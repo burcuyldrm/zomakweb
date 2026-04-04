@@ -4,7 +4,7 @@ import logoImg from "@assets/7def00d3-5c30-412a-b6e3-ac4fa24678f5_1775312460306.
 
 export function Footer() {
   return (
-    <footer className="bg-[--brand-charcoal] text-white pt-16 pb-8 border-t-2 border-[--brand-red]">
+    <footer className="bg-[#111111] text-white pt-16 pb-8 border-t-2 border-[#8B1A1A]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 
@@ -18,7 +18,7 @@ export function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Zomak Vinç Platform ve Makina Sanayi, Türkiye ve dünya genelinde kaldırma, kurtarıcı ve platform ekipmanları alanında güvenilir çözümler sunar.
             </p>
-            <div className="text-sm font-bold text-[--brand-red] tracking-wider">Zirveye Odaklan</div>
+            <div className="text-sm font-bold text-[#8B1A1A] tracking-wider">Zirveye Odaklan</div>
           </div>
 
           {/* Kurumsal + Hızlı Bağlantılar */}
@@ -74,25 +74,25 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               <li className="flex gap-3 items-start">
-                <MapPin className="w-4 h-4 text-[--brand-red] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#8B1A1A] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm leading-relaxed">
                   Atatürk Mahallesi 4. Cadde No:54<br />Oğlananası-Menderes / İzmir
                 </span>
               </li>
               <li className="flex gap-3 items-center">
-                <Phone className="w-4 h-4 text-[--brand-red] flex-shrink-0" />
+                <Phone className="w-4 h-4 text-[#8B1A1A] flex-shrink-0" />
                 <a href="tel:05411290102" className="text-gray-400 hover:text-white text-sm transition-colors">
                   0541 129 01 02
                 </a>
               </li>
               <li className="flex gap-3 items-center">
-                <Mail className="w-4 h-4 text-[--brand-red] flex-shrink-0" />
+                <Mail className="w-4 h-4 text-[#8B1A1A] flex-shrink-0" />
                 <a href="mailto:info@zomak.com.tr" className="text-gray-400 hover:text-white text-sm transition-colors">
                   info@zomak.com.tr
                 </a>
               </li>
               <li className="flex gap-3 items-center pt-1">
-                <Linkedin className="w-4 h-4 text-[--brand-red] flex-shrink-0" />
+                <Linkedin className="w-4 h-4 text-[#8B1A1A] flex-shrink-0" />
                 <a
                   href="https://linkedin.com/company/zomak"
                   target="_blank"

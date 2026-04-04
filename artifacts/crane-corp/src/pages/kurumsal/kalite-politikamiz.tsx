@@ -16,10 +16,10 @@ const commitments = [
 export default function KalitePolitikamiz() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[--brand-charcoal] text-white py-20 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[--brand-red]" />
+      <div className="bg-[#111111] text-white py-20 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8B1A1A]" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Kurumsal</div>
+          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Kurumsal</div>
           <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Kalite Politikamız</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Kalite, ZOMAK'ın üretim felsefesinin temel taşıdır.
@@ -55,14 +55,14 @@ export default function KalitePolitikamiz() {
           <ul className="space-y-3">
             {commitments.map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                <CheckCircle className="w-4 h-4 text-[--brand-red] flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-4 h-4 text-[#8B1A1A] flex-shrink-0 mt-0.5" />
                 {item}
               </li>
             ))}
           </ul>
         </motion.div>
 
-        <div className="bg-[--brand-charcoal] text-white rounded-sm p-8 mb-10">
+        <div className="bg-[#111111] text-white rounded-sm p-8 mb-10">
           <h2 className="text-lg font-black uppercase mb-3">Kalite İlkemiz</h2>
           <p className="text-gray-300 leading-relaxed text-sm italic">
             "Ürünlerimizin her birini, kendi ekibimizin de güvenle kullanacağı standartlarda üretiriz. Kalite bir hedef değil; iş yapış biçimimizin ayrılmaz bir parçasıdır."
@@ -71,7 +71,7 @@ export default function KalitePolitikamiz() {
 
         <div className="flex flex-wrap gap-3">
           <Link href="/urunler">
-            <Button className="bg-[--brand-red] hover:bg-[--brand-red-light] text-white font-bold rounded-sm border-none uppercase">
+            <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold rounded-sm border-none uppercase">
               Ürünlerimiz
             </Button>
           </Link>

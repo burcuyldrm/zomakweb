@@ -1,0 +1,323 @@
+IMPORTANT:
+
+Do NOT rebuild the project from scratch.
+Do NOT recreate the project.
+Do NOT delete existing files.
+
+You are working on an EXISTING Next.js project.
+Your task is to FIX and REFINE the current implementation only.
+
+Keep:
+- the existing project
+- existing routes
+- existing content structure
+- existing pages
+- existing components where useful
+
+Only:
+- fix broken UI
+- restore visual hierarchy
+- improve readability
+- restore proper color balance
+- fix navbar appearance
+- fix clickable product cards
+- improve hero section proportions
+- improve logo visibility
+- make the design strong, professional, and readable again
+
+Do not restart the project.
+Do not redesign everything from zero.
+Do targeted improvements carefully.
+
+--------------------------------------------------
+MAIN PROBLEMS TO FIX
+--------------------------------------------------
+
+The current website has these issues:
+
+1. Navbar looks broken
+2. Colors became too washed out / too white
+3. Text visibility is weak in several areas
+4. Product cards are not clickable properly
+5. Logo in navbar is too small and not impactful enough
+6. The small text above “Zirveye Odaklan” is not readable
+7. The hero background image is too tall / too long
+8. Overall design lost contrast and lost its industrial visual strength
+
+Your task is to fix these issues while preserving the project structure.
+
+--------------------------------------------------
+NAVBAR FIX
+--------------------------------------------------
+
+Fix the navbar completely.
+
+Requirements:
+- restore a stronger corporate visual appearance
+- make navbar more balanced and visually solid
+- logo must be larger, clearer, and more striking
+- nav links must be visible and readable
+- maintain professional spacing
+- keep dropdown structure for:
+  - Kurumsal
+  - Ürünler
+- active and hover states should be visible
+- navbar should not look washed out
+- navbar should not look empty or unfinished
+
+Recommended direction:
+- use a stronger white / dark / charcoal balance
+- keep red as accent
+- improve text contrast
+- improve header shadow / separation from page
+- ensure menu items are clearly visible on desktop and mobile
+
+If current navbar background is too pale, restore stronger contrast.
+Make the navbar feel premium and corporate again.
+
+--------------------------------------------------
+LOGO FIX
+--------------------------------------------------
+
+Increase the visual importance of the logo in the navbar.
+
+Requirements:
+- logo should be larger
+- logo should be more noticeable
+- preserve professional balance
+- do not make it cartoonish
+- maintain proper alignment with menu items
+- use the uploaded logo properly
+- if needed, increase logo container width and height
+- ensure retina/sharp appearance
+
+The logo must contribute to brand identity and not disappear visually.
+
+--------------------------------------------------
+COLOR BALANCE FIX
+--------------------------------------------------
+
+The site has become too white and visually weak.
+
+Fix the color system so the site regains a strong industrial identity.
+
+Use this visual balance:
+- white for clean sections
+- dark charcoal / near-black for important anchors
+- muted red for accents
+- light gray only as secondary background
+- enough contrast for readability
+- avoid washed-out look
+
+Do NOT return to harsh overuse of red.
+But also do NOT leave the site flat, pale, and lifeless.
+
+Goal:
+A premium industrial black-white-red balance with strong readability.
+
+--------------------------------------------------
+TEXT READABILITY FIX
+--------------------------------------------------
+
+Several texts are hard to read.
+
+Fix readability across the site:
+- ensure strong contrast
+- headings should be clear
+- body text should be readable
+- small supporting labels must not disappear
+- avoid light text over light background
+- avoid transparent overlays that reduce readability too much
+
+Especially fix:
+- the small text above “Zirveye Odaklan”
+- navbar text
+- any faded text in cards or hero areas
+- product section labels
+
+Use professional typography contrast.
+
+--------------------------------------------------
+HERO SECTION FIX
+--------------------------------------------------
+
+Fix the hero section proportions and readability.
+
+Current issues:
+- background image is too tall / too long
+- hero feels oversized
+- small upper label is not readable
+- content hierarchy is weak
+
+Update hero section so that:
+- hero height is reduced to a more controlled premium size
+- use a better overlay for readability
+- preserve strong visual impact
+- main slogan “Zirveye Odaklan” remains bold and strong
+- supporting text becomes clearly readable
+- the small top label becomes visible
+- buttons remain prominent
+- image composition feels cleaner
+
+Recommended:
+- use a dark gradient overlay from left side
+- reduce vertical height to something more elegant
+- avoid excessive empty image area
+- ensure hero works well on desktop and mobile
+
+Do NOT let the hero image dominate the page too aggressively.
+
+--------------------------------------------------
+TOP LABEL ABOVE “ZİRVEYE ODAKLAN”
+--------------------------------------------------
+
+The small text above the main heading is currently unreadable.
+
+Fix it specifically:
+- increase contrast
+- adjust font weight
+- improve background support if needed
+- make it visually subtle but clearly readable
+- preserve premium corporate feel
+
+It should not disappear into the background.
+
+--------------------------------------------------
+PRODUCT CARDS CLICKABILITY FIX
+--------------------------------------------------
+
+The product cards are currently not clickable properly.
+
+Fix the products section so that:
+- every product card is clearly clickable
+- clicking the card or the title opens the correct product detail page
+- hover state indicates interactivity
+- cursor behavior is correct
+- clickable area is large enough
+- no overlay or layout bug blocks clicking
+
+This is critical.
+
+Each product must route properly to its own page.
+
+--------------------------------------------------
+PRODUCTS PAGE VISUAL FIX
+--------------------------------------------------
+
+Improve the product listing page:
+- maintain strong card design
+- better spacing
+- better contrast
+- card titles readable
+- descriptions readable
+- image ratio controlled
+- no broken placeholders if image exists
+- if image missing, show a clean fallback block
+
+Do not let the page feel too empty or too white.
+
+--------------------------------------------------
+CARD DESIGN FIX
+--------------------------------------------------
+
+Cards should remain slightly softened but still strong.
+
+Update cards so that:
+- corners are slightly rounded, not too sharp
+- cards feel premium
+- borders/shadows are subtle but visible
+- cards do not look flat or unfinished
+- text hierarchy is clear
+- product cards look interactive
+
+--------------------------------------------------
+GENERAL LAYOUT FIX
+--------------------------------------------------
+
+Restore stronger visual hierarchy throughout the site:
+- better section spacing
+- stronger contrast
+- less empty washed-out space
+- clearer divisions between sections
+- better balance between white and dark tones
+
+Do not make the site overly minimal to the point of looking unfinished.
+
+--------------------------------------------------
+IMAGE HANDLING FIX
+--------------------------------------------------
+
+Ensure uploaded images are used properly.
+
+Requirements:
+- use proper image sizing
+- avoid extreme aspect ratios
+- prevent oversized hero image behavior
+- use controlled height containers
+- ensure product images display cleanly
+- ensure gallery/product visuals are not stretched
+
+--------------------------------------------------
+FORMAL CONTENT STYLE
+--------------------------------------------------
+
+Keep all visible text in formal Turkish.
+No emojis.
+No playful wording.
+Professional industrial tone only.
+
+--------------------------------------------------
+RESPONSIVE FIX
+--------------------------------------------------
+
+Ensure all fixes work on:
+- desktop
+- tablet
+- mobile
+
+Especially:
+- navbar
+- hero section
+- product cards
+- dropdown menus
+- text readability
+- logo sizing
+
+--------------------------------------------------
+DO NOT
+--------------------------------------------------
+
+- do not rebuild the app
+- do not delete existing files
+- do not remove working routes
+- do not keep the navbar pale and broken
+- do not keep unreadable text
+- do not keep product cards unclickable
+- do not keep the hero image overly tall
+- do not shrink the logo back down
+- do not over-whiten the interface
+
+--------------------------------------------------
+FINAL TASK
+--------------------------------------------------
+
+Fix the current implementation and restore a strong, readable, professional industrial design.
+
+Priority order:
+1. Fix navbar
+2. Fix logo size and visibility
+3. Fix color contrast
+4. Fix hero height and readability
+5. Fix small text above “Zirveye Odaklan”
+6. Fix product card click behavior
+7. Improve product page card design
+8. Preserve responsiveness
+9. Keep overall style corporate, industrial, premium
+
+After updating:
+- ensure navbar is visually strong
+- ensure texts are readable
+- ensure product cards are clickable
+- ensure hero is not too tall
+- ensure logo is impactful
+- ensure the site feels balanced again

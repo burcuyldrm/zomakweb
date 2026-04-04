@@ -29,10 +29,10 @@ const social = [
 export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[--brand-charcoal] text-white py-20 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[--brand-red]" />
+      <div className="bg-[#111111] text-white py-20 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8B1A1A]" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Bize Ulaşın</div>
+          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Bize Ulaşın</div>
           <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">İletişim</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Sorularınız, talepleriniz ve iş birliği teklifleriniz için ekibimiz hazır.
@@ -51,14 +51,14 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white border border-gray-200 rounded-sm p-5 hover:border-[--brand-red] group transition-colors"
+                className="bg-white border border-gray-200 rounded-sm p-5 hover:border-[#8B1A1A] group transition-colors"
               >
-                <div className="w-10 h-10 bg-gray-100 group-hover:bg-[--brand-red]/10 flex items-center justify-center rounded-sm mb-3 transition-colors">
-                  <info.icon className="w-5 h-5 text-[--brand-red]" />
+                <div className="w-10 h-10 bg-gray-100 group-hover:bg-[#8B1A1A]/10 flex items-center justify-center rounded-sm mb-3 transition-colors">
+                  <info.icon className="w-5 h-5 text-[#8B1A1A]" />
                 </div>
-                <div className="text-[10px] font-bold uppercase tracking-widest text-[--brand-red] mb-1">{info.label}</div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-[#8B1A1A] mb-1">{info.label}</div>
                 {info.href ? (
-                  <a href={info.href} className="text-sm font-medium text-gray-700 hover:text-[--brand-red] transition-colors whitespace-pre-line leading-relaxed">
+                  <a href={info.href} className="text-sm font-medium text-gray-700 hover:text-[#8B1A1A] transition-colors whitespace-pre-line leading-relaxed">
                     {info.value}
                   </a>
                 ) : (
@@ -77,7 +77,7 @@ export default function Contact() {
 
             {/* Map */}
             <div className="lg:col-span-2">
-              <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Harita</div>
+              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Harita</div>
               <h2 className="text-2xl font-black uppercase text-gray-900 mb-5">Konumumuz</h2>
               <div className="w-full rounded-sm overflow-hidden border border-gray-200 shadow-sm">
                 <iframe
@@ -91,7 +91,7 @@ export default function Contact() {
                 />
               </div>
               <div className="mt-3 flex items-start gap-2 text-sm text-gray-500">
-                <MapPin className="w-4 h-4 text-[--brand-red] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#8B1A1A] flex-shrink-0 mt-0.5" />
                 <span>Atatürk Mahallesi 4. Cadde No:54 Oğlananası-Menderes / İzmir</span>
               </div>
             </div>
@@ -99,8 +99,8 @@ export default function Contact() {
             {/* Sidebar */}
             <div className="space-y-5">
               {/* WhatsApp */}
-              <div className="bg-[--brand-charcoal] text-white rounded-sm p-6">
-                <div className="text-[10px] font-bold text-[--brand-red] uppercase tracking-widest mb-2">Hızlı İletişim</div>
+              <div className="bg-[#111111] text-white rounded-sm p-6">
+                <div className="text-[10px] font-bold text-[#8B1A1A] uppercase tracking-widest mb-2">Hızlı İletişim</div>
                 <h3 className="text-lg font-black uppercase mb-3">WhatsApp ile Yazın</h3>
                 <p className="text-gray-400 text-sm mb-5 leading-relaxed">
                   Sorularınızı veya teklif talebinizi hızlıca iletmek için WhatsApp kullanabilirsiniz.
@@ -124,14 +124,14 @@ export default function Contact() {
               </div>
 
               {/* Teklif */}
-              <div className="border border-[--brand-red]/30 rounded-sm p-6">
-                <div className="text-[10px] font-bold text-[--brand-red] uppercase tracking-widest mb-2">Fiyat Talebi</div>
+              <div className="border border-[#8B1A1A]/30 rounded-sm p-6">
+                <div className="text-[10px] font-bold text-[#8B1A1A] uppercase tracking-widest mb-2">Fiyat Talebi</div>
                 <h3 className="text-lg font-black uppercase text-gray-900 mb-2">Teklif Alın</h3>
                 <p className="text-gray-500 text-sm mb-4 leading-relaxed">
                   Projenizi ayrıntılı olarak iletmek için formu doldurun.
                 </p>
                 <Link href="/teklif">
-                  <Button className="w-full bg-[--brand-red] hover:bg-[--brand-red-light] text-white font-bold rounded-sm border-none uppercase">
+                  <Button className="w-full bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold rounded-sm border-none uppercase">
                     Teklif Formu <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Link>
@@ -147,9 +147,9 @@ export default function Contact() {
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-gray-600 hover:text-[--brand-red] transition-colors group"
+                      className="flex items-center gap-3 text-gray-600 hover:text-[#8B1A1A] transition-colors group"
                     >
-                      <div className="w-8 h-8 bg-white border border-gray-200 group-hover:border-[--brand-red]/30 flex items-center justify-center rounded-sm transition-colors">
+                      <div className="w-8 h-8 bg-white border border-gray-200 group-hover:border-[#8B1A1A]/30 flex items-center justify-center rounded-sm transition-colors">
                         <s.icon className="w-4 h-4" />
                       </div>
                       <div>

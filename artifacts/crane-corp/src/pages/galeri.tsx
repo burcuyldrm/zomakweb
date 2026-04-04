@@ -25,10 +25,10 @@ export default function Galeri() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-[--brand-charcoal] text-white py-20 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[--brand-red]" />
+      <div className="bg-[#111111] text-white py-20 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8B1A1A]" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Projelerimizden</div>
+          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Projelerimizden</div>
           <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Galeri</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Gerçekleştirdiğimiz projeler ve ürettiğimiz ekipmanlardan görüntüler.
@@ -74,7 +74,7 @@ export default function Galeri() {
             onClick={() => setLightbox(null)}
           >
             <button
-              className="absolute top-4 right-4 text-white hover:text-[--brand-red] z-10 p-2"
+              className="absolute top-4 right-4 text-white hover:text-[#8B1A1A] z-10 p-2"
               onClick={() => setLightbox(null)}
             >
               <X className="w-7 h-7" />

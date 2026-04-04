@@ -54,10 +54,10 @@ export default function Teklif() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[--brand-charcoal] text-white py-20 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[--brand-red]" />
+      <div className="bg-[#111111] text-white py-20 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8B1A1A]" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Fiyat Talebi</div>
+          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Fiyat Talebi</div>
           <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Teklif Al</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Projenizi bize aktarın, size en uygun çözümü ve fiyatı sunalım.
@@ -76,14 +76,14 @@ export default function Teklif() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="bg-gray-50 border border-gray-200 rounded-sm p-12 text-center"
               >
-                <CheckCircle className="w-16 h-16 text-[--brand-red] mx-auto mb-5" />
+                <CheckCircle className="w-16 h-16 text-[#8B1A1A] mx-auto mb-5" />
                 <h2 className="text-2xl font-black uppercase text-gray-900 mb-3">Talebiniz Alındı</h2>
                 <p className="text-gray-500 text-sm mb-8 max-w-md mx-auto leading-relaxed">
                   Teklif talebiniz başarıyla iletildi. Uzman ekibimiz en kısa sürede sizinle iletişime geçecektir.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
                   <a href="tel:05411290102">
-                    <Button className="bg-[--brand-red] hover:bg-[--brand-red-light] font-bold rounded-sm uppercase border-none">
+                    <Button className="bg-[#8B1A1A] hover:bg-[#A52020] font-bold rounded-sm uppercase border-none">
                       <Phone className="w-4 h-4 mr-2" />
                       Hemen Ara
                     </Button>
@@ -105,7 +105,7 @@ export default function Teklif() {
                       <FormItem>
                         <FormLabel className="font-bold text-xs uppercase tracking-widest text-gray-600">Ad Soyad *</FormLabel>
                         <FormControl>
-                          <Input className="rounded-sm border-gray-300 focus:border-[--brand-red] h-11" placeholder="Ahmet Yılmaz" {...field} data-testid="input-ad-soyad" />
+                          <Input className="rounded-sm border-gray-300 focus:border-[#8B1A1A] h-11" placeholder="Ahmet Yılmaz" {...field} data-testid="input-ad-soyad" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -175,7 +175,7 @@ export default function Teklif() {
                       <FormLabel className="font-bold text-xs uppercase tracking-widest text-gray-600">İş Açıklaması *</FormLabel>
                       <FormControl>
                         <Textarea
-                          className="rounded-sm border-gray-300 min-h-[130px] resize-none focus:border-[--brand-red]"
+                          className="rounded-sm border-gray-300 min-h-[130px] resize-none focus:border-[#8B1A1A]"
                           placeholder="Projenizi, ihtiyaçlarınızı ve talep ettiğiniz kapasiteyi kısaca aktarın..."
                           {...field}
                           data-testid="textarea-aciklama"
@@ -188,8 +188,8 @@ export default function Teklif() {
                   {/* File Upload */}
                   <div>
                     <label className="block font-bold text-xs uppercase tracking-widest text-gray-600 mb-2">Dosya / Görsel Yükleme</label>
-                    <label className="flex items-center gap-3 border border-dashed border-gray-300 hover:border-[--brand-red] rounded-sm p-5 cursor-pointer transition-colors group">
-                      <Upload className="w-4 h-4 text-gray-400 group-hover:text-[--brand-red] flex-shrink-0" />
+                    <label className="flex items-center gap-3 border border-dashed border-gray-300 hover:border-[#8B1A1A] rounded-sm p-5 cursor-pointer transition-colors group">
+                      <Upload className="w-4 h-4 text-gray-400 group-hover:text-[#8B1A1A] flex-shrink-0" />
                       <div>
                         <div className="text-sm font-medium text-gray-600">
                           {fileName ? fileName : "Dosya seçmek için tıklayın"}
@@ -207,7 +207,7 @@ export default function Teklif() {
 
                   <Button
                     type="submit"
-                    className="w-full h-12 font-bold bg-[--brand-red] hover:bg-[--brand-red-light] text-white rounded-sm border-none uppercase tracking-widest"
+                    className="w-full h-12 font-bold bg-[#8B1A1A] hover:bg-[#A52020] text-white rounded-sm border-none uppercase tracking-widest"
                     disabled={form.formState.isSubmitting}
                     data-testid="button-submit"
                   >
@@ -220,12 +220,12 @@ export default function Teklif() {
 
           {/* Sidebar */}
           <div className="space-y-5">
-            <div className="bg-[--brand-charcoal] text-white rounded-sm p-7">
-              <div className="text-[10px] font-bold text-[--brand-red] uppercase tracking-widest mb-2">İletişim</div>
+            <div className="bg-[#111111] text-white rounded-sm p-7">
+              <div className="text-[10px] font-bold text-[#8B1A1A] uppercase tracking-widest mb-2">İletişim</div>
               <h3 className="font-black uppercase mb-5">Hızlı Ulaşın</h3>
               <div className="space-y-4">
-                <a href="tel:05411290102" className="flex items-center gap-3 hover:text-[--brand-red] transition-colors">
-                  <Phone className="w-4 h-4 text-[--brand-red]" />
+                <a href="tel:05411290102" className="flex items-center gap-3 hover:text-[#8B1A1A] transition-colors">
+                  <Phone className="w-4 h-4 text-[#8B1A1A]" />
                   <div>
                     <div className="text-[10px] text-gray-400 uppercase">Telefon</div>
                     <div className="font-bold text-sm">0541 129 01 02</div>
@@ -257,7 +257,7 @@ export default function Teklif() {
                   "Satış sonrası servis",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2.5">
-                    <span className="w-1 h-1 bg-[--brand-red] rounded-full flex-shrink-0" />
+                    <span className="w-1 h-1 bg-[#8B1A1A] rounded-full flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -265,7 +265,7 @@ export default function Teklif() {
             </div>
 
             <div className="bg-gray-50 border border-gray-200 rounded-sm p-6 text-center">
-              <div className="text-3xl font-black text-[--brand-red] mb-1">24 Saat</div>
+              <div className="text-3xl font-black text-[#8B1A1A] mb-1">24 Saat</div>
               <div className="text-xs font-bold uppercase tracking-widest text-gray-500">İçinde Yanıt Veriyoruz</div>
             </div>
           </div>

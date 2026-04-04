@@ -42,34 +42,34 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
 
       {/* HERO */}
-      <section className="relative min-h-screen bg-[--brand-charcoal] flex items-center overflow-hidden">
+      <section className="relative bg-[#111111] flex items-center overflow-hidden" style={{ minHeight: "680px", maxHeight: "800px", height: "78vh" }}>
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${craneImg})`, backgroundPosition: "center top" }}
+          className="absolute inset-0 bg-cover bg-right-top"
+          style={{ backgroundImage: `url(${craneImg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30" />
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[--brand-red]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/75 to-black/20" />
+        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
 
-        <div className="relative z-10 container mx-auto px-4 md:px-8 py-32">
+        <div className="relative z-10 container mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 border border-[--brand-red]/40 text-[--brand-red] text-xs font-bold uppercase tracking-widest px-4 py-2 mb-6 rounded-sm">
-              <span className="w-1.5 h-1.5 bg-[--brand-red] rounded-full" />
+            <div className="inline-flex items-center gap-2 bg-[#8B1A1A]/20 border border-[#8B1A1A]/60 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 mb-7 rounded-sm">
+              <span className="w-1.5 h-1.5 bg-[#8B1A1A] rounded-full" />
               Zomak Vinç Platform ve Makina Sanayi — İzmir
             </div>
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-none tracking-tight uppercase mb-4">
-              Zirveye<br /><span className="text-[--brand-red]">Odaklan</span>
+            <h1 className="text-5xl md:text-7xl font-black text-white leading-none tracking-tight uppercase mb-5">
+              Zirveye<br /><span className="text-[#8B1A1A]">Odaklan</span>
             </h1>
-            <p className="text-lg text-gray-300 mb-8 max-w-lg leading-relaxed font-light">
+            <p className="text-base md:text-lg text-gray-300 mb-9 max-w-lg leading-relaxed">
               Mobil vinç, hidrolik kurtarıcı ve sepetli platform çözümlerinde güvenilir iş ortağınız. Türkiye ve dünya geneli hizmet.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/teklif">
-                <Button size="lg" className="h-12 px-8 font-bold bg-[--brand-red] hover:bg-[--brand-red-light] text-white rounded-sm border-none uppercase tracking-wide shadow-lg">
+                <Button size="lg" className="h-12 px-8 font-bold bg-[#8B1A1A] hover:bg-[#A52020] text-white rounded-sm border-none uppercase tracking-wide shadow-lg">
                   Teklif Al <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
@@ -78,7 +78,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button size="lg" variant="outline" className="h-12 px-8 font-bold rounded-sm border-white/25 text-white hover:bg-white/10 uppercase tracking-wide">
+                <Button size="lg" variant="outline" className="h-12 px-8 font-bold rounded-sm border-white/30 bg-white/5 text-white hover:bg-white/15 uppercase tracking-wide">
                   <MessageCircle className="mr-2 w-4 h-4 text-green-400" />
                   WhatsApp
                 </Button>
@@ -86,7 +86,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[--brand-red]/40" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/50" />
       </section>
 
       {/* INTRO */}
@@ -94,7 +94,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-3">Kimiz</div>
+              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-3">Kimiz</div>
               <h2 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-5 leading-tight">
                 Sektörün Güvenilir Üreticisi
               </h2>
@@ -113,7 +113,7 @@ export default function Home() {
                 { num: "7/24", label: "Teknik Destek" },
               ].map((s, i) => (
                 <div key={i} className="bg-gray-50 border border-gray-200 p-6 text-center rounded-sm">
-                  <div className="text-3xl font-black text-[--brand-red] mb-1">{s.num}</div>
+                  <div className="text-3xl font-black text-[#8B1A1A] mb-1">{s.num}</div>
                   <div className="text-xs font-bold text-gray-500 uppercase tracking-wider">{s.label}</div>
                 </div>
               ))}
@@ -126,7 +126,7 @@ export default function Home() {
       <section className="py-20 bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-8">
           <div className="mb-10">
-            <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Ürün Portföyümüz</div>
+            <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Ürün Portföyümüz</div>
             <h2 className="text-3xl md:text-4xl font-black uppercase text-gray-900">Ürünlerimiz</h2>
           </div>
 
@@ -140,12 +140,12 @@ export default function Home() {
                   className={cn(
                     "w-full text-left px-6 py-5 border-b border-gray-100 last:border-0 flex items-center justify-between transition-colors",
                     activeProduct === i
-                      ? "bg-[--brand-charcoal] text-white"
+                      ? "bg-[#111111] text-white"
                       : "text-gray-700 hover:bg-gray-50"
                   )}
                 >
                   <span className="text-sm font-bold">{p.title}</span>
-                  <ChevronRight className={cn("w-4 h-4 transition-colors flex-shrink-0", activeProduct === i ? "text-[--brand-red]" : "text-gray-300")} />
+                  <ChevronRight className={cn("w-4 h-4 transition-colors flex-shrink-0", activeProduct === i ? "text-[#8B1A1A]" : "text-gray-300")} />
                 </button>
               ))}
             </div>
@@ -169,7 +169,7 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <div className="absolute bottom-4 left-6">
-                      <div className="bg-[--brand-red] text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">
+                      <div className="bg-[#8B1A1A] text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">
                         {product.title}
                       </div>
                     </div>
@@ -178,7 +178,7 @@ export default function Home() {
                     <p className="text-gray-500 text-sm mb-4 font-medium italic">{product.shortDesc}</p>
                     <p className="text-gray-700 text-sm leading-relaxed mb-6">{product.description.slice(0, 200)}...</p>
                     <Link href={`/urunler/${product.slug}`}>
-                      <Button size="sm" className="bg-[--brand-red] hover:bg-[--brand-red-light] text-white rounded-sm border-none font-bold uppercase">
+                      <Button size="sm" className="bg-[#8B1A1A] hover:bg-[#A52020] text-white rounded-sm border-none font-bold uppercase">
                         Ürün Detayı <ArrowRight className="ml-2 w-3.5 h-3.5" />
                       </Button>
                     </Link>
@@ -190,7 +190,7 @@ export default function Home() {
 
           <div className="mt-6 text-right">
             <Link href="/urunler">
-              <Button variant="ghost" className="text-[--brand-red] font-bold uppercase text-sm group hover:bg-transparent hover:text-[--brand-red-light]">
+              <Button variant="ghost" className="text-[#8B1A1A] font-bold uppercase text-sm group hover:bg-transparent hover:text-[#A52020]">
                 Tüm Ürünleri Gör <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -203,7 +203,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-3">Tercih Sebebimiz</div>
+              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-3">Tercih Sebebimiz</div>
               <h2 className="text-3xl md:text-4xl font-black uppercase text-gray-900 leading-tight mb-8">
                 Neden ZOMAK?
               </h2>
@@ -217,14 +217,14 @@ export default function Home() {
                     transition={{ delay: i * 0.08 }}
                     className="flex items-center gap-4"
                   >
-                    <CheckCircle className="w-5 h-5 text-[--brand-red] flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-[#8B1A1A] flex-shrink-0" />
                     <span className="text-gray-700 font-medium text-sm">{p}</span>
                   </motion.div>
                 ))}
               </div>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link href="/teklif">
-                  <Button className="bg-[--brand-red] hover:bg-[--brand-red-light] text-white font-bold px-7 h-11 rounded-sm border-none uppercase">
+                  <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold px-7 h-11 rounded-sm border-none uppercase">
                     Teklif Al
                   </Button>
                 </Link>
@@ -251,7 +251,7 @@ export default function Home() {
       <section className="py-20 bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
-            <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Güveni Kazandık</div>
+            <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Güveni Kazandık</div>
             <h2 className="text-3xl font-black uppercase text-gray-900">Referanslarımız</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -262,7 +262,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
-                className="bg-white border border-gray-200 hover:border-[--brand-red] p-8 flex items-center justify-center text-center font-bold text-gray-700 hover:text-[--brand-red] transition-colors duration-300 rounded-sm text-sm uppercase tracking-wide"
+                className="bg-white border border-gray-200 hover:border-[#8B1A1A] p-8 flex items-center justify-center text-center font-bold text-gray-700 hover:text-[#8B1A1A] transition-colors duration-300 rounded-sm text-sm uppercase tracking-wide"
               >
                 {ref}
               </motion.div>
@@ -270,7 +270,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-6">
             <Link href="/referanslar">
-              <Button variant="ghost" className="text-[--brand-red] font-bold uppercase text-sm group hover:bg-transparent">
+              <Button variant="ghost" className="text-[#8B1A1A] font-bold uppercase text-sm group hover:bg-transparent">
                 Tüm Referanslar <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -279,11 +279,11 @@ export default function Home() {
       </section>
 
       {/* GALLERY PREVIEW */}
-      <section className="py-20 bg-[--brand-charcoal]">
+      <section className="py-20 bg-[#111111]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Projelerimizden</div>
+              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Projelerimizden</div>
               <h2 className="text-3xl font-black text-white uppercase">Galeri</h2>
             </div>
             <Link href="/galeri">
@@ -316,7 +316,7 @@ export default function Home() {
       {/* CONTACT CTA */}
       <section className="py-16 bg-white border-t border-gray-200">
         <div className="container mx-auto px-4 text-center">
-          <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-3">Projenizi Değerlendirelim</div>
+          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-3">Projenizi Değerlendirelim</div>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 uppercase mb-4 leading-tight">
             Bizimle İletişime Geçin
           </h2>
@@ -325,7 +325,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link href="/teklif">
-              <Button size="lg" className="h-12 px-8 font-bold bg-[--brand-red] hover:bg-[--brand-red-light] text-white rounded-sm border-none uppercase">
+              <Button size="lg" className="h-12 px-8 font-bold bg-[#8B1A1A] hover:bg-[#A52020] text-white rounded-sm border-none uppercase">
                 Teklif Formu
               </Button>
             </Link>

@@ -24,7 +24,7 @@ export default function UrunDetay() {
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-2xl font-black uppercase mb-4">Ürün Bulunamadı</h1>
         <Link href="/urunler">
-          <Button className="bg-[--brand-red] text-white rounded-sm border-none font-bold">
+          <Button className="bg-[#8B1A1A] text-white rounded-sm border-none font-bold">
             Ürünlere Dön
           </Button>
         </Link>
@@ -40,9 +40,9 @@ export default function UrunDetay() {
       <div className="bg-gray-50 border-b border-gray-200 py-3">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center gap-2 text-xs text-gray-500">
-            <Link href="/"><span className="hover:text-[--brand-red] cursor-pointer">Ana Sayfa</span></Link>
+            <Link href="/"><span className="hover:text-[#8B1A1A] cursor-pointer">Ana Sayfa</span></Link>
             <span>/</span>
-            <Link href="/urunler"><span className="hover:text-[--brand-red] cursor-pointer">Ürünler</span></Link>
+            <Link href="/urunler"><span className="hover:text-[#8B1A1A] cursor-pointer">Ürünler</span></Link>
             <span>/</span>
             <span className="text-gray-900 font-medium">{product.title}</span>
           </div>
@@ -52,7 +52,7 @@ export default function UrunDetay() {
       {/* Main content */}
       <div className="container mx-auto px-4 md:px-8 py-14">
         <Link href="/urunler">
-          <Button variant="ghost" size="sm" className="mb-8 text-gray-500 hover:text-[--brand-red] font-bold uppercase text-xs rounded-sm -ml-2">
+          <Button variant="ghost" size="sm" className="mb-8 text-gray-500 hover:text-[#8B1A1A] font-bold uppercase text-xs rounded-sm -ml-2">
             <ArrowLeft className="mr-2 w-4 h-4" />
             Tüm Ürünler
           </Button>
@@ -80,9 +80,9 @@ export default function UrunDetay() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Ürün Detayı</div>
+            <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Ürün Detayı</div>
             <h1 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-3 leading-tight">{product.title}</h1>
-            <p className="text-gray-500 font-medium text-sm italic mb-5 border-l-2 border-[--brand-red] pl-4">{product.shortDesc}</p>
+            <p className="text-gray-500 font-medium text-sm italic mb-5 border-l-2 border-[#8B1A1A] pl-4">{product.shortDesc}</p>
             <p className="text-gray-700 leading-relaxed text-sm mb-7">{product.description}</p>
 
             {/* Usage areas */}
@@ -91,7 +91,7 @@ export default function UrunDetay() {
               <ul className="space-y-2">
                 {product.usage.map((u, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
-                    <CheckCircle className="w-4 h-4 text-[--brand-red] flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-[#8B1A1A] flex-shrink-0 mt-0.5" />
                     {u}
                   </li>
                 ))}
@@ -116,7 +116,7 @@ export default function UrunDetay() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-3">
               <Link href="/teklif">
-                <Button className="bg-[--brand-red] hover:bg-[--brand-red-light] text-white font-bold rounded-sm border-none uppercase px-7 h-11">
+                <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold rounded-sm border-none uppercase px-7 h-11">
                   Teklif Al <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
@@ -147,8 +147,8 @@ export default function UrunDetay() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {otherProducts.map((p) => (
                 <Link key={p.slug} href={`/urunler/${p.slug}`}>
-                  <div className="border border-gray-200 rounded-sm p-5 hover:border-[--brand-red] transition-colors cursor-pointer group">
-                    <h3 className="font-bold text-sm uppercase mb-1 text-gray-800 group-hover:text-[--brand-red] transition-colors">{p.title}</h3>
+                  <div className="border border-gray-200 rounded-sm p-5 hover:border-[#8B1A1A] transition-colors cursor-pointer group">
+                    <h3 className="font-bold text-sm uppercase mb-1 text-gray-800 group-hover:text-[#8B1A1A] transition-colors">{p.title}</h3>
                     <p className="text-gray-400 text-xs leading-relaxed">{p.shortDesc}</p>
                   </div>
                 </Link>

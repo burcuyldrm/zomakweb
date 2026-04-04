@@ -13,10 +13,10 @@ const values = [
 export default function Hakkimizda() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[--brand-charcoal] text-white py-20 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[--brand-red]" />
+      <div className="bg-[#111111] text-white py-20 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8B1A1A]" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Kurumsal</div>
+          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Kurumsal</div>
           <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Hakkımızda</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Zomak Vinç Platform ve Makina Sanayi'nin kuruluş hikâyesi, vizyonu ve değerleri.
@@ -62,13 +62,13 @@ export default function Hakkimizda() {
         {/* Vision & Mission */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
-            <h3 className="font-black uppercase text-sm tracking-widest text-[--brand-red] mb-3">Vizyonumuz</h3>
+            <h3 className="font-black uppercase text-sm tracking-widest text-[#8B1A1A] mb-3">Vizyonumuz</h3>
             <p className="text-gray-700 leading-relaxed text-sm">
               Türkiye'nin en güvenilir vinç ve platform ekipmanları üreticisi olarak uluslararası standartlarda mühendislik çözümleri sunmak; ihracat ağımızı genişleterek küresel ölçekte tanınan bir marka olmak.
             </p>
           </div>
           <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
-            <h3 className="font-black uppercase text-sm tracking-widest text-[--brand-red] mb-3">Misyonumuz</h3>
+            <h3 className="font-black uppercase text-sm tracking-widest text-[#8B1A1A] mb-3">Misyonumuz</h3>
             <p className="text-gray-700 leading-relaxed text-sm">
               Müşterilerimizin operasyonel verimliliğini artıracak, güvenli ve uzun ömürlü ekipmanlar tasarlamak; satış öncesinden satış sonrasına kadar kesintisiz teknik destek ile iş ortaklarımızın güvenini kazanmak.
             </p>
@@ -86,9 +86,9 @@ export default function Hakkimizda() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white border border-gray-200 rounded-sm p-6 hover:border-[--brand-red] transition-colors"
+                className="bg-white border border-gray-200 rounded-sm p-6 hover:border-[#8B1A1A] transition-colors"
               >
-                <div className="w-6 h-0.5 bg-[--brand-red] mb-4" />
+                <div className="w-6 h-0.5 bg-[#8B1A1A] mb-4" />
                 <h4 className="font-black uppercase text-sm text-gray-900 mb-2">{v.title}</h4>
                 <p className="text-gray-500 text-xs leading-relaxed">{v.desc}</p>
               </motion.div>
@@ -98,7 +98,7 @@ export default function Hakkimizda() {
 
         <div className="flex flex-wrap gap-3">
           <Link href="/urunler">
-            <Button className="bg-[--brand-red] hover:bg-[--brand-red-light] text-white font-bold rounded-sm border-none uppercase">
+            <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold rounded-sm border-none uppercase">
               Ürünlerimiz
             </Button>
           </Link>

@@ -30,10 +30,10 @@ const references = [
 export default function Referanslar() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[--brand-charcoal] text-white py-20 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[--brand-red]" />
+      <div className="bg-[#111111] text-white py-20 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8B1A1A]" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Güven Duyanlar</div>
+          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Güven Duyanlar</div>
           <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Referanslarımız</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Türkiye'nin önde gelen vinç ve platform operatörleriyle iş ortaklığı kuruyoruz.
@@ -55,18 +55,18 @@ export default function Referanslar() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="border border-gray-200 rounded-sm p-8 hover:border-[--brand-red] group transition-colors duration-300"
+                className="border border-gray-200 rounded-sm p-8 hover:border-[#8B1A1A] group transition-colors duration-300"
                 data-testid={`ref-card-${i}`}
               >
                 <div className="flex items-start justify-between mb-5">
-                  <div className="w-14 h-14 bg-gray-100 group-hover:bg-[--brand-red]/10 flex items-center justify-center rounded-sm transition-colors">
-                    <Building2 className="w-7 h-7 text-gray-400 group-hover:text-[--brand-red] transition-colors" />
+                  <div className="w-14 h-14 bg-gray-100 group-hover:bg-[#8B1A1A]/10 flex items-center justify-center rounded-sm transition-colors">
+                    <Building2 className="w-7 h-7 text-gray-400 group-hover:text-[#8B1A1A] transition-colors" />
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[--brand-red] border border-[--brand-red]/30 px-3 py-1 rounded-sm">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#8B1A1A] border border-[#8B1A1A]/30 px-3 py-1 rounded-sm">
                     {ref.sector}
                   </span>
                 </div>
-                <h3 className="text-xl font-black uppercase mb-2 text-gray-900 group-hover:text-[--brand-red] transition-colors">
+                <h3 className="text-xl font-black uppercase mb-2 text-gray-900 group-hover:text-[#8B1A1A] transition-colors">
                   {ref.name}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{ref.desc}</p>
@@ -83,7 +83,7 @@ export default function Referanslar() {
             />
             <div className="bg-gray-50 border-x border-b border-gray-200 px-6 py-4 flex items-center justify-between">
               <div>
-                <div className="text-xs font-bold text-[--brand-red] uppercase tracking-wide mb-0.5">Referans Projesi</div>
+                <div className="text-xs font-bold text-[#8B1A1A] uppercase tracking-wide mb-0.5">Referans Projesi</div>
                 <div className="text-sm font-bold text-gray-800">Pekgöz Vinç — Hidrolik Kurtarıcı Teslimi</div>
               </div>
             </div>
@@ -95,13 +95,13 @@ export default function Referanslar() {
             viewport={{ once: true }}
             className="bg-gray-50 border border-dashed border-gray-300 rounded-sm p-12 text-center"
           >
-            <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Büyümeye Devam Ediyoruz</div>
+            <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Büyümeye Devam Ediyoruz</div>
             <h3 className="text-2xl font-black uppercase text-gray-900 mb-3">Referans Listemiz Genişliyor</h3>
             <p className="text-gray-500 text-sm max-w-lg mx-auto mb-6">
               Yeni iş ortaklıkları ve referanslarımız yakında bu sayfaya eklenecektir. Siz de güvenilir tedarikçilerimiz arasına katılın.
             </p>
             <Link href="/teklif">
-              <Button className="bg-[--brand-red] hover:bg-[--brand-red-light] text-white font-bold rounded-sm border-none uppercase">
+              <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold rounded-sm border-none uppercase">
                 Teklif Talebi
               </Button>
             </Link>

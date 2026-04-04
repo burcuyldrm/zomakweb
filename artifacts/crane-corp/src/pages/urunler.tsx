@@ -17,18 +17,22 @@ const productImages: Record<string, string> = {
 export default function Urunler() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[--brand-charcoal] text-white py-20 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[--brand-red]" />
+
+      {/* Header */}
+      <div className="bg-[#111111] text-white py-16 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-3">Ekipman Portföyü</div>
-          <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Ürünlerimiz</h1>
+          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Ekipman Portföyü</div>
+          <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3 leading-tight">Ürünlerimiz</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Endüstriyel kaldırma, kurtarma ve platform çözümlerinde kapsamlı ürün yelpazesi.
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 py-16">
+      {/* Grid */}
+      <div className="container mx-auto px-4 md:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product, i) => (
             <motion.div
@@ -37,38 +41,49 @@ export default function Urunler() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.07 }}
-              className="bg-white border border-gray-200 rounded-sm overflow-hidden hover:shadow-md transition-shadow duration-300 group"
             >
-              <div className="relative h-52 overflow-hidden bg-gray-100">
-                <img
-                  src={productImages[product.slug]}
-                  alt={product.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-base font-black uppercase mb-2 text-gray-900">{product.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-5">{product.shortDesc}</p>
-                <Link href={`/urunler/${product.slug}`}>
-                  <Button size="sm" className="bg-[--brand-red] hover:bg-[--brand-red-light] text-white rounded-sm border-none font-bold uppercase text-xs">
-                    İncele <ArrowRight className="ml-1.5 w-3.5 h-3.5" />
-                  </Button>
-                </Link>
-              </div>
+              <Link href={`/urunler/${product.slug}`}>
+                <div
+                  className="bg-white border border-gray-200 rounded-sm overflow-hidden hover:border-[#8B1A1A] hover:shadow-lg transition-all duration-300 group cursor-pointer h-full"
+                  data-testid={`product-card-${product.slug}`}
+                >
+                  <div className="relative h-52 overflow-hidden bg-gray-900">
+                    <img
+                      src={productImages[product.slug]}
+                      alt={product.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-3 left-4">
+                      <span className="text-[10px] font-bold text-white/70 uppercase tracking-widest">ZOMAK</span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-base font-black uppercase mb-2 text-gray-900 group-hover:text-[#8B1A1A] transition-colors leading-tight">
+                      {product.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-5">{product.shortDesc}</p>
+                    <div className="inline-flex items-center gap-1.5 text-[#8B1A1A] font-bold text-xs uppercase tracking-wide group-hover:gap-2.5 transition-all">
+                      İncele <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
       </div>
 
-      <div className="bg-gray-50 border-t border-gray-200 py-14">
+      {/* CTA */}
+      <div className="bg-[#111111] py-14">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-black uppercase text-gray-900 mb-3">Özel Çözüm mü Arıyorsunuz?</h2>
-          <p className="text-gray-500 text-sm mb-6 max-w-lg mx-auto">
+          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest uppercase mb-3">Özel Proje</div>
+          <h2 className="text-2xl font-black uppercase text-white mb-3">Özel Çözüm mü Arıyorsunuz?</h2>
+          <p className="text-gray-400 text-sm mb-7 max-w-lg mx-auto">
             Standart ürün portföyümüzün dışında projeye özel tasarım ve üretim kapasitemiz mevcuttur.
           </p>
           <Link href="/teklif">
-            <Button className="bg-[--brand-red] hover:bg-[--brand-red-light] text-white font-bold px-8 h-11 rounded-sm border-none uppercase">
+            <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold px-9 h-12 rounded-sm border-none uppercase tracking-wide">
               Teklif Talebi
             </Button>
           </Link>

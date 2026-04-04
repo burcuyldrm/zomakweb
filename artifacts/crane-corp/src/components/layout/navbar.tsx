@@ -44,8 +44,8 @@ function DropdownMenu({ label, items, isActive }: {
     >
       <button
         className={cn(
-          "flex items-center gap-1 uppercase text-sm font-bold tracking-wide transition-colors hover:text-[--brand-red]",
-          isActive ? "text-[--brand-red]" : "text-white/80"
+          "flex items-center gap-1 uppercase text-sm font-bold tracking-wide transition-colors hover:text-[#8B1A1A]",
+          isActive ? "text-[#8B1A1A]" : "text-white/80"
         )}
         onClick={() => setOpen(!open)}
       >
@@ -58,7 +58,7 @@ function DropdownMenu({ label, items, isActive }: {
           <div className="bg-white border border-gray-200 shadow-lg py-1 rounded-sm">
             {items.map(({ href, label }) => (
               <Link key={href} href={href} onClick={() => setOpen(false)}>
-                <span className="block px-5 py-2.5 text-sm text-gray-700 hover:text-[--brand-red] hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 last:border-0">
+                <span className="block px-5 py-2.5 text-sm text-gray-700 hover:text-[#8B1A1A] hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 last:border-0">
                   {label}
                 </span>
               </Link>
@@ -89,7 +89,7 @@ function MobileAccordion({ label, items, onClose }: {
         <div className="bg-white/5">
           {items.map(({ href, label }) => (
             <Link key={href} href={href} onClick={onClose}>
-              <span className="block pl-10 pr-6 py-2.5 text-sm text-white/60 hover:text-[--brand-red] cursor-pointer border-b border-white/5 last:border-0">
+              <span className="block pl-10 pr-6 py-2.5 text-sm text-white/60 hover:text-[#8B1A1A] cursor-pointer border-b border-white/5 last:border-0">
                 {label}
               </span>
             </Link>
@@ -109,9 +109,9 @@ export function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 flex flex-col">
       {/* Top contact strip */}
-      <div className="bg-[--brand-charcoal] text-white/60 py-1.5 px-4 hidden md:flex items-center justify-between text-xs border-b border-white/10">
+      <div className="bg-[#111111] text-white/60 py-1.5 px-4 hidden md:flex items-center justify-between text-xs border-b border-white/10">
         <span className="flex items-center gap-2">
-          <Phone className="w-3 h-3 text-[--brand-red]" />
+          <Phone className="w-3 h-3 text-[#8B1A1A]" />
           <a href="tel:05411290102" className="hover:text-white transition-colors">0541 129 01 02</a>
         </span>
         <span>
@@ -121,12 +121,12 @@ export function Navbar() {
       </div>
 
       {/* Main nav */}
-      <nav className="bg-[--brand-charcoal] px-4 md:px-8 py-3 flex items-center justify-between border-b border-white/10 shadow-md">
+      <nav className="bg-[#111111] px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A]/50 shadow-lg">
         {/* Logo */}
         <Link href="/">
           <div className="cursor-pointer flex items-center">
-            <div className="bg-white px-3 py-1.5 rounded-sm">
-              <img src={logoImg} alt="ZOMAK" className="h-9 w-auto object-contain" />
+            <div className="bg-white px-4 py-2 rounded-sm shadow-sm">
+              <img src={logoImg} alt="ZOMAK" className="h-11 w-auto object-contain" />
             </div>
           </div>
         </Link>
@@ -134,7 +134,7 @@ export function Navbar() {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-7 text-sm font-bold tracking-wide">
           <Link href="/">
-            <span className={cn("cursor-pointer uppercase transition-colors hover:text-[--brand-red]", location === "/" ? "text-[--brand-red]" : "text-white/80")}>
+            <span className={cn("cursor-pointer uppercase transition-colors hover:text-[#8B1A1A]", location === "/" ? "text-[#8B1A1A]" : "text-white/80")}>
               Ana Sayfa
             </span>
           </Link>
@@ -152,19 +152,19 @@ export function Navbar() {
           />
 
           <Link href="/referanslar">
-            <span className={cn("cursor-pointer uppercase transition-colors hover:text-[--brand-red]", isActive("/referanslar") ? "text-[--brand-red]" : "text-white/80")}>
+            <span className={cn("cursor-pointer uppercase transition-colors hover:text-[#8B1A1A]", isActive("/referanslar") ? "text-[#8B1A1A]" : "text-white/80")}>
               Referanslar
             </span>
           </Link>
 
           <Link href="/galeri">
-            <span className={cn("cursor-pointer uppercase transition-colors hover:text-[--brand-red]", isActive("/galeri") ? "text-[--brand-red]" : "text-white/80")}>
+            <span className={cn("cursor-pointer uppercase transition-colors hover:text-[#8B1A1A]", isActive("/galeri") ? "text-[#8B1A1A]" : "text-white/80")}>
               Galeri
             </span>
           </Link>
 
           <Link href="/iletisim">
-            <span className={cn("cursor-pointer uppercase transition-colors hover:text-[--brand-red]", isActive("/iletisim") ? "text-[--brand-red]" : "text-white/80")}>
+            <span className={cn("cursor-pointer uppercase transition-colors hover:text-[#8B1A1A]", isActive("/iletisim") ? "text-[#8B1A1A]" : "text-white/80")}>
               İletişim
             </span>
           </Link>
@@ -172,7 +172,7 @@ export function Navbar() {
 
         <div className="hidden md:flex">
           <Link href="/teklif">
-            <Button size="sm" className="bg-[--brand-red] hover:bg-[--brand-red-light] text-white font-bold px-6 rounded-sm border-none uppercase tracking-wide shadow-sm">
+            <Button size="sm" className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold px-6 rounded-sm border-none uppercase tracking-wide shadow-sm">
               Teklif Al
             </Button>
           </Link>
@@ -190,7 +190,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-[--brand-charcoal] border-t border-white/10 flex flex-col">
+        <div className="md:hidden bg-[#111111] border-t border-white/10 flex flex-col">
           <Link href="/" onClick={() => setMobileOpen(false)}>
             <span className="block px-6 py-3 text-sm font-bold uppercase border-b border-white/5 text-white/80 hover:text-white">
               Ana Sayfa
@@ -215,7 +215,7 @@ export function Navbar() {
           </Link>
           <div className="px-6 py-4">
             <Link href="/teklif" onClick={() => setMobileOpen(false)}>
-              <Button className="w-full bg-[--brand-red] hover:bg-[--brand-red-light] text-white font-bold rounded-sm border-none uppercase">
+              <Button className="w-full bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold rounded-sm border-none uppercase">
                 Teklif Al
               </Button>
             </Link>
