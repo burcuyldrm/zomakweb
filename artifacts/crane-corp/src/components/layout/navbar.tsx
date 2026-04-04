@@ -158,9 +158,12 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/">
           <div className="cursor-pointer flex items-center">
-            <div className="bg-white px-4 py-2 rounded-sm shadow-sm">
-              <img src={logoImg} alt="ZOMAK" className="h-11 w-auto object-contain" />
-            </div>
+            <img
+                src={logoImg as unknown as string}
+                alt="ZOMAK"
+                className="h-12 w-auto object-contain"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
           </div>
         </Link>
 

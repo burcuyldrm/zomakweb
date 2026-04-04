@@ -11,9 +11,12 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-5">
-              <div className="inline-block bg-white px-4 py-2 rounded-sm">
-                <img src={logoImg} alt="ZOMAK" className="h-10 w-auto object-contain" />
-              </div>
+              <img
+                src={logoImg as unknown as string}
+                alt="ZOMAK"
+                className="h-12 w-auto object-contain"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Zomak Vinç Platform ve Makina Sanayi, Türkiye ve dünya genelinde kaldırma, kurtarıcı ve platform ekipmanları alanında güvenilir çözümler sunar.

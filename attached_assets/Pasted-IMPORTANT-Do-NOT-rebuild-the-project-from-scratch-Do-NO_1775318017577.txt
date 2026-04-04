@@ -1,0 +1,144 @@
+IMPORTANT:
+
+Do NOT rebuild the project from scratch.
+Do NOT delete existing files.
+You are working on an EXISTING Next.js project.
+
+Your task is to:
+1. Properly integrate the provided transparent logo
+2. Add a professional admin panel structure
+
+--------------------------------------------------
+LOGO INTEGRATION
+--------------------------------------------------
+
+I uploaded a transparent PNG logo.
+
+Fix logo usage:
+
+- place it under /public/logo/zomak.png
+- use Next.js Image component
+- remove any background behind logo
+- do NOT use white box or background color
+- ensure logo looks clean on dark navbar
+- increase logo size slightly for better visibility
+
+Navbar requirements:
+- logo must be more prominent
+- align properly with menu items
+- keep professional spacing
+
+--------------------------------------------------
+ADMIN PANEL SETUP
+--------------------------------------------------
+
+Create a clean admin panel structure inside the existing project.
+
+Add routes:
+
+- /admin/login
+- /admin/dashboard
+- /admin/urunler
+- /admin/kurumsal
+- /admin/galeri
+- /admin/referanslar
+- /admin/teklifler
+- /admin/ayarlar
+
+--------------------------------------------------
+ADMIN LAYOUT
+--------------------------------------------------
+
+Create:
+
+- AdminLayout component
+- Sidebar navigation
+- Topbar
+
+Sidebar items:
+
+- Dashboard
+- Ürünler
+- Kurumsal
+- Galeri
+- Referanslar
+- Teklifler
+- Ayarlar
+- Çıkış
+
+--------------------------------------------------
+ADMIN DESIGN
+--------------------------------------------------
+
+Admin panel must be:
+
+- clean
+- minimal
+- professional
+- readable
+- consistent with site style
+
+Colors:
+- white + light gray
+- charcoal text
+- muted red accent
+
+--------------------------------------------------
+ADMIN PAGES (SKELETON)
+--------------------------------------------------
+
+Create basic UI (no backend yet):
+
+Dashboard:
+- summary cards
+
+Ürünler:
+- table list
+- add/edit buttons
+
+Kurumsal:
+- text edit areas
+
+Galeri:
+- image grid + add button
+
+Referanslar:
+- list + edit
+
+Teklifler:
+- table view
+
+Ayarlar:
+- form inputs
+
+--------------------------------------------------
+DATA STRUCTURE
+--------------------------------------------------
+
+Prepare TypeScript types:
+
+- Product
+- GalleryItem
+- Reference
+- QuoteRequest
+- CorporateContent
+- SiteSettings
+
+--------------------------------------------------
+IMPORTANT
+--------------------------------------------------
+
+- do NOT connect real backend yet
+- use mock data
+- structure must be ready for API integration
+- keep code clean and modular
+- keep everything inside current project
+
+--------------------------------------------------
+FINAL TASK
+--------------------------------------------------
+
+1. Fix logo integration
+2. Add admin panel structure
+3. Keep public site unchanged
+4. Ensure everything works without breaking existing pages

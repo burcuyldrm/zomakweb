@@ -27,6 +27,12 @@ import ProductForm from "@/pages/admin/product-form";
 import AdminCategories from "@/pages/admin/categories-admin";
 import AdminNews from "@/pages/admin/news-admin";
 import AdminMedia from "@/pages/admin/media-admin";
+import UrunlerAdmin from "@/pages/admin/urunler-admin";
+import KurumsalAdmin from "@/pages/admin/kurumsal-admin";
+import GaleriAdmin from "@/pages/admin/galeri-admin";
+import ReferanslarAdmin from "@/pages/admin/referanslar-admin";
+import TekliflerAdmin from "@/pages/admin/teklifler-admin";
+import AyarlarAdmin from "@/pages/admin/ayarlar-admin";
 
 function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -111,6 +117,26 @@ function Router() {
       </Route>
       <Route path="/admin/media">
         <AdminLayout><AdminMedia /></AdminLayout>
+      </Route>
+
+      {/* Admin — ZOMAK sections */}
+      <Route path="/admin/urunler">
+        <AdminLayout><UrunlerAdmin /></AdminLayout>
+      </Route>
+      <Route path="/admin/kurumsal">
+        <AdminLayout><KurumsalAdmin /></AdminLayout>
+      </Route>
+      <Route path="/admin/galeri">
+        <AdminLayout><GaleriAdmin /></AdminLayout>
+      </Route>
+      <Route path="/admin/referanslar">
+        <AdminLayout><ReferanslarAdmin /></AdminLayout>
+      </Route>
+      <Route path="/admin/teklifler">
+        <AdminLayout><TekliflerAdmin /></AdminLayout>
+      </Route>
+      <Route path="/admin/ayarlar">
+        <AdminLayout><AyarlarAdmin /></AdminLayout>
       </Route>
 
       {/* 404 */}
