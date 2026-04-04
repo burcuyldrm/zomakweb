@@ -201,7 +201,7 @@ export function Navbar() {
         </span>
       </div>
       {/* Main nav */}
-      <nav className="bg-[#111111] px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A]/50 shadow-lg">
+      <nav className="bg-[#111111] px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A]/50 shadow-lg text-[14px]">
         {/* Logo */}
         <Link href="/">
           <div className="cursor-pointer flex items-center">
