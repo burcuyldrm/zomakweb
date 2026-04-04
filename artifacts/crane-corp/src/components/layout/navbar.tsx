@@ -168,7 +168,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 flex flex-col">
       {/* Top contact strip */}
-      <div className="bg-[#0D0D0D] text-white/60 py-1.5 px-4 hidden md:flex items-center justify-between text-xs border-b border-white/10">
+      <div className="bg-[#0D0D0D] text-white/60 py-1.5 px-4 hidden md:flex items-center justify-between border-b border-white/10 text-[18px]">
         <span className="flex items-center gap-2">
           <svg
             className="w-3 h-3 text-[#8B1A1A]"
@@ -200,7 +200,6 @@ export function Navbar() {
           &nbsp;&nbsp;|&nbsp;&nbsp;İzmir, Türkiye
         </span>
       </div>
-
       {/* Main nav */}
       <nav className="bg-[#111111] px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A]/50 shadow-lg">
         {/* Logo */}
@@ -303,7 +302,6 @@ export function Navbar() {
           )}
         </button>
       </nav>
-
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-[#111111] border-t border-white/10 flex flex-col">
