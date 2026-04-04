@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, MessageCircle, Linkedin, ExternalLink } from "lucide-react";
-import logoImg from "@assets/zomaklogo_1775318960943.png";
+import logoImg from "@assets/zomak_logo_transparent.png";
 
 export function Footer() {
   return (
