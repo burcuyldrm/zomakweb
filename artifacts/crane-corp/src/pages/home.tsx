@@ -199,7 +199,7 @@ export default function Home() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-7 flex-1 flex flex-col">
+                  <div className="p-7 flex-1 flex flex-col text-[#ffffff] border-t-[#ffffff] border-r-[#ffffff] border-b-[#ffffff] border-l-[#ffffff]">
                     <p className="text-[#8B1A1A] text-xs font-bold tracking-widest mb-2">
                       ÜRÜN DETAYI
                     </p>
