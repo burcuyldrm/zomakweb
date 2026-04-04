@@ -1,350 +1,165 @@
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { useSubmitContact } from "@workspace/api-client-react";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Link } from "wouter";
+import { Phone, Mail, MapPin, Clock, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
-import { useState } from "react";
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().optional(),
-  company: z.string().optional(),
-  department: z.string().optional(),
-  subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(20, "Message must be at least 20 characters"),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
-
-const departments = [
-  { value: "sales", label: "Sales & Quotations" },
-  { value: "technical", label: "Technical Support" },
-  { value: "aftersales", label: "After-Sales Service" },
-  { value: "parts", label: "Spare Parts" },
-  { value: "dealer", label: "Dealer Inquiries" },
-  { value: "general", label: "General Inquiries" },
-];
-
-const offices = [
+const contactInfo = [
   {
-    city: "Headquarters — New York",
-    address: "123 Industrial Way, Heavy Machinery District, NY 10001",
-    phone: "+1 (800) 555-CRANE",
-    email: "hq@cranecorp.com",
-    hours: "Mon–Fri: 8:00–18:00 EST",
+    icon: Phone,
+    label: "Telefon",
+    value: "0541 129 01 02",
+    href: "tel:05411290102",
   },
   {
-    city: "European Office — Frankfurt",
-    address: "Industriestraße 45, 60329 Frankfurt am Main, Germany",
-    phone: "+49 69 1234 5678",
-    email: "europe@cranecorp.com",
-    hours: "Mon–Fri: 8:00–17:00 CET",
+    icon: Mail,
+    label: "E-posta",
+    value: "info@zomak.com.tr",
+    href: "mailto:info@zomak.com.tr",
   },
   {
-    city: "Asia Pacific — Singapore",
-    address: "18 Tuas South Avenue 2, Singapore 637022",
-    phone: "+65 6123 4567",
-    email: "apac@cranecorp.com",
-    hours: "Mon–Fri: 9:00–18:00 SGT",
+    icon: MapPin,
+    label: "Adres",
+    value: "Atatürk Mahallesi 4. Cadde No:54\nOğlananası-Menderes / İzmir",
+    href: undefined,
+  },
+  {
+    icon: Clock,
+    label: "Çalışma Saatleri",
+    value: "Hafta içi: 08:00 – 18:00\nCumartesi: 09:00 – 14:00",
+    href: undefined,
   },
 ];
 
 export default function Contact() {
-  const { toast } = useToast();
-  const [submitted, setSubmitted] = useState(false);
-  const submitContact = useSubmitContact();
-
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      department: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  async function onSubmit(values: ContactFormValues) {
-    submitContact.mutate(
-      {
-        data: {
-          name: values.name,
-          email: values.email,
-          phone: values.phone ?? null,
-          company: values.company ?? null,
-          department: values.department ?? null,
-          subject: values.subject,
-          message: values.message,
-        },
-      },
-      {
-        onSuccess: (data) => {
-          if (data.success) {
-            setSubmitted(true);
-            toast({ title: "Message sent!", description: data.message });
-          }
-        },
-        onError: () => {
-          toast({
-            title: "Error",
-            description: "Failed to send message. Please try again.",
-            variant: "destructive",
-          });
-        },
-      }
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-[#0f172a] text-white py-20">
+      <div className="bg-black text-white py-24 relative overflow-hidden">
+        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#c00]" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-primary tracking-widest mb-3">GET IN TOUCH</div>
-          <h1 className="text-5xl md:text-6xl font-black tracking-tight uppercase mb-4">Contact Us</h1>
+          <div className="text-xs font-black text-[#c00] tracking-widest uppercase mb-3">Bize Ulaşın</div>
+          <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">İletişim</h1>
           <p className="text-gray-400 text-lg max-w-2xl">
-            Our sales engineers and technical specialists are ready to discuss your lifting requirements.
+            Sorularınız ve talepleriniz için her zaman yanınızdayız.
           </p>
         </div>
       </div>
 
-      {/* Offices */}
-      <section className="py-16 border-b border-border bg-muted/30">
+      {/* Contact Cards */}
+      <section className="py-16 bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {offices.map((office, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {contactInfo.map((info, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-card border border-border p-6 hover:border-primary transition-colors"
+                className="bg-white border border-gray-200 hover:border-[#c00] p-6 group transition-colors duration-300"
               >
-                <h3 className="font-black text-lg mb-4 text-primary">{office.city}</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex gap-3">
-                    <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{office.address}</span>
-                  </div>
-                  <div className="flex gap-3">
-                    <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span className="text-muted-foreground">{office.phone}</span>
-                  </div>
-                  <div className="flex gap-3">
-                    <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span className="text-muted-foreground">{office.email}</span>
-                  </div>
-                  <div className="flex gap-3">
-                    <Clock className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span className="text-muted-foreground">{office.hours}</span>
-                  </div>
+                <div className="w-12 h-12 bg-[#c00]/10 group-hover:bg-[#c00] flex items-center justify-center mb-4 transition-colors">
+                  <info.icon className="w-6 h-6 text-[#c00] group-hover:text-white transition-colors" />
                 </div>
+                <div className="text-xs font-black uppercase tracking-widest text-[#c00] mb-1">{info.label}</div>
+                {info.href ? (
+                  <a href={info.href} className="font-bold text-sm text-gray-700 hover:text-[#c00] transition-colors whitespace-pre-line">
+                    {info.value}
+                  </a>
+                ) : (
+                  <p className="font-bold text-sm text-gray-700 whitespace-pre-line">{info.value}</p>
+                )}
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Form + Map */}
+      {/* Map + WhatsApp */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Form */}
-            <div>
-              <div className="text-xs font-bold text-primary tracking-widest mb-3">SEND A MESSAGE</div>
-              <h2 className="text-3xl font-black uppercase mb-8">Request Information</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="bg-green-50 border border-green-200 p-8 text-center"
-                >
-                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-2xl font-black mb-2 text-green-800">Message Sent!</h3>
-                  <p className="text-green-700">Our team will respond within 24 business hours.</p>
-                  <Button className="mt-6" onClick={() => { setSubmitted(false); form.reset(); }}>
-                    Send Another Message
-                  </Button>
-                </motion.div>
-              ) : (
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5" data-testid="form-contact">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-bold text-xs tracking-wider">FULL NAME *</FormLabel>
-                            <FormControl>
-                              <Input className="rounded-none" placeholder="John Smith" {...field} data-testid="input-name" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-bold text-xs tracking-wider">EMAIL ADDRESS *</FormLabel>
-                            <FormControl>
-                              <Input className="rounded-none" type="email" placeholder="john@company.com" {...field} data-testid="input-email" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-bold text-xs tracking-wider">PHONE</FormLabel>
-                            <FormControl>
-                              <Input className="rounded-none" placeholder="+1 (555) 000-0000" {...field} data-testid="input-phone" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="company"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-bold text-xs tracking-wider">COMPANY</FormLabel>
-                            <FormControl>
-                              <Input className="rounded-none" placeholder="Your Company Ltd." {...field} data-testid="input-company" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="department"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-bold text-xs tracking-wider">DEPARTMENT</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger className="rounded-none" data-testid="select-department">
-                                <SelectValue placeholder="Select department..." />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              {departments.map((d) => (
-                                <SelectItem key={d.value} value={d.value}>{d.label}</SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="subject"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-bold text-xs tracking-wider">SUBJECT *</FormLabel>
-                          <FormControl>
-                            <Input className="rounded-none" placeholder="e.g. Quotation for 100T Mobile Crane" {...field} data-testid="input-subject" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-bold text-xs tracking-wider">MESSAGE *</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              className="rounded-none min-h-[140px] resize-none"
-                              placeholder="Describe your project requirements, lifting capacity needed, work environment, timeline..."
-                              {...field}
-                              data-testid="textarea-message"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <Button
-                      type="submit"
-                      className="w-full h-14 font-bold text-base rounded-none"
-                      disabled={submitContact.isPending}
-                      data-testid="button-submit"
-                    >
-                      {submitContact.isPending ? "SENDING..." : "SEND MESSAGE"}
-                    </Button>
-                  </form>
-                </Form>
-              )}
+            {/* Map */}
+            <div className="lg:col-span-2">
+              <div className="text-xs font-black text-[#c00] tracking-widest uppercase mb-3">Bizi Haritada Bulun</div>
+              <h2 className="text-3xl font-black uppercase mb-6">Konumumuz</h2>
+              <div className="w-full overflow-hidden border-2 border-gray-200" style={{ height: "420px" }}>
+                <iframe
+                  src="https://www.google.com/maps?q=Atatürk+Mahallesi+4.+Cadde+No:54+Oğlananası+Menderes+İzmir&output=embed"
+                  width="100%"
+                  height="420"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="ZOMAK Konum"
+                />
+              </div>
+              <div className="mt-4 flex items-start gap-2 text-sm text-gray-500">
+                <MapPin className="w-4 h-4 text-[#c00] flex-shrink-0 mt-0.5" />
+                <span>Atatürk Mahallesi 4. Cadde No:54 Oğlananası-Menderes / İzmir</span>
+              </div>
             </div>
 
-            {/* Map Placeholder + Info */}
-            <div className="space-y-8">
-              <div>
-                <div className="text-xs font-bold text-primary tracking-widest mb-3">HEADQUARTERS</div>
-                <h2 className="text-3xl font-black uppercase mb-6">Find Us</h2>
-              </div>
-              
-              {/* Map Placeholder */}
-              <div className="aspect-[4/3] bg-muted border border-border flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-primary mx-auto mb-3" />
-                  <p className="font-bold text-lg">CraneCorp Headquarters</p>
-                  <p className="text-muted-foreground text-sm">123 Industrial Way, NY 10001</p>
-                </div>
+            {/* Sidebar */}
+            <div className="space-y-5">
+              {/* WhatsApp CTA */}
+              <div className="bg-black text-white p-8">
+                <div className="text-xs font-black text-[#c00] uppercase tracking-widest mb-3">Hızlı İletişim</div>
+                <h3 className="text-xl font-black uppercase mb-4">WhatsApp ile Yaz</h3>
+                <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+                  Hızlı yanıt için WhatsApp üzerinden bize ulaşabilirsiniz. Mesajınızı anında iletebilirsiniz.
+                </p>
+                <a
+                  href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%27tan%20vin%C3%A7%2Fplatform%20hizmeti%20i%C3%A7in%20teklif%20almak%20istiyorum."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="w-full bg-green-600 hover:bg-green-500 text-white font-black rounded-none border-none uppercase h-12">
+                    <MessageCircle className="mr-2 w-5 h-5" />
+                    WhatsApp'a Yaz
+                  </Button>
+                </a>
+                <a href="tel:05411290102" className="mt-3 block">
+                  <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 font-black rounded-none uppercase h-12">
+                    <Phone className="mr-2 w-4 h-4" />
+                    Hemen Ara
+                  </Button>
+                </a>
               </div>
 
-              {/* Department Contacts */}
-              <div className="space-y-4">
-                <h3 className="font-black uppercase text-lg flex items-center gap-3">
-                  <span className="w-6 h-1 bg-primary inline-block" /> Department Contacts
-                </h3>
-                {[
-                  { dept: "Sales & Quotations", phone: "+1 (800) 555-7263", email: "sales@cranecorp.com" },
-                  { dept: "Technical Support", phone: "+1 (800) 555-8324", email: "support@cranecorp.com" },
-                  { dept: "After-Sales", phone: "+1 (800) 555-2783", email: "service@cranecorp.com" },
-                ].map((d, i) => (
-                  <div key={i} className="flex items-center justify-between p-4 bg-muted/30 border border-border">
-                    <div>
-                      <div className="font-bold text-sm">{d.dept}</div>
-                      <div className="text-xs text-muted-foreground">{d.email}</div>
+              {/* Teklif CTA */}
+              <div className="border-2 border-[#c00] p-8">
+                <div className="text-xs font-black text-[#c00] uppercase tracking-widest mb-2">Fiyat Talebi</div>
+                <h3 className="text-xl font-black uppercase mb-3">Teklif Alın</h3>
+                <p className="text-gray-600 text-sm mb-5">
+                  Projenizi detaylı şekilde iletmek için teklif formunu doldurun.
+                </p>
+                <Link href="/teklif">
+                  <Button className="w-full bg-[#c00] hover:bg-red-700 text-white font-black rounded-none border-none uppercase">
+                    Teklif Formu <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Hours */}
+              <div className="bg-gray-50 border border-gray-200 p-6">
+                <h4 className="font-black uppercase text-sm mb-4 flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-[#c00]" />
+                  Çalışma Saatleri
+                </h4>
+                <div className="space-y-2 text-sm">
+                  {[
+                    { day: "Pazartesi – Cuma", hours: "08:00 – 18:00" },
+                    { day: "Cumartesi", hours: "09:00 – 14:00" },
+                    { day: "Pazar", hours: "Kapalı" },
+                  ].map((r, i) => (
+                    <div key={i} className="flex justify-between">
+                      <span className="text-gray-500">{r.day}</span>
+                      <span className={`font-bold ${r.hours === "Kapalı" ? "text-gray-400" : "text-black"}`}>{r.hours}</span>
                     </div>
-                    <a href={`tel:${d.phone}`} className="text-primary font-bold text-sm hover:underline">
-                      {d.phone}
-                    </a>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>

@@ -1,0 +1,266 @@
+IMPORTANT:
+
+Do NOT rebuild the project from scratch.
+Do NOT recreate the entire project.
+Do NOT delete existing files.
+
+You are working on an EXISTING Next.js project.
+
+Your task is to UPDATE and IMPROVE the current project based on new requirements.
+
+Keep:
+- existing structure
+- existing components
+- existing routing
+
+Only:
+- update content
+- modify pages
+- add new sections
+- improve UI
+- extend functionality
+
+--------------------------------------------------
+COMPANY UPDATE
+--------------------------------------------------
+
+Brand:
+ZOMAK Vinç Platform ve Makina Sanayi
+
+Established:
+2024
+
+Location:
+İzmir
+
+Service Area:
+Türkiye ve dünya geneli
+
+Slogan:
+Zirveye Odaklan
+
+Services:
+- Mobil Katlanır Vinç
+- Hidrolik Gözlüklü Kurtarıcı
+- Hidrolik Kurtarıcı
+- Özel Hidrolik Makineler
+- Sepetli Platform
+
+Fleet:
+- ZV060 – 60 ton/metre – 27 (structure flexible, values editable)
+
+References:
+- Pekgöz Vinç
+- Fındık Vinç
+- Bergama Vinç
+- Kuşadası Vinç
+
+Contact:
+Phone: 0541 129 01 02
+Email: info@zomak.com.tr
+
+Address:
+Atatürk Mahallesi 4. Cadde No:54 Oğlananası-Menderes / İzmir
+
+--------------------------------------------------
+SITE STRUCTURE UPDATE
+--------------------------------------------------
+
+Update site pages to:
+
+- Ana Sayfa
+- Hizmetler
+- Filomuz
+- Referanslar
+- Galeri
+- Teklif Formu
+- İletişim
+
+Remove blog if exists.
+
+--------------------------------------------------
+DESIGN UPDATE
+--------------------------------------------------
+
+Apply new design system:
+
+- Colors: black + red + white
+- Industrial corporate style
+- Strong typography
+- Large sections
+- Clean spacing
+- Minimal but powerful UI
+
+Inspired by:
+Hidrokon, Tevor
+
+--------------------------------------------------
+HOME PAGE UPDATE
+--------------------------------------------------
+
+Update homepage to include:
+
+- Hero with slogan: "Zirveye Odaklan"
+- CTA buttons:
+  - Teklif Al
+  - WhatsApp
+- Services preview
+- Fleet highlight (ZV060)
+- Trust section
+- References
+- Gallery preview
+- Contact CTA
+
+--------------------------------------------------
+SERVICES PAGE
+--------------------------------------------------
+
+Create service cards with:
+- title
+- short description
+- usage areas
+- CTA
+
+--------------------------------------------------
+FLEET PAGE
+--------------------------------------------------
+
+Show ZV060 professionally:
+- technical card
+- editable fields
+- image placeholder
+- strong industrial design
+
+--------------------------------------------------
+REFERENCES PAGE
+--------------------------------------------------
+
+Show references as:
+- clean cards
+- future logo-ready
+
+--------------------------------------------------
+GALLERY PAGE
+--------------------------------------------------
+
+Create responsive industrial grid gallery.
+
+--------------------------------------------------
+QUOTE PAGE
+--------------------------------------------------
+
+Form fields:
+
+- Ad Soyad
+- Firma
+- Telefon
+- Email
+- Hizmet Türü
+- Şehir
+- Açıklama
+- Dosya upload UI
+
+Use:
+- React Hook Form
+- Zod validation
+
+--------------------------------------------------
+WHATSAPP BUTTON
+--------------------------------------------------
+
+Add floating WhatsApp button.
+
+Default message:
+"Merhaba, ZOMAK’tan vinç/platform hizmeti için teklif almak istiyorum."
+
+--------------------------------------------------
+CONTACT PAGE (IMPORTANT)
+--------------------------------------------------
+
+Update contact page to include:
+
+- phone
+- email
+- address
+- WhatsApp CTA
+
+AND ADD GOOGLE MAP EMBED:
+
+Embed a Google Maps iframe using the address.
+
+Use a placeholder Google Maps embed structure if exact link is not provided.
+
+Make map:
+- responsive
+- full width
+- visually integrated
+
+Example iframe structure:
+
+<iframe
+  src="https://www.google.com/maps?q=Atatürk+Mahallesi+4.+Cadde+No:54+Oğlananası+Menderes+İzmir&output=embed"
+  width="100%"
+  height="400"
+  style="border:0;"
+  loading="lazy"
+></iframe>
+
+--------------------------------------------------
+CONTENT LANGUAGE
+--------------------------------------------------
+
+All content must be in Turkish.
+
+Tone:
+- corporate
+- industrial
+- strong
+- professional
+
+--------------------------------------------------
+COMPONENT UPDATE
+--------------------------------------------------
+
+Update or create:
+
+- Hero
+- ServiceCard
+- FleetCard
+- ReferenceCard
+- GalleryGrid
+- ContactSection
+- QuoteForm
+- WhatsAppButton
+
+--------------------------------------------------
+RESPONSIVE
+--------------------------------------------------
+
+Ensure:
+- mobile friendly
+- clean layout
+- working navigation
+- proper spacing
+
+--------------------------------------------------
+DO NOT:
+--------------------------------------------------
+
+- do not recreate project
+- do not delete files
+- do not break structure
+
+--------------------------------------------------
+FINAL TASK
+--------------------------------------------------
+
+Update the existing project fully according to these requirements.
+
+Only modify what is needed.
+
+Keep project stable and working.
+
+After changes:
+- ensure no errors
+- ensure layout consistency
+- ensure responsive behavior

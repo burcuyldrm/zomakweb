@@ -1,209 +1,334 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ChevronRight, ArrowRight, ShieldCheck, Wrench, Globe2, Truck } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, MessageCircle, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useGetFeaturedProducts, useGetStats, useListNews } from "@workspace/api-client-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
+const services = [
+  { title: "Mobil Katlanır Vinç", desc: "Kompakt yapısı ile dar alanlarda yüksek performanslı kaldırma çözümü.", icon: "🏗️" },
+  { title: "Hidrolik Gözlüklü Kurtarıcı", desc: "Araç kurtarma operasyonlarında güvenilir hidrolik çözüm.", icon: "🚛" },
+  { title: "Hidrolik Kurtarıcı", desc: "Ağır taşıt kurtarma için özel tasarım hidrolik sistemler.", icon: "⚙️" },
+  { title: "Özel Hidrolik Makineler", desc: "Projeye özel tasarım ve üretim imkânı.", icon: "🔧" },
+  { title: "Sepetli Platform", desc: "Yüksekte çalışma için güvenli ve konforlu platform sistemleri.", icon: "🧺" },
+];
+
+const references = [
+  "Pekgöz Vinç",
+  "Fındık Vinç",
+  "Bergama Vinç",
+  "Kuşadası Vinç",
+];
+
+const trustPoints = [
+  "2024 yılından itibaren sektörde aktif",
+  "Türkiye ve dünya geneli hizmet ağı",
+  "Özel tasarım ve seri üretim",
+  "Teknik destek ve satış sonrası servis",
+  "İzmir merkezli, ulusal erişim",
+];
+
+const galleryImages = [
+  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+  "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&q=80",
+  "https://images.unsplash.com/photo-1590141837800-79b87ece2f6e?w=800&q=80",
+  "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+  "https://images.unsplash.com/photo-1530973428-5bf2db2e4d71?w=800&q=80",
+  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+];
 
 export default function Home() {
-  const { data: featuredProducts } = useGetFeaturedProducts();
-  const { data: stats } = useGetStats();
-  const { data: news } = useListNews({ limit: 3, status: "published" });
-
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] w-full overflow-hidden bg-[#0f172a]">
-        <Carousel className="w-full h-full" opts={{ loop: true }}>
-          <CarouselContent className="h-full">
-            {[
-              {
-                image: "/images/hero-1.png",
-                title: "POWERING THE FUTURE OF CONSTRUCTION",
-                subtitle: "Advanced lifting solutions for the world's most demanding projects. Engineered for precision, built for strength.",
-              },
-              {
-                image: "/images/hero-2.png",
-                title: "ENGINEERED FOR EXTREMES",
-                subtitle: "Our tower cranes deliver uncompromising performance in the toughest conditions.",
-              }
-            ].map((slide, idx) => (
-              <CarouselItem key={idx} className="h-full relative">
-                <div className="absolute inset-0">
-                  <img src={slide.image} alt={slide.title} className="w-full h-full object-cover object-center opacity-60" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent"></div>
-                </div>
-                <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="max-w-3xl"
-                  >
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/20 border border-primary text-primary mb-6">
-                      <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                      <span className="text-sm font-bold tracking-wider">INDUSTRY LEADER</span>
-                    </div>
-                    <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight tracking-tighter">
-                      {slide.title}
-                    </h1>
-                    <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl font-light">
-                      {slide.subtitle}
-                    </p>
-                    <div className="flex flex-wrap gap-4">
-                      <Button size="lg" className="h-14 px-8 text-lg font-bold">
-                        VIEW PRODUCTS
-                      </Button>
-                      <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold border-white text-white hover:bg-white hover:text-black">
-                        COMPANY PROFILE
-                      </Button>
-                    </div>
-                  </motion.div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="absolute bottom-12 right-12 flex gap-4">
-            <CarouselPrevious className="static translate-y-0 w-12 h-12 bg-white/10 hover:bg-primary border-none text-white rounded-none" />
-            <CarouselNext className="static translate-y-0 w-12 h-12 bg-white/10 hover:bg-primary border-none text-white rounded-none" />
-          </div>
-        </Carousel>
-      </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-background border-b border-border">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { label: "YEARS EXPERIENCE", value: stats?.yearsOfExperience || 45, suffix: "+" },
-              { label: "PRODUCTS DELIVERED", value: stats?.productsDelivered || 12500, suffix: "+" },
-              { label: "COUNTRIES SERVED", value: stats?.countriesServed || 85, suffix: "" },
-              { label: "CERTIFICATIONS", value: stats?.certifications || 12, suffix: "" },
-            ].map((stat, i) => (
-              <div key={i} className="text-center group">
-                <div className="text-4xl md:text-6xl font-black text-primary mb-2 group-hover:scale-110 transition-transform">
-                  {stat.value}{stat.suffix}
-                </div>
-                <div className="text-sm font-bold tracking-widest text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* HERO */}
+      <section className="relative min-h-screen bg-black flex items-center overflow-hidden">
+        {/* Background texture */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-25"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=80')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
-      {/* Featured Products */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-sm font-bold text-primary tracking-widest mb-2">OUR FLEET</h2>
-              <h3 className="text-4xl font-black uppercase tracking-tight">Featured Equipment</h3>
+        {/* Red accent bar */}
+        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#c00]" />
+
+        <div className="relative z-10 container mx-auto px-4 md:px-8 py-32">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <div className="inline-flex items-center gap-2 border border-[#c00] text-[#c00] text-xs font-black uppercase tracking-widest px-4 py-2 mb-6">
+              <span className="w-2 h-2 bg-[#c00] animate-pulse rounded-full" />
+              Zomak Vinç Platform Makina — İzmir
             </div>
-            <Link href="/products">
-              <Button variant="link" className="group font-bold">
-                VIEW ALL <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <h1 className="text-6xl md:text-8xl font-black text-white leading-none tracking-tighter uppercase mb-6">
+              Zirveye<br /><span className="text-[#c00]">Odaklan</span>
+            </h1>
+            <p className="text-xl text-gray-300 mb-10 max-w-xl font-light leading-relaxed">
+              Mobil vinç, hidrolik kurtarıcı ve sepetli platform çözümlerinde güvenilir iş ortağınız. Türkiye ve dünya geneli hizmet.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/teklif">
+                <Button size="lg" className="h-14 px-10 text-base font-black bg-[#c00] hover:bg-red-700 rounded-none border-none uppercase tracking-wider">
+                  Teklif Al <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <a
+                href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%27tan%20vin%C3%A7%2Fplatform%20hizmeti%20i%C3%A7in%20teklif%20almak%20istiyorum."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" variant="outline" className="h-14 px-10 text-base font-black rounded-none border-white/30 text-white hover:bg-white hover:text-black uppercase tracking-wider">
+                  <MessageCircle className="mr-2 w-5 h-5 text-green-400" />
+                  WhatsApp
+                </Button>
+              </a>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Bottom red strip */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#c00]" />
+      </section>
+
+      {/* SERVICES PREVIEW */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+            <div>
+              <div className="text-xs font-black text-[#c00] tracking-widest uppercase mb-2">Neler Yapıyoruz</div>
+              <h2 className="text-4xl md:text-5xl font-black text-black uppercase tracking-tight leading-none">
+                Hizmetlerimiz
+              </h2>
+            </div>
+            <Link href="/hizmetler">
+              <Button variant="ghost" className="font-black text-[#c00] hover:text-black uppercase group">
+                Tümünü Gör <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredProducts?.map((product) => (
-              <div key={product.id} className="group bg-card border border-border overflow-hidden hover:border-primary transition-colors">
-                <div className="aspect-[4/3] bg-muted relative overflow-hidden">
-                  <img 
-                    src={product.coverImage || "/images/mobile-crane.png"} 
-                    alt={product.name} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 font-bold text-sm">
-                    {product.capacity}
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-gray-200">
+            {services.map((s, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="border-b border-r border-gray-200 p-8 hover:bg-black hover:text-white group transition-colors duration-300 cursor-pointer"
+              >
+                <div className="text-4xl mb-4">{s.icon}</div>
+                <h3 className="text-lg font-black uppercase mb-2 group-hover:text-[#c00] transition-colors">{s.title}</h3>
+                <p className="text-sm text-gray-500 group-hover:text-gray-300 leading-relaxed transition-colors">{s.desc}</p>
+                <div className="mt-4 flex items-center gap-2 text-xs font-black uppercase text-[#c00] group-hover:text-[#c00]">
+                  Detaylar <ChevronRight className="w-3 h-3" />
                 </div>
-                <div className="p-6">
-                  <div className="text-xs font-bold text-muted-foreground mb-2 uppercase tracking-wider">{product.categoryName}</div>
-                  <h4 className="text-xl font-bold mb-3">{product.name}</h4>
-                  <p className="text-muted-foreground text-sm line-clamp-2 mb-6">{product.shortDescription}</p>
-                  <Link href={`/products/${product.slug}`}>
-                    <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">
-                      VIEW DETAILS
-                    </Button>
-                  </Link>
-                </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services/Trust Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
+      {/* FLEET HIGHLIGHT */}
+      <section className="py-24 bg-black text-white">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <img src="/images/corporate.png" alt="R&D Engineering" className="w-full aspect-[4/3] object-cover rounded-sm" />
-            </div>
-            <div>
-              <h2 className="text-sm font-bold text-primary tracking-widest mb-2">WHY CHOOSE US</h2>
-              <h3 className="text-4xl font-black uppercase tracking-tight mb-6">Uncompromising Quality & Support</h3>
-              <p className="text-lg text-muted-foreground mb-10">
-                We don't just sell equipment; we provide end-to-end lifting solutions. Our commitment to excellence extends far beyond the manufacturing floor.
+              <div className="text-xs font-black text-[#c00] tracking-widest uppercase mb-2">Amiral Gemimiz</div>
+              <h2 className="text-4xl md:text-5xl font-black uppercase leading-none mb-6">
+                ZV060<br /><span className="text-[#c00]">Mobil Vinç</span>
+              </h2>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="border-l-4 border-[#c00] pl-4">
+                  <div className="text-4xl font-black text-[#c00]">60</div>
+                  <div className="text-sm text-gray-400 font-bold">ton/metre</div>
+                </div>
+                <div className="border-l-4 border-white/20 pl-4">
+                  <div className="text-4xl font-black text-white">27</div>
+                  <div className="text-sm text-gray-400 font-bold">metre bom</div>
+                </div>
+              </div>
+              <p className="text-gray-300 mb-8 leading-relaxed">
+                ZV060, ZOMAK'ın en güçlü mobil katlanır vinç modelidir. Yüksek kapasitesi ve kompakt tasarımıyla her türlü operasyonuna uyumludur.
               </p>
-
-              <div className="space-y-6">
-                {[
-                  { icon: ShieldCheck, title: "Certified Manufacturing", desc: "All equipment built to exceed global safety standards (ISO 9001, CE, TUV)." },
-                  { icon: Wrench, title: "24/7 Global Support", desc: "Expert technicians ready to deploy worldwide for maintenance and repair." },
-                  { icon: Globe2, title: "International Dealer Network", desc: "Local presence in over 85 countries ensuring rapid parts delivery." },
-                  { icon: Truck, title: "Logistics & Assembly", desc: "Complete delivery, erection, and operator training services included." }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <item.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-1">{item.title}</h4>
-                      <p className="text-muted-foreground">{item.desc}</p>
-                    </div>
+              <Link href="/filomuz">
+                <Button className="bg-[#c00] hover:bg-red-700 text-white font-black px-8 h-12 rounded-none border-none uppercase">
+                  Teknik Detaylar
+                </Button>
+              </Link>
+            </div>
+            <div className="relative">
+              <div className="aspect-[4/3] bg-gray-800 flex items-center justify-center border border-gray-700">
+                <img
+                  src="https://images.unsplash.com/photo-1530973428-5bf2db2e4d71?w=1000&q=80"
+                  alt="ZV060 Mobil Vinç"
+                  className="w-full h-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 flex items-end p-6">
+                  <div className="bg-[#c00] text-white px-4 py-2 font-black text-sm uppercase tracking-widest">
+                    ZV060 — 60 ton/metre
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* News Preview */}
-      <section className="py-24 bg-[#0f172a] text-white">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-12">
+      {/* TRUST */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-sm font-bold text-primary tracking-widest mb-2">LATEST UPDATES</h2>
-              <h3 className="text-4xl font-black uppercase tracking-tight">Corporate News</h3>
+              <div className="text-xs font-black text-[#c00] tracking-widest uppercase mb-2">Neden ZOMAK</div>
+              <h2 className="text-4xl md:text-5xl font-black uppercase leading-none mb-8 text-black">
+                Güvenilir<br />Çözüm Ortağı
+              </h2>
+              <div className="space-y-4">
+                {trustPoints.map((p, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="flex items-center gap-4"
+                  >
+                    <CheckCircle className="w-5 h-5 text-[#c00] flex-shrink-0" />
+                    <span className="font-semibold text-gray-800">{p}</span>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="mt-10 flex gap-6">
+                <Link href="/teklif">
+                  <Button className="bg-[#c00] hover:bg-red-700 text-white font-black px-8 h-12 rounded-none border-none uppercase">
+                    Teklif Al
+                  </Button>
+                </Link>
+                <a href="tel:05411290102">
+                  <Button variant="outline" className="border-black text-black font-black px-8 h-12 rounded-none hover:bg-black hover:text-white uppercase">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Ara
+                  </Button>
+                </a>
+              </div>
             </div>
-            <Link href="/media">
-              <Button variant="link" className="group font-bold text-white hover:text-primary">
-                ALL NEWS <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { number: "2024", label: "Kuruluş Yılı" },
+                { number: "5+", label: "Hizmet Türü" },
+                { number: "TR+", label: "Hizmet Alanı" },
+                { number: "7/24", label: "Teknik Destek" },
+              ].map((s, i) => (
+                <div key={i} className="bg-black text-white p-8 flex flex-col items-center justify-center text-center">
+                  <div className="text-4xl font-black text-[#c00] mb-1">{s.number}</div>
+                  <div className="text-xs font-bold text-gray-400 uppercase tracking-wider">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REFERENCES */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-center mb-14">
+            <div className="text-xs font-black text-[#c00] tracking-widest uppercase mb-2">Güven Duyanlar</div>
+            <h2 className="text-4xl font-black uppercase text-black">Referanslarımız</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {references.map((ref, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="border-2 border-gray-200 hover:border-[#c00] p-8 flex items-center justify-center text-center font-black text-gray-700 hover:text-[#c00] transition-colors duration-300 uppercase text-sm tracking-wide"
+              >
+                {ref}
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/referanslar">
+              <Button variant="ghost" className="text-[#c00] font-black uppercase group">
+                Tüm Referanslar <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {news?.map((item) => (
-              <div key={item.id} className="group cursor-pointer">
-                <div className="aspect-[16/9] overflow-hidden mb-4 rounded-sm">
-                  <img 
-                    src={item.image || "/images/news-1.png"} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="text-sm text-primary font-bold mb-2">
-                  {new Date(item.date).toLocaleDateString()}
-                </div>
-                <h4 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{item.title}</h4>
-                <p className="text-gray-400 text-sm line-clamp-2">{item.summary}</p>
-              </div>
+      {/* GALLERY PREVIEW */}
+      <section className="py-24 bg-black">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <div className="text-xs font-black text-[#c00] tracking-widest uppercase mb-2">Projelerimiz</div>
+              <h2 className="text-4xl font-black text-white uppercase">Galeri</h2>
+            </div>
+            <Link href="/galeri">
+              <Button variant="ghost" className="text-[#c00] font-black uppercase group">
+                Tümünü Gör <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {galleryImages.map((src, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+                className="aspect-square overflow-hidden group cursor-pointer"
+              >
+                <img
+                  src={src}
+                  alt={`Galeri ${i + 1}`}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-75 group-hover:opacity-100"
+                />
+              </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT CTA */}
+      <section className="py-20 bg-[#c00]">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-black text-white uppercase mb-4 leading-none">
+            Projenizi Konuşalım
+          </h2>
+          <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto">
+            Hizmet talebiniz veya teknik sorularınız için hemen ulaşın.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link href="/teklif">
+              <Button size="lg" className="h-14 px-10 font-black bg-white text-[#c00] hover:bg-gray-100 rounded-none border-none uppercase text-base">
+                Teklif Formu
+              </Button>
+            </Link>
+            <a
+              href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%27tan%20vin%C3%A7%2Fplatform%20hizmeti%20i%C3%A7in%20teklif%20almak%20istiyorum."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" variant="outline" className="h-14 px-10 font-black border-white text-white hover:bg-white hover:text-[#c00] rounded-none uppercase text-base">
+                <MessageCircle className="mr-2 w-5 h-5" />
+                WhatsApp
+              </Button>
+            </a>
+            <a href="tel:05411290102">
+              <Button size="lg" variant="outline" className="h-14 px-10 font-black border-white text-white hover:bg-white hover:text-[#c00] rounded-none uppercase text-base">
+                <Phone className="mr-2 w-5 h-5" />
+                Ara
+              </Button>
+            </a>
           </div>
         </div>
       </section>

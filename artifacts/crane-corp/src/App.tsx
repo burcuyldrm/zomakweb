@@ -5,13 +5,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { AdminLayout } from "@/components/layout/admin-layout";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import NotFound from "@/pages/not-found";
 
 import Home from "@/pages/home";
-import Products from "@/pages/products";
-import ProductDetail from "@/pages/product-detail";
-import Corporate from "@/pages/corporate";
-import Media from "@/pages/media";
+import Hizmetler from "@/pages/hizmetler";
+import Filomuz from "@/pages/filomuz";
+import Referanslar from "@/pages/referanslar";
+import Galeri from "@/pages/galeri";
+import Teklif from "@/pages/teklif";
 import Contact from "@/pages/contact";
 
 import AdminLogin from "@/pages/admin/login";
@@ -26,8 +28,9 @@ function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
-      <main className="pt-[104px] md:pt-[132px]">{children}</main>
+      <main className="pt-[88px] md:pt-[116px]">{children}</main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
@@ -39,18 +42,26 @@ function Router() {
       <Route path="/">
         <PublicLayout><Home /></PublicLayout>
       </Route>
-      <Route path="/products">
-        <PublicLayout><Products /></PublicLayout>
+      <Route path="/hizmetler">
+        <PublicLayout><Hizmetler /></PublicLayout>
       </Route>
-      <Route path="/products/:slug">
-        {(params) => <PublicLayout><ProductDetail /></PublicLayout>}
+      <Route path="/filomuz">
+        <PublicLayout><Filomuz /></PublicLayout>
       </Route>
-      <Route path="/corporate">
-        <PublicLayout><Corporate /></PublicLayout>
+      <Route path="/referanslar">
+        <PublicLayout><Referanslar /></PublicLayout>
       </Route>
-      <Route path="/media">
-        <PublicLayout><Media /></PublicLayout>
+      <Route path="/galeri">
+        <PublicLayout><Galeri /></PublicLayout>
       </Route>
+      <Route path="/teklif">
+        <PublicLayout><Teklif /></PublicLayout>
+      </Route>
+      <Route path="/iletisim">
+        <PublicLayout><Contact /></PublicLayout>
+      </Route>
+
+      {/* Legacy redirects — keep old paths working */}
       <Route path="/contact">
         <PublicLayout><Contact /></PublicLayout>
       </Route>
@@ -72,7 +83,7 @@ function Router() {
         <AdminLayout><ProductForm /></AdminLayout>
       </Route>
       <Route path="/admin/products/:slug/edit">
-        {(params) => <AdminLayout><ProductForm /></AdminLayout>}
+        {() => <AdminLayout><ProductForm /></AdminLayout>}
       </Route>
       <Route path="/admin/categories">
         <AdminLayout><AdminCategories /></AdminLayout>
@@ -94,10 +105,7 @@ function Router() {
 
 const queryClient = new QueryClient({
   defaultOptions: {
-    queries: {
-      retry: 1,
-      staleTime: 30000,
-    },
+    queries: { retry: 1, staleTime: 30000 },
   },
 });
 
