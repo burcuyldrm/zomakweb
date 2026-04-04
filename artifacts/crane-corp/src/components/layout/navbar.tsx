@@ -201,14 +201,14 @@ export function Navbar() {
         </span>
       </div>
       {/* Main nav */}
-      <nav className="bg-[#111111] px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A]/50 shadow-lg text-[14px]">
+      <nav className="bg-[#111111] px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A]/50 shadow-lg text-[12px]">
         {/* Logo */}
         <Link href="/">
           <div className="cursor-pointer flex items-center">
             <img
               src={logoImg as unknown as string}
               alt="ZOMAK"
-              className="h-36 w-auto object-contain"
+              className="h-24 w-auto object-contain"
               style={{ filter: "brightness(0) invert(1)" }}
             />
           </div>
