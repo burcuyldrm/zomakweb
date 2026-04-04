@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "74mtwDVabseAbar8okUSu"
+uri = "file://artifacts/crane-corp/public/images/hero-1.png"
+type = "image"
+title = "Hero crane sunset"
+
+[[generated]]
+id = "9FSd4VdWJZxDDimQwKWRT"
+uri = "file://artifacts/crane-corp/public/images/hero-2.png"
+type = "image"
+title = "Tower crane lifting"
+
+[[generated]]
+id = "LdK-H4KpUMxh3a2hJ3Df6"
+uri = "file://artifacts/crane-corp/public/images/mobile-crane.png"
+type = "image"
+title = "Mobile crane product"
+
+[[generated]]
+id = "jxCnPoKHWMG4VtYVc9jUw"
+uri = "file://artifacts/crane-corp/public/images/corporate.png"
+type = "image"
+title = "R&D engineering facility"
+
+[[generated]]
+id = "Zbs3OzX7mFeJD26nnSHE2"
+uri = "file://artifacts/crane-corp/public/images/news-1.png"
+type = "image"
+title = "Crane delivery news"

@@ -3,13 +3,23 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: API specification for crane manufacturing corporate website
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: products
+    description: Product management
+  - name: categories
+    description: Category management
+  - name: news
+    description: News management
+  - name: media
+    description: Media management
+  - name: contact
+    description: Contact form
 paths:
   /healthz:
     get:
@@ -24,6 +34,379 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /products:
+    get:
+      operationId: listProducts
+      tags: [products]
+      summary: List all products
+      parameters:
+        - name: categoryId
+          in: query
+          schema:
+            type: integer
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [published, draft]
+        - name: featured
+          in: query
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: List of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+    post:
+      operationId: createProduct
+      tags: [products]
+      summary: Create a product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateProductBody"
+      responses:
+        "201":
+          description: Created product
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+
+  /products/featured:
+    get:
+      operationId: getFeaturedProducts
+      tags: [products]
+      summary: Get featured products for homepage
+      responses:
+        "200":
+          description: Featured products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+
+  /products/{slug}:
+    get:
+      operationId: getProduct
+      tags: [products]
+      summary: Get product by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Product detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "404":
+          description: Product not found
+    put:
+      operationId: updateProduct
+      tags: [products]
+      summary: Update a product
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateProductBody"
+      responses:
+        "200":
+          description: Updated product
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+    delete:
+      operationId: deleteProduct
+      tags: [products]
+      summary: Delete a product
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+
+  /categories:
+    get:
+      operationId: listCategories
+      tags: [categories]
+      summary: List all categories
+      responses:
+        "200":
+          description: List of categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Category"
+    post:
+      operationId: createCategory
+      tags: [categories]
+      summary: Create a category
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateCategoryBody"
+      responses:
+        "201":
+          description: Created category
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Category"
+
+  /categories/{id}:
+    put:
+      operationId: updateCategory
+      tags: [categories]
+      summary: Update a category
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateCategoryBody"
+      responses:
+        "200":
+          description: Updated category
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Category"
+    delete:
+      operationId: deleteCategory
+      tags: [categories]
+      summary: Delete a category
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
+
+  /news:
+    get:
+      operationId: listNews
+      tags: [news]
+      summary: List all news articles
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [published, draft]
+        - name: limit
+          in: query
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: List of news
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/NewsArticle"
+    post:
+      operationId: createNews
+      tags: [news]
+      summary: Create a news article
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateNewsBody"
+      responses:
+        "201":
+          description: Created article
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsArticle"
+
+  /news/{slug}:
+    get:
+      operationId: getNews
+      tags: [news]
+      summary: Get news article by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: News article
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsArticle"
+        "404":
+          description: Not found
+    put:
+      operationId: updateNews
+      tags: [news]
+      summary: Update news article
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateNewsBody"
+      responses:
+        "200":
+          description: Updated article
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsArticle"
+    delete:
+      operationId: deleteNews
+      tags: [news]
+      summary: Delete news article
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+
+  /media:
+    get:
+      operationId: listMedia
+      tags: [media]
+      summary: List media items
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [video, gallery, pdf]
+      responses:
+        "200":
+          description: Media items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MediaItem"
+    post:
+      operationId: createMedia
+      tags: [media]
+      summary: Create media item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateMediaBody"
+      responses:
+        "201":
+          description: Created media
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MediaItem"
+
+  /media/{id}:
+    delete:
+      operationId: deleteMedia
+      tags: [media]
+      summary: Delete media item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
+
+  /contact:
+    post:
+      operationId: submitContact
+      tags: [contact]
+      summary: Submit a contact form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactFormBody"
+      responses:
+        "200":
+          description: Submission accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactFormResponse"
+
+  /stats:
+    get:
+      operationId: getStats
+      tags: [products]
+      summary: Get company stats for homepage
+      responses:
+        "200":
+          description: Company statistics
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CompanyStats"
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +417,393 @@ components:
       required:
         - status
 
+    Spec:
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+      required:
+        - key
+        - value
+
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        slug:
+          type: string
+        categoryId:
+          type: integer
+        categoryName:
+          type: string
+        shortDescription:
+          type: string
+        description:
+          type: string
+        specs:
+          type: array
+          items:
+            $ref: "#/components/schemas/Spec"
+        coverImage:
+          type: string
+        gallery:
+          type: array
+          items:
+            type: string
+        pdfUrl:
+          type: string
+          nullable: true
+        status:
+          type: string
+          enum: [published, draft]
+        featured:
+          type: boolean
+        sortOrder:
+          type: integer
+        capacity:
+          type: string
+        usageAreas:
+          type: array
+          items:
+            type: string
+        optionalEquipment:
+          type: array
+          items:
+            type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+      required:
+        - id
+        - name
+        - slug
+        - categoryId
+        - categoryName
+        - shortDescription
+        - description
+        - specs
+        - coverImage
+        - gallery
+        - status
+        - featured
+        - sortOrder
+        - capacity
+        - usageAreas
+        - optionalEquipment
+        - createdAt
+        - updatedAt
+
+    CreateProductBody:
+      type: object
+      properties:
+        name:
+          type: string
+        slug:
+          type: string
+        categoryId:
+          type: integer
+        shortDescription:
+          type: string
+        description:
+          type: string
+        specs:
+          type: array
+          items:
+            $ref: "#/components/schemas/Spec"
+        coverImage:
+          type: string
+        gallery:
+          type: array
+          items:
+            type: string
+        pdfUrl:
+          type: string
+          nullable: true
+        status:
+          type: string
+          enum: [published, draft]
+        featured:
+          type: boolean
+        sortOrder:
+          type: integer
+        capacity:
+          type: string
+        usageAreas:
+          type: array
+          items:
+            type: string
+        optionalEquipment:
+          type: array
+          items:
+            type: string
+      required:
+        - name
+        - slug
+        - categoryId
+        - shortDescription
+        - description
+        - specs
+        - coverImage
+        - gallery
+        - status
+        - featured
+        - sortOrder
+        - capacity
+        - usageAreas
+        - optionalEquipment
+
+    UpdateProductBody:
+      type: object
+      properties:
+        name:
+          type: string
+        categoryId:
+          type: integer
+        shortDescription:
+          type: string
+        description:
+          type: string
+        specs:
+          type: array
+          items:
+            $ref: "#/components/schemas/Spec"
+        coverImage:
+          type: string
+        gallery:
+          type: array
+          items:
+            type: string
+        pdfUrl:
+          type: string
+          nullable: true
+        status:
+          type: string
+          enum: [published, draft]
+        featured:
+          type: boolean
+        sortOrder:
+          type: integer
+        capacity:
+          type: string
+        usageAreas:
+          type: array
+          items:
+            type: string
+        optionalEquipment:
+          type: array
+          items:
+            type: string
+
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        slug:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        sortOrder:
+          type: integer
+        productCount:
+          type: integer
+      required:
+        - id
+        - name
+        - slug
+        - description
+        - image
+        - sortOrder
+        - productCount
+
+    CreateCategoryBody:
+      type: object
+      properties:
+        name:
+          type: string
+        slug:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        sortOrder:
+          type: integer
+      required:
+        - name
+        - slug
+        - description
+        - image
+        - sortOrder
+
+    NewsArticle:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        slug:
+          type: string
+        summary:
+          type: string
+        content:
+          type: string
+        image:
+          type: string
+        date:
+          type: string
+        status:
+          type: string
+          enum: [published, draft]
+        createdAt:
+          type: string
+      required:
+        - id
+        - title
+        - slug
+        - summary
+        - content
+        - image
+        - date
+        - status
+        - createdAt
+
+    CreateNewsBody:
+      type: object
+      properties:
+        title:
+          type: string
+        slug:
+          type: string
+        summary:
+          type: string
+        content:
+          type: string
+        image:
+          type: string
+        date:
+          type: string
+        status:
+          type: string
+          enum: [published, draft]
+      required:
+        - title
+        - slug
+        - summary
+        - content
+        - image
+        - date
+        - status
+
+    MediaItem:
+      type: object
+      properties:
+        id:
+          type: integer
+        type:
+          type: string
+          enum: [video, gallery, pdf]
+        title:
+          type: string
+        url:
+          type: string
+        thumbnail:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+      required:
+        - id
+        - type
+        - title
+        - url
+        - createdAt
+
+    CreateMediaBody:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [video, gallery, pdf]
+        title:
+          type: string
+        url:
+          type: string
+        thumbnail:
+          type: string
+          nullable: true
+      required:
+        - type
+        - title
+        - url
+
+    ContactFormBody:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+          nullable: true
+        company:
+          type: string
+          nullable: true
+        department:
+          type: string
+          nullable: true
+        subject:
+          type: string
+        message:
+          type: string
+      required:
+        - name
+        - email
+        - subject
+        - message
+
+    ContactFormResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+      required:
+        - success
+        - message
+
+    CompanyStats:
+      type: object
+      properties:
+        yearsOfExperience:
+          type: integer
+        productsDelivered:
+          type: integer
+        countriesServed:
+          type: integer
+        certifications:
+          type: integer
+        productCount:
+          type: integer
+        categoryCount:
+          type: integer
+      required:
+        - yearsOfExperience
+        - productsDelivered
+        - countriesServed
+        - certifications
+        - productCount
+        - categoryCount

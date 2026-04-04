@@ -1,0 +1,401 @@
+You are a senior full-stack engineer. Build a production-ready, scalable, secure, and modern corporate website for a crane manufacturing company.
+
+⚠️ IMPORTANT:
+- This is NOT a demo project.
+- This site will be deployed and used by a real company.
+- Code must be clean, modular, maintainable, and production-grade.
+- Do NOT skip any part.
+- Generate FULL project structure, not partial code.
+
+--------------------------------------------------
+🏢 PROJECT CONTEXT
+--------------------------------------------------
+
+This is a corporate website for a crane manufacturing company.
+
+Purpose:
+- Showcase crane products in detail
+- Build corporate trust and credibility
+- Provide technical information to potential clients
+
+This is NOT an e-commerce platform.
+No payment system required.
+
+--------------------------------------------------
+👥 TARGET USERS
+--------------------------------------------------
+
+- Construction companies
+- Industrial companies
+- Engineers
+- Project managers
+
+Design must be:
+- Professional
+- Technical
+- Clean
+- Trustworthy
+- Minimal but powerful
+
+--------------------------------------------------
+🎨 DESIGN INSPIRATION
+--------------------------------------------------
+
+Take inspiration from:
+- worldpower.com.tr
+- tevor.pl
+- hidrokon.com
+- uzmanlarplatform.com
+
+DO NOT COPY.
+
+Key design patterns:
+- Large hero section
+- Strong product visuals
+- Industrial dark theme
+- Clean grid layouts
+- Corporate trust sections
+- Media/news areas
+- Strong typography
+- Minimal but powerful UI
+
+--------------------------------------------------
+🧠 TECH STACK (MANDATORY)
+--------------------------------------------------
+
+Frontend:
+- Next.js (App Router)
+- React
+- TypeScript (strict)
+- Tailwind CSS
+
+UI:
+- Component-based architecture
+- Clean reusable components
+- No messy code
+
+Libraries:
+- Swiper (hero slider)
+- Framer Motion (subtle animations)
+- React Hook Form
+- Zod (validation)
+
+Architecture must support:
+- Future backend integration
+- Admin panel integration
+- Multi-language support (TR / EN ready)
+
+--------------------------------------------------
+📁 PROJECT STRUCTURE (STRICT)
+--------------------------------------------------
+
+Create full structure like:
+
+src/
+  app/
+    page.tsx
+    kurumsal/
+    urunler/
+      page.tsx
+      [slug]/page.tsx
+    medya/
+    iletisim/
+    admin/
+  components/
+    layout/
+    home/
+    products/
+    media/
+    contact/
+    ui/
+  lib/
+    api.ts
+    utils.ts
+    seo.ts
+  types/
+    product.ts
+    media.ts
+    category.ts
+  data/
+  styles/
+
+--------------------------------------------------
+📄 REQUIRED PAGES
+--------------------------------------------------
+
+1. Home Page
+2. Corporate (Kurumsal)
+3. Products (Listing)
+4. Product Detail (Dynamic route)
+5. Media (News, Gallery, Videos)
+6. Contact
+7. Admin Login
+8. Admin Dashboard
+9. Product Management
+10. Media Management
+11. News Management
+12. Category Management
+
+--------------------------------------------------
+🏠 HOME PAGE SECTIONS
+--------------------------------------------------
+
+- TopBar (phone, email, language)
+- Header / Navigation / Mega menu
+- Hero slider
+- Company intro
+- Product categories
+- Featured products
+- Trust section:
+  - experience
+  - production power
+  - certifications
+  - R&D
+- After-sales services
+- Media preview
+- References / export section
+- CTA section
+- Footer
+
+--------------------------------------------------
+🏗️ PRODUCTS PAGE
+--------------------------------------------------
+
+- Category filters
+- Grid layout
+- Product cards:
+  - image
+  - title
+  - short description
+  - capacity label
+- "View Details" button
+
+--------------------------------------------------
+📦 PRODUCT DETAIL PAGE
+--------------------------------------------------
+
+- Image gallery
+- Title
+- Short description
+- Detailed description
+- Technical specifications table
+- Optional equipment
+- Usage areas
+- PDF catalog button
+- Contact CTA
+- Similar products
+
+--------------------------------------------------
+🖼️ MEDIA PAGE
+--------------------------------------------------
+
+- News cards
+- Video gallery
+- Events / fairs
+- Catalog downloads
+
+--------------------------------------------------
+📞 CONTACT PAGE
+--------------------------------------------------
+
+- Contact info
+- Map placeholder
+- Department-based contact
+- Contact form (validated)
+- CTA
+
+--------------------------------------------------
+🔐 ADMIN PANEL (STRUCTURE ONLY - FRONTEND)
+--------------------------------------------------
+
+Pages:
+- Login
+- Dashboard
+- Products CRUD UI
+- Categories CRUD UI
+- Media CRUD UI
+- News CRUD UI
+
+Admin capabilities:
+- Add/edit/delete products
+- Upload images
+- Manage categories
+- Manage news
+- Manage media
+- Publish/unpublish
+- Sorting
+
+--------------------------------------------------
+📊 DATA MODELS (TYPESCRIPT)
+--------------------------------------------------
+
+Product:
+- id
+- name
+- slug
+- category
+- shortDescription
+- description
+- specs (key-value)
+- coverImage
+- gallery
+- pdf
+- status
+- order
+
+News:
+- id
+- title
+- slug
+- summary
+- content
+- image
+- date
+- status
+
+Media:
+- id
+- type (video/gallery/pdf)
+- title
+- file/url
+
+--------------------------------------------------
+🎨 DESIGN SYSTEM
+--------------------------------------------------
+
+Colors:
+- Primary: dark navy / charcoal
+- Accent: yellow/orange/red (industrial feel)
+- Background: white + light gray
+
+Typography:
+- Strong modern sans-serif
+- Clean readable body
+
+UI:
+- Clean cards
+- Large spacing
+- Subtle hover effects
+- Minimal animations
+
+--------------------------------------------------
+📱 RESPONSIVE RULES
+--------------------------------------------------
+
+- Mobile first
+- 1 column mobile
+- 2 tablet
+- 3-4 desktop
+- Hamburger menu
+- Scrollable tables on mobile
+
+--------------------------------------------------
+🌍 MULTI-LANGUAGE READY
+--------------------------------------------------
+
+Structure must support:
+- TR / EN
+- No hardcoded strings
+- Prepare for i18n
+
+--------------------------------------------------
+🔍 SEO REQUIREMENTS
+--------------------------------------------------
+
+- Dynamic meta tags
+- Clean URLs
+- Open Graph
+- Alt texts
+- Schema-ready structure
+
+--------------------------------------------------
+⚡ PERFORMANCE
+--------------------------------------------------
+
+- Optimized images
+- Lazy loading
+- Minimal JS
+- Component splitting
+
+--------------------------------------------------
+🔐 SECURITY AWARE STRUCTURE
+--------------------------------------------------
+
+- Admin routes separated
+- Form validation
+- Input sanitization ready
+- No unsafe patterns
+- Env-based config support
+
+--------------------------------------------------
+🧩 COMPONENTS (CREATE ALL)
+--------------------------------------------------
+
+- Header
+- TopBar
+- MegaMenu
+- HeroSlider
+- SectionTitle
+- ProductGrid
+- ProductCard
+- ProductGallery
+- SpecsTable
+- NewsCard
+- VideoCard
+- ContactForm
+- CTASection
+- Footer
+- LanguageSwitcher
+
+--------------------------------------------------
+📦 REQUIREMENTS OUTPUT
+--------------------------------------------------
+
+You MUST generate:
+
+1. Full folder structure
+2. All necessary files
+3. Working pages
+4. Components
+5. Dummy data
+6. Type definitions
+7. Admin UI skeleton
+8. Clean code with comments
+9. Setup instructions
+10. How to run (npm commands)
+
+--------------------------------------------------
+⚠️ RULES
+--------------------------------------------------
+
+- Do NOT generate partial code
+- Do NOT skip files
+- Do NOT simplify
+- Write production-quality code
+- Use TypeScript strictly
+- Keep code clean and readable
+
+--------------------------------------------------
+🎯 FINAL GOAL
+--------------------------------------------------
+
+A real-world deployable corporate crane company website with:
+
+- Strong product showcase
+- Admin-manageable content
+- Professional UI
+- Clean architecture
+- Scalable system
+- Production-ready quality
+
+--------------------------------------------------
+START NOW:
+1. Plan structure
+2. Generate project
+3. Build components
+4. Create pages
+5. Connect dummy data
+6. Add admin panel skeleton
+7. Provide run instructions
+
+Do not stop until everything is complete.
