@@ -23,8 +23,8 @@ export function Footer() {
 
           {/* Kurumsal + Hızlı Bağlantılar */}
           <div>
-            <h4 className="font-bold uppercase tracking-widest text-xs text-gray-400 mb-4 pb-2 border-b border-white/10">
-              Kurumsal
+            <h4 className="font-bold tracking-widest text-[10px] text-gray-400 mb-4 pb-2 border-b border-white/10">
+              KURUMSAL
             </h4>
             <ul className="space-y-2 mb-6">
               {[
@@ -47,8 +47,8 @@ export function Footer() {
 
           {/* Ürünler */}
           <div>
-            <h4 className="font-bold uppercase tracking-widest text-xs text-gray-400 mb-4 pb-2 border-b border-white/10">
-              Ürünler
+            <h4 className="font-bold tracking-widest text-[10px] text-gray-400 mb-4 pb-2 border-b border-white/10">
+              ÜRÜNLER
             </h4>
             <ul className="space-y-2">
               {[
@@ -69,8 +69,8 @@ export function Footer() {
 
           {/* İletişim */}
           <div>
-            <h4 className="font-bold uppercase tracking-widest text-xs text-gray-400 mb-4 pb-2 border-b border-white/10">
-              İletişim
+            <h4 className="font-bold tracking-widest text-[10px] text-gray-400 mb-4 pb-2 border-b border-white/10">
+              İLETİŞİM
             </h4>
             <ul className="space-y-3">
               <li className="flex gap-3 items-start">

@@ -16,11 +16,12 @@ const principles = [
 export default function CevrePolitikamiz() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[#111111] text-white py-20 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8B1A1A]" />
+      <div className="bg-[#111111] text-white py-16 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Kurumsal</div>
-          <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Çevre Politikamız</h1>
+          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">KURUMSAL</div>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">ÇEVRE POLİTİKAMIZ</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Çevresel sorumluluk, iş yapış biçimimizin temel bir boyutudur.
           </p>
@@ -51,7 +52,7 @@ export default function CevrePolitikamiz() {
           viewport={{ once: true }}
           className="bg-gray-50 border border-gray-200 rounded-sm p-8 mb-12"
         >
-          <h2 className="text-xl font-black uppercase text-gray-900 mb-6">Çevre Taahhütlerimiz</h2>
+          <h2 className="text-xl font-black text-gray-900 mb-6">ÇEVRE TAAHHÜTLERİMİZ</h2>
           <ul className="space-y-3">
             {principles.map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
@@ -63,7 +64,7 @@ export default function CevrePolitikamiz() {
         </motion.div>
 
         <div className="bg-[#111111] text-white rounded-sm p-8 mb-10">
-          <h2 className="text-lg font-black uppercase mb-3">Çevre İlkemiz</h2>
+          <h2 className="text-lg font-black mb-3">ÇEVRE İLKEMİZ</h2>
           <p className="text-gray-300 leading-relaxed text-sm italic">
             "Ürettiğimiz her ekipman, hem insanlara hem de çevreye karşı sorumluluğumuzu yansıtır. Doğayla uyumlu üretim anlayışını nesiller boyu sürdürülebilir bir miras olarak görüyoruz."
           </p>

@@ -80,14 +80,14 @@ export default function UrunDetay() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Ürün Detayı</div>
-            <h1 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-3 leading-tight">{product.title}</h1>
+            <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">ÜRÜN DETAYI</div>
+            <h1 className="text-3xl md:text-4xl font-black text-gray-900 mb-3 leading-tight">{product.title}</h1>
             <p className="text-gray-500 font-medium text-sm italic mb-5 border-l-2 border-[#8B1A1A] pl-4">{product.shortDesc}</p>
             <p className="text-gray-700 leading-relaxed text-sm mb-7">{product.description}</p>
 
             {/* Usage areas */}
             <div className="mb-7">
-              <h3 className="font-black uppercase text-sm tracking-wide mb-3 text-gray-900">Kullanım Alanları</h3>
+              <h3 className="font-black text-sm tracking-wide mb-3 text-gray-900">KULLANIM ALANLARI</h3>
               <ul className="space-y-2">
                 {product.usage.map((u, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
@@ -101,7 +101,7 @@ export default function UrunDetay() {
             {/* Specs */}
             {product.specs && product.specs.length > 0 && (
               <div className="mb-8 bg-gray-50 border border-gray-200 rounded-sm p-5">
-                <h3 className="font-black uppercase text-xs tracking-widest mb-4 text-gray-500">Teknik Bilgiler</h3>
+                <h3 className="font-black text-xs tracking-widest mb-4 text-gray-500">TEKNİK BİLGİLER</h3>
                 <div className="divide-y divide-gray-100">
                   {product.specs.map((spec, i) => (
                     <div key={i} className="flex justify-between py-2.5 text-sm">
@@ -143,12 +143,12 @@ export default function UrunDetay() {
         {/* Other products */}
         {otherProducts.length > 0 && (
           <div className="mt-20 pt-12 border-t border-gray-200">
-            <h2 className="text-xl font-black uppercase text-gray-900 mb-6">Diğer Ürünlerimiz</h2>
+            <h2 className="text-xl font-black text-gray-900 mb-6">DİĞER ÜRÜNLERİMİZ</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {otherProducts.map((p) => (
                 <Link key={p.slug} href={`/urunler/${p.slug}`}>
                   <div className="border border-gray-200 rounded-sm p-5 hover:border-[#8B1A1A] transition-colors cursor-pointer group">
-                    <h3 className="font-bold text-sm uppercase mb-1 text-gray-800 group-hover:text-[#8B1A1A] transition-colors">{p.title}</h3>
+                    <h3 className="font-bold text-sm mb-1 text-gray-800 group-hover:text-[#8B1A1A] transition-colors">{p.title}</h3>
                     <p className="text-gray-400 text-xs leading-relaxed">{p.shortDesc}</p>
                   </div>
                 </Link>

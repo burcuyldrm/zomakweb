@@ -23,8 +23,8 @@ export default function Urunler() {
         <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Ekipman Portföyü</div>
-          <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3 leading-tight">Ürünlerimiz</h1>
+          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">EKİPMAN PORTFÖYÜMÜZ</div>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">ÜRÜNLERİMİZ</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Endüstriyel kaldırma, kurtarma ve platform çözümlerinde kapsamlı ürün yelpazesi.
           </p>
@@ -59,11 +59,11 @@ export default function Urunler() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-base font-black uppercase mb-2 text-gray-900 group-hover:text-[#8B1A1A] transition-colors leading-tight">
+                    <h3 className="text-base font-black mb-2 text-gray-900 group-hover:text-[#8B1A1A] transition-colors leading-tight">
                       {product.title}
                     </h3>
                     <p className="text-gray-500 text-sm leading-relaxed mb-5">{product.shortDesc}</p>
-                    <div className="inline-flex items-center gap-1.5 text-[#8B1A1A] font-bold text-xs uppercase tracking-wide group-hover:gap-2.5 transition-all">
+                    <div className="inline-flex items-center gap-1.5 text-[#8B1A1A] font-bold text-xs tracking-wide group-hover:gap-2.5 transition-all">
                       İncele <ArrowRight className="w-3.5 h-3.5" />
                     </div>
                   </div>
@@ -77,14 +77,14 @@ export default function Urunler() {
       {/* CTA */}
       <div className="bg-[#111111] py-14">
         <div className="container mx-auto px-4 text-center">
-          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest uppercase mb-3">Özel Proje</div>
-          <h2 className="text-2xl font-black uppercase text-white mb-3">Özel Çözüm mü Arıyorsunuz?</h2>
+          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-3">ÖZEL PROJE</div>
+          <h2 className="text-2xl font-black text-white mb-3">Özel Çözüm mü Arıyorsunuz?</h2>
           <p className="text-gray-400 text-sm mb-7 max-w-lg mx-auto">
             Standart ürün portföyümüzün dışında projeye özel tasarım ve üretim kapasitemiz mevcuttur.
           </p>
           <Link href="/teklif">
-            <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold px-9 h-12 rounded-sm border-none uppercase tracking-wide">
-              Teklif Talebi
+            <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold px-9 h-12 rounded-sm border-none tracking-wide">
+              TEKLİF TALEBİ
             </Button>
           </Link>
         </div>

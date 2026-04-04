@@ -16,11 +16,12 @@ const commitments = [
 export default function KalitePolitikamiz() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[#111111] text-white py-20 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8B1A1A]" />
+      <div className="bg-[#111111] text-white py-16 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Kurumsal</div>
-          <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Kalite Politikamız</h1>
+          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">KURUMSAL</div>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">KALİTE POLİTİKAMIZ</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Kalite, ZOMAK'ın üretim felsefesinin temel taşıdır.
           </p>
@@ -51,7 +52,7 @@ export default function KalitePolitikamiz() {
           viewport={{ once: true }}
           className="bg-gray-50 border border-gray-200 rounded-sm p-8 mb-12"
         >
-          <h2 className="text-xl font-black uppercase text-gray-900 mb-6">Kalite Taahhütlerimiz</h2>
+          <h2 className="text-xl font-black text-gray-900 mb-6">KALİTE TAAHHÜTLERİMİZ</h2>
           <ul className="space-y-3">
             {commitments.map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
@@ -63,7 +64,7 @@ export default function KalitePolitikamiz() {
         </motion.div>
 
         <div className="bg-[#111111] text-white rounded-sm p-8 mb-10">
-          <h2 className="text-lg font-black uppercase mb-3">Kalite İlkemiz</h2>
+          <h2 className="text-lg font-black mb-3">KALİTE İLKEMİZ</h2>
           <p className="text-gray-300 leading-relaxed text-sm italic">
             "Ürünlerimizin her birini, kendi ekibimizin de güvenle kullanacağı standartlarda üretiriz. Kalite bir hedef değil; iş yapış biçimimizin ayrılmaz bir parçasıdır."
           </p>

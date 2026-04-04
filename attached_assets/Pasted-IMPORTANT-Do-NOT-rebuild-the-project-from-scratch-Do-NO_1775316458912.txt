@@ -1,0 +1,230 @@
+IMPORTANT:
+
+Do NOT rebuild the project from scratch.
+Do NOT recreate the entire project.
+Do NOT delete existing files.
+
+You are working on an EXISTING Next.js project.
+Your task is to UPDATE, FIX, and IMPROVE the current implementation only.
+
+Keep:
+- existing project structure
+- existing working routes
+- existing pages
+- existing reusable components where possible
+- existing logic where possible
+
+Only:
+- improve the product showcase section
+- enlarge and strengthen the navbar logo
+- fix the Ürünler navigation behavior
+- correct all Turkish character issues
+- keep the project stable, responsive, and professional
+
+Do not restart the project.
+Do not redesign everything from zero.
+Make targeted improvements carefully.
+
+--------------------------------------------------
+MAIN UPDATE GOALS
+--------------------------------------------------
+
+Fix and improve these areas:
+
+1. The current “Ürün Portföyümüz / Ürünlerimiz” section should be redesigned into a more usable and polished layout
+2. The navbar logo should be larger and more visually powerful
+3. Clicking “Ürünler” in the navbar should open the full products page directly
+4. Turkish characters across the site must be corrected everywhere
+5. Preserve the professional corporate industrial look
+
+--------------------------------------------------
+PRODUCT SHOWCASE SECTION UPDATE
+--------------------------------------------------
+
+The current product showcase area (with the left-side product list and right-side preview panel) should be improved into a more usable and professional section.
+
+Current issue:
+- it feels visually heavy and not very practical
+- the interaction can be improved
+- it does not feel as clean and user-friendly as it should
+
+Update this section with these goals:
+- make the layout cleaner and easier to scan
+- improve spacing and hierarchy
+- make product navigation more intuitive
+- maintain a premium industrial look
+- keep it responsive
+- preserve strong visual structure
+
+Suggested direction:
+- keep product list and preview relationship, but make it more elegant
+- improve the active state for the selected product
+- make the right content panel cleaner
+- improve image ratio and content spacing
+- ensure the detail button is more prominent
+- use softer corners and refined borders
+- avoid cramped text blocks
+- avoid oversized empty areas
+
+Make this section feel more like a premium product navigator.
+
+It should clearly help the user:
+- browse products quickly
+- understand the selected product
+- move to product detail easily
+- reach the full products page easily
+
+--------------------------------------------------
+ALL PRODUCTS PAGE BEHAVIOR
+--------------------------------------------------
+
+Clicking “Ürünler” in the navbar must open the main all-products page directly.
+
+Requirements:
+- Navbar item “Ürünler” should link directly to /urunler
+- If there is a dropdown submenu under Ürünler, it can remain
+- But clicking the main “Ürünler” item itself must still go to the full products page
+- Do not make the top-level nav item non-clickable
+- Submenu items can still open product-specific pages
+
+Expected behavior:
+- Main click -> /urunler
+- Dropdown items -> specific product pages
+
+This is important for usability.
+
+--------------------------------------------------
+NAVBAR LOGO UPDATE
+--------------------------------------------------
+
+Increase the visual impact of the logo in the navbar.
+
+Requirements:
+- make the logo larger
+- improve spacing around the logo
+- keep alignment professional
+- logo should feel more visible and brand-defining
+- do not make it oversized in a clumsy way
+- preserve clean navbar layout
+- use the uploaded logo asset properly
+- ensure the logo remains sharp and responsive
+
+The navbar should feel more branded and visually balanced.
+
+--------------------------------------------------
+TURKISH CHARACTER FIX
+--------------------------------------------------
+
+There is a Turkish character problem on the website.
+For example:
+- İ appears as I
+- ı / İ / Ş / Ğ / Ç / Ö / Ü may be rendered incorrectly
+
+This must be corrected across the entire project.
+
+Requirements:
+- use correct Turkish text everywhere
+- all menu items must use proper Turkish capitalization
+- all headings, labels, buttons, page titles, and descriptions must use correct Turkish characters
+- ensure font and encoding support Turkish characters properly
+- review all visible UI strings and fix them
+
+Examples of correct usage:
+- Ürünler
+- İletişim
+- Hakkımızda
+- Çevre Politikamız
+- Kalite Politikamız
+- Mobil Katlanır Vinç
+- Hidrolik Gözlüklü Kurtarıcı
+- Özel Hidrolik Makineler
+- Zirveye Odaklan
+
+Check both:
+- hardcoded content
+- data files
+- component labels
+- button text
+- page titles
+- navigation text
+
+--------------------------------------------------
+CONTENT CONSISTENCY
+--------------------------------------------------
+
+Keep all visible text in formal Turkish.
+No emojis.
+No casual tone.
+No broken capitalization.
+
+Use proper Turkish spelling and typography throughout the site.
+
+--------------------------------------------------
+UI / VISUAL QUALITY
+--------------------------------------------------
+
+When improving the product section and navbar:
+- keep black / charcoal / white base
+- use muted red only as accent
+- keep the design corporate and industrial
+- maintain strong readability
+- do not flatten the interface
+- do not over-whiten the design
+- do not remove useful contrast
+
+Improve:
+- spacing
+- hover states
+- active states
+- card refinement
+- section clarity
+
+--------------------------------------------------
+RESPONSIVE REQUIREMENTS
+--------------------------------------------------
+
+Ensure these updates work well on:
+- desktop
+- tablet
+- mobile
+
+Especially:
+- navbar logo size
+- Ürünler menu behavior
+- product showcase usability
+- Turkish text rendering
+- product section layout
+
+--------------------------------------------------
+DO NOT
+--------------------------------------------------
+
+- do not rebuild the project
+- do not delete existing files
+- do not break existing routes
+- do not make the Ürünler nav item non-clickable
+- do not leave Turkish text broken
+- do not keep the product section awkward and hard to use
+- do not shrink the logo again
+- do not damage responsiveness
+
+--------------------------------------------------
+FINAL TASK
+--------------------------------------------------
+
+Update the current implementation and improve the product area and navbar behavior.
+
+Priority order:
+1. Fix Turkish characters everywhere
+2. Make navbar logo larger and more visible
+3. Make clicking “Ürünler” open the full products page
+4. Improve the product showcase section to be more usable and polished
+5. Preserve corporate industrial design consistency
+6. Keep the site responsive and stable
+
+After updating:
+- ensure all Turkish characters display correctly
+- ensure navbar logo is stronger
+- ensure Ürünler opens /urunler
+- ensure product showcase looks cleaner and works better
+- ensure the project remains stable and professional

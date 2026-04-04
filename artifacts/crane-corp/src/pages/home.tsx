@@ -41,8 +41,11 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
 
-      {/* HERO */}
-      <section className="relative bg-[#111111] flex items-center overflow-hidden" style={{ minHeight: "680px", maxHeight: "800px", height: "78vh" }}>
+      {/* ── HERO ─────────────────────────────────────── */}
+      <section
+        className="relative bg-[#111111] flex items-center overflow-hidden"
+        style={{ minHeight: "680px", maxHeight: "800px", height: "78vh" }}
+      >
         <div
           className="absolute inset-0 bg-cover bg-right-top"
           style={{ backgroundImage: `url(${craneImg})` }}
@@ -57,20 +60,20 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 bg-[#8B1A1A]/20 border border-[#8B1A1A]/60 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 mb-7 rounded-sm">
-              <span className="w-1.5 h-1.5 bg-[#8B1A1A] rounded-full" />
-              Zomak Vinç Platform ve Makina Sanayi — İzmir
+            <div className="inline-flex items-center gap-2 bg-[#8B1A1A]/20 border border-[#8B1A1A]/60 text-white text-xs font-bold px-4 py-2 mb-7 rounded-sm tracking-widest">
+              <span className="w-1.5 h-1.5 bg-[#8B1A1A] rounded-full flex-shrink-0" />
+              ZOMAK VİNÇ PLATFORM VE MAKİNA SANAYİ — İZMİR
             </div>
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-none tracking-tight uppercase mb-5">
-              Zirveye<br /><span className="text-[#8B1A1A]">Odaklan</span>
+            <h1 className="text-5xl md:text-7xl font-black text-white leading-none tracking-tight mb-5">
+              ZİRVEYE<br /><span className="text-[#8B1A1A]">ODAKLAN</span>
             </h1>
             <p className="text-base md:text-lg text-gray-300 mb-9 max-w-lg leading-relaxed">
               Mobil vinç, hidrolik kurtarıcı ve sepetli platform çözümlerinde güvenilir iş ortağınız. Türkiye ve dünya geneli hizmet.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/teklif">
-                <Button size="lg" className="h-12 px-8 font-bold bg-[#8B1A1A] hover:bg-[#A52020] text-white rounded-sm border-none uppercase tracking-wide shadow-lg">
-                  Teklif Al <ArrowRight className="ml-2 w-4 h-4" />
+                <Button size="lg" className="h-12 px-8 font-bold bg-[#8B1A1A] hover:bg-[#A52020] text-white rounded-sm border-none tracking-wide shadow-lg">
+                  TEKLİF AL <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
               <a
@@ -78,7 +81,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button size="lg" variant="outline" className="h-12 px-8 font-bold rounded-sm border-white/30 bg-white/5 text-white hover:bg-white/15 uppercase tracking-wide">
+                <Button size="lg" variant="outline" className="h-12 px-8 font-bold rounded-sm border-white/30 bg-white/5 text-white hover:bg-white/15 tracking-wide">
                   <MessageCircle className="mr-2 w-4 h-4 text-green-400" />
                   WhatsApp
                 </Button>
@@ -89,13 +92,13 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/50" />
       </section>
 
-      {/* INTRO */}
-      <section className="py-16 bg-white border-b border-gray-100">
+      {/* ── INTRO STATS ───────────────────────────────── */}
+      <section className="py-14 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-3">Kimiz</div>
-              <h2 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-5 leading-tight">
+              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-3">KİMİZ</div>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5 leading-tight">
                 Sektörün Güvenilir Üreticisi
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
@@ -114,7 +117,7 @@ export default function Home() {
               ].map((s, i) => (
                 <div key={i} className="bg-gray-50 border border-gray-200 p-6 text-center rounded-sm">
                   <div className="text-3xl font-black text-[#8B1A1A] mb-1">{s.num}</div>
-                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wider">{s.label}</div>
+                  <div className="text-xs font-bold text-gray-500 tracking-wider">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -122,63 +125,114 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DYNAMIC PRODUCT SHOWCASE */}
-      <section className="py-20 bg-gray-50 border-b border-gray-200">
+      {/* ── PRODUCT SHOWCASE ─────────────────────────── */}
+      <section className="py-20 bg-[#111111]">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="mb-10">
-            <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Ürün Portföyümüz</div>
-            <h2 className="text-3xl md:text-4xl font-black uppercase text-gray-900">Ürünlerimiz</h2>
+          {/* Header */}
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-2">ÜRÜN PORTFÖYÜMÜZ</div>
+              <h2 className="text-3xl md:text-4xl font-black text-white">ÜRÜNLERİMİZ</h2>
+            </div>
+            <Link href="/urunler">
+              <Button variant="ghost" className="text-gray-400 hover:text-white font-bold text-xs tracking-widest group hover:bg-transparent border border-white/10 hover:border-[#8B1A1A]/50 rounded-sm px-4">
+                TÜM ÜRÜNLER <ArrowRight className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-200 rounded-sm overflow-hidden shadow-sm">
-            {/* Product selector */}
-            <div className="bg-white border-r border-gray-200">
+          {/* Navigator */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-px bg-white/10 rounded-sm overflow-hidden shadow-xl">
+
+            {/* Left: product tabs */}
+            <div className="lg:col-span-2 bg-[#0D0D0D] flex flex-col">
               {products.map((p, i) => (
                 <button
                   key={p.slug}
                   onClick={() => setActiveProduct(i)}
                   className={cn(
-                    "w-full text-left px-6 py-5 border-b border-gray-100 last:border-0 flex items-center justify-between transition-colors",
+                    "w-full text-left flex items-center justify-between px-6 py-5 border-b border-white/5 last:border-0 transition-all duration-200 group",
                     activeProduct === i
-                      ? "bg-[#111111] text-white"
-                      : "text-gray-700 hover:bg-gray-50"
+                      ? "bg-[#8B1A1A]"
+                      : "hover:bg-white/5"
                   )}
+                  data-testid={`product-tab-${p.slug}`}
                 >
-                  <span className="text-sm font-bold">{p.title}</span>
-                  <ChevronRight className={cn("w-4 h-4 transition-colors flex-shrink-0", activeProduct === i ? "text-[#8B1A1A]" : "text-gray-300")} />
+                  <div className="flex items-center gap-4">
+                    <span className={cn(
+                      "text-xs font-black tabular-nums w-5 text-right flex-shrink-0",
+                      activeProduct === i ? "text-white/60" : "text-[#8B1A1A]"
+                    )}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className={cn(
+                      "text-sm font-bold leading-tight text-left",
+                      activeProduct === i ? "text-white" : "text-gray-300 group-hover:text-white"
+                    )}>
+                      {p.title}
+                    </span>
+                  </div>
+                  <ChevronRight className={cn(
+                    "w-4 h-4 flex-shrink-0 transition-transform",
+                    activeProduct === i ? "text-white translate-x-0.5" : "text-gray-600 group-hover:text-gray-300"
+                  )} />
                 </button>
               ))}
             </div>
 
-            {/* Product detail */}
-            <div className="lg:col-span-2 flex flex-col">
+            {/* Right: product detail */}
+            <div className="lg:col-span-3 bg-[#181818] flex flex-col">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={product.slug}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.25 }}
+                  transition={{ duration: 0.2 }}
                   className="flex flex-col h-full"
                 >
-                  <div className="relative h-56 bg-gray-200 overflow-hidden">
+                  {/* Image */}
+                  <div className="relative h-56 md:h-64 overflow-hidden flex-shrink-0">
                     <img
                       src={productImages[product.slug] as string}
                       alt={product.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <div className="absolute bottom-4 left-6">
-                      <div className="bg-[#8B1A1A] text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">
-                        {product.title}
-                      </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent" />
+                    <div className="absolute top-4 left-5">
+                      <span className="text-[10px] font-bold text-white/50 tracking-widest">ZOMAK</span>
                     </div>
                   </div>
-                  <div className="p-8 flex-1">
-                    <p className="text-gray-500 text-sm mb-4 font-medium italic">{product.shortDesc}</p>
-                    <p className="text-gray-700 text-sm leading-relaxed mb-6">{product.description.slice(0, 200)}...</p>
+
+                  {/* Content */}
+                  <div className="p-7 flex-1 flex flex-col">
+                    <p className="text-[#8B1A1A] text-xs font-bold tracking-widest mb-2">
+                      ÜRÜN DETAYI
+                    </p>
+                    <h3 className="text-xl font-black text-white mb-3 leading-tight">
+                      {product.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-2 italic">
+                      {product.shortDesc}
+                    </p>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
+                      {product.description.slice(0, 180)}…
+                    </p>
+
+                    {/* Specs preview */}
+                    {product.specs && product.specs.length > 0 && (
+                      <div className="grid grid-cols-2 gap-2 mb-6">
+                        {product.specs.slice(0, 4).map((s, i) => (
+                          <div key={i} className="bg-white/5 px-3 py-2 rounded-sm">
+                            <div className="text-[10px] text-gray-500 font-bold tracking-widest">{s.label}</div>
+                            <div className="text-xs text-white font-bold mt-0.5">{s.value}</div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
                     <Link href={`/urunler/${product.slug}`}>
-                      <Button size="sm" className="bg-[#8B1A1A] hover:bg-[#A52020] text-white rounded-sm border-none font-bold uppercase">
+                      <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white rounded-sm border-none font-bold tracking-wide w-full md:w-auto">
                         Ürün Detayı <ArrowRight className="ml-2 w-3.5 h-3.5" />
                       </Button>
                     </Link>
@@ -187,24 +241,16 @@ export default function Home() {
               </AnimatePresence>
             </div>
           </div>
-
-          <div className="mt-6 text-right">
-            <Link href="/urunler">
-              <Button variant="ghost" className="text-[#8B1A1A] font-bold uppercase text-sm group hover:bg-transparent hover:text-[#A52020]">
-                Tüm Ürünleri Gör <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* TRUST */}
+      {/* ── WHY ZOMAK ────────────────────────────────── */}
       <section className="py-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-3">Tercih Sebebimiz</div>
-              <h2 className="text-3xl md:text-4xl font-black uppercase text-gray-900 leading-tight mb-8">
+              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-3">TERCİH SEBEBİMİZ</div>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-8">
                 Neden ZOMAK?
               </h2>
               <div className="space-y-4">
@@ -224,12 +270,12 @@ export default function Home() {
               </div>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link href="/teklif">
-                  <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold px-7 h-11 rounded-sm border-none uppercase">
-                    Teklif Al
+                  <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold px-7 h-11 rounded-sm border-none">
+                    TEKLİF AL
                   </Button>
                 </Link>
                 <Link href="/kurumsal/hakkimizda">
-                  <Button variant="outline" className="border-gray-300 text-gray-800 font-bold px-7 h-11 rounded-sm hover:bg-gray-50 uppercase">
+                  <Button variant="outline" className="border-gray-300 text-gray-800 font-bold px-7 h-11 rounded-sm hover:bg-gray-50">
                     Hakkımızda
                   </Button>
                 </Link>
@@ -247,12 +293,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* REFERENCES */}
+      {/* ── REFERENCES ───────────────────────────────── */}
       <section className="py-20 bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
-            <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Güveni Kazandık</div>
-            <h2 className="text-3xl font-black uppercase text-gray-900">Referanslarımız</h2>
+            <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-2">GÜVENİ KAZANDIK</div>
+            <h2 className="text-3xl font-black text-gray-900">Referanslarımız</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {references.map((ref, i) => (
@@ -262,7 +308,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
-                className="bg-white border border-gray-200 hover:border-[#8B1A1A] p-8 flex items-center justify-center text-center font-bold text-gray-700 hover:text-[#8B1A1A] transition-colors duration-300 rounded-sm text-sm uppercase tracking-wide"
+                className="bg-white border border-gray-200 hover:border-[#8B1A1A] p-8 flex items-center justify-center text-center font-bold text-gray-700 hover:text-[#8B1A1A] transition-colors duration-300 rounded-sm text-sm"
               >
                 {ref}
               </motion.div>
@@ -270,7 +316,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-6">
             <Link href="/referanslar">
-              <Button variant="ghost" className="text-[#8B1A1A] font-bold uppercase text-sm group hover:bg-transparent">
+              <Button variant="ghost" className="text-[#8B1A1A] font-bold text-sm group hover:bg-transparent">
                 Tüm Referanslar <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -278,16 +324,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GALLERY PREVIEW */}
+      {/* ── GALLERY PREVIEW ──────────────────────────── */}
       <section className="py-20 bg-[#111111]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Projelerimizden</div>
-              <h2 className="text-3xl font-black text-white uppercase">Galeri</h2>
+              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-2">PROJELERİMİZDEN</div>
+              <h2 className="text-3xl font-black text-white">GALERİ</h2>
             </div>
             <Link href="/galeri">
-              <Button variant="ghost" className="text-gray-300 font-bold uppercase text-sm group hover:bg-transparent hover:text-white">
+              <Button variant="ghost" className="text-gray-300 font-bold text-sm group hover:bg-transparent hover:text-white">
                 Tümü <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -313,11 +359,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT CTA */}
+      {/* ── CONTACT CTA ──────────────────────────────── */}
       <section className="py-16 bg-white border-t border-gray-200">
         <div className="container mx-auto px-4 text-center">
-          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-3">Projenizi Değerlendirelim</div>
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 uppercase mb-4 leading-tight">
+          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-3">PROJENİZİ DEĞERLENDİRELİM</div>
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 leading-tight">
             Bizimle İletişime Geçin
           </h2>
           <p className="text-gray-500 mb-8 max-w-xl mx-auto text-sm leading-relaxed">
@@ -325,12 +371,12 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link href="/teklif">
-              <Button size="lg" className="h-12 px-8 font-bold bg-[#8B1A1A] hover:bg-[#A52020] text-white rounded-sm border-none uppercase">
-                Teklif Formu
+              <Button size="lg" className="h-12 px-8 font-bold bg-[#8B1A1A] hover:bg-[#A52020] text-white rounded-sm border-none">
+                TEKLİF FORMU
               </Button>
             </Link>
             <a href="tel:05411290102">
-              <Button size="lg" variant="outline" className="h-12 px-8 font-bold border-gray-300 text-gray-800 hover:bg-gray-50 rounded-sm uppercase">
+              <Button size="lg" variant="outline" className="h-12 px-8 font-bold border-gray-300 text-gray-800 hover:bg-gray-50 rounded-sm">
                 <Phone className="mr-2 w-4 h-4" />
                 0541 129 01 02
               </Button>
@@ -340,7 +386,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button size="lg" variant="outline" className="h-12 px-8 font-bold border-gray-300 text-gray-800 hover:bg-gray-50 rounded-sm uppercase">
+              <Button size="lg" variant="outline" className="h-12 px-8 font-bold border-gray-300 text-gray-800 hover:bg-gray-50 rounded-sm">
                 <MessageCircle className="mr-2 w-4 h-4 text-green-600" />
                 WhatsApp
               </Button>

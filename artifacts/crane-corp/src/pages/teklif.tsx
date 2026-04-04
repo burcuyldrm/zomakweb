@@ -54,11 +54,12 @@ export default function Teklif() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[#111111] text-white py-20 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8B1A1A]" />
+      <div className="bg-[#111111] text-white py-16 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Fiyat Talebi</div>
-          <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Teklif Al</h1>
+          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">FİYAT TALEBİ</div>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">TEKLİF AL</h1>
           <p className="text-gray-400 text-base max-w-2xl">
             Projenizi bize aktarın, size en uygun çözümü ve fiyatı sunalım.
           </p>
