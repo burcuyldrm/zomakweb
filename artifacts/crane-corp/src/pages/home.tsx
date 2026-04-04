@@ -162,7 +162,7 @@ export default function Home() {
                     )}>
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-sm font-bold leading-tight text-left text-white border-t-[#000000] border-r-[#000000] border-b-[#000000] border-l-[#000000]">
+                    <span className="font-bold text-left border-t-[#000000] border-r-[#000000] border-b-[#000000] border-l-[#000000] text-[#000000] text-[18px]">
                       {p.title}
                     </span>
                   </div>
