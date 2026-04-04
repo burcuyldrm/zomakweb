@@ -162,10 +162,7 @@ export default function Home() {
                     )}>
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className={cn(
-                      "text-sm font-bold leading-tight text-left",
-                      activeProduct === i ? "text-white" : "text-gray-300 group-hover:text-white"
-                    )}>
+                    <span className="text-sm font-bold leading-tight text-left text-white border-t-[#000000] border-r-[#000000] border-b-[#000000] border-l-[#000000]">
                       {p.title}
                     </span>
                   </div>
