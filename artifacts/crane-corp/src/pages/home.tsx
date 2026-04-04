@@ -123,7 +123,7 @@ export default function Home() {
         </div>
       </section>
       {/* ── PRODUCT SHOWCASE ─────────────────────────── */}
-      <section className="py-20 bg-[#111111] border-t-[#ffffff] border-r-[#ffffff] border-b-[#ffffff] border-l-[#ffffff]">
+      <section className="py-20 border-t-[#ffffff] border-r-[#ffffff] border-b-[#ffffff] border-l-[#ffffff] bg-[#ffffff]">
         <div className="container mx-auto px-4 md:px-8">
           {/* Header */}
           <div className="flex items-end justify-between mb-8">
