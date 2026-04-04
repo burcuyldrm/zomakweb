@@ -142,7 +142,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-px bg-white/10 rounded-sm overflow-hidden shadow-xl">
 
             {/* Left: product tabs */}
-            <div className="lg:col-span-2 bg-[#0D0D0D] flex flex-col">
+            <div className="lg:col-span-2 flex flex-col bg-[#ffffff]">
               {products.map((p, i) => (
                 <button
                   key={p.slug}
