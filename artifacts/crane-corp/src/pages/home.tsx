@@ -40,7 +40,6 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-
       {/* ── HERO ─────────────────────────────────────── */}
       <section
         className="relative bg-[#111111] flex items-center overflow-hidden"
@@ -91,7 +90,6 @@ export default function Home() {
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/50" />
       </section>
-
       {/* ── INTRO STATS ───────────────────────────────── */}
       <section className="py-14 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 md:px-8">
@@ -124,9 +122,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── PRODUCT SHOWCASE ─────────────────────────── */}
-      <section className="py-20 bg-[#111111]">
+      <section className="py-20 bg-[#111111] border-t-[#ffffff] border-r-[#ffffff] border-b-[#ffffff] border-l-[#ffffff]">
         <div className="container mx-auto px-4 md:px-8">
           {/* Header */}
           <div className="flex items-end justify-between mb-8">
@@ -243,7 +240,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── WHY ZOMAK ────────────────────────────────── */}
       <section className="py-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 md:px-8">
@@ -292,7 +288,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── REFERENCES ───────────────────────────────── */}
       <section className="py-20 bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-8">
@@ -323,7 +318,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── GALLERY PREVIEW ──────────────────────────── */}
       <section className="py-20 bg-[#111111]">
         <div className="container mx-auto px-4 md:px-8">
@@ -358,7 +352,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── CONTACT CTA ──────────────────────────────── */}
       <section className="py-16 bg-white border-t border-gray-200">
         <div className="container mx-auto px-4 text-center">

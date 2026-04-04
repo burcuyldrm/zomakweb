@@ -14,7 +14,7 @@ export function Footer() {
               <img
                 src={logoImg as unknown as string}
                 alt="ZOMAK"
-                className="h-12 w-auto object-contain"
+                className="h-24 w-auto object-contain"
                 style={{ filter: "brightness(0) invert(1)" }}
               />
             </div>
@@ -97,7 +97,7 @@ export function Footer() {
               <li className="flex gap-3 items-center pt-1">
                 <Linkedin className="w-4 h-4 text-[#8B1A1A] flex-shrink-0" />
                 <a
-                  href="https://linkedin.com/company/zomak"
+                  href="https://www.linkedin.com/company/zomak-vin%C3%A7-platform-makina/posts/?feedView=all"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white text-sm flex items-center gap-1 transition-colors"
