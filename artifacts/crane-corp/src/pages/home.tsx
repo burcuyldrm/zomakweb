@@ -129,7 +129,7 @@ export default function Home() {
           <div className="flex items-end justify-between mb-8">
             <div>
               <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-2">ÜRÜN PORTFÖYÜMÜZ</div>
-              <h2 className="text-3xl md:text-4xl font-black text-white">ÜRÜNLERİMİZ</h2>
+              <h2 className="text-3xl md:text-4xl font-black text-[#000000]">ÜRÜNLERİMİZ</h2>
             </div>
             <Link href="/urunler">
               <Button variant="ghost" className="text-gray-400 hover:text-white font-bold text-xs tracking-widest group hover:bg-transparent border border-white/10 hover:border-[#8B1A1A]/50 rounded-sm px-4">
