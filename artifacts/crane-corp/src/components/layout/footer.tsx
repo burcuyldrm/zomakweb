@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, MessageCircle, Linkedin, ExternalLink } from "lucide-react";
-import logoImg from "@assets/7def00d3-5c30-412a-b6e3-ac4fa24678f5_1775312460306.jpeg";
+import logoImg from "@assets/Gemini_Generated_Image_s627qts627qts627_1775317181163.png";
 
 export function Footer() {
   return (
