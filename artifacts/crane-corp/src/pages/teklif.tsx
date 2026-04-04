@@ -12,12 +12,12 @@ import { CheckCircle, Upload, Phone, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const quoteSchema = z.object({
-  adSoyad: z.string().min(2, "Ad soyad en az 2 karakter olmalıdır"),
+  adSoyad: z.string().min(3, "Ad soyad en az 3 karakter olmalıdır"),
   firma: z.string().optional(),
-  telefon: z.string().min(10, "Geçerli bir telefon numarası girin"),
-  email: z.string().email("Geçerli bir e-posta adresi girin"),
-  hizmetTuru: z.string().min(1, "Hizmet türü seçiniz"),
-  sehir: z.string().min(2, "Şehir adı girin"),
+  telefon: z.string().min(10, "Geçerli bir telefon numarası giriniz"),
+  email: z.string().email("Geçerli bir e-posta adresi giriniz"),
+  hizmetTuru: z.string().min(1, "Lütfen hizmet türü seçiniz"),
+  sehir: z.string().min(2, "Şehir bilgisi giriniz"),
   aciklama: z.string().min(20, "Açıklama en az 20 karakter olmalıdır"),
 });
 
@@ -29,7 +29,7 @@ const hizmetler = [
   "Hidrolik Kurtarıcı",
   "Özel Hidrolik Makine",
   "Sepetli Platform",
-  "Diğer / Belirtmek İstiyorum",
+  "Diğer / Bilgi Almak İstiyorum",
 ];
 
 export default function Teklif() {
@@ -48,51 +48,50 @@ export default function Teklif() {
   function onSubmit(_values: QuoteValues) {
     setTimeout(() => {
       setSubmitted(true);
-      toast({ title: "Teklif talebiniz alındı!", description: "En kısa sürede sizinle iletişime geçeceğiz." });
+      toast({ title: "Talebiniz alındı", description: "Ekibimiz en kısa sürede sizinle iletişime geçecektir." });
     }, 600);
   }
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="bg-black text-white py-24 relative overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#c00]" />
+      <div className="bg-[--brand-charcoal] text-white py-20 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[--brand-red]" />
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-xs font-black text-[#c00] tracking-widest uppercase mb-3">Fiyat Talebi</div>
-          <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">Teklif Al</h1>
-          <p className="text-gray-400 text-lg max-w-2xl">
-            Projenizi bize anlatın, size en uygun çözümü ve fiyatı sunalım.
+          <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Fiyat Talebi</div>
+          <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Teklif Al</h1>
+          <p className="text-gray-400 text-base max-w-2xl">
+            Projenizi bize aktarın, size en uygun çözümü ve fiyatı sunalım.
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div className="container mx-auto px-4 md:px-8 py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
           {/* Form */}
           <div className="lg:col-span-2">
             {submitted ? (
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.97 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-black text-white p-12 text-center"
+                className="bg-gray-50 border border-gray-200 rounded-sm p-12 text-center"
               >
-                <CheckCircle className="w-20 h-20 text-[#c00] mx-auto mb-6" />
-                <h2 className="text-3xl font-black uppercase mb-3">Talebiniz Alındı!</h2>
-                <p className="text-gray-300 mb-8 max-w-md mx-auto">
-                  Teklif talebiniz başarıyla iletildi. Ekibimiz en kısa sürede sizinle iletişime geçecektir.
+                <CheckCircle className="w-16 h-16 text-[--brand-red] mx-auto mb-5" />
+                <h2 className="text-2xl font-black uppercase text-gray-900 mb-3">Talebiniz Alındı</h2>
+                <p className="text-gray-500 text-sm mb-8 max-w-md mx-auto leading-relaxed">
+                  Teklif talebiniz başarıyla iletildi. Uzman ekibimiz en kısa sürede sizinle iletişime geçecektir.
                 </p>
-                <div className="flex flex-wrap gap-4 justify-center">
+                <div className="flex flex-wrap gap-3 justify-center">
                   <a href="tel:05411290102">
-                    <Button className="bg-[#c00] hover:bg-red-700 font-black rounded-none uppercase border-none">
+                    <Button className="bg-[--brand-red] hover:bg-[--brand-red-light] font-bold rounded-sm uppercase border-none">
                       <Phone className="w-4 h-4 mr-2" />
                       Hemen Ara
                     </Button>
                   </a>
                   <Button
                     variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-black font-black rounded-none uppercase"
-                    onClick={() => { setSubmitted(false); form.reset(); }}
+                    className="border-gray-300 text-gray-700 font-bold rounded-sm uppercase hover:bg-gray-50"
+                    onClick={() => { setSubmitted(false); form.reset(); setFileName(null); }}
                   >
                     Yeni Teklif Talebi
                   </Button>
@@ -104,18 +103,18 @@ export default function Teklif() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <FormField control={form.control} name="adSoyad" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-black text-xs uppercase tracking-widest">Ad Soyad *</FormLabel>
+                        <FormLabel className="font-bold text-xs uppercase tracking-widest text-gray-600">Ad Soyad *</FormLabel>
                         <FormControl>
-                          <Input className="rounded-none border-gray-300 focus:border-[#c00]" placeholder="Ahmet Yılmaz" {...field} data-testid="input-ad-soyad" />
+                          <Input className="rounded-sm border-gray-300 focus:border-[--brand-red] h-11" placeholder="Ahmet Yılmaz" {...field} data-testid="input-ad-soyad" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )} />
                     <FormField control={form.control} name="firma" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-black text-xs uppercase tracking-widest">Firma</FormLabel>
+                        <FormLabel className="font-bold text-xs uppercase tracking-widest text-gray-600">Firma</FormLabel>
                         <FormControl>
-                          <Input className="rounded-none border-gray-300" placeholder="Firma Adı" {...field} data-testid="input-firma" />
+                          <Input className="rounded-sm border-gray-300 h-11" placeholder="Firma Adı" {...field} data-testid="input-firma" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -125,18 +124,18 @@ export default function Teklif() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <FormField control={form.control} name="telefon" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-black text-xs uppercase tracking-widest">Telefon *</FormLabel>
+                        <FormLabel className="font-bold text-xs uppercase tracking-widest text-gray-600">Telefon *</FormLabel>
                         <FormControl>
-                          <Input className="rounded-none border-gray-300" placeholder="0541 000 00 00" {...field} data-testid="input-telefon" />
+                          <Input className="rounded-sm border-gray-300 h-11" placeholder="0541 000 00 00" {...field} data-testid="input-telefon" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )} />
                     <FormField control={form.control} name="email" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-black text-xs uppercase tracking-widest">E-posta *</FormLabel>
+                        <FormLabel className="font-bold text-xs uppercase tracking-widest text-gray-600">E-posta *</FormLabel>
                         <FormControl>
-                          <Input className="rounded-none border-gray-300" type="email" placeholder="info@firma.com" {...field} data-testid="input-email" />
+                          <Input className="rounded-sm border-gray-300 h-11" type="email" placeholder="info@firma.com" {...field} data-testid="input-email" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -146,17 +145,15 @@ export default function Teklif() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <FormField control={form.control} name="hizmetTuru" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-black text-xs uppercase tracking-widest">Hizmet Türü *</FormLabel>
+                        <FormLabel className="font-bold text-xs uppercase tracking-widest text-gray-600">Ürün / Hizmet Türü *</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger className="rounded-none border-gray-300" data-testid="select-hizmet">
-                              <SelectValue placeholder="Hizmet seçin..." />
+                            <SelectTrigger className="rounded-sm border-gray-300 h-11" data-testid="select-hizmet">
+                              <SelectValue placeholder="Seçiniz..." />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            {hizmetler.map((h) => (
-                              <SelectItem key={h} value={h}>{h}</SelectItem>
-                            ))}
+                            {hizmetler.map((h) => <SelectItem key={h} value={h}>{h}</SelectItem>)}
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -164,9 +161,9 @@ export default function Teklif() {
                     )} />
                     <FormField control={form.control} name="sehir" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-black text-xs uppercase tracking-widest">Şehir *</FormLabel>
+                        <FormLabel className="font-bold text-xs uppercase tracking-widest text-gray-600">Şehir / Lokasyon *</FormLabel>
                         <FormControl>
-                          <Input className="rounded-none border-gray-300" placeholder="İzmir" {...field} data-testid="input-sehir" />
+                          <Input className="rounded-sm border-gray-300 h-11" placeholder="İzmir" {...field} data-testid="input-sehir" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -175,11 +172,11 @@ export default function Teklif() {
 
                   <FormField control={form.control} name="aciklama" render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-black text-xs uppercase tracking-widest">Proje Açıklaması *</FormLabel>
+                      <FormLabel className="font-bold text-xs uppercase tracking-widest text-gray-600">İş Açıklaması *</FormLabel>
                       <FormControl>
                         <Textarea
-                          className="rounded-none border-gray-300 min-h-[140px] resize-none focus:border-[#c00]"
-                          placeholder="Projenizi, ihtiyaçlarınızı ve talep ettiğiniz kapasiteyi kısaca açıklayın..."
+                          className="rounded-sm border-gray-300 min-h-[130px] resize-none focus:border-[--brand-red]"
+                          placeholder="Projenizi, ihtiyaçlarınızı ve talep ettiğiniz kapasiteyi kısaca aktarın..."
                           {...field}
                           data-testid="textarea-aciklama"
                         />
@@ -188,16 +185,16 @@ export default function Teklif() {
                     </FormItem>
                   )} />
 
-                  {/* File Upload UI */}
+                  {/* File Upload */}
                   <div>
-                    <label className="block font-black text-xs uppercase tracking-widest mb-2">Dosya Ekle (İsteğe Bağlı)</label>
-                    <label className="flex items-center gap-3 border-2 border-dashed border-gray-300 hover:border-[#c00] p-6 cursor-pointer transition-colors group">
-                      <Upload className="w-5 h-5 text-gray-400 group-hover:text-[#c00]" />
+                    <label className="block font-bold text-xs uppercase tracking-widest text-gray-600 mb-2">Dosya / Görsel Yükleme</label>
+                    <label className="flex items-center gap-3 border border-dashed border-gray-300 hover:border-[--brand-red] rounded-sm p-5 cursor-pointer transition-colors group">
+                      <Upload className="w-4 h-4 text-gray-400 group-hover:text-[--brand-red] flex-shrink-0" />
                       <div>
-                        <div className="text-sm font-bold text-gray-600 group-hover:text-black">
+                        <div className="text-sm font-medium text-gray-600">
                           {fileName ? fileName : "Dosya seçmek için tıklayın"}
                         </div>
-                        <div className="text-xs text-gray-400">PDF, JPG, PNG — Max 10MB</div>
+                        <div className="text-xs text-gray-400 mt-0.5">PDF, JPG, PNG — Maks. 10 MB</div>
                       </div>
                       <input
                         type="file"
@@ -210,11 +207,11 @@ export default function Teklif() {
 
                   <Button
                     type="submit"
-                    className="w-full h-14 font-black text-base bg-[#c00] hover:bg-red-700 text-white rounded-none border-none uppercase tracking-widest"
+                    className="w-full h-12 font-bold bg-[--brand-red] hover:bg-[--brand-red-light] text-white rounded-sm border-none uppercase tracking-widest"
                     disabled={form.formState.isSubmitting}
                     data-testid="button-submit"
                   >
-                    {form.formState.isSubmitting ? "GÖNDERİLİYOR..." : "TEKLİF TALEP ET"}
+                    {form.formState.isSubmitting ? "Gönderiliyor..." : "Teklif Talep Et"}
                   </Button>
                 </form>
               </Form>
@@ -222,53 +219,54 @@ export default function Teklif() {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
-            <div className="bg-black text-white p-8">
-              <h3 className="font-black uppercase text-lg mb-4 text-[#c00]">Hızlı İletişim</h3>
+          <div className="space-y-5">
+            <div className="bg-[--brand-charcoal] text-white rounded-sm p-7">
+              <div className="text-[10px] font-bold text-[--brand-red] uppercase tracking-widest mb-2">İletişim</div>
+              <h3 className="font-black uppercase mb-5">Hızlı Ulaşın</h3>
               <div className="space-y-4">
-                <a href="tel:05411290102" className="flex items-center gap-3 hover:text-[#c00] transition-colors">
-                  <Phone className="w-5 h-5 text-[#c00]" />
+                <a href="tel:05411290102" className="flex items-center gap-3 hover:text-[--brand-red] transition-colors">
+                  <Phone className="w-4 h-4 text-[--brand-red]" />
                   <div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider">Telefon</div>
-                    <div className="font-black">0541 129 01 02</div>
+                    <div className="text-[10px] text-gray-400 uppercase">Telefon</div>
+                    <div className="font-bold text-sm">0541 129 01 02</div>
                   </div>
                 </a>
                 <a
                   href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%27tan%20vin%C3%A7%2Fplatform%20hizmeti%20i%C3%A7in%20teklif%20almak%20istiyorum."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white p-4 transition-colors"
+                  className="flex items-center gap-3 bg-green-700 hover:bg-green-600 text-white p-3 rounded-sm transition-colors"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <MessageCircle className="w-4 h-4" />
                   <div>
-                    <div className="text-xs opacity-80 uppercase tracking-wider">WhatsApp</div>
-                    <div className="font-black text-sm">Hemen Yaz</div>
+                    <div className="text-[10px] text-green-200 uppercase">WhatsApp</div>
+                    <div className="font-bold text-sm">Hemen Yaz</div>
                   </div>
                 </a>
               </div>
             </div>
 
-            <div className="border-2 border-gray-200 p-8">
-              <h3 className="font-black uppercase text-sm mb-4">Neden ZOMAK?</h3>
-              <ul className="space-y-3 text-sm text-gray-600">
+            <div className="border border-gray-200 rounded-sm p-6">
+              <h3 className="font-black uppercase text-xs tracking-widest text-gray-500 mb-4">Neden ZOMAK?</h3>
+              <ul className="space-y-2.5 text-sm text-gray-600">
                 {[
-                  "Hızlı yanıt süresi",
+                  "Hızlı geri dönüş süresi",
                   "Rekabetçi fiyatlandırma",
                   "Teknik uzman destek",
-                  "Proje bazlı çözümler",
+                  "Proje odaklı çözümler",
                   "Satış sonrası servis",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[#c00] rounded-full flex-shrink-0" />
+                  <li key={i} className="flex items-center gap-2.5">
+                    <span className="w-1 h-1 bg-[--brand-red] rounded-full flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-[#c00] text-white p-6 text-center">
-              <div className="text-3xl font-black mb-1">24 Saat</div>
-              <div className="text-sm text-white/80 font-bold uppercase">İçinde Yanıt Veriyoruz</div>
+            <div className="bg-gray-50 border border-gray-200 rounded-sm p-6 text-center">
+              <div className="text-3xl font-black text-[--brand-red] mb-1">24 Saat</div>
+              <div className="text-xs font-bold uppercase tracking-widest text-gray-500">İçinde Yanıt Veriyoruz</div>
             </div>
           </div>
         </div>

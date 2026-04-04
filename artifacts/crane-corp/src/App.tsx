@@ -9,12 +9,16 @@ import { WhatsAppButton } from "@/components/whatsapp-button";
 import NotFound from "@/pages/not-found";
 
 import Home from "@/pages/home";
-import Hizmetler from "@/pages/hizmetler";
-import Filomuz from "@/pages/filomuz";
+import Urunler from "@/pages/urunler";
+import UrunDetay from "@/pages/urun-detay";
 import Referanslar from "@/pages/referanslar";
 import Galeri from "@/pages/galeri";
 import Teklif from "@/pages/teklif";
 import Contact from "@/pages/contact";
+
+import Hakkimizda from "@/pages/kurumsal/hakkimizda";
+import KalitePolitikamiz from "@/pages/kurumsal/kalite-politikamiz";
+import CevrePolitikamiz from "@/pages/kurumsal/cevre-politikamiz";
 
 import AdminLogin from "@/pages/admin/login";
 import AdminDashboard from "@/pages/admin/dashboard";
@@ -28,7 +32,7 @@ function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
-      <main className="pt-[88px] md:pt-[116px]">{children}</main>
+      <main className="pt-[88px] md:pt-[100px]">{children}</main>
       <Footer />
       <WhatsAppButton />
     </>
@@ -38,16 +42,31 @@ function PublicLayout({ children }: { children: React.ReactNode }) {
 function Router() {
   return (
     <Switch>
-      {/* Public Routes */}
+      {/* Public */}
       <Route path="/">
         <PublicLayout><Home /></PublicLayout>
       </Route>
-      <Route path="/hizmetler">
-        <PublicLayout><Hizmetler /></PublicLayout>
+
+      {/* Kurumsal */}
+      <Route path="/kurumsal/hakkimizda">
+        <PublicLayout><Hakkimizda /></PublicLayout>
       </Route>
-      <Route path="/filomuz">
-        <PublicLayout><Filomuz /></PublicLayout>
+      <Route path="/kurumsal/kalite-politikamiz">
+        <PublicLayout><KalitePolitikamiz /></PublicLayout>
       </Route>
+      <Route path="/kurumsal/cevre-politikamiz">
+        <PublicLayout><CevrePolitikamiz /></PublicLayout>
+      </Route>
+
+      {/* Ürünler */}
+      <Route path="/urunler">
+        <PublicLayout><Urunler /></PublicLayout>
+      </Route>
+      <Route path="/urunler/:slug">
+        <PublicLayout><UrunDetay /></PublicLayout>
+      </Route>
+
+      {/* Other public */}
       <Route path="/referanslar">
         <PublicLayout><Referanslar /></PublicLayout>
       </Route>
@@ -61,18 +80,17 @@ function Router() {
         <PublicLayout><Contact /></PublicLayout>
       </Route>
 
-      {/* Legacy redirects — keep old paths working */}
+      {/* Legacy redirects */}
       <Route path="/contact">
         <PublicLayout><Contact /></PublicLayout>
       </Route>
+      <Route path="/hizmetler">
+        <PublicLayout><Urunler /></PublicLayout>
+      </Route>
 
-      {/* Admin Routes */}
-      <Route path="/admin">
-        <AdminLogin />
-      </Route>
-      <Route path="/admin/login">
-        <AdminLogin />
-      </Route>
+      {/* Admin */}
+      <Route path="/admin"><AdminLogin /></Route>
+      <Route path="/admin/login"><AdminLogin /></Route>
       <Route path="/admin/dashboard">
         <AdminLayout><AdminDashboard /></AdminLayout>
       </Route>
@@ -104,9 +122,7 @@ function Router() {
 }
 
 const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: { retry: 1, staleTime: 30000 },
-  },
+  defaultOptions: { queries: { retry: 1, staleTime: 30000 } },
 });
 
 function App() {

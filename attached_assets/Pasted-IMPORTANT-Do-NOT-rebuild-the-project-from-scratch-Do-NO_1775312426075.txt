@@ -1,0 +1,542 @@
+IMPORTANT:
+
+Do NOT rebuild the project from scratch.
+Do NOT recreate the entire project.
+Do NOT delete existing files.
+
+You are working on an EXISTING Next.js project.
+Your task is to UPDATE, REFINE, and IMPROVE the current project only.
+
+Keep:
+- existing project structure
+- existing working pages
+- existing routing where possible
+- existing reusable components if useful
+- existing working logic
+
+Only:
+- update content
+- refine design system
+- reduce harsh red usage
+- integrate uploaded logo and image assets
+- improve navigation and page structure
+- add corporate pages
+- convert services structure into products structure
+- improve professionalism and visual softness
+- keep the site stable and responsive
+
+Do not restart the project.
+Do not blindly replace everything.
+Reuse current components where possible and only refine what is necessary.
+
+--------------------------------------------------
+GLOBAL DESIGN UPDATE
+--------------------------------------------------
+
+The current red color usage is too intense and visually tiring.
+
+Update the design system so that:
+
+- red is used only as an accent color
+- large red backgrounds are removed
+- the overall interface becomes more balanced, elegant, and premium
+- the website keeps its industrial and corporate character
+- the visual result feels more professional and less aggressive
+
+Use this new color strategy:
+
+- Main base colors: white, dark charcoal, black, light gray
+- Accent color: a darker and more muted red
+- Red should be used only for:
+  - primary buttons
+  - hover states
+  - small highlights
+  - dividers
+  - icons if needed
+  - active navigation items
+- Avoid using strong red as full-width section background
+- Avoid stacking too many red UI elements close to each other
+
+Design goal:
+A premium, modern, industrial, less eye-straining corporate interface.
+
+--------------------------------------------------
+VISUAL REFINEMENT
+--------------------------------------------------
+
+The UI currently feels too sharp and rigid.
+
+Update the visual system so that:
+- cards have softer border radius
+- buttons have slightly rounded corners
+- image containers feel more polished
+- major content blocks look more premium
+- spacing is cleaner and more balanced
+- the interface remains serious and industrial, not playful
+
+Do NOT overdo the rounding.
+Keep it restrained and premium.
+
+Also improve:
+- whitespace usage
+- typography contrast
+- section spacing
+- card cleanliness
+- CTA styling
+- visual consistency across pages
+
+--------------------------------------------------
+ASSET INTEGRATION REQUEST
+--------------------------------------------------
+
+I uploaded logo and image files for this project.
+
+Please integrate the uploaded assets properly into the existing project.
+
+Expected behavior:
+- use the uploaded company logo in the header/navbar
+- use the uploaded logo in the footer
+- use uploaded images in the hero section where appropriate
+- use uploaded machine/crane visuals in product sections and product detail pages
+- use uploaded gallery visuals in the gallery page
+- replace generic placeholders with uploaded real assets wherever appropriate
+
+If needed, organize assets under folders such as:
+- public/logo
+- public/images
+- public/products
+- public/gallery
+
+Please inspect available uploaded assets and assign them logically:
+- logo files -> branding
+- machine / crane photos -> hero, ürünler, ürün detay pages
+- gallery images -> galeri page
+- supporting brand visuals -> suitable supporting sections
+
+If multiple logos are uploaded:
+- use the best primary logo in header/footer
+- keep others as backup assets if useful
+
+Make sure images are:
+- responsive
+- optimized
+- not stretched
+- not distorted
+- cropped elegantly when necessary
+- visually professional
+
+Do not leave uploaded assets unused if they are appropriate.
+
+--------------------------------------------------
+GLOBAL CONTENT AND LANGUAGE UPDATE
+--------------------------------------------------
+
+All visible content must be written in more formal, corporate, and professional Turkish.
+
+Rules:
+- Do not use emojis anywhere in the UI
+- Do not use casual or playful marketing language
+- Do not use overly decorative text
+- Use serious, concise, trustworthy, institutional wording
+- Tone must reflect a real industrial company
+
+Apply this tone across:
+- homepage
+- navigation
+- product pages
+- kurumsal pages
+- references
+- gallery labels if any
+- teklif formu
+- iletişim
+- CTA texts
+
+Keep the approved slogan:
+- Zirveye Odaklan
+
+--------------------------------------------------
+NAVIGATION UPDATE
+--------------------------------------------------
+
+Update the main navbar structure to:
+
+- Ana Sayfa
+- Kurumsal
+- Ürünler
+- Referanslar
+- Galeri
+- İletişim
+- Teklif Al
+
+Remove:
+- Filomuz from navbar
+- Hizmetler as a top-level nav item
+
+Add:
+- Kurumsal as top-level item
+- Ürünler as top-level item
+
+Kurumsal dropdown/submenu must include:
+- Hakkımızda
+- Kalite Politikamız
+- Çevre Politikamız
+
+Ürünler dropdown/submenu must include:
+- Mobil Katlanır Vinç
+- Hidrolik Gözlüklü Kurtarıcı
+- Hidrolik Kurtarıcı
+- Özel Hidrolik Makineler
+- Sepetli Platform
+
+The dropdowns must:
+- look modern and premium
+- work on desktop
+- work on mobile
+- feel polished and usable
+- use restrained accent styling
+
+Header requirements:
+- use logo properly
+- keep clean desktop navbar
+- ensure mobile menu includes Kurumsal and Ürünler submenus
+- hover and active states should use muted red accent only
+
+--------------------------------------------------
+SITE STRUCTURE UPDATE
+--------------------------------------------------
+
+Update the site pages to:
+
+- /
+- /kurumsal/hakkimizda
+- /kurumsal/kalite-politikamiz
+- /kurumsal/cevre-politikamiz
+- /urunler
+- /urunler/[slug]
+- /referanslar
+- /galeri
+- /iletisim
+- /teklif
+
+If an existing “hizmetler” page exists, carefully refactor it into “urunler” instead of keeping both active unnecessarily.
+If needed, preserve compatibility safely, but the main active structure must use “Ürünler”.
+
+Remove blog if it exists.
+
+--------------------------------------------------
+PRODUCTS STRUCTURE UPDATE
+--------------------------------------------------
+
+Transform the old “Hizmetler” structure into “Ürünler”.
+
+Requirements:
+- create a proper Ürünler page
+- list all products clearly
+- each product must have its own dedicated detail page
+- when a user clicks a product card or title, they must be routed to the relevant detail page
+
+Suggested routing:
+- /urunler
+- /urunler/[slug]
+
+Each product detail page should include:
+- product title
+- formal short introduction
+- detailed description
+- usage areas
+- visual/image area
+- CTA for teklif
+- CTA for WhatsApp
+- optional technical information section if suitable
+
+Use formal, industrial, reliable Turkish copy.
+
+--------------------------------------------------
+DYNAMIC PRODUCT SHOWCASE UPDATE
+--------------------------------------------------
+
+The current side-by-side product information section must become more dynamic and refined.
+
+Requirements:
+- make this section data-driven
+- support dynamic switching between products
+- selecting another product should update image/text properly
+- use smooth transitions
+- keep the interaction professional and restrained
+- do not use emojis in icons or labels
+- use icons minimally, and only if they look corporate/industrial
+
+This dynamic section must:
+- have softer corners
+- feel less rigid
+- remain strong and corporate
+- be responsive
+- integrate uploaded visuals where available
+
+--------------------------------------------------
+HOME PAGE UPDATE
+--------------------------------------------------
+
+Update homepage to include:
+
+- Hero with slogan: “Zirveye Odaklan”
+- CTA buttons:
+  - Teklif Al
+  - WhatsApp
+- Company intro in formal Turkish
+- Ürünler preview
+- Dynamic featured product area
+- Trust / why choose us section
+- References preview
+- Gallery preview
+- Contact CTA
+- Footer with logo integration
+
+Hero rules:
+- keep bold and strong
+- use uploaded hero image if suitable
+- avoid heavy red overlay
+- use dark neutral overlay or subtle charcoal overlay instead
+
+CTA sections:
+- remain conversion-focused
+- look elegant and not overwhelming
+
+--------------------------------------------------
+KURUMSAL PAGES
+--------------------------------------------------
+
+Create and structure these pages:
+
+- /kurumsal/hakkimizda
+- /kurumsal/kalite-politikamiz
+- /kurumsal/cevre-politikamiz
+
+Each page must contain professionally written Turkish corporate placeholder copy suitable for a real industrial firm.
+
+Hakkımızda page should cover:
+- company identity
+- vision
+- service understanding
+- reliability
+- professionalism
+
+Kalite Politikamız page should cover:
+- quality-driven approach
+- customer satisfaction
+- continuous improvement
+- discipline and standards
+
+Çevre Politikamız page should cover:
+- environmental awareness
+- sustainable approach
+- responsible service/production mindset
+- legal and ethical sensitivity
+
+All texts must be formal and institutional.
+
+--------------------------------------------------
+REFERENCES PAGE
+--------------------------------------------------
+
+Keep/create a professional references page.
+
+Show:
+- Pekgöz Vinç
+- Fındık Vinç
+- Bergama Vinç
+- Kuşadası Vinç
+
+Use clean corporate reference cards.
+If logos are not available, keep them name-based but future-logo-ready.
+
+Add a formal introduction text above the section.
+
+--------------------------------------------------
+GALLERY PAGE UPDATE
+--------------------------------------------------
+
+Update the gallery page to be cleaner and more minimal.
+
+Remove category/group labels such as:
+- Şantiye
+- Sanayi
+- Liman
+
+New gallery behavior:
+- display images in a professional grid
+- no unnecessary category tabs or labels
+- maintain industrial premium presentation
+- support uploaded real image replacement
+- use cleaner spacing
+- use softer but restrained containers if needed
+
+--------------------------------------------------
+QUOTE PAGE
+--------------------------------------------------
+
+Keep or update the teklif page with a professional form.
+
+Form fields:
+- Ad Soyad
+- Firma
+- Telefon
+- E-posta
+- Hizmet Türü
+- Şehir / Lokasyon
+- İş Açıklaması
+- Dosya / Görsel Yükleme (UI if backend not connected)
+
+Use:
+- React Hook Form
+- Zod validation
+
+Validation must be:
+- clean
+- realistic
+- professional
+- inline and user-friendly
+
+Also include:
+- quick WhatsApp CTA
+- phone block
+- email block
+
+Buttons and form areas should use softer corners and refined visual styling.
+
+--------------------------------------------------
+WHATSAPP BUTTON
+--------------------------------------------------
+
+Add or preserve a floating WhatsApp button.
+
+Default message:
+“Merhaba, ZOMAK’tan vinç/platform hizmeti için teklif almak istiyorum.”
+
+Use the company number in WhatsApp-compatible format.
+
+Also include WhatsApp CTA buttons in:
+- hero
+- ürün detay pages
+- teklif page
+- iletişim page
+
+--------------------------------------------------
+CONTACT PAGE UPDATE
+--------------------------------------------------
+
+Update the contact page to include:
+
+- phone
+- e-mail
+- address
+- responsive map
+- WhatsApp CTA
+- social media section
+- LinkedIn section
+
+The contact page must include:
+- company phone
+- company email
+- address in text form
+- Google Maps embed
+- social media links block
+- LinkedIn link block
+
+If exact social URLs are not yet available:
+- use clean placeholders
+- make them easy to update later
+
+The map container should:
+- be responsive
+- visually integrated
+- use softer corners
+- match the updated premium UI
+
+Keep the address visible in text form above or beside the map.
+
+--------------------------------------------------
+MAP REQUIREMENT
+--------------------------------------------------
+
+Keep the address as text and also show the location through an embedded map.
+
+Use a responsive iframe block with polished styling.
+
+Example map logic can remain placeholder if needed, but implement it in a reusable, visually refined way.
+
+--------------------------------------------------
+BUTTONS / UI ELEMENTS
+--------------------------------------------------
+
+Update buttons and interactive elements so they are:
+- slightly softer in corners
+- more refined in shadow/border treatment
+- still strong CTAs
+- less visually aggressive
+
+Primary actions:
+- Teklif Al
+- İletişime Geç
+- WhatsApp
+
+Footer requirements:
+- integrate logo
+- use dark premium appearance
+- keep red as minimal accent only
+
+--------------------------------------------------
+RESPONSIVE REQUIREMENTS
+--------------------------------------------------
+
+Ensure all updates remain fully responsive:
+- navbar dropdowns and submenus work on mobile
+- products page and product detail pages are mobile-friendly
+- gallery grid scales cleanly
+- contact page and map remain responsive
+- softer corners still look strong across all breakpoints
+- buttons and forms remain easy to use on mobile
+
+--------------------------------------------------
+DO NOT
+--------------------------------------------------
+
+- do not rebuild the entire project
+- do not delete existing files
+- do not remove useful working sections unnecessarily
+- do not use emojis anywhere
+- do not keep overly bright red backgrounds
+- do not keep sharp rigid corners in major UI blocks
+- do not leave Filomuz in navbar
+- do not leave Hizmetler as main menu label
+- do not keep gallery category labels for Şantiye, Sanayi, Liman
+- do not ignore uploaded assets
+- do not break responsiveness
+- do not break current working functionality unless necessary for proper refactor
+
+--------------------------------------------------
+FINAL TASK
+--------------------------------------------------
+
+Update the existing website only.
+
+Main goals:
+1. Improve color balance and reduce harsh red usage
+2. Integrate uploaded logo and image assets
+3. Rewrite visible content into more formal Turkish
+4. Restructure navigation
+5. Add Kurumsal pages
+6. Convert Hizmetler into Ürünler
+7. Create product dropdown and separate product detail pages
+8. Simplify gallery
+9. Add social media and LinkedIn to contact page
+10. Soften corners and improve visual refinement
+11. Improve the dynamic product area
+
+After completing the update:
+- ensure all routes work
+- ensure dropdown menus work
+- ensure product detail navigation works
+- ensure uploaded assets are used properly
+- ensure the UI is more polished and less harsh
+- ensure the project remains stable, responsive, and professional

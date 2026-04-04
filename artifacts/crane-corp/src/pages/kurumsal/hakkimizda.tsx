@@ -1,0 +1,114 @@
+import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import craneImg from "@assets/e8d0929a-4828-4358-80ce-dc6d91d4660f_1775312450764.jpeg";
+
+const values = [
+  { title: "Güvenilirlik", desc: "Her projede söz verilen kalite ve zamanlamaya bağlılık." },
+  { title: "Mühendislik", desc: "Teknik uzmanlık ve inovatif tasarım yaklaşımı." },
+  { title: "Müşteri Odaklılık", desc: "İhtiyaca özel çözümler ve süregelen destek." },
+  { title: "Kalite Standartları", desc: "Uluslararası kalite normlarına uygun üretim süreçleri." },
+];
+
+export default function Hakkimizda() {
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="bg-[--brand-charcoal] text-white py-20 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[--brand-red]" />
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-xs font-bold text-[--brand-red] tracking-widest uppercase mb-2">Kurumsal</div>
+          <h1 className="text-4xl md:text-5xl font-black uppercase text-white mb-3">Hakkımızda</h1>
+          <p className="text-gray-400 text-base max-w-2xl">
+            Zomak Vinç Platform ve Makina Sanayi'nin kuruluş hikâyesi, vizyonu ve değerleri.
+          </p>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="prose prose-gray max-w-none">
+              <h2 className="text-2xl font-black uppercase text-gray-900 mb-5">Şirket Kimliğimiz</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Zomak Vinç Platform ve Makina Sanayi, 2024 yılında İzmir'de kurulmuş olup vinç, kurtarıcı ve platform ekipmanları tasarımı ile üretimi konusunda hizmet vermektedir. Şirketimiz, endüstriyel ihtiyaçlara yönelik güvenilir, dayanıklı ve yüksek performanslı ekipmanlar üretmekte; Türkiye'nin önde gelen iş makineleri ve ağır araç operatörlerine çözüm ortağı olmaktadır.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Teknik bilgi birikimimiz ve deneyimli mühendislik kadromuz ile her ölçekteki projeye uygun ekipman sunabilme kapasitesine sahibiz. Standart ürün portföyümüzün yanı sıra projeye özel tasarım ve üretim hizmetleri de sunmaktayız.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                ZOMAK olarak yurt içi pazardaki hızlı büyümemizin yanı sıra uluslararası arenada da güvenilir bir tedarikçi konumuna ulaşmayı hedefliyoruz.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="rounded-sm overflow-hidden shadow-md"
+          >
+            <img
+              src={craneImg as unknown as string}
+              alt="ZOMAK Vinç"
+              className="w-full h-[380px] object-cover"
+            />
+          </motion.div>
+        </div>
+
+        {/* Vision & Mission */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
+            <h3 className="font-black uppercase text-sm tracking-widest text-[--brand-red] mb-3">Vizyonumuz</h3>
+            <p className="text-gray-700 leading-relaxed text-sm">
+              Türkiye'nin en güvenilir vinç ve platform ekipmanları üreticisi olarak uluslararası standartlarda mühendislik çözümleri sunmak; ihracat ağımızı genişleterek küresel ölçekte tanınan bir marka olmak.
+            </p>
+          </div>
+          <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
+            <h3 className="font-black uppercase text-sm tracking-widest text-[--brand-red] mb-3">Misyonumuz</h3>
+            <p className="text-gray-700 leading-relaxed text-sm">
+              Müşterilerimizin operasyonel verimliliğini artıracak, güvenli ve uzun ömürlü ekipmanlar tasarlamak; satış öncesinden satış sonrasına kadar kesintisiz teknik destek ile iş ortaklarımızın güvenini kazanmak.
+            </p>
+          </div>
+        </div>
+
+        {/* Values */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-black uppercase text-gray-900 mb-8">Temel Değerlerimiz</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {values.map((v, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="bg-white border border-gray-200 rounded-sm p-6 hover:border-[--brand-red] transition-colors"
+              >
+                <div className="w-6 h-0.5 bg-[--brand-red] mb-4" />
+                <h4 className="font-black uppercase text-sm text-gray-900 mb-2">{v.title}</h4>
+                <p className="text-gray-500 text-xs leading-relaxed">{v.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-3">
+          <Link href="/urunler">
+            <Button className="bg-[--brand-red] hover:bg-[--brand-red-light] text-white font-bold rounded-sm border-none uppercase">
+              Ürünlerimiz
+            </Button>
+          </Link>
+          <Link href="/iletisim">
+            <Button variant="outline" className="border-gray-300 text-gray-800 font-bold rounded-sm uppercase hover:bg-gray-50">
+              İletişim
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

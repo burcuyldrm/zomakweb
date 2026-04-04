@@ -12,11 +12,10 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp ile iletişime geç"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-4 py-3 shadow-xl transition-all duration-300 group"
-      style={{ borderRadius: "2px" }}
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-green-700 hover:bg-green-600 text-white px-4 py-3 shadow-lg transition-all duration-300 rounded-sm group"
     >
-      <MessageCircle className="w-6 h-6 flex-shrink-0" />
-      <span className="text-sm font-bold hidden group-hover:inline whitespace-nowrap">
+      <MessageCircle className="w-5 h-5 flex-shrink-0" />
+      <span className="text-xs font-bold hidden group-hover:inline whitespace-nowrap uppercase tracking-wide">
         WhatsApp ile Yaz
       </span>
     </a>

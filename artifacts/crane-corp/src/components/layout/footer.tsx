@@ -1,45 +1,42 @@
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Linkedin, ExternalLink } from "lucide-react";
+import logoImg from "@assets/7def00d3-5c30-412a-b6e3-ac4fa24678f5_1775312460306.jpeg";
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white pt-16 pb-8 border-t-4 border-[#c00]">
+    <footer className="bg-[--brand-charcoal] text-white pt-16 pb-8 border-t-2 border-[--brand-red]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-[#c00] flex items-center justify-center font-black text-2xl text-white">Z</div>
-              <div>
-                <div className="text-xl font-black tracking-widest">ZOMAK</div>
-                <div className="text-[10px] text-[#c00] font-semibold tracking-widest uppercase">Vinç Platform Makina</div>
+            <div className="mb-5">
+              <div className="inline-block bg-white px-4 py-2 rounded-sm">
+                <img src={logoImg} alt="ZOMAK" className="h-10 w-auto object-contain" />
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Zomak Vinç Platform ve Makina Sanayi olarak Türkiye ve dünya genelinde güvenilir kaldırma ve platform çözümleri sunuyoruz.
+              Zomak Vinç Platform ve Makina Sanayi, Türkiye ve dünya genelinde kaldırma, kurtarıcı ve platform ekipmanları alanında güvenilir çözümler sunar.
             </p>
-            <div className="text-xl font-black text-[#c00] tracking-wider">Zirveye Odaklan</div>
+            <div className="text-sm font-bold text-[--brand-red] tracking-wider">Zirveye Odaklan</div>
           </div>
 
-          {/* Quick Links */}
+          {/* Kurumsal + Hızlı Bağlantılar */}
           <div>
-            <h4 className="font-black uppercase tracking-widest text-sm mb-5 relative inline-block">
-              Hızlı Bağlantılar
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#c00]" />
+            <h4 className="font-bold uppercase tracking-widest text-xs text-gray-400 mb-4 pb-2 border-b border-white/10">
+              Kurumsal
             </h4>
-            <ul className="space-y-2 mt-2">
+            <ul className="space-y-2 mb-6">
               {[
-                { href: "/", label: "Ana Sayfa" },
-                { href: "/hizmetler", label: "Hizmetler" },
-                { href: "/filomuz", label: "Filomuz" },
+                { href: "/kurumsal/hakkimizda", label: "Hakkımızda" },
+                { href: "/kurumsal/kalite-politikamiz", label: "Kalite Politikamız" },
+                { href: "/kurumsal/cevre-politikamiz", label: "Çevre Politikamız" },
                 { href: "/referanslar", label: "Referanslar" },
                 { href: "/galeri", label: "Galeri" },
-                { href: "/iletisim", label: "İletişim" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href}>
-                    <span className="text-gray-400 hover:text-[#c00] transition-colors cursor-pointer text-sm">
+                    <span className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm">
                       {label}
                     </span>
                   </Link>
@@ -48,68 +45,83 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Ürünler */}
           <div>
-            <h4 className="font-black uppercase tracking-widest text-sm mb-5 relative inline-block">
-              Hizmetlerimiz
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#c00]" />
+            <h4 className="font-bold uppercase tracking-widest text-xs text-gray-400 mb-4 pb-2 border-b border-white/10">
+              Ürünler
             </h4>
-            <ul className="space-y-2 mt-2">
+            <ul className="space-y-2">
               {[
-                "Mobil Katlanır Vinç",
-                "Hidrolik Gözlüklü Kurtarıcı",
-                "Hidrolik Kurtarıcı",
-                "Özel Hidrolik Makineler",
-                "Sepetli Platform",
-              ].map((s) => (
-                <li key={s}>
-                  <Link href="/hizmetler">
-                    <span className="text-gray-400 hover:text-[#c00] transition-colors cursor-pointer text-sm">{s}</span>
+                { href: "/urunler/mobil-katlanir-vinc", label: "Mobil Katlanır Vinç" },
+                { href: "/urunler/hidrolik-gozluklu-kurtarici", label: "Hidrolik Gözlüklü Kurtarıcı" },
+                { href: "/urunler/hidrolik-kurtarici", label: "Hidrolik Kurtarıcı" },
+                { href: "/urunler/ozel-hidrolik-makineler", label: "Özel Hidrolik Makineler" },
+                { href: "/urunler/sepetli-platform", label: "Sepetli Platform" },
+              ].map(({ href, label }) => (
+                <li key={href}>
+                  <Link href={href}>
+                    <span className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm">{label}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* İletişim */}
           <div>
-            <h4 className="font-black uppercase tracking-widest text-sm mb-5 relative inline-block">
+            <h4 className="font-bold uppercase tracking-widest text-xs text-gray-400 mb-4 pb-2 border-b border-white/10">
               İletişim
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#c00]" />
             </h4>
-            <ul className="space-y-4 mt-2">
+            <ul className="space-y-3">
               <li className="flex gap-3 items-start">
-                <MapPin className="w-4 h-4 text-[#c00] flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400 text-sm">Atatürk Mahallesi 4. Cadde No:54 Oğlananası-Menderes / İzmir</span>
+                <MapPin className="w-4 h-4 text-[--brand-red] flex-shrink-0 mt-0.5" />
+                <span className="text-gray-400 text-sm leading-relaxed">
+                  Atatürk Mahallesi 4. Cadde No:54<br />Oğlananası-Menderes / İzmir
+                </span>
               </li>
               <li className="flex gap-3 items-center">
-                <Phone className="w-4 h-4 text-[#c00] flex-shrink-0" />
-                <a href="tel:05411290102" className="text-gray-400 hover:text-white text-sm">0541 129 01 02</a>
+                <Phone className="w-4 h-4 text-[--brand-red] flex-shrink-0" />
+                <a href="tel:05411290102" className="text-gray-400 hover:text-white text-sm transition-colors">
+                  0541 129 01 02
+                </a>
               </li>
               <li className="flex gap-3 items-center">
-                <Mail className="w-4 h-4 text-[#c00] flex-shrink-0" />
-                <a href="mailto:info@zomak.com.tr" className="text-gray-400 hover:text-white text-sm">info@zomak.com.tr</a>
+                <Mail className="w-4 h-4 text-[--brand-red] flex-shrink-0" />
+                <a href="mailto:info@zomak.com.tr" className="text-gray-400 hover:text-white text-sm transition-colors">
+                  info@zomak.com.tr
+                </a>
               </li>
-              <li>
+              <li className="flex gap-3 items-center pt-1">
+                <Linkedin className="w-4 h-4 text-[--brand-red] flex-shrink-0" />
+                <a
+                  href="https://linkedin.com/company/zomak"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white text-sm flex items-center gap-1 transition-colors"
+                >
+                  LinkedIn <ExternalLink className="w-3 h-3" />
+                </a>
+              </li>
+              <li className="pt-2">
                 <a
                   href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%27tan%20vin%C3%A7%2Fplatform%20hizmeti%20i%C3%A7in%20teklif%20almak%20istiyorum."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white text-sm font-bold px-4 py-2 transition-colors"
+                  className="inline-flex items-center gap-2 bg-green-700 hover:bg-green-600 text-white text-xs font-bold px-4 py-2 rounded-sm transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4" />
-                  WhatsApp ile Yaz
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  WhatsApp
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-500">
           <p>&copy; {new Date().getFullYear()} Zomak Vinç Platform ve Makina Sanayi. Tüm hakları saklıdır.</p>
-          <div className="flex gap-4">
-            <Link href="/admin"><span className="hover:text-[#c00] cursor-pointer">Admin</span></Link>
-          </div>
+          <Link href="/admin">
+            <span className="hover:text-gray-300 cursor-pointer transition-colors">Admin</span>
+          </Link>
         </div>
       </div>
     </footer>
