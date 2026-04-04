@@ -168,7 +168,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 flex flex-col">
       {/* Top contact strip */}
-      <div className="bg-[#0D0D0D] text-white/60 py-1.5 px-4 hidden md:flex items-center justify-between border-b border-white/10 text-[18px]">
+      <div className="bg-[#0D0D0D] text-white/60 py-1.5 px-4 hidden md:flex items-center justify-between border-b border-white/10 text-[13px]">
         <span className="flex items-center gap-2">
           <svg
             className="w-3 h-3 text-[#8B1A1A]"
