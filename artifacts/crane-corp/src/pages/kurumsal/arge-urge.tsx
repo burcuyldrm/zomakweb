@@ -1,14 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Wrench, Lightbulb } from "lucide-react";
+import { Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const argeAreas = [
-  {
-    icon: Wrench,
-    title: "Üretim Geliştirme (Ür-Ge)",
-    desc: "Mevcut ürün ailesinin sürekli iyileştirilmesi; malzeme seçiminden kaynak teknolojilerine, yüzey işlemlerinden montaj süreçlerine kadar her aşamada verimlilik ve kalite artışı hedeflenmektedir.",
-  },
   {
     icon: Lightbulb,
     title: "Özel Proje & İnovasyon",
