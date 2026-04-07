@@ -44,7 +44,6 @@ export default function Contact() {
           </p>
         </div>
       </div>
-
       {/* Main content: info boxes left, map right */}
       <section className="py-14">
         <div className="container mx-auto px-4 md:px-8">
@@ -76,7 +75,7 @@ export default function Contact() {
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-sm font-medium text-gray-700 whitespace-pre-line leading-relaxed">
+                      <p className="font-medium text-gray-700 whitespace-pre-line text-[16px] text-center">
                         {item.value}
                       </p>
                     )}
