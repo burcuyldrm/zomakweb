@@ -224,54 +224,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ── WHY ZOMAK ────────────────────────────────── */}
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-3">TERCİH SEBEBİMİZ</div>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-8">
-                Neden ZOMAK?
-              </h2>
-              <div className="space-y-4">
-                {trustPoints.map((p, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -15 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="flex items-center gap-4"
-                  >
-                    <CheckCircle className="w-5 h-5 text-[#8B1A1A] flex-shrink-0" />
-                    <span className="text-gray-700 font-medium text-sm">{p}</span>
-                  </motion.div>
-                ))}
-              </div>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <Link href="/teklif">
-                  <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold px-7 h-11 rounded-sm border-none">
-                    TEKLİF AL
-                  </Button>
-                </Link>
-                <Link href="/kurumsal/hakkimizda">
-                  <Button variant="outline" className="border-gray-300 text-gray-800 font-bold px-7 h-11 rounded-sm hover:bg-gray-50">
-                    Hakkımızda
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            <div className="relative rounded-sm overflow-hidden shadow-md">
-              <img
-                src={truckImg as unknown as string}
-                alt="ZOMAK Ekipmanı"
-                className="w-full h-[380px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-            </div>
-          </div>
-        </div>
-      </section>
       {/* ── REFERENCES ───────────────────────────────── */}
       <section className="py-20 bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-8">
