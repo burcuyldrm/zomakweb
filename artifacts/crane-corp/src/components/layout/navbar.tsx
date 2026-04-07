@@ -164,7 +164,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 flex flex-col">
       {/* Main nav */}
-      <nav className="bg-[#111111] px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A]/50 shadow-lg text-[12px]">
+      <nav className="bg-[#2D2D2D] px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A]/50 shadow-lg text-[12px]">
         {/* Logo */}
         <Link href="/">
           <div className="cursor-pointer flex items-center">
@@ -267,7 +267,7 @@ export function Navbar() {
       </nav>
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#111111] border-t border-white/10 flex flex-col">
+        <div className="md:hidden bg-[#2D2D2D] border-t border-white/10 flex flex-col">
           <Link href="/" onClick={() => setMobileOpen(false)}>
             <span className="block px-6 py-3 text-sm font-bold border-b border-white/5 text-white/80 hover:text-white">
               ANA SAYFA
