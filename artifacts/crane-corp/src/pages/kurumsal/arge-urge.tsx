@@ -57,9 +57,6 @@ export default function ArgeUrge() {
           <p className="text-gray-700 leading-relaxed mb-5">
             ZOMAK Vinç Platform ve Makina Sanayi olarak araştırma-geliştirme faaliyetleri; tasarım aşamasından seri üretime, malzeme seçiminden sistem testlerine kadar tüm üretim sürecini kapsayan bütünleşik bir yapıda yürütülmektedir.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-5">
-            Mühendislik ekibimiz, sektörün değişen ihtiyaçlarını ve teknolojik gelişmeleri yakından takip ederek ürün portfolyomuzu sürekli güncel tutmaktadır. Geliştirilen her yeni çözüm; saha koşullarında güvenilirlik, operatör konforu ve uzun servis ömrü kriterleri esas alınarak tasarlanmaktadır.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
