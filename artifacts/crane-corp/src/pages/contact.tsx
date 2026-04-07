@@ -100,7 +100,7 @@ export default function Contact() {
 
             {/* RIGHT — map (smaller) */}
             <div className="flex flex-col">
-              <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Harita</div>
+              <div className="font-bold text-[#8B1A1A] tracking-widest uppercase mb-2 text-[18px]">Harita</div>
               <h2 className="text-2xl font-black uppercase text-gray-900 mb-4">Konumumuz</h2>
               <div className="w-full rounded-sm overflow-hidden border border-gray-200 shadow-sm flex-1">
                 <iframe
