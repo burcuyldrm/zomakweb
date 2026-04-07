@@ -175,7 +175,7 @@ export function Navbar() {
             <img
               src={logoImg as unknown as string}
               alt="ZOMAK"
-              className="h-24 w-auto object-contain"
+              className="h-28 w-auto object-contain"
               style={{ filter: "brightness(0) invert(1)" }}
             />
           </div>
