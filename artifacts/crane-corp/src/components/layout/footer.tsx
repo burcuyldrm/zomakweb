@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, MessageCircle, Linkedin, ExternalLink } from "lucide-react";
-import logoImg from "@assets/logozomak_1775571243883.png";
+import logoImg from "@assets/ZOMAKLOGO_1775573024840.png";
 
 export function Footer() {
   return (
@@ -21,7 +21,6 @@ export function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Zomak Vinç Platform ve Makina Sanayi, Türkiye ve dünya genelinde kaldırma, kurtarıcı ve platform ekipmanları alanında güvenilir çözümler sunar.
             </p>
-            <div className="text-sm font-bold text-[#8B1A1A] tracking-wider">Zirveye Odaklan</div>
           </div>
 
           {/* Kurumsal + Hızlı Bağlantılar */}
