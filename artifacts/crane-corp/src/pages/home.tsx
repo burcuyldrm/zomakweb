@@ -102,7 +102,7 @@ export default function Home() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 Zomak Vinç Platform ve Makina Sanayi, 2024 yılında İzmir'de kurulmuş olup mobil katlanır vinç, hidrolik kurtarıcı ve sepetli platform ekipmanları alanında üretim ve hizmet vermektedir.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-justify">
                 Mühendislik odaklı yaklaşımımız, kaliteli üretim süreçlerimiz ve müşteri memnuniyetine olan bağlılığımız ile Türkiye'nin önde gelen endüstriyel firmalarına güvenilir çözümler sunmaktayız.
               </p>
             </div>
