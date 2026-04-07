@@ -7,15 +7,9 @@ import logoImg from "@assets/logozomak_1775571243883.png";
 
 const products = [
   { href: "/urunler/mobil-katlanir-vinc", label: "Mobil Katlanır Vinç" },
-  {
-    href: "/urunler/hidrolik-gozluklu-kurtarici",
-    label: "Hidrolik Gözlüklü Kurtarıcı",
-  },
+  { href: "/urunler/hidrolik-gozluklu-kurtarici", label: "Hidrolik Gözlüklü Kurtarıcı" },
   { href: "/urunler/hidrolik-kurtarici", label: "Hidrolik Kurtarıcı" },
-  {
-    href: "/urunler/ozel-hidrolik-makineler",
-    label: "Özel Hidrolik Makineler",
-  },
+  { href: "/urunler/ozel-hidrolik-makineler", label: "Özel Hidrolik Makineler" },
   { href: "/urunler/sepetli-platform", label: "Sepetli Platform" },
 ];
 
@@ -42,8 +36,7 @@ function DropdownMenu({
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node))
-        setOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -58,12 +51,10 @@ function DropdownMenu({
     >
       <div className="flex items-center gap-0.5">
         <Link href={href}>
-          <span
-            className={cn(
-              "cursor-pointer text-sm font-bold tracking-wide transition-colors hover:text-[#8B1A1A]",
-              isActive ? "text-[#8B1A1A]" : "text-gray-800",
-            )}
-          >
+          <span className={cn(
+            "cursor-pointer text-sm font-bold tracking-wide transition-colors hover:text-[#8B1A1A]",
+            isActive ? "text-[#8B1A1A]" : "text-gray-800",
+          )}>
             {label}
           </span>
         </Link>
@@ -75,12 +66,7 @@ function DropdownMenu({
           )}
           onClick={() => setOpen(!open)}
         >
-          <ChevronDown
-            className={cn(
-              "w-3.5 h-3.5 transition-transform duration-200",
-              open && "rotate-180",
-            )}
-          />
+          <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-200", open && "rotate-180")} />
         </button>
       </div>
 
@@ -123,17 +109,10 @@ function MobileAccordion({
             </span>
           </Link>
         ) : (
-          <span className="flex-1 px-6 py-3 text-sm font-bold text-gray-800">
-            {label}
-          </span>
+          <span className="flex-1 px-6 py-3 text-sm font-bold text-gray-800">{label}</span>
         )}
-        <button
-          className="px-4 py-3 text-gray-500 hover:text-[#8B1A1A]"
-          onClick={() => setOpen(!open)}
-        >
-          <ChevronDown
-            className={cn("w-4 h-4 transition-transform", open && "rotate-180")}
-          />
+        <button className="px-4 py-3 text-gray-500 hover:text-[#8B1A1A]" onClick={() => setOpen(!open)}>
+          <ChevronDown className={cn("w-4 h-4 transition-transform", open && "rotate-180")} />
         </button>
       </div>
       {open && (
@@ -154,109 +133,102 @@ function MobileAccordion({
 export function Navbar() {
   const [location] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
-
   const isActive = (prefix: string) => location.startsWith(prefix);
 
   return (
-    <header className="fixed top-0 w-full z-50 flex flex-col">
-      {/* Main nav */}
-      <nav className="bg-white px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A] shadow-sm text-[12px]">
-        {/* Logo */}
-        <Link href="/">
-          <div className="cursor-pointer flex items-center">
-            <img
-              src={logoImg as unknown as string}
-              alt="ZOMAK"
-              className="h-28 w-auto object-contain"
-            />
-          </div>
-        </Link>
-
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-7 text-sm font-bold tracking-wide">
+    <header className="fixed top-0 w-full z-50">
+      {/* ── MAIN NAV — fixed 90px height, overflow visible for logo ── */}
+      <nav
+        className="bg-white border-b-2 border-[#8B1A1A] shadow-sm"
+        style={{ height: "90px", overflow: "visible" }}
+      >
+        <div
+          className="h-full px-4 md:px-10 flex items-center justify-between"
+          style={{ overflow: "visible" }}
+        >
+          {/* Logo — overflows above navbar */}
           <Link href="/">
-            <span
-              className={cn(
+            <div className="cursor-pointer flex-shrink-0" style={{ overflow: "visible" }}>
+              <img
+                src={logoImg as unknown as string}
+                alt="ZOMAK"
+                style={{
+                  height: "120px",
+                  width: "auto",
+                  objectFit: "contain",
+                  marginTop: "-15px",
+                  display: "block",
+                }}
+              />
+            </div>
+          </Link>
+
+          {/* Desktop — centered nav links */}
+          <div className="hidden md:flex items-center gap-7 text-sm font-bold tracking-wide absolute left-1/2 -translate-x-1/2">
+            <Link href="/">
+              <span className={cn(
                 "cursor-pointer transition-colors hover:text-[#8B1A1A]",
                 location === "/" ? "text-[#8B1A1A]" : "text-gray-800",
-              )}
-            >
-              ANA SAYFA
-            </span>
-          </Link>
+              )}>
+                ANA SAYFA
+              </span>
+            </Link>
 
-          <DropdownMenu
-            label="KURUMSAL"
-            href="/kurumsal/hakkimizda"
-            items={kurumsal}
-            isActive={isActive("/kurumsal")}
-          />
+            <DropdownMenu label="KURUMSAL" href="/kurumsal/hakkimizda" items={kurumsal} isActive={isActive("/kurumsal")} />
+            <DropdownMenu label="ÜRÜNLER" href="/urunler" items={products} isActive={isActive("/urunler")} />
 
-          <DropdownMenu
-            label="ÜRÜNLER"
-            href="/urunler"
-            items={products}
-            isActive={isActive("/urunler")}
-          />
-
-          <Link href="/referanslar">
-            <span
-              className={cn(
+            <Link href="/referanslar">
+              <span className={cn(
                 "cursor-pointer transition-colors hover:text-[#8B1A1A]",
                 isActive("/referanslar") ? "text-[#8B1A1A]" : "text-gray-800",
-              )}
-            >
-              REFERANSLAR
-            </span>
-          </Link>
+              )}>
+                REFERANSLAR
+              </span>
+            </Link>
 
-          <Link href="/galeri">
-            <span
-              className={cn(
+            <Link href="/galeri">
+              <span className={cn(
                 "cursor-pointer transition-colors hover:text-[#8B1A1A]",
                 isActive("/galeri") ? "text-[#8B1A1A]" : "text-gray-800",
-              )}
-            >
-              GALERİ
-            </span>
-          </Link>
+              )}>
+                GALERİ
+              </span>
+            </Link>
 
-          <Link href="/iletisim">
-            <span
-              className={cn(
+            <Link href="/iletisim">
+              <span className={cn(
                 "cursor-pointer transition-colors hover:text-[#8B1A1A]",
                 isActive("/iletisim") ? "text-[#8B1A1A]" : "text-gray-800",
-              )}
-            >
-              İLETİŞİM
-            </span>
-          </Link>
-        </div>
+              )}>
+                İLETİŞİM
+              </span>
+            </Link>
+          </div>
 
-        <div className="hidden md:flex">
-          <Link href="/teklif">
-            <Button
-              size="sm"
-              className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold px-6 rounded-sm border-none tracking-wide shadow-sm"
-            >
-              TEKLİF AL
-            </Button>
-          </Link>
-        </div>
+          {/* Right side — CTA + mobile toggle */}
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="hidden md:flex">
+              <Link href="/teklif">
+                <Button
+                  size="sm"
+                  className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold px-6 rounded-sm border-none tracking-wide shadow-sm"
+                >
+                  TEKLİF AL
+                </Button>
+              </Link>
+            </div>
 
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden text-gray-800 p-1"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Menüyü aç/kapat"
-        >
-          {mobileOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
-        </button>
+            <button
+              className="md:hidden text-gray-800 p-1"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Menüyü aç/kapat"
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
       </nav>
+
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 flex flex-col shadow-lg">
@@ -265,18 +237,8 @@ export function Navbar() {
               ANA SAYFA
             </span>
           </Link>
-          <MobileAccordion
-            label="KURUMSAL"
-            href="/kurumsal/hakkimizda"
-            items={kurumsal}
-            onClose={() => setMobileOpen(false)}
-          />
-          <MobileAccordion
-            label="ÜRÜNLER"
-            href="/urunler"
-            items={products}
-            onClose={() => setMobileOpen(false)}
-          />
+          <MobileAccordion label="KURUMSAL" href="/kurumsal/hakkimizda" items={kurumsal} onClose={() => setMobileOpen(false)} />
+          <MobileAccordion label="ÜRÜNLER" href="/urunler" items={products} onClose={() => setMobileOpen(false)} />
           <Link href="/referanslar" onClick={() => setMobileOpen(false)}>
             <span className="block px-6 py-3 text-sm font-bold border-b border-gray-100 text-gray-800 hover:text-[#8B1A1A]">
               REFERANSLAR
