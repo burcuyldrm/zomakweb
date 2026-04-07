@@ -39,7 +39,7 @@ function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
-      <main className="pt-[200px]">{children}</main>
+      <main className="pt-[190px]">{children}</main>
       <Footer />
       <WhatsAppButton />
     </>

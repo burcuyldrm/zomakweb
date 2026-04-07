@@ -140,7 +140,7 @@ export function Navbar() {
       {/* ── MAIN NAV — fixed 90px height, overflow visible for logo ── */}
       <nav
         className="bg-white border-b-2 border-[#8B1A1A] shadow-sm"
-        style={{ height: "200px" }}
+        style={{ height: "190px" }}
       >
         <div
           className="h-full px-4 md:px-10 flex items-center justify-between"
