@@ -60,9 +60,6 @@ export default function ArgeUrge() {
           <p className="text-gray-700 leading-relaxed mb-5">
             Mühendislik ekibimiz, sektörün değişen ihtiyaçlarını ve teknolojik gelişmeleri yakından takip ederek ürün portfolyomuzu sürekli güncel tutmaktadır. Geliştirilen her yeni çözüm; saha koşullarında güvenilirlik, operatör konforu ve uzun servis ömrü kriterleri esas alınarak tasarlanmaktadır.
           </p>
-          <p className="text-gray-700 leading-relaxed">
-            Ürün geliştirme (Ür-Ge) süreçlerimizde ise var olan ürün ailesi üzerinde yapılan sistematik iyileştirmeler ile müşteri geri bildirimleri etkin biçimde değerlendirilmekte; sürüm bazlı güncellemeler ile ürünlerin saha performansı artırılmaktadır.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
