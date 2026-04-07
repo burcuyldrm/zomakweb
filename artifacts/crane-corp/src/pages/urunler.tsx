@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
 import craneImg from "@assets/e8d0929a-4828-4358-80ce-dc6d91d4660f_1775312450764.jpeg";
 import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763.jpeg";
+import { PageHero } from "@/components/layout/page-hero";
 
 const productImages: Record<string, string> = {
   "mobil-katlanir-vinc": craneImg as unknown as string,
@@ -18,18 +19,11 @@ export default function Urunler() {
   return (
     <div className="min-h-screen bg-white">
 
-      {/* Header */}
-      <div className="bg-[#111111] text-white py-16 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">EKİPMAN PORTFÖYÜMÜZ</div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">ÜRÜNLERİMİZ</h1>
-          <p className="text-gray-400 text-base max-w-2xl">
-            Endüstriyel kaldırma, kurtarma ve platform çözümlerinde kapsamlı ürün yelpazesi.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        label="EKİPMAN PORTFÖYÜMÜZ"
+        title="ÜRÜNLERİMİZ"
+        description="Endüstriyel kaldırma, kurtarma ve platform çözümlerinde kapsamlı ürün yelpazesi."
+      />
 
       {/* Grid */}
       <div className="container mx-auto px-4 md:px-8 py-14">

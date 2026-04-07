@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PageHero } from "@/components/layout/page-hero";
 
 const contactItems = [
   {
@@ -32,18 +33,11 @@ const contactItems = [
 export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="bg-[#111111] text-white py-8 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-base font-bold text-white tracking-widest mb-1">BİZE ULAŞIN</div>
-          <h1 className="text-2xl font-black text-white mb-1 leading-tight">İLETİŞİM</h1>
-          <p className="text-gray-400 text-sm max-w-2xl">
-            Sorularınız, talepleriniz ve iş birliği teklifleriniz için ekibimiz hazır.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        label="İLETİŞİM"
+        title="BİZE ULAŞIN"
+        description="Sorularınız, talepleriniz ve iş birliği teklifleriniz için ekibimiz hazır."
+      />
       {/* Main content: info boxes left, map right */}
       <section className="py-14">
         <div className="container mx-auto px-4 md:px-8">

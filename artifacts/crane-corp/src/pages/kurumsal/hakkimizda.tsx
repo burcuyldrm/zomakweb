@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import craneImg from "@assets/hakkımızda_1775570946334.png";
+import { PageHero } from "@/components/layout/page-hero";
 
 const values = [
   { title: "Güvenilirlik", desc: "Her projede söz verilen kalite ve zamanlamaya bağlılık." },
@@ -13,18 +14,11 @@ const values = [
 export default function Hakkimizda() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[#111111] text-white py-16 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">KURUMSAL</div>
-          {/* Explicit Turkish uppercase — CSS transform would give HAKKIMIZDA (correct, ı→I) */}
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">HAKKIMIZDA</h1>
-          <p className="text-gray-400 text-base max-w-2xl">
-            Zomak Vinç Platform ve Makina Sanayi'nin kuruluş hikâyesi, vizyonu ve değerleri.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        label="KURUMSAL"
+        title="HAKKIMIZDA"
+        description="Zomak Vinç Platform ve Makina Sanayi'nin kuruluş hikâyesi, vizyonu ve değerleri."
+      />
       <div className="container mx-auto px-4 md:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start mb-16">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>

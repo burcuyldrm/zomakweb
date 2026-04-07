@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Upload, Phone, MessageCircle } from "lucide-react";
+import { PageHero } from "@/components/layout/page-hero";
 import { useToast } from "@/hooks/use-toast";
 
 const quoteSchema = z.object({
@@ -54,17 +55,11 @@ export default function Teklif() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[#111111] text-white py-16 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">FİYAT TALEBİ</div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">TEKLİF AL</h1>
-          <p className="text-gray-400 text-base max-w-2xl">
-            Projenizi bize aktarın, size en uygun çözümü ve fiyatı sunalım.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        label="FİYAT TALEBİ"
+        title="TEKLİF AL"
+        description="Projenizi bize aktarın, size en uygun çözümü ve fiyatı sunalım."
+      />
 
       <div className="container mx-auto px-4 md:px-8 py-14">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">

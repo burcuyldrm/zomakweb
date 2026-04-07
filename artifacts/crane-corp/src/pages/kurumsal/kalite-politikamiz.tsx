@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PageHero } from "@/components/layout/page-hero";
 
 const commitments = [
   "Uluslararası kalite standartlarına uygun üretim süreçleri",
@@ -16,17 +17,11 @@ const commitments = [
 export default function KalitePolitikamiz() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[#111111] text-white py-16 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">KURUMSAL</div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">KALİTE POLİTİKAMIZ</h1>
-          <p className="text-gray-400 text-base max-w-2xl">
-            Kalite, ZOMAK'ın üretim felsefesinin temel taşıdır.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        label="KURUMSAL"
+        title="KALİTE POLİTİKAMIZ"
+        description="Kalite, ZOMAK'ın üretim felsefesinin temel taşıdır."
+      />
 
       <div className="container mx-auto px-4 md:px-8 py-16 max-w-4xl">
         <motion.div

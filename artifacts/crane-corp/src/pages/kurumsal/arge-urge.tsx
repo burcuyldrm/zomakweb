@@ -4,18 +4,15 @@ import { Button } from "@/components/ui/button";
 import arge1 from "@assets/arge1_1775570334475.png";
 import arge2 from "@assets/arge2_1775570334476.png";
 import arge3 from "@assets/arge3_1775570334476.png";
+import { PageHero } from "@/components/layout/page-hero";
 
 export default function ArgeUrge() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-[#111111] text-white py-16 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#8B1A1A]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">KURUMSAL</div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight text-center">AR-GE &amp; ÜR-GE</h1>
-        </div>
-      </div>
+      <PageHero
+        label="KURUMSAL"
+        title="AR-GE & ÜR-GE"
+      />
       <div className="container mx-auto px-4 md:px-8 py-16 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
