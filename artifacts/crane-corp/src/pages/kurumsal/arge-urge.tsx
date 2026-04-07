@@ -1,16 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const argeAreas = [
-  {
-    icon: Lightbulb,
-    title: "Özel Proje & İnovasyon",
-    desc: "Müşterilerin özel ihtiyaçlarına yönelik mühendislik çözümleri geliştirilmekte; standart ürün gamının ötesinde, proje bazlı makina ve platform tasarımları hayata geçirilmektedir.",
-  },
-];
-
 
 export default function ArgeUrge() {
   return (
@@ -32,27 +22,6 @@ export default function ArgeUrge() {
         >
           <p className="text-gray-700 leading-relaxed mb-5 text-justify">AR&GE ve ÜR&GE çalışmalarımız kapsamında, dünya teknolojilerini yakından takip ederek kendimizi sürekli geliştiriyoruz. Hafiflik ve yüksek mukavemeti esas alan tasarımlarımızı, üstün kalite anlayışı ve hatasız işçilikle bir araya getirerek güvenilir ve verimli sistemler ortaya koyuyoruz. Mühendislik gücümüz ve yenilikçi yaklaşımımız sayesinde, sektörün ihtiyaçlarına ileri düzey çözümler sunmaya devam edeceğiz.</p>
         </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
-          {argeAreas.map((area, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="border border-gray-200 rounded-sm p-6 hover:border-[#8B1A1A] transition-colors duration-300 group"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-9 h-9 rounded-sm bg-[#8B1A1A]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#8B1A1A]/20 transition-colors">
-                  <area.icon className="w-4 h-4 text-[#8B1A1A]" />
-                </div>
-                <h3 className="font-black text-gray-900 text-sm">{area.title}</h3>
-              </div>
-              <p className="text-gray-600 text-sm leading-relaxed">{area.desc}</p>
-            </motion.div>
-          ))}
-        </div>
 
         <div className="bg-[#111111] text-white rounded-sm p-8 mb-10">
           <h2 className="text-lg font-black mb-3">MÜHENDİSLİK ANLAYIŞIMIZ</h2>
