@@ -44,9 +44,6 @@ export default function ArgeUrge() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">KURUMSAL</div>
           <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">AR-GE &amp; ÜR-GE</h1>
-          <p className="text-gray-400 text-base max-w-2xl">
-            İnovasyon ve sürekli gelişim, ZOMAK'ın mühendislik kültürünün merkezindedir.
-          </p>
         </div>
       </div>
 
