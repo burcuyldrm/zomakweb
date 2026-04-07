@@ -90,25 +90,6 @@ export default function Home() {
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/50" />
       </section>
-      {/* ── INTRO STATS ───────────────────────────────── */}
-      <section className="py-14 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-justify">
-            <div>
-              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-3">BİZ KİMİZ</div>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5 leading-tight">
-                Sektörün Güvenilir Üreticisi
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Zomak Vinç Platform ve Makina Sanayi, 2024 yılında İzmir'de kurulmuş olup mobil katlanır vinç, hidrolik kurtarıcı ve sepetli platform ekipmanları alanında üretim ve hizmet vermektedir.
-              </p>
-              <p className="text-gray-600 leading-relaxed text-justify">
-                Mühendislik odaklı yaklaşımımız, kaliteli üretim süreçlerimiz ve müşteri memnuniyetine olan bağlılığımız ile Türkiye'nin önde gelen endüstriyel firmalarına güvenilir çözümler sunmaktayız.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* ── PRODUCT SHOWCASE ─────────────────────────── */}
       <section className="py-20 border-t-[#ffffff] border-r-[#ffffff] border-b-[#ffffff] border-l-[#ffffff] bg-[#ffffff]">
         <div className="container mx-auto px-4 md:px-8">
@@ -220,6 +201,25 @@ export default function Home() {
                   </div>
                 </motion.div>
               </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ── INTRO STATS ───────────────────────────────── */}
+      <section className="py-14 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-justify">
+            <div>
+              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-3">BİZ KİMİZ</div>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5 leading-tight">
+                Sektörün Güvenilir Üreticisi
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Zomak Vinç Platform ve Makina Sanayi, 2024 yılında İzmir'de kurulmuş olup mobil katlanır vinç, hidrolik kurtarıcı ve sepetli platform ekipmanları alanında üretim ve hizmet vermektedir.
+              </p>
+              <p className="text-gray-600 leading-relaxed text-justify">
+                Mühendislik odaklı yaklaşımımız, kaliteli üretim süreçlerimiz ve müşteri memnuniyetine olan bağlılığımız ile Türkiye'nin önde gelen endüstriyel firmalarına güvenilir çözümler sunmaktayız.
+              </p>
             </div>
           </div>
         </div>
