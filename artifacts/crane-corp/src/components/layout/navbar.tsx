@@ -140,26 +140,24 @@ export function Navbar() {
       {/* ── MAIN NAV — fixed 90px height, overflow visible for logo ── */}
       <nav
         className="bg-white border-b-2 border-[#8B1A1A] shadow-sm"
-        style={{ height: "90px", overflow: "visible" }}
+        style={{ height: "200px" }}
       >
         <div
           className="h-full px-4 md:px-10 flex items-center justify-between"
-          style={{ overflow: "visible" }}
+          style={{  }}
         >
-          {/* Logo + slogan — overflows slightly above for modern effect */}
-          <Link href="/">
-            <div className="cursor-pointer flex-shrink-0 flex flex-col items-center" style={{ overflow: "visible" }}>
-              <img
-                src={logoImg as unknown as string}
-                alt="ZOMAK"
-                style={{
-                  height: "180px",
-                  width: "auto",
-                  objectFit: "contain",
-                  display: "block",
-                }}
-              />
-            </div>
+          {/* Logo — 10px eşit boşluk üstte ve altta */}
+          <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+            <img
+              src={logoImg as unknown as string}
+              alt="ZOMAK"
+              style={{
+                height: "180px",
+                width: "auto",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
           </Link>
 
           {/* Desktop — centered nav links */}
