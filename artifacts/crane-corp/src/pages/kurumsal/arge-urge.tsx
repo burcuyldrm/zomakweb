@@ -26,7 +26,7 @@ export default function ArgeUrge() {
           <p className="text-gray-700 leading-relaxed mb-5 text-justify">AR&GE ve ÜR&GE çalışmalarımız kapsamında, dünya teknolojilerini yakından takip ederek kendimizi sürekli geliştiriyoruz. Hafiflik ve yüksek mukavemeti esas alan tasarımlarımızı, üstün kalite anlayışı ve hatasız işçilikle bir araya getirerek güvenilir ve verimli sistemler ortaya koyuyoruz. Mühendislik gücümüz ve yenilikçi yaklaşımımız sayesinde, sektörün ihtiyaçlarına ileri düzey çözümler sunmaya devam edeceğiz.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+        <div className="grid grid-cols-1 gap-6 mb-12">
           {[
             { src: arge1, alt: "ZOMAK AR-GE Teknik Çizim" },
             { src: arge2, alt: "ZOMAK AR-GE 3D Model" },
@@ -43,7 +43,7 @@ export default function ArgeUrge() {
               <img
                 src={img.src as unknown as string}
                 alt={img.alt}
-                className="w-full h-56 object-cover object-center"
+                className="w-full h-80 object-cover object-center"
               />
             </motion.div>
           ))}
