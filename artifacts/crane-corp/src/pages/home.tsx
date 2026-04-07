@@ -93,7 +93,7 @@ export default function Home() {
       {/* ── INTRO STATS ───────────────────────────────── */}
       <section className="py-14 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-justify">
             <div>
               <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-3">BİZ KİMİZ</div>
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5 leading-tight">
