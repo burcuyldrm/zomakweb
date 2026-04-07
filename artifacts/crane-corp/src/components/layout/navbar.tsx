@@ -153,7 +153,7 @@ export function Navbar() {
                 src={logoImg as unknown as string}
                 alt="ZOMAK"
                 style={{
-                  height: "70px",
+                  height: "100px",
                   width: "auto",
                   objectFit: "contain",
                   display: "block",
