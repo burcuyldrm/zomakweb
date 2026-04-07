@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import arge1 from "@assets/arge1_1775570334475.png";
+import arge2 from "@assets/arge2_1775570334476.png";
+import arge3 from "@assets/arge3_1775570334476.png";
 
 export default function ArgeUrge() {
   return (
@@ -22,6 +25,29 @@ export default function ArgeUrge() {
         >
           <p className="text-gray-700 leading-relaxed mb-5 text-justify">AR&GE ve ÜR&GE çalışmalarımız kapsamında, dünya teknolojilerini yakından takip ederek kendimizi sürekli geliştiriyoruz. Hafiflik ve yüksek mukavemeti esas alan tasarımlarımızı, üstün kalite anlayışı ve hatasız işçilikle bir araya getirerek güvenilir ve verimli sistemler ortaya koyuyoruz. Mühendislik gücümüz ve yenilikçi yaklaşımımız sayesinde, sektörün ihtiyaçlarına ileri düzey çözümler sunmaya devam edeceğiz.</p>
         </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+          {[
+            { src: arge1, alt: "ZOMAK AR-GE Teknik Çizim" },
+            { src: arge2, alt: "ZOMAK AR-GE 3D Model" },
+            { src: arge3, alt: "ZOMAK AR-GE Simülasyon" },
+          ].map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="rounded-sm overflow-hidden border border-gray-200 bg-gray-50"
+            >
+              <img
+                src={img.src as unknown as string}
+                alt={img.alt}
+                className="w-full h-56 object-cover object-center"
+              />
+            </motion.div>
+          ))}
+        </div>
 
         <div className="bg-[#111111] text-white rounded-sm p-8 mb-10">
           <h2 className="text-lg font-black mb-3">MÜHENDİSLİK ANLAYIŞIMIZ</h2>
