@@ -46,7 +46,6 @@ export default function ArgeUrge() {
           <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">AR-GE &amp; ÜR-GE</h1>
         </div>
       </div>
-
       <div className="container mx-auto px-4 md:px-8 py-16 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,9 +53,7 @@ export default function ArgeUrge() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <p className="text-gray-700 leading-relaxed mb-5">
-            ZOMAK Vinç Platform ve Makina Sanayi olarak araştırma-geliştirme faaliyetleri; tasarım aşamasından seri üretime, malzeme seçiminden sistem testlerine kadar tüm üretim sürecini kapsayan bütünleşik bir yapıda yürütülmektedir.
-          </p>
+          <p className="text-gray-700 leading-relaxed mb-5 text-justify">AR&GE ve ÜR&GE çalışmalarımız kapsamında, dünya teknolojilerini yakından takip ederek kendimizi sürekli geliştiriyoruz. Hafiflik ve yüksek mukavemeti esas alan tasarımlarımızı, üstün kalite anlayışı ve hatasız işçilikle bir araya getirerek güvenilir ve verimli sistemler ortaya koyuyoruz. Mühendislik gücümüz ve yenilikçi yaklaşımımız sayesinde, sektörün ihtiyaçlarına ileri düzey çözümler sunmaya devam edeceğiz.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
