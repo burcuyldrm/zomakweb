@@ -17,14 +17,6 @@ const trustPoints = [
   "Kalite odaklı mühendislik anlayışı",
 ];
 
-const galleryImages = [
-  { src: craneImg, alt: "Mobil Katlanır Vinç" },
-  { src: truckImg, alt: "Hidrolik Kurtarıcı" },
-  { src: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&q=80", alt: "Şantiye Operasyonu" },
-  { src: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80", alt: "Platform Çalışması" },
-  { src: "https://images.unsplash.com/photo-1590141837800-79b87ece2f6e?w=800&q=80", alt: "Sanayi Projesi" },
-  { src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80", alt: "Vinç Operasyonu" },
-];
 
 const productImages: Record<string, string> = {
   "mobil-katlanir-vinc": craneImg as unknown as string,
@@ -251,40 +243,6 @@ export default function Home() {
                 Tüm Referanslar <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-          </div>
-        </div>
-      </section>
-      {/* ── GALLERY PREVIEW ──────────────────────────── */}
-      <section className="py-20 bg-[#111111]">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <div className="text-xs font-bold text-[#8B1A1A] tracking-widest mb-2">PROJELERİMİZDEN</div>
-              <h2 className="text-3xl font-black text-white">GALERİ</h2>
-            </div>
-            <Link href="/galeri">
-              <Button variant="ghost" className="text-gray-300 font-bold text-sm group hover:bg-transparent hover:text-white">
-                Tümü <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {galleryImages.map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="aspect-[4/3] overflow-hidden rounded-sm group cursor-pointer"
-              >
-                <img
-                  src={img.src as unknown as string}
-                  alt={img.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
-                />
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
