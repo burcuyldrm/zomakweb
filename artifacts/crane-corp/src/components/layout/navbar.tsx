@@ -167,39 +167,6 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 w-full z-50 flex flex-col">
-      {/* Top contact strip */}
-      <div className="bg-[#0D0D0D] text-white/60 py-1.5 px-4 hidden md:flex items-center justify-between border-b border-white/10 text-[13px]">
-        <span className="flex items-center gap-2">
-          <svg
-            className="w-3 h-3 text-[#8B1A1A]"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-            />
-          </svg>
-          <a
-            href="tel:05411290102"
-            className="hover:text-white transition-colors"
-          >
-            0541 129 01 02
-          </a>
-        </span>
-        <span>
-          <a
-            href="mailto:info@zomak.com.tr"
-            className="hover:text-white transition-colors"
-          >
-            info@zomak.com.tr
-          </a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;İzmir, Türkiye
-        </span>
-      </div>
       {/* Main nav */}
       <nav className="bg-[#111111] px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A]/50 shadow-lg text-[12px]">
         {/* Logo */}
