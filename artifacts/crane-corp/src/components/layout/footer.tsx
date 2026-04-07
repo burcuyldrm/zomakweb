@@ -15,6 +15,7 @@ export function Footer() {
                 src={logoImg as unknown as string}
                 alt="ZOMAK"
                 className="h-24 w-auto object-contain"
+                style={{ mixBlendMode: "screen" }}
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">

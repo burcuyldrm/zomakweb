@@ -172,6 +172,7 @@ export function Navbar() {
               src={logoImg as unknown as string}
               alt="ZOMAK"
               className="h-28 w-auto object-contain"
+              style={{ mixBlendMode: "screen" }}
             />
           </div>
         </Link>
