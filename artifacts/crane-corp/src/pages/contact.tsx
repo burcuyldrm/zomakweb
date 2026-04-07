@@ -18,7 +18,7 @@ const contactItems = [
   {
     icon: MapPin,
     label: "Adres",
-    value: "Atatürk Mahallesi 4. Cadde No:54\nOğlananası-Menderes / İzmir",
+    value: "Atatürk Mahallesi 4. Cadde No:54 Oğlananası-Menderes / İzmir",
     href: undefined,
   },
   {
