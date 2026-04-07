@@ -23,6 +23,7 @@ const kurumsal = [
   { href: "/kurumsal/hakkimizda", label: "Hakkımızda" },
   { href: "/kurumsal/kalite-politikamiz", label: "Kalite Politikamız" },
   { href: "/kurumsal/cevre-politikamiz", label: "Çevre Politikamız" },
+   { href: "/kurumsal/arge-urge", label: "AR-GE & ÜR-GE" },
 ];
 
 /* A dropdown that:
@@ -90,6 +91,11 @@ function DropdownMenu({
       {open && (
         <div className="absolute top-full left-0 pt-2 min-w-[240px] z-50">
           <div className="bg-white border border-gray-200 shadow-xl py-1 rounded-sm">
+            <Link href={href} onClick={() => setOpen(false)}>
+              <span className="flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-[#8B1A1A] border-b border-gray-100 uppercase tracking-widest cursor-pointer hover:bg-gray-50">
+                Tümünü Gör
+              </span>
+            </Link>
             {items.map(({ href, label }) => (
               <Link key={href} href={href} onClick={() => setOpen(false)}>
                 <span className="block px-5 py-2.5 text-sm text-gray-700 hover:text-[#8B1A1A] hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 last:border-0">

@@ -19,6 +19,7 @@ import Contact from "@/pages/contact";
 import Hakkimizda from "@/pages/kurumsal/hakkimizda";
 import KalitePolitikamiz from "@/pages/kurumsal/kalite-politikamiz";
 import CevrePolitikamiz from "@/pages/kurumsal/cevre-politikamiz";
+import ArgeUrge from "@/pages/kurumsal/arge-urge";
 
 import AdminLogin from "@/pages/admin/login";
 import AdminDashboard from "@/pages/admin/dashboard";
@@ -62,6 +63,9 @@ function Router() {
       </Route>
       <Route path="/kurumsal/cevre-politikamiz">
         <PublicLayout><CevrePolitikamiz /></PublicLayout>
+      </Route>
+      <Route path="/kurumsal/arge-urge">
+        <PublicLayout><ArgeUrge /></PublicLayout>
       </Route>
 
       {/* Ürünler */}
