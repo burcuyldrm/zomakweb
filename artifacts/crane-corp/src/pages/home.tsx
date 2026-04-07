@@ -106,16 +106,6 @@ export default function Home() {
                 Mühendislik odaklı yaklaşımımız, kaliteli üretim süreçlerimiz ve müşteri memnuniyetine olan bağlılığımız ile Türkiye'nin önde gelen endüstriyel firmalarına güvenilir çözümler sunmaktayız.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { num: "7/24", label: "Teknik Destek" },
-              ].map((s, i) => (
-                <div key={i} className="bg-gray-50 border border-gray-200 p-6 text-center rounded-sm">
-                  <div className="text-3xl font-black text-[#8B1A1A] mb-1">{s.num}</div>
-                  <div className="text-xs font-bold text-gray-500 tracking-wider">{s.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
