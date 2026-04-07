@@ -108,7 +108,6 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { num: "TR+", label: "Hizmet Alanı" },
                 { num: "7/24", label: "Teknik Destek" },
               ].map((s, i) => (
                 <div key={i} className="bg-gray-50 border border-gray-200 p-6 text-center rounded-sm">
