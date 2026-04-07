@@ -23,13 +23,9 @@ const kurumsal = [
   { href: "/kurumsal/hakkimizda", label: "Hakkımızda" },
   { href: "/kurumsal/kalite-politikamiz", label: "Kalite Politikamız" },
   { href: "/kurumsal/cevre-politikamiz", label: "Çevre Politikamız" },
-   { href: "/kurumsal/arge-urge", label: "AR-GE & ÜR-GE" },
+  { href: "/kurumsal/arge-urge", label: "AR-GE & ÜR-GE" },
 ];
 
-/* A dropdown that:
-   – navigates to `href` when its label is clicked
-   – shows submenu on hover or chevron-click
-*/
 function DropdownMenu({
   label,
   href,
@@ -65,7 +61,7 @@ function DropdownMenu({
           <span
             className={cn(
               "cursor-pointer text-sm font-bold tracking-wide transition-colors hover:text-[#8B1A1A]",
-              isActive ? "text-[#8B1A1A]" : "text-white/80",
+              isActive ? "text-[#8B1A1A]" : "text-gray-800",
             )}
           >
             {label}
@@ -75,7 +71,7 @@ function DropdownMenu({
           aria-label="Menüyü aç"
           className={cn(
             "p-0.5 transition-colors hover:text-[#8B1A1A]",
-            isActive ? "text-[#8B1A1A]" : "text-white/60",
+            isActive ? "text-[#8B1A1A]" : "text-gray-500",
           )}
           onClick={() => setOpen(!open)}
         >
@@ -119,20 +115,20 @@ function MobileAccordion({
   const [open, setOpen] = useState(false);
   return (
     <div>
-      <div className="flex items-center border-b border-white/5">
+      <div className="flex items-center border-b border-gray-100">
         {href ? (
           <Link href={href} onClick={onClose}>
-            <span className="flex-1 block px-6 py-3 text-sm font-bold text-white/80 hover:text-white">
+            <span className="flex-1 block px-6 py-3 text-sm font-bold text-gray-800 hover:text-[#8B1A1A]">
               {label}
             </span>
           </Link>
         ) : (
-          <span className="flex-1 px-6 py-3 text-sm font-bold text-white/80">
+          <span className="flex-1 px-6 py-3 text-sm font-bold text-gray-800">
             {label}
           </span>
         )}
         <button
-          className="px-4 py-3 text-white/60 hover:text-white"
+          className="px-4 py-3 text-gray-500 hover:text-[#8B1A1A]"
           onClick={() => setOpen(!open)}
         >
           <ChevronDown
@@ -141,10 +137,10 @@ function MobileAccordion({
         </button>
       </div>
       {open && (
-        <div className="bg-white/5">
+        <div className="bg-gray-50">
           {items.map(({ href, label }) => (
             <Link key={href} href={href} onClick={onClose}>
-              <span className="block pl-10 pr-6 py-2.5 text-sm text-white/60 hover:text-[#8B1A1A] cursor-pointer border-b border-white/5 last:border-0">
+              <span className="block pl-10 pr-6 py-2.5 text-sm text-gray-600 hover:text-[#8B1A1A] cursor-pointer border-b border-gray-100 last:border-0">
                 {label}
               </span>
             </Link>
@@ -164,7 +160,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 flex flex-col">
       {/* Main nav */}
-      <nav className="bg-[#2D2D2D] px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A]/50 shadow-lg text-[12px]">
+      <nav className="bg-white px-4 md:px-8 py-4 flex items-center justify-between border-b-2 border-[#8B1A1A] shadow-sm text-[12px]">
         {/* Logo */}
         <Link href="/">
           <div className="cursor-pointer flex items-center">
@@ -172,7 +168,6 @@ export function Navbar() {
               src={logoImg as unknown as string}
               alt="ZOMAK"
               className="h-28 w-auto object-contain"
-              style={{ mixBlendMode: "screen" }}
             />
           </div>
         </Link>
@@ -180,11 +175,10 @@ export function Navbar() {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-7 text-sm font-bold tracking-wide">
           <Link href="/">
-            {/* Write uppercase explicitly to avoid Turkish i → I browser issue */}
             <span
               className={cn(
                 "cursor-pointer transition-colors hover:text-[#8B1A1A]",
-                location === "/" ? "text-[#8B1A1A]" : "text-white/80",
+                location === "/" ? "text-[#8B1A1A]" : "text-gray-800",
               )}
             >
               ANA SAYFA
@@ -209,7 +203,7 @@ export function Navbar() {
             <span
               className={cn(
                 "cursor-pointer transition-colors hover:text-[#8B1A1A]",
-                isActive("/referanslar") ? "text-[#8B1A1A]" : "text-white/80",
+                isActive("/referanslar") ? "text-[#8B1A1A]" : "text-gray-800",
               )}
             >
               REFERANSLAR
@@ -217,11 +211,10 @@ export function Navbar() {
           </Link>
 
           <Link href="/galeri">
-            {/* GALERİ — explicit Turkish uppercase (İ not I) */}
             <span
               className={cn(
                 "cursor-pointer transition-colors hover:text-[#8B1A1A]",
-                isActive("/galeri") ? "text-[#8B1A1A]" : "text-white/80",
+                isActive("/galeri") ? "text-[#8B1A1A]" : "text-gray-800",
               )}
             >
               GALERİ
@@ -229,11 +222,10 @@ export function Navbar() {
           </Link>
 
           <Link href="/iletisim">
-            {/* İLETİŞİM — explicit Turkish uppercase */}
             <span
               className={cn(
                 "cursor-pointer transition-colors hover:text-[#8B1A1A]",
-                isActive("/iletisim") ? "text-[#8B1A1A]" : "text-white/80",
+                isActive("/iletisim") ? "text-[#8B1A1A]" : "text-gray-800",
               )}
             >
               İLETİŞİM
@@ -254,7 +246,7 @@ export function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-white p-1"
+          className="md:hidden text-gray-800 p-1"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menüyü aç/kapat"
         >
@@ -267,9 +259,9 @@ export function Navbar() {
       </nav>
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#2D2D2D] border-t border-white/10 flex flex-col">
+        <div className="md:hidden bg-white border-t border-gray-100 flex flex-col shadow-lg">
           <Link href="/" onClick={() => setMobileOpen(false)}>
-            <span className="block px-6 py-3 text-sm font-bold border-b border-white/5 text-white/80 hover:text-white">
+            <span className="block px-6 py-3 text-sm font-bold border-b border-gray-100 text-gray-800 hover:text-[#8B1A1A]">
               ANA SAYFA
             </span>
           </Link>
@@ -286,17 +278,17 @@ export function Navbar() {
             onClose={() => setMobileOpen(false)}
           />
           <Link href="/referanslar" onClick={() => setMobileOpen(false)}>
-            <span className="block px-6 py-3 text-sm font-bold border-b border-white/5 text-white/80 hover:text-white">
+            <span className="block px-6 py-3 text-sm font-bold border-b border-gray-100 text-gray-800 hover:text-[#8B1A1A]">
               REFERANSLAR
             </span>
           </Link>
           <Link href="/galeri" onClick={() => setMobileOpen(false)}>
-            <span className="block px-6 py-3 text-sm font-bold border-b border-white/5 text-white/80 hover:text-white">
+            <span className="block px-6 py-3 text-sm font-bold border-b border-gray-100 text-gray-800 hover:text-[#8B1A1A]">
               GALERİ
             </span>
           </Link>
           <Link href="/iletisim" onClick={() => setMobileOpen(false)}>
-            <span className="block px-6 py-3 text-sm font-bold border-b border-white/5 text-white/80 hover:text-white">
+            <span className="block px-6 py-3 text-sm font-bold border-b border-gray-100 text-gray-800 hover:text-[#8B1A1A]">
               İLETİŞİM
             </span>
           </Link>
