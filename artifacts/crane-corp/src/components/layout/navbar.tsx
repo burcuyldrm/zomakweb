@@ -148,7 +148,7 @@ export function Navbar() {
         >
           {/* Logo — overflows above navbar */}
           <Link href="/">
-            <div className="cursor-pointer flex-shrink-0" style={{ overflow: "visible" }}>
+            <div className="cursor-pointer flex-shrink-0 flex flex-col items-center" style={{ overflow: "visible" }}>
               <img
                 src={logoImg as unknown as string}
                 alt="ZOMAK"
@@ -160,6 +160,10 @@ export function Navbar() {
                   display: "block",
                 }}
               />
+              <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em", lineHeight: 1, marginTop: "2px" }}>
+                <span style={{ color: "#111111" }}>ZİRVEYE </span>
+                <span style={{ color: "#8B1A1A" }}>ODAKLAN</span>
+              </p>
             </div>
           </Link>
 
