@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
-import { Phone, Mail, MapPin, Clock, MessageCircle, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const contactItems = [
@@ -86,7 +85,7 @@ export default function Contact() {
               ))}
 
               {/* Action buttons below info boxes */}
-              <div className="grid grid-cols-2 gap-3 mt-2">
+              <div className="mt-2">
                 <a
                   href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%27tan%20vin%C3%A7%2Fplatform%20hizmeti%20i%C3%A7in%20teklif%20almak%20istiyorum."
                   target="_blank"
@@ -97,11 +96,6 @@ export default function Contact() {
                     WhatsApp
                   </Button>
                 </a>
-                <Link href="/teklif">
-                  <Button className="w-full bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold rounded-sm border-none uppercase">
-                    Teklif Al <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </Link>
               </div>
             </div>
 
