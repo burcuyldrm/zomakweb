@@ -70,7 +70,7 @@ export default function Contact() {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-sm font-medium text-gray-700 hover:text-[#8B1A1A] transition-colors whitespace-pre-line leading-relaxed"
+                        className="font-medium text-gray-700 hover:text-[#8B1A1A] transition-colors whitespace-pre-line text-[16px]"
                       >
                         {item.value}
                       </a>
