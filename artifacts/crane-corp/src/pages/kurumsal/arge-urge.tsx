@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { FlaskConical, Cpu, Wrench, Lightbulb } from "lucide-react";
+import { FlaskConical, Wrench, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const argeAreas = [
@@ -8,11 +8,6 @@ const argeAreas = [
     icon: FlaskConical,
     title: "Ar-Ge Merkezi",
     desc: "Vinç ve platform sistemleri üzerinde yürütülen mühendislik araştırmaları; yeni nesil hidrolik mekanizmalar, yük kapasitesi optimizasyonu ve güvenlik donanımları üzerine odaklanmaktadır.",
-  },
-  {
-    icon: Cpu,
-    title: "Dijital Tasarım & Simülasyon",
-    desc: "CAD/CAM yazılımlarıyla yürütülen 3D modelleme ve FEM analizleri sayesinde ürünler seri üretime geçmeden önce sanal ortamda kapsamlı dayanım testlerine tabi tutulmaktadır.",
   },
   {
     icon: Wrench,
