@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import logoImg from "@assets/zomak_logo_transparent.png";
+import logoImg from "@assets/logozomak_1775571243883.png";
 
 const products = [
   { href: "/urunler/mobil-katlanir-vinc", label: "Mobil Katlanır Vinç" },
@@ -172,7 +172,6 @@ export function Navbar() {
               src={logoImg as unknown as string}
               alt="ZOMAK"
               className="h-28 w-auto object-contain"
-              style={{ filter: "brightness(0) invert(1)" }}
             />
           </div>
         </Link>

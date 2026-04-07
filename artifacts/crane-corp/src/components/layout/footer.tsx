@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, MessageCircle, Linkedin, ExternalLink } from "lucide-react";
-import logoImg from "@assets/zomak_logo_transparent.png";
+import logoImg from "@assets/logozomak_1775571243883.png";
 
 export function Footer() {
   return (
@@ -15,7 +15,6 @@ export function Footer() {
                 src={logoImg as unknown as string}
                 alt="ZOMAK"
                 className="h-24 w-auto object-contain"
-                style={{ filter: "brightness(0) invert(1)" }}
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">

@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import logoImg from "@assets/zomak_logo_transparent.png";
+import logoImg from "@assets/logozomak_1775571243883.png";
 
 const navItems = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
