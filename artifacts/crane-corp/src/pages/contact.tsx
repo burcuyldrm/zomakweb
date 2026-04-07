@@ -75,7 +75,7 @@ export default function Contact() {
                         {item.value}
                       </a>
                     ) : (
-                      <p className="font-medium text-gray-700 whitespace-pre-line text-[16px] text-center">
+                      <p className="font-medium text-gray-700 whitespace-pre-line text-[16px] text-justify">
                         {item.value}
                       </p>
                     )}
