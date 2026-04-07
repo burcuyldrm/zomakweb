@@ -14,7 +14,7 @@ export function Footer() {
               <img
                 src={logoImg as unknown as string}
                 alt="ZOMAK"
-                className="h-24 w-auto object-contain"
+                className="h-36 w-auto object-contain"
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
