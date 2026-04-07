@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import craneImg from "@assets/e8d0929a-4828-4358-80ce-dc6d91d4660f_1775312450764.jpeg";
+import craneImg from "@assets/hakkımızda_1775570946334.png";
 
 const values = [
   { title: "Güvenilirlik", desc: "Her projede söz verilen kalite ve zamanlamaya bağlılık." },
