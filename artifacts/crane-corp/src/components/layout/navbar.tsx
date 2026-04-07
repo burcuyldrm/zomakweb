@@ -140,27 +140,27 @@ export function Navbar() {
       {/* ── MAIN NAV — fixed 90px height, overflow visible for logo ── */}
       <nav
         className="bg-white border-b-2 border-[#8B1A1A] shadow-sm"
-        style={{ height: "90px", overflow: "visible" }}
+        style={{ height: "110px", overflow: "visible" }}
       >
         <div
           className="h-full px-4 md:px-10 flex items-center justify-between"
           style={{ overflow: "visible" }}
         >
-          {/* Logo — overflows above navbar */}
+          {/* Logo + slogan — overflows slightly above for modern effect */}
           <Link href="/">
             <div className="cursor-pointer flex-shrink-0 flex flex-col items-center" style={{ overflow: "visible" }}>
               <img
                 src={logoImg as unknown as string}
                 alt="ZOMAK"
                 style={{
-                  height: "134px",
+                  height: "88px",
                   width: "auto",
                   objectFit: "contain",
-                  marginTop: "-5px",
+                  marginTop: "-14px",
                   display: "block",
                 }}
               />
-              <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em", lineHeight: 1, marginTop: "2px" }}>
+              <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", lineHeight: 1, marginTop: "5px" }}>
                 <span style={{ color: "#111111" }}>ZİRVEYE </span>
                 <span style={{ color: "#8B1A1A" }}>ODAKLAN</span>
               </p>
