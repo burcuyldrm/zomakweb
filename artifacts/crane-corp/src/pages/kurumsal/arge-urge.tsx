@@ -43,7 +43,7 @@ export default function ArgeUrge() {
               <img
                 src={img.src as unknown as string}
                 alt={img.alt}
-                className="w-full h-80 object-cover object-center"
+                className="w-full h-auto object-contain"
               />
             </motion.div>
           ))}
