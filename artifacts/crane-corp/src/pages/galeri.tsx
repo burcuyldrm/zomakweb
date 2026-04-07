@@ -7,16 +7,6 @@ import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763
 const images = [
   { src: craneImg, alt: "Mobil Katlanır Vinç" },
   { src: truckImg, alt: "Hidrolik Gözlüklü Kurtarıcı — Pekgöz" },
-  { src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=85", alt: "Vinç Operasyonu" },
-  { src: "https://images.unsplash.com/photo-1530973428-5bf2db2e4d71?w=1200&q=85", alt: "Kaldırma Operasyonu" },
-  { src: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1200&q=85", alt: "Şantiye Çalışması" },
-  { src: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=85", alt: "Platform Çalışması" },
-  { src: "https://images.unsplash.com/photo-1590141837800-79b87ece2f6e?w=1200&q=85", alt: "Sanayi Projesi" },
-  { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85", alt: "Kurtarma Operasyonu" },
-  { src: "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?w=1200&q=85", alt: "Hidrolik Sistem" },
-  { src: "https://images.unsplash.com/photo-1504615755583-2916b52192a3?w=1200&q=85", alt: "Vinç Montajı" },
-  { src: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=1200&q=85", alt: "Ağır Taşıma" },
-  { src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&q=85", alt: "İnşaat Destek" },
 ];
 
 export default function Galeri() {
