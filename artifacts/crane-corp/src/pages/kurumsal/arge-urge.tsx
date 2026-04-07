@@ -43,7 +43,7 @@ export default function ArgeUrge() {
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#8B1A1A]/40" />
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-2">KURUMSAL</div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">AR-GE &amp; ÜR-GE</h1>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight text-center">AR-GE &amp; ÜR-GE</h1>
         </div>
       </div>
       <div className="container mx-auto px-4 md:px-8 py-16 max-w-4xl">
