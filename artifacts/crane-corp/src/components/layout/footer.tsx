@@ -10,12 +10,11 @@ export function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-5">
+            <div className="mb-5 inline-block bg-white rounded-sm px-3 py-2">
               <img
                 src={logoImg as unknown as string}
                 alt="ZOMAK"
                 className="h-24 w-auto object-contain"
-                style={{ mixBlendMode: "screen" }}
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
