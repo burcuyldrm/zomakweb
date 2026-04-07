@@ -16,7 +16,6 @@ const products = [
 const kurumsal = [
   { href: "/kurumsal/hakkimizda", label: "Hakkımızda" },
   { href: "/kurumsal/kalite-politikamiz", label: "Kalite Politikamız" },
-  { href: "/kurumsal/cevre-politikamiz", label: "Çevre Politikamız" },
   { href: "/kurumsal/arge-urge", label: "AR-GE & ÜR-GE" },
 ];
 
