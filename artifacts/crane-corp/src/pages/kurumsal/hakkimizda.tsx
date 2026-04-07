@@ -25,7 +25,6 @@ export default function Hakkimizda() {
           </p>
         </div>
       </div>
-
       <div className="container mx-auto px-4 md:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start mb-16">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -57,9 +56,7 @@ export default function Hakkimizda() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
             <h3 className="font-black text-sm tracking-widest text-[#8B1A1A] mb-3">VİZYONUMUZ</h3>
-            <p className="text-gray-700 leading-relaxed text-sm">
-              Türkiye'nin en güvenilir vinç ve platform ekipmanları üreticisi olarak uluslararası standartlarda mühendislik çözümleri sunmak; ihracat ağımızı genişleterek küresel ölçekte tanınan bir marka olmak.
-            </p>
+            <p className="text-gray-700 leading-relaxed text-sm">Türkiye'nin en güvenilir vinç ve kurtarıcı ekipmanları üreticisi olarak uluslararası standartlarda mühendislik çözümleri sunmak; ihracat ağımızı genişleterek küresel ölçekte tanınan bir marka olmak.</p>
           </div>
           <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
             <h3 className="font-black text-sm tracking-widest text-[#8B1A1A] mb-3">MİSYONUMUZ</h3>
