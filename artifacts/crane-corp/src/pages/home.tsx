@@ -108,7 +108,6 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { num: "5+", label: "Ürün Grubu" },
                 { num: "TR+", label: "Hizmet Alanı" },
                 { num: "7/24", label: "Teknik Destek" },
               ].map((s, i) => (
