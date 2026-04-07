@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { FlaskConical, Cpu, Wrench, Lightbulb, ArrowRight } from "lucide-react";
+import { FlaskConical, Cpu, Wrench, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const argeAreas = [
@@ -26,14 +26,6 @@ const argeAreas = [
   },
 ];
 
-const milestones = [
-  "Hidrolik katlanır vinç kolunda özgün tasarım geliştirme",
-  "Özel taşıyıcı şasi yapılarında ağırlık optimizasyonu çalışmaları",
-  "Çalışma güvenliği için elektronik yük kontrol sistemleri entegrasyonu",
-  "Sepetli platform modellerinde erişim yüksekliği ve manevra kabiliyeti iyileştirmeleri",
-  "Kurtarıcı ekipmanlarında hızlı montaj / demontaj modüler yapılar",
-  "Yerli tedarikçilerle ortak prototip geliştirme süreçleri",
-];
 
 export default function ArgeUrge() {
   return (
@@ -76,23 +68,6 @@ export default function ArgeUrge() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-gray-50 border border-gray-200 rounded-sm p-8 mb-12"
-        >
-          <h2 className="text-xl font-black text-gray-900 mb-6">GELİŞTİRME ODAK ALANLARI</h2>
-          <ul className="space-y-3">
-            {milestones.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                <ArrowRight className="w-4 h-4 text-[#8B1A1A] flex-shrink-0 mt-0.5" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </motion.div>
 
         <div className="bg-[#111111] text-white rounded-sm p-8 mb-10">
           <h2 className="text-lg font-black mb-3">MÜHENDİSLİK ANLAYIŞIMIZ</h2>
