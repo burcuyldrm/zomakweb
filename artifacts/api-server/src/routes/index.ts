@@ -7,6 +7,7 @@ import mediaRouter from "./media";
 import contactRouter from "./contact";
 import statsRouter from "./stats";
 import uploadRouter from "./upload";
+import referencesRouter from "./references";
 
 const router: IRouter = Router();
 
@@ -18,5 +19,6 @@ router.use(newsRouter);
 router.use(mediaRouter);
 router.use(contactRouter);
 router.use(statsRouter);
+router.use(referencesRouter);
 
 export default router;
