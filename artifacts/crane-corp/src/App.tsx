@@ -131,6 +131,12 @@ function Router() {
       <Route path="/admin/urunler">
         <AdminLayout><UrunlerAdmin /></AdminLayout>
       </Route>
+      <Route path="/admin/urunler/yeni">
+        <AdminLayout><ProductForm /></AdminLayout>
+      </Route>
+      <Route path="/admin/urunler/:slug/duzenle">
+        {() => <AdminLayout><ProductForm baseRoute="/admin/urunler" /></AdminLayout>}
+      </Route>
       <Route path="/admin/kurumsal">
         <AdminLayout><KurumsalAdmin /></AdminLayout>
       </Route>
