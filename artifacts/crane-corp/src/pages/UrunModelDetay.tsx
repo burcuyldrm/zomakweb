@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 import { ArrowLeft, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getModelBySlugs } from "@/data/products";
-import craneImg from "@assets/e8d0929a-4828-4358-80ce-dc6d91d4660f_1775312450764.jpeg";
-import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763.jpeg";
-
 const modelImages: Record<string, string> = {
-  "zv-030": craneImg as unknown as string,
-  "zv-060": craneImg as unknown as string,
-  "zv-105": craneImg as unknown as string,
-  "zv-150": craneImg as unknown as string,
-  "zv-225": craneImg as unknown as string,
-  "zv-300": craneImg as unknown as string,
-  "zk-a25": truckImg as unknown as string,
-  "zk-g100": truckImg as unknown as string,
-  "zk-g300": truckImg as unknown as string,
-  "zk-s15": truckImg as unknown as string,
-  "zk-s25": truckImg as unknown as string,
+  "zv-030": "/images/products/zv-030.png",
+  "zv-060": "/images/products/zv-060.png",
+  "zv-105": "/images/products/zk-105.png",
+  "zv-150": "/images/products/zk-150.png",
+  "zv-225": "/images/products/zv-225-1.jpeg",
+  "zv-300": "/images/products/zv-300-1.jpeg",
+  "zk-a25": "/images/products/zk-a25.jpg",
+  "zk-g100": "/images/products/zk-g100-1.jpeg",
+  "zk-g300": "/images/products/zk-g300-1.jpeg",
+  "zk-s15": "/images/products/zk-s15.jpg",
+  "zk-s25": "/images/products/zk-s25.jpg",
+  "zgk-001": "/images/products/zk-g100-1.jpeg",
+  "zk-001": "/images/products/zk-a25.jpg",
+  "zp-001": "/images/products/zk-s15.jpg",
 };
 
 export default function UrunModelDetay() {
@@ -91,7 +91,7 @@ export default function UrunModelDetay() {
           >
             <div className="flex min-h-[420px] items-center justify-center">
               <img
-                src={modelImages[model.slug] || craneImg}
+                src={modelImages[model.slug] || "/images/products/zv-030.png"}
                 alt={model.title}
                 className="max-h-[420px] w-auto max-w-full object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.16)]"
               />

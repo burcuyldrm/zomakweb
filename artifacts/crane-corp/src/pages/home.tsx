@@ -9,8 +9,6 @@ import {
   ChevronLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import craneImg from "@assets/e8d0929a-4828-4358-80ce-dc6d91d4660f_1775312450764.jpeg";
-import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763.jpeg";
 import { products } from "@/data/products";
 
 const references = [
@@ -26,7 +24,7 @@ const heroSlides = [
     eyebrow: "ZOMAK VİNÇ PLATFORM VE MAKİNA SANAYİ",
     title: "ZİRVEYE\nODAKLAN",
     desc: "Mobil vinç, kurtarıcı ve özel hidrolik sistem çözümlerinde güvenilir üretim ve mühendislik desteği sunuyoruz.",
-    image: craneImg as unknown as string,
+    image: "/images/products/zv-300-1.jpeg",
     cta: "/urunler",
   },
   {
@@ -34,19 +32,17 @@ const heroSlides = [
     eyebrow: "ENDÜSTRİYEL GÜÇ",
     title: "SAHADA\nYÜKSEK PERFORMANS",
     desc: "Ağır hizmet koşullarına uygun, güvenilir ve dayanıklı ürün gruplarımız ile projelerinize değer katıyoruz.",
-    image: truckImg as unknown as string,
+    image: "/images/products/zk-g300-1.jpeg",
     cta: "/urunler",
   },
 ];
 
 const productImages: Record<string, string> = {
-  "mobil-katlanir-vinc": craneImg as unknown as string,
-  "hidrolik-gozluklu-kurtarici": truckImg as unknown as string,
-  "hidrolik-kurtarici": truckImg as unknown as string,
-  "ozel-hidrolik-makineler":
-    "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?w=900&q=80",
-  "sepetli-platform":
-    "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80",
+  "mobil-katlanir-vinc": "/images/products/zv-030.png",
+  "hidrolik-gozluklu-kurtarici": "/images/products/zk-g100-1.jpeg",
+  "hidrolik-kurtarici": "/images/products/zk-a25.jpg",
+  "ozel-hidrolik-makineler": "/images/products/zk-g300-1.jpeg",
+  "sepetli-platform": "/images/products/zk-s15.jpg",
 };
 
 export default function Home() {
