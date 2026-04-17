@@ -89,18 +89,6 @@ export default function UrunDetay() {
         </div>
 
         <div className="relative z-10 container mx-auto px-4 py-14 md:px-8 md:py-16">
-          <div className="mb-3 flex items-center gap-2 text-xs text-white/70">
-            <Link href="/">
-              <span className="cursor-pointer hover:text-white">Ana Sayfa</span>
-            </Link>
-            <span>/</span>
-            <Link href="/urunler">
-              <span className="cursor-pointer hover:text-white">Ürünler</span>
-            </Link>
-            <span>/</span>
-            <span className="font-medium text-white">{product.title}</span>
-          </div>
-
           <h1 className="text-4xl font-black text-white md:text-5xl">
             {product.title}
           </h1>
