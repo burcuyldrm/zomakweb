@@ -13,7 +13,12 @@ import craneImg from "@assets/e8d0929a-4828-4358-80ce-dc6d91d4660f_1775312450764
 import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763.jpeg";
 import { products } from "@/data/products";
 
-const references = ["Pekgöz Vinç", "Fındık Vinç", "Bergama Vinç", "Kuşadası Vinç"];
+const references = [
+  "Pekgöz Vinç",
+  "Fındık Vinç",
+  "Bergama Vinç",
+  "Kuşadası Vinç",
+];
 
 const heroSlides = [
   {
@@ -36,10 +41,12 @@ const heroSlides = [
 
 const productImages: Record<string, string> = {
   "mobil-katlanir-vinc": craneImg as unknown as string,
-  "kurtarici": truckImg as unknown as string,
-  "kayar-kasa": truckImg as unknown as string,
+  "hidrolik-gozluklu-kurtarici": truckImg as unknown as string,
+  "hidrolik-kurtarici": truckImg as unknown as string,
   "ozel-hidrolik-makineler":
     "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?w=900&q=80",
+  "sepetli-platform":
+    "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80",
 };
 
 export default function Home() {
@@ -54,7 +61,9 @@ export default function Home() {
   }, []);
 
   const prevSlide = () => {
-    setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+    setActiveSlide(
+      (prev) => (prev - 1 + heroSlides.length) % heroSlides.length,
+    );
   };
 
   const nextSlide = () => {
@@ -207,8 +216,8 @@ export default function Home() {
               ÜRÜNLERİMİZ
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-gray-500 md:text-base">
-              İhtiyacınıza uygun vinç, kurtarıcı, kayar kasa ve özel hidrolik sistem
-              çözümlerimizi inceleyin.
+              İhtiyacınıza uygun vinç, kurtarıcı, kayar kasa ve özel hidrolik
+              sistem çözümlerimizi inceleyin.
             </p>
           </div>
 
@@ -222,7 +231,10 @@ export default function Home() {
                 transition={{ duration: 0.45, delay: i * 0.06 }}
                 className="h-full"
               >
-                <Link href={`/urunler/${product.slug}`} className="block h-full">
+                <Link
+                  href={`/urunler/${product.slug}`}
+                  className="block h-full"
+                >
                   <article className="group relative h-full min-h-[430px] cursor-pointer overflow-hidden rounded-[28px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
                     <div
                       className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
@@ -309,7 +321,9 @@ export default function Home() {
             <div className="mb-2 text-xs font-bold tracking-widest text-[#8B1A1A]">
               GÜVENİ KAZANDIK
             </div>
-            <h2 className="text-3xl font-black text-gray-900">Referanslarımız</h2>
+            <h2 className="text-3xl font-black text-gray-900">
+              Referanslarımız
+            </h2>
           </div>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -353,8 +367,8 @@ export default function Home() {
           </h2>
 
           <p className="mx-auto mb-8 max-w-xl text-sm leading-relaxed text-gray-500">
-            Proje ihtiyaçlarınız ve teknik sorularınız için uzman ekibimiz hazır.
-            Hemen bir teklif talep edin.
+            Proje ihtiyaçlarınız ve teknik sorularınız için uzman ekibimiz
+            hazır. Hemen bir teklif talep edin.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">

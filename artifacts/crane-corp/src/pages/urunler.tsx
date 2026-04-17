@@ -7,10 +7,12 @@ import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763
 
 const productImages: Record<string, string> = {
   "mobil-katlanir-vinc": craneImg as unknown as string,
-  kurtarici: truckImg as unknown as string,
-  "kayar-kasa": truckImg as unknown as string,
+  "hidrolik-gozluklu-kurtarici": truckImg as unknown as string,
+  "hidrolik-kurtarici": truckImg as unknown as string,
   "ozel-hidrolik-makineler":
     "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?w=800&q=80",
+  "sepetli-platform":
+    "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
 };
 
 export default function Urunler() {
