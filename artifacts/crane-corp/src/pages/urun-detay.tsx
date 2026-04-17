@@ -101,11 +101,7 @@ export default function UrunDetay() {
             <span className="font-medium text-white">{product.title}</span>
           </div>
 
-          <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#d7b04a]">
-            Ürün Grubu
-          </div>
-
-          <h1 className="mt-3 text-4xl font-black text-white md:text-5xl">
+          <h1 className="text-4xl font-black text-white md:text-5xl">
             {product.title}
           </h1>
 
