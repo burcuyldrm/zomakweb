@@ -8,7 +8,7 @@ import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763
 
 const productImages: Record<string, string> = {
   "mobil-katlanir-vinc": craneImg as unknown as string,
-  "kurtarici": truckImg as unknown as string,
+  kurtarici: truckImg as unknown as string,
   "kayar-kasa": truckImg as unknown as string,
   "ozel-hidrolik-makineler":
     "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?w=900&q=80",
@@ -22,7 +22,9 @@ export default function UrunDetay() {
   if (!product) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center px-4 text-center">
-        <h1 className="mb-4 text-2xl font-black uppercase">Kategori Bulunamadı</h1>
+        <h1 className="mb-4 text-2xl font-black uppercase">
+          Kategori Bulunamadı
+        </h1>
         <Link href="/urunler">
           <Button className="rounded-sm border-none bg-[#8B1A1A] font-bold text-white">
             Ürünlere Dön
@@ -37,9 +39,17 @@ export default function UrunDetay() {
       <div className="border-b border-gray-200 bg-gray-50 py-3">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center gap-2 text-xs text-gray-500">
-            <Link href="/"><span className="cursor-pointer hover:text-[#8B1A1A]">Ana Sayfa</span></Link>
+            <Link href="/">
+              <span className="cursor-pointer hover:text-[#8B1A1A]">
+                Ana Sayfa
+              </span>
+            </Link>
             <span>/</span>
-            <Link href="/urunler"><span className="cursor-pointer hover:text-[#8B1A1A]">Ürünler</span></Link>
+            <Link href="/urunler">
+              <span className="cursor-pointer hover:text-[#8B1A1A]">
+                Ürünler
+              </span>
+            </Link>
             <span>/</span>
             <span className="font-medium text-gray-900">{product.title}</span>
           </div>
@@ -48,7 +58,11 @@ export default function UrunDetay() {
 
       <div className="container mx-auto px-4 py-14 md:px-8">
         <Link href="/urunler">
-          <Button variant="ghost" size="sm" className="-ml-2 mb-8 rounded-sm text-xs font-bold uppercase text-gray-500 hover:text-[#8B1A1A]">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="-ml-2 mb-8 rounded-sm text-xs font-bold uppercase text-gray-500 hover:text-[#8B1A1A]"
+          >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Tüm Ürünler
           </Button>
@@ -119,7 +133,8 @@ export default function UrunDetay() {
                       <div
                         className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
                         style={{
-                          clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)",
+                          clipPath:
+                            "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)",
                         }}
                       />
 
@@ -151,7 +166,9 @@ export default function UrunDetay() {
 
         {product.models.length === 0 && (
           <div className="mt-16 rounded-[24px] border border-dashed border-gray-300 bg-gray-50 px-6 py-10 text-center">
-            <h3 className="text-lg font-bold text-gray-800">Model listesi yakında eklenecek</h3>
+            <h3 className="text-lg font-bold text-gray-800">
+              Model listesi yakında eklenecek
+            </h3>
             <p className="mt-2 text-sm text-gray-500">
               Bu kategori için projeye özel ürünler sunulmaktadır.
             </p>

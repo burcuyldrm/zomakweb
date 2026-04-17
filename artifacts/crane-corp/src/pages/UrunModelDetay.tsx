@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link, useRoute } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, MessageCircle, Phone } from "lucide-react";
@@ -10,8 +9,14 @@ import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763
 const modelImages: Record<string, string> = {
   "zv-030": craneImg as unknown as string,
   "zv-060": craneImg as unknown as string,
+  "zv-105": craneImg as unknown as string,
+  "zv-150": craneImg as unknown as string,
   "zv-225": craneImg as unknown as string,
   "zv-300": craneImg as unknown as string,
+  "zk-a25": truckImg as unknown as string,
+  "zk-g100": truckImg as unknown as string,
+  "zk-g300": truckImg as unknown as string,
+  "zk-s15": truckImg as unknown as string,
   "zk-s25": truckImg as unknown as string,
 };
 
@@ -36,9 +41,6 @@ export default function UrunModelDetay() {
   }
 
   const { product, model } = result;
-
-  const primaryImage = model.image || modelImages[model.slug] || craneImg;
-  const galleryImages = model.images && model.images.length > 0 ? model.images : null;
 
   return (
     <div className="min-h-screen bg-white">
@@ -87,17 +89,13 @@ export default function UrunModelDetay() {
             transition={{ duration: 0.5 }}
             className="overflow-hidden rounded-[28px] bg-[#f3f3f3] p-8 shadow-sm"
           >
-            {galleryImages ? (
-              <GalleryViewer images={galleryImages} title={model.title} />
-            ) : (
-              <div className="flex min-h-[420px] items-center justify-center">
-                <img
-                  src={primaryImage as unknown as string}
-                  alt={model.title}
-                  className="max-h-[420px] w-auto max-w-full object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.16)]"
-                />
-              </div>
-            )}
+            <div className="flex min-h-[420px] items-center justify-center">
+              <img
+                src={modelImages[model.slug] || craneImg}
+                alt={model.title}
+                className="max-h-[420px] w-auto max-w-full object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.16)]"
+              />
+            </div>
           </motion.div>
 
           <motion.div
@@ -181,42 +179,6 @@ export default function UrunModelDetay() {
             </div>
           </motion.div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function GalleryViewer({ images, title }: { images: string[]; title: string }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="flex min-h-[340px] items-center justify-center">
-        <img
-          key={activeIndex}
-          src={images[activeIndex]}
-          alt={`${title} - ${activeIndex + 1}`}
-          className="max-h-[340px] w-auto max-w-full object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.16)] transition-opacity duration-300"
-        />
-      </div>
-      <div className="flex flex-wrap justify-center gap-2">
-        {images.map((img, i) => (
-          <button
-            key={i}
-            onClick={() => setActiveIndex(i)}
-            className={`h-14 w-14 overflow-hidden rounded-lg border-2 transition-all ${
-              i === activeIndex
-                ? "border-[#8B1A1A] opacity-100"
-                : "border-transparent opacity-60 hover:opacity-90"
-            }`}
-          >
-            <img
-              src={img}
-              alt={`${title} - ${i + 1}`}
-              className="h-full w-full object-cover"
-            />
-          </button>
-        ))}
       </div>
     </div>
   );
