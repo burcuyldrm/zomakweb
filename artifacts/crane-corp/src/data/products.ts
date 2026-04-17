@@ -45,6 +45,7 @@ export const products: Product[] = [
         title: "ZV-030",
         shortDesc: "Mobil katlanır vinç modeli.",
         description: "ZV-030 mobil katlanır vinç modelidir.",
+        image: "/images/products/zv-030.png",
         specs: [
           { label: "Model", value: "ZV-030" },
           { label: "Kategori", value: "Mobil Katlanır Vinç" },
@@ -56,6 +57,7 @@ export const products: Product[] = [
         title: "ZV-060",
         shortDesc: "Mobil katlanır vinç modeli.",
         description: "ZV-060 mobil katlanır vinç modelidir.",
+        image: "/images/products/zv-060.png",
         specs: [
           { label: "Model", value: "ZV-060" },
           { label: "Kategori", value: "Mobil Katlanır Vinç" },
@@ -91,6 +93,11 @@ export const products: Product[] = [
         title: "ZV-225",
         shortDesc: "Mobil katlanır vinç modeli.",
         description: "ZV-225 mobil katlanır vinç modelidir.",
+        image: "/images/products/zv-225-1.jpeg",
+        images: [
+          "/images/products/zv-225-1.jpeg",
+          "/images/products/zv-225-2.jpeg",
+        ],
         specs: [
           { label: "Model", value: "ZV-225" },
           { label: "Kategori", value: "Mobil Katlanır Vinç" },
@@ -102,6 +109,11 @@ export const products: Product[] = [
         title: "ZV-300",
         shortDesc: "Mobil katlanır vinç modeli.",
         description: "ZV-300 mobil katlanır vinç modelidir.",
+        image: "/images/products/zv-300-1.jpeg",
+        images: [
+          "/images/products/zv-300-1.jpeg",
+          "/images/products/zv-300-2.jpeg",
+        ],
         specs: [
           { label: "Model", value: "ZV-300" },
           { label: "Kategori", value: "Mobil Katlanır Vinç" },
@@ -217,6 +229,7 @@ export const products: Product[] = [
         title: "ZK-S25",
         shortDesc: "Kayar kasa modeli.",
         description: "ZK-S25 kayar kasa modelidir.",
+        image: "/images/products/zk-s25.jpg",
         specs: [
           { label: "Model", value: "ZK-S25" },
           { label: "Kategori", value: "Kayar Kasa" },

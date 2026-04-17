@@ -1,237 +1,92 @@
-export interface ProductModel {
-  slug: string;
-  code: string;
-  title: string;
-  shortDesc: string;
-  description: string;
-  image?: string;
-  specs?: { label: string; value: string }[];
-}
+import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
+import { PageHero } from "@/components/layout/page-hero";
+import { products } from "@/data/products";
+import craneImg from "@assets/e8d0929a-4828-4358-80ce-dc6d91d4660f_1775312450764.jpeg";
+import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763.jpeg";
 
-export interface Product {
-  slug: string;
-  title: string;
-  shortDesc: string;
-  description: string;
-  usage: string[];
-  specs?: { label: string; value: string }[];
-  models: ProductModel[];
-}
+const productImages: Record<string, string> = {
+  "mobil-katlanir-vinc": craneImg as unknown as string,
+  "kurtarici": truckImg as unknown as string,
+  "kayar-kasa": truckImg as unknown as string,
+  "ozel-hidrolik-makineler":
+    "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?w=900&q=80",
+};
 
-export const products: Product[] = [
-  {
-    slug: "mobil-katlanir-vinc",
-    title: "Mobil Katlanır Vinç",
-    shortDesc: "Mobil katlanır vinç ürün grubumuzu inceleyin.",
-    description:
-      "Mobil katlanır vinç ürün grubumuz, farklı saha ve kaldırma ihtiyaçlarına uygun model seçenekleri sunar.",
-    usage: [
-      "İnşaat ve şantiye çalışmaları",
-      "Sanayi ve tesis uygulamaları",
-      "Ağır yük kaldırma operasyonları",
-      "Saha ve mobil hizmet çözümleri",
-    ],
-    specs: [
-      { label: "Kategori", value: "Mobil Katlanır Vinç" },
-      { label: "Model Sayısı", value: "6" },
-      { label: "Seri", value: "ZV" },
-      { label: "Menşei", value: "Türkiye" },
-    ],
-    models: [
-      {
-        slug: "zv-030",
-        code: "ZV-030",
-        title: "ZV-030",
-        shortDesc: "Mobil katlanır vinç modeli.",
-        description: "ZV-030 mobil katlanır vinç modelidir.",
-        specs: [
-          { label: "Model", value: "ZV-030" },
-          { label: "Kategori", value: "Mobil Katlanır Vinç" },
-        ],
-      },
-      {
-        slug: "zv-060",
-        code: "ZV-060",
-        title: "ZV-060",
-        shortDesc: "Mobil katlanır vinç modeli.",
-        description: "ZV-060 mobil katlanır vinç modelidir.",
-        specs: [
-          { label: "Model", value: "ZV-060" },
-          { label: "Kategori", value: "Mobil Katlanır Vinç" },
-        ],
-      },
-      {
-        slug: "zv-105",
-        code: "ZV-105",
-        title: "ZV-105",
-        shortDesc: "Mobil katlanır vinç modeli.",
-        description: "ZV-105 mobil katlanır vinç modelidir.",
-        specs: [
-          { label: "Model", value: "ZV-105" },
-          { label: "Kategori", value: "Mobil Katlanır Vinç" },
-        ],
-      },
-      {
-        slug: "zv-150",
-        code: "ZV-150",
-        title: "ZV-150",
-        shortDesc: "Mobil katlanır vinç modeli.",
-        description: "ZV-150 mobil katlanır vinç modelidir.",
-        specs: [
-          { label: "Model", value: "ZV-150" },
-          { label: "Kategori", value: "Mobil Katlanır Vinç" },
-        ],
-      },
-      {
-        slug: "zv-225",
-        code: "ZV-225",
-        title: "ZV-225",
-        shortDesc: "Mobil katlanır vinç modeli.",
-        description: "ZV-225 mobil katlanır vinç modelidir.",
-        specs: [
-          { label: "Model", value: "ZV-225" },
-          { label: "Kategori", value: "Mobil Katlanır Vinç" },
-        ],
-      },
-      {
-        slug: "zv-300",
-        code: "ZV-300",
-        title: "ZV-300",
-        shortDesc: "Mobil katlanır vinç modeli.",
-        description: "ZV-300 mobil katlanır vinç modelidir.",
-        specs: [
-          { label: "Model", value: "ZV-300" },
-          { label: "Kategori", value: "Mobil Katlanır Vinç" },
-        ],
-      },
-    ],
-  },
-  {
-    slug: "kurtarici",
-    title: "Kurtarıcı",
-    shortDesc: "Kurtarıcı ürün grubumuzu inceleyin.",
-    description:
-      "Kurtarıcı ürün grubumuz, araç kurtarma ve çekici uygulamalarına yönelik model seçenekleri sunar.",
-    usage: [
-      "Yol yardım hizmetleri",
-      "Araç taşıma ve kurtarma",
-      "Servis ve saha operasyonları",
-    ],
-    specs: [
-      { label: "Kategori", value: "Kurtarıcı" },
-      { label: "Model Sayısı", value: "3" },
-      { label: "Seri", value: "ZK" },
-      { label: "Menşei", value: "Türkiye" },
-    ],
-    models: [
-      {
-        slug: "zk-a25",
-        code: "ZK-A25",
-        title: "ZK-A25",
-        shortDesc: "Kurtarıcı modeli.",
-        description: "ZK-A25 kurtarıcı modelidir.",
-        specs: [
-          { label: "Model", value: "ZK-A25" },
-          { label: "Kategori", value: "Kurtarıcı" },
-        ],
-      },
-      {
-        slug: "zk-g100",
-        code: "ZK-G100",
-        title: "ZK-G100",
-        shortDesc: "Kurtarıcı modeli.",
-        description: "ZK-G100 kurtarıcı modelidir.",
-        specs: [
-          { label: "Model", value: "ZK-G100" },
-          { label: "Kategori", value: "Kurtarıcı" },
-        ],
-      },
-      {
-        slug: "zk-g300",
-        code: "ZK-G300",
-        title: "ZK-G300",
-        shortDesc: "Kurtarıcı modeli.",
-        description: "ZK-G300 kurtarıcı modelidir.",
-        specs: [
-          { label: "Model", value: "ZK-G300" },
-          { label: "Kategori", value: "Kurtarıcı" },
-        ],
-      },
-    ],
-  },
-  {
-    slug: "kayar-kasa",
-    title: "Kayar Kasa",
-    shortDesc: "Kayar kasa ürün grubumuzu inceleyin.",
-    description:
-      "Kayar kasa ürün grubumuz, pratik kullanım ve taşıma çözümleri için model seçenekleri sunar.",
-    usage: [
-      "Araç üstü taşıma sistemleri",
-      "Lojistik uygulamaları",
-      "Saha ve servis çözümleri",
-    ],
-    specs: [
-      { label: "Kategori", value: "Kayar Kasa" },
-      { label: "Model Sayısı", value: "2" },
-      { label: "Seri", value: "ZK-S" },
-      { label: "Menşei", value: "Türkiye" },
-    ],
-    models: [
-      {
-        slug: "zk-s15",
-        code: "ZK-S15",
-        title: "ZK-S15",
-        shortDesc: "Kayar kasa modeli.",
-        description: "ZK-S15 kayar kasa modelidir.",
-        specs: [
-          { label: "Model", value: "ZK-S15" },
-          { label: "Kategori", value: "Kayar Kasa" },
-        ],
-      },
-      {
-        slug: "zk-s25",
-        code: "ZK-S25",
-        title: "ZK-S25",
-        shortDesc: "Kayar kasa modeli.",
-        description: "ZK-S25 kayar kasa modelidir.",
-        specs: [
-          { label: "Model", value: "ZK-S25" },
-          { label: "Kategori", value: "Kayar Kasa" },
-        ],
-      },
-    ],
-  },
-  {
-    slug: "ozel-hidrolik-makineler",
-    title: "Özel Hidrolik Makineler",
-    shortDesc: "Özel hidrolik makineler ürün grubumuzu inceleyin.",
-    description:
-      "Özel hidrolik makineler kategorimiz projeye özel çözümler için ayrılmıştır.",
-    usage: [
-      "Projeye özel makine tasarımları",
-      "Özel üretim hidrolik sistemler",
-      "Kurumsal mühendislik çözümleri",
-    ],
-    specs: [
-      { label: "Kategori", value: "Özel Hidrolik Makineler" },
-      { label: "Model Sayısı", value: "0" },
-      { label: "Durum", value: "Projeye Özel" },
-      { label: "Menşei", value: "Türkiye" },
-    ],
-    models: [],
-  },
-];
+export default function Urunler() {
+  return (
+    <div className="min-h-screen bg-white">
+      <PageHero
+        label="EKİPMAN PORTFÖYÜMÜZ"
+        title="ÜRÜNLERİMİZ"
+        description="Endüstriyel kaldırma, kurtarma ve özel hidrolik çözümlerimiz."
+      />
 
-export function getProductBySlug(slug: string): Product | undefined {
-  return products.find((p) => p.slug === slug);
-}
+      <div className="container mx-auto px-4 py-16 md:px-8">
+        <div className="grid grid-cols-1 gap-7 md:grid-cols-2 xl:grid-cols-4">
+          {products.map((product, i) => (
+            <motion.div
+              key={product.slug}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: i * 0.06 }}
+              className="h-full"
+            >
+              <Link href={`/urunler/${product.slug}`} className="block h-full">
+                <article className="group relative h-full min-h-[430px] cursor-pointer overflow-hidden rounded-[28px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+                  <div
+                    className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
+                    style={{
+                      clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)",
+                    }}
+                  />
 
-export function getModelBySlugs(productSlug: string, modelSlug: string) {
-  const product = products.find((p) => p.slug === productSlug);
-  if (!product) return undefined;
+                  <div className="relative z-10 flex h-full flex-col px-6 pb-6 pt-7">
+                    <div className="mb-5">
+                      <h3 className="max-w-[220px] text-[24px] font-black leading-[1.08] text-[#1f1f1f] transition-colors duration-300 group-hover:text-[#8B1A1A]">
+                        {product.title}
+                      </h3>
+                      <span className="mt-4 block h-[5px] w-10 rounded-full bg-[#B3201D]" />
+                    </div>
 
-  const model = product.models.find((m) => m.slug === modelSlug);
-  if (!model) return undefined;
+                    <div className="flex min-h-[180px] items-center justify-center">
+                      <img
+                        src={productImages[product.slug]}
+                        alt={product.title}
+                        className="max-h-[170px] w-auto max-w-full object-contain drop-shadow-[0_12px_16px_rgba(0,0,0,0.14)] transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
+                    </div>
 
-  return { product, model };
+                    <p className="mt-5 text-sm leading-relaxed text-gray-500">
+                      {product.shortDesc}
+                    </p>
+
+                    {product.models.length > 0 && (
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        {product.models.slice(0, 4).map((model) => (
+                          <span
+                            key={model.slug}
+                            className="rounded-full border border-gray-300 bg-white px-3 py-1 text-[10px] font-semibold text-gray-700"
+                          >
+                            {model.code}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-extrabold uppercase tracking-[0.12em] text-[#8B1A1A] transition-all duration-300 group-hover:gap-3">
+                      İncele
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
+                  </div>
+                </article>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
