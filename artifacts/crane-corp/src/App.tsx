@@ -11,6 +11,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Urunler from "@/pages/urunler";
 import UrunDetay from "@/pages/urun-detay";
+import UrunModelDetay from "@/pages/UrunModelDetay";
 import Referanslar from "@/pages/referanslar";
 import Galeri from "@/pages/galeri";
 import Teklif from "@/pages/teklif";
@@ -71,6 +72,9 @@ function Router() {
       {/* Ürünler */}
       <Route path="/urunler">
         <PublicLayout><Urunler /></PublicLayout>
+      </Route>
+      <Route path="/urunler/:productSlug/:modelSlug">
+        <PublicLayout><UrunModelDetay /></PublicLayout>
       </Route>
       <Route path="/urunler/:slug">
         <PublicLayout><UrunDetay /></PublicLayout>

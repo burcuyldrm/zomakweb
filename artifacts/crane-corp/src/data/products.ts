@@ -5,6 +5,7 @@ export interface ProductModel {
   shortDesc: string;
   description: string;
   image?: string;
+  images?: string[];
   specs?: { label: string; value: string }[];
 }
 
@@ -66,6 +67,7 @@ export const products: Product[] = [
         title: "ZV-105",
         shortDesc: "Mobil katlanır vinç modeli.",
         description: "ZV-105 mobil katlanır vinç modelidir.",
+        image: "/images/products/zk-105.png",
         specs: [
           { label: "Model", value: "ZV-105" },
           { label: "Kategori", value: "Mobil Katlanır Vinç" },
@@ -77,6 +79,7 @@ export const products: Product[] = [
         title: "ZV-150",
         shortDesc: "Mobil katlanır vinç modeli.",
         description: "ZV-150 mobil katlanır vinç modelidir.",
+        image: "/images/products/zk-150.png",
         specs: [
           { label: "Model", value: "ZV-150" },
           { label: "Kategori", value: "Mobil Katlanır Vinç" },
@@ -130,6 +133,7 @@ export const products: Product[] = [
         title: "ZK-A25",
         shortDesc: "Kurtarıcı modeli.",
         description: "ZK-A25 kurtarıcı modelidir.",
+        image: "/images/products/zk-a25.jpg",
         specs: [
           { label: "Model", value: "ZK-A25" },
           { label: "Kategori", value: "Kurtarıcı" },
@@ -141,6 +145,12 @@ export const products: Product[] = [
         title: "ZK-G100",
         shortDesc: "Kurtarıcı modeli.",
         description: "ZK-G100 kurtarıcı modelidir.",
+        image: "/images/products/zk-g100-1.jpeg",
+        images: [
+          "/images/products/zk-g100-1.jpeg",
+          "/images/products/zk-g100-2.jpeg",
+          "/images/products/zk-g100-3.jpeg",
+        ],
         specs: [
           { label: "Model", value: "ZK-G100" },
           { label: "Kategori", value: "Kurtarıcı" },
@@ -152,6 +162,18 @@ export const products: Product[] = [
         title: "ZK-G300",
         shortDesc: "Kurtarıcı modeli.",
         description: "ZK-G300 kurtarıcı modelidir.",
+        image: "/images/products/zk-g300-1.jpeg",
+        images: [
+          "/images/products/zk-g300-1.jpeg",
+          "/images/products/zk-g300-2.jpeg",
+          "/images/products/zk-g300-3.jpeg",
+          "/images/products/zk-g300-4.jpeg",
+          "/images/products/zk-g300-5.jpeg",
+          "/images/products/zk-g300-6.jpeg",
+          "/images/products/zk-g300-7.jpeg",
+          "/images/products/zk-g300-8.jpeg",
+          "/images/products/zk-g300-9.jpeg",
+        ],
         specs: [
           { label: "Model", value: "ZK-G300" },
           { label: "Kategori", value: "Kurtarıcı" },
@@ -183,6 +205,7 @@ export const products: Product[] = [
         title: "ZK-S15",
         shortDesc: "Kayar kasa modeli.",
         description: "ZK-S15 kayar kasa modelidir.",
+        image: "/images/products/zk-s15.jpg",
         specs: [
           { label: "Model", value: "ZK-S15" },
           { label: "Kategori", value: "Kayar Kasa" },
