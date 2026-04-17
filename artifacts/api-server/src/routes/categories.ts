@@ -82,4 +82,33 @@ router.delete("/categories/:id", async (req, res): Promise<void> => {
   res.sendStatus(204);
 });
 
+router.get("/categories/:slug/models", async (req, res): Promise<void> => {
+  const slug = req.params.slug as string;
+  const [cat] = await db.select().from(categoriesTable).where(eq(categoriesTable.slug, slug));
+  if (!cat) {
+    res.status(404).json({ error: "Category not found" });
+    return;
+  }
+  const models = await db
+    .select()
+    .from(productsTable)
+    .where(eq(productsTable.categoryId, cat.id))
+    .orderBy(productsTable.sortOrder);
+  res.json(models);
+});
+
+router.get("/categories/:slug", async (req, res): Promise<void> => {
+  const slug = req.params.slug as string;
+  const [cat] = await db.select().from(categoriesTable).where(eq(categoriesTable.slug, slug));
+  if (!cat) {
+    res.status(404).json({ error: "Category not found" });
+    return;
+  }
+  const [row] = await db
+    .select({ count: sql<number>`count(*)::int` })
+    .from(productsTable)
+    .where(eq(productsTable.categoryId, cat.id));
+  res.json({ ...cat, productCount: row?.count ?? 0 });
+});
+
 export default router;

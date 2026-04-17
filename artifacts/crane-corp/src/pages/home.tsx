@@ -9,7 +9,7 @@ import {
   ChevronLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { products } from "@/data/products";
+import { useListCategories } from "@workspace/api-client-react";
 
 const references = [
   "Pekgöz Vinç",
@@ -37,16 +37,9 @@ const heroSlides = [
   },
 ];
 
-const productImages: Record<string, string> = {
-  "mobil-katlanir-vinc": "/images/products/zv-030.png",
-  "hidrolik-gozluklu-kurtarici": "/images/products/zk-g100-1.jpeg",
-  "hidrolik-kurtarici": "/images/products/zk-a25.jpg",
-  "ozel-hidrolik-makineler": "/images/products/zk-g300-1.jpeg",
-  "sepetli-platform": "/images/products/zk-s15.jpg",
-};
-
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const { data: categories } = useListCategories();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -218,59 +211,42 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 gap-7 md:grid-cols-2 xl:grid-cols-4">
-            {products.map((product, i) => (
+            {(categories ?? []).map((cat, i) => (
               <motion.div
-                key={product.slug}
+                key={cat.slug}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.06 }}
                 className="h-full"
               >
-                <Link
-                  href={`/urunler/${product.slug}`}
-                  className="block h-full"
-                >
+                <Link href={`/urunler/${cat.slug}`} className="block h-full">
                   <article className="group relative h-full min-h-[430px] cursor-pointer overflow-hidden rounded-[28px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
                     <div
                       className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
-                      style={{
-                        clipPath:
-                          "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)",
-                      }}
+                      style={{ clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)" }}
                     />
-
                     <div className="relative z-10 flex h-full flex-col px-6 pt-7 pb-6">
                       <div className="mb-5">
                         <h3 className="max-w-[220px] text-[24px] leading-[1.08] font-black text-[#1f1f1f] transition-colors duration-300 group-hover:text-[#8B1A1A]">
-                          {product.title}
+                          {cat.name}
                         </h3>
                         <span className="mt-4 block h-[5px] w-10 rounded-full bg-[#B3201D]" />
                       </div>
-
                       <div className="flex min-h-[180px] items-center justify-center">
-                        <img
-                          src={productImages[product.slug]}
-                          alt={product.title}
-                          className="max-h-[170px] w-auto max-w-full object-contain drop-shadow-[0_12px_16px_rgba(0,0,0,0.14)] transition-transform duration-500 group-hover:scale-[1.04]"
-                        />
+                        {cat.image ? (
+                          <img
+                            src={cat.image}
+                            alt={cat.name}
+                            className="max-h-[170px] w-auto max-w-full object-contain drop-shadow-[0_12px_16px_rgba(0,0,0,0.14)] transition-transform duration-500 group-hover:scale-[1.04]"
+                          />
+                        ) : (
+                          <div className="h-[170px] w-full rounded-xl bg-gray-200" />
+                        )}
                       </div>
-
                       <p className="mt-5 text-sm leading-relaxed text-gray-500">
-                        {product.shortDesc}
+                        {cat.description}
                       </p>
-
-                      <div className="mt-5 flex flex-wrap gap-2">
-                        {product.models.slice(0, 4).map((model) => (
-                          <span
-                            key={model.slug}
-                            className="rounded-full border border-gray-300 bg-white px-3 py-1 text-[10px] font-semibold text-gray-700"
-                          >
-                            {model.code}
-                          </span>
-                        ))}
-                      </div>
-
                       <div className="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-extrabold uppercase tracking-[0.12em] text-[#8B1A1A] transition-all duration-300 group-hover:gap-3">
                         İncele
                         <ArrowRight className="h-4 w-4" />

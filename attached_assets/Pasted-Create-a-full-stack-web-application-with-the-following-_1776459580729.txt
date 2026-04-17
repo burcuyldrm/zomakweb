@@ -1,0 +1,129 @@
+Create a full-stack web application with the following architecture:
+
+TECH STACK:
+- Frontend: React + TypeScript + TailwindCSS
+- Routing: wouter
+- Backend: Node.js + Express
+- Database: SQLite (simple and local)
+- File upload: multer
+- Project structure must be clean and production-like
+
+GOAL:
+Build a product management system where:
+- Admin panel manages products and models
+- Website reads data dynamically from backend API
+- No hardcoded product data in frontend
+
+--------------------------------------
+
+DATA STRUCTURE:
+
+ProductCategory:
+- id
+- title
+- slug
+- shortDesc
+- description
+- coverImage
+
+ProductModel:
+- id
+- categoryId
+- code
+- title
+- slug
+- shortDesc
+- description
+- image
+
+ProductSpec:
+- id
+- modelId
+- label
+- value
+
+--------------------------------------
+
+BACKEND REQUIREMENTS:
+
+Create REST API:
+
+GET /api/categories
+GET /api/categories/:slug
+GET /api/categories/:slug/models
+GET /api/models/:slug
+
+POST /api/categories
+POST /api/models
+POST /api/upload
+
+Use multer to upload images to /uploads folder.
+
+Return image URLs like:
+http://localhost:5000/uploads/image.jpg
+
+--------------------------------------
+
+ADMIN PANEL:
+
+Create /admin page with:
+
+1. Add Category Form:
+- title
+- slug
+- description
+- image upload
+
+2. Add Model Form:
+- select category
+- code
+- title
+- description
+- image upload
+
+3. List all categories and models
+
+--------------------------------------
+
+FRONTEND WEBSITE:
+
+Replace static product data with API calls.
+
+Pages:
+
+/urunler
+→ show categories as cards
+
+/urunler/:categorySlug
+→ left sidebar filter + right model grid
+
+/urunler/:categorySlug/:modelSlug
+→ model detail page
+
+--------------------------------------
+
+UI REQUIREMENTS:
+
+- Use Tailwind
+- Modern industrial design
+- Cards with hover effects
+- Left filter sidebar (sticky)
+- Responsive grid
+
+--------------------------------------
+
+IMPORTANT:
+
+- Remove all hardcoded products.ts usage
+- Fetch everything from API using fetch or axios
+- Use React hooks (useEffect, useState)
+- Clean component structure
+
+--------------------------------------
+
+DELIVERABLE:
+
+Working full-stack project where:
+- Admin panel controls content
+- Website updates automatically
+- Images are uploaded and displayed

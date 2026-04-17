@@ -6,10 +6,12 @@ import newsRouter from "./news";
 import mediaRouter from "./media";
 import contactRouter from "./contact";
 import statsRouter from "./stats";
+import uploadRouter from "./upload";
 
 const router: IRouter = Router();
 
 router.use(healthRouter);
+router.use(uploadRouter);
 router.use(categoriesRouter);
 router.use(productsRouter);
 router.use(newsRouter);
