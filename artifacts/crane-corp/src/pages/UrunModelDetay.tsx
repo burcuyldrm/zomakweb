@@ -47,12 +47,22 @@ export default function UrunModelDetay() {
       <div className="border-b border-gray-200 bg-gray-50 py-3">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center gap-2 text-xs text-gray-500">
-            <Link href="/"><span className="cursor-pointer hover:text-[#8B1A1A]">Ana Sayfa</span></Link>
+            <Link href="/">
+              <span className="cursor-pointer hover:text-[#8B1A1A]">
+                Ana Sayfa
+              </span>
+            </Link>
             <span>/</span>
-            <Link href="/urunler"><span className="cursor-pointer hover:text-[#8B1A1A]">Ürünler</span></Link>
+            <Link href="/urunler">
+              <span className="cursor-pointer hover:text-[#8B1A1A]">
+                Ürünler
+              </span>
+            </Link>
             <span>/</span>
             <Link href={`/urunler/${product.slug}`}>
-              <span className="cursor-pointer hover:text-[#8B1A1A]">{product.title}</span>
+              <span className="cursor-pointer hover:text-[#8B1A1A]">
+                {product.title}
+              </span>
             </Link>
             <span>/</span>
             <span className="font-medium text-gray-900">{model.code}</span>
@@ -62,7 +72,11 @@ export default function UrunModelDetay() {
 
       <div className="container mx-auto px-4 py-14 md:px-8">
         <Link href={`/urunler/${product.slug}`}>
-          <Button variant="ghost" size="sm" className="-ml-2 mb-8 rounded-sm text-xs font-bold uppercase text-gray-500 hover:text-[#8B1A1A]">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="-ml-2 mb-8 rounded-sm text-xs font-bold uppercase text-gray-500 hover:text-[#8B1A1A]"
+          >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Model Listesine Dön
           </Button>
@@ -97,7 +111,9 @@ export default function UrunModelDetay() {
               {model.code}
             </h1>
 
-            <p className="mb-3 text-lg font-bold text-gray-800">{product.title}</p>
+            <p className="mb-3 text-lg font-bold text-gray-800">
+              {product.title}
+            </p>
 
             <p className="mb-5 border-l-2 border-[#8B1A1A] pl-4 text-sm font-medium italic text-gray-500">
               {model.shortDesc}
@@ -114,9 +130,16 @@ export default function UrunModelDetay() {
                 </h3>
                 <div className="divide-y divide-gray-100">
                   {model.specs.map((spec, i) => (
-                    <div key={i} className="flex justify-between py-2.5 text-sm">
-                      <span className="font-medium text-gray-500">{spec.label}</span>
-                      <span className="font-bold text-gray-900">{spec.value}</span>
+                    <div
+                      key={i}
+                      className="flex justify-between py-2.5 text-sm"
+                    >
+                      <span className="font-medium text-gray-500">
+                        {spec.label}
+                      </span>
+                      <span className="font-bold text-gray-900">
+                        {spec.value}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -135,14 +158,20 @@ export default function UrunModelDetay() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" className="h-11 rounded-sm border-gray-300 px-7 font-bold uppercase text-gray-800 hover:bg-gray-50">
+                <Button
+                  variant="outline"
+                  className="h-11 rounded-sm border-gray-300 px-7 font-bold uppercase text-gray-800 hover:bg-gray-50"
+                >
                   <MessageCircle className="mr-2 h-4 w-4 text-green-600" />
                   WhatsApp
                 </Button>
               </a>
 
               <a href="tel:05411290102">
-                <Button variant="outline" className="h-11 rounded-sm border-gray-300 font-bold uppercase text-gray-800 hover:bg-gray-50">
+                <Button
+                  variant="outline"
+                  className="h-11 rounded-sm border-gray-300 font-bold uppercase text-gray-800 hover:bg-gray-50"
+                >
                   <Phone className="mr-2 h-4 w-4" />
                   Ara
                 </Button>
