@@ -29,7 +29,7 @@ export default function UrunModelDetay() {
 
   if (!result) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+      <div className="flex min-h-screen flex-col items-center justify-center px-4 text-center">
         <h1 className="mb-4 text-2xl font-black uppercase">Model Bulunamadı</h1>
         <Link href="/urunler">
           <Button className="rounded-sm border-none bg-[#8B1A1A] font-bold text-white">
@@ -47,13 +47,9 @@ export default function UrunModelDetay() {
       <div className="border-b border-gray-200 bg-gray-50 py-3">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center gap-2 text-xs text-gray-500">
-            <Link href="/">
-              <span className="cursor-pointer hover:text-[#8B1A1A]">Ana Sayfa</span>
-            </Link>
+            <Link href="/"><span className="cursor-pointer hover:text-[#8B1A1A]">Ana Sayfa</span></Link>
             <span>/</span>
-            <Link href="/urunler">
-              <span className="cursor-pointer hover:text-[#8B1A1A]">Ürünler</span>
-            </Link>
+            <Link href="/urunler"><span className="cursor-pointer hover:text-[#8B1A1A]">Ürünler</span></Link>
             <span>/</span>
             <Link href={`/urunler/${product.slug}`}>
               <span className="cursor-pointer hover:text-[#8B1A1A]">{product.title}</span>
@@ -66,11 +62,7 @@ export default function UrunModelDetay() {
 
       <div className="container mx-auto px-4 py-14 md:px-8">
         <Link href={`/urunler/${product.slug}`}>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="-ml-2 mb-8 rounded-sm text-xs font-bold uppercase text-gray-500 hover:text-[#8B1A1A]"
-          >
+          <Button variant="ghost" size="sm" className="-ml-2 mb-8 rounded-sm text-xs font-bold uppercase text-gray-500 hover:text-[#8B1A1A]">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Model Listesine Dön
           </Button>
@@ -105,9 +97,7 @@ export default function UrunModelDetay() {
               {model.code}
             </h1>
 
-            <p className="mb-3 text-lg font-bold text-gray-800">
-              {product.title}
-            </p>
+            <p className="mb-3 text-lg font-bold text-gray-800">{product.title}</p>
 
             <p className="mb-5 border-l-2 border-[#8B1A1A] pl-4 text-sm font-medium italic text-gray-500">
               {model.shortDesc}
@@ -145,20 +135,14 @@ export default function UrunModelDetay() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button
-                  variant="outline"
-                  className="h-11 rounded-sm border-gray-300 px-7 font-bold uppercase text-gray-800 hover:bg-gray-50"
-                >
+                <Button variant="outline" className="h-11 rounded-sm border-gray-300 px-7 font-bold uppercase text-gray-800 hover:bg-gray-50">
                   <MessageCircle className="mr-2 h-4 w-4 text-green-600" />
                   WhatsApp
                 </Button>
               </a>
 
               <a href="tel:05411290102">
-                <Button
-                  variant="outline"
-                  className="h-11 rounded-sm border-gray-300 font-bold uppercase text-gray-800 hover:bg-gray-50"
-                >
+                <Button variant="outline" className="h-11 rounded-sm border-gray-300 font-bold uppercase text-gray-800 hover:bg-gray-50">
                   <Phone className="mr-2 h-4 w-4" />
                   Ara
                 </Button>

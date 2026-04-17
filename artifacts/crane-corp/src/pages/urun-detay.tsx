@@ -21,7 +21,7 @@ export default function UrunDetay() {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+      <div className="flex min-h-screen flex-col items-center justify-center px-4 text-center">
         <h1 className="mb-4 text-2xl font-black uppercase">Kategori Bulunamadı</h1>
         <Link href="/urunler">
           <Button className="rounded-sm border-none bg-[#8B1A1A] font-bold text-white">
@@ -37,13 +37,9 @@ export default function UrunDetay() {
       <div className="border-b border-gray-200 bg-gray-50 py-3">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center gap-2 text-xs text-gray-500">
-            <Link href="/">
-              <span className="cursor-pointer hover:text-[#8B1A1A]">Ana Sayfa</span>
-            </Link>
+            <Link href="/"><span className="cursor-pointer hover:text-[#8B1A1A]">Ana Sayfa</span></Link>
             <span>/</span>
-            <Link href="/urunler">
-              <span className="cursor-pointer hover:text-[#8B1A1A]">Ürünler</span>
-            </Link>
+            <Link href="/urunler"><span className="cursor-pointer hover:text-[#8B1A1A]">Ürünler</span></Link>
             <span>/</span>
             <span className="font-medium text-gray-900">{product.title}</span>
           </div>
@@ -52,11 +48,7 @@ export default function UrunDetay() {
 
       <div className="container mx-auto px-4 py-14 md:px-8">
         <Link href="/urunler">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="-ml-2 mb-8 rounded-sm text-xs font-bold uppercase text-gray-500 hover:text-[#8B1A1A]"
-          >
+          <Button variant="ghost" size="sm" className="-ml-2 mb-8 rounded-sm text-xs font-bold uppercase text-gray-500 hover:text-[#8B1A1A]">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Tüm Ürünler
           </Button>
@@ -98,22 +90,6 @@ export default function UrunDetay() {
             <p className="mb-7 text-sm leading-relaxed text-gray-700">
               {product.description}
             </p>
-
-            {product.specs && product.specs.length > 0 && (
-              <div className="rounded-[20px] border border-gray-200 bg-gray-50 p-5">
-                <h3 className="mb-4 text-xs font-black tracking-widest text-gray-500">
-                  KATEGORİ BİLGİLERİ
-                </h3>
-                <div className="divide-y divide-gray-100">
-                  {product.specs.map((spec, i) => (
-                    <div key={i} className="flex justify-between py-2.5 text-sm">
-                      <span className="font-medium text-gray-500">{spec.label}</span>
-                      <span className="font-bold text-gray-900">{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </motion.div>
         </div>
 
@@ -143,8 +119,7 @@ export default function UrunDetay() {
                       <div
                         className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
                         style={{
-                          clipPath:
-                            "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)",
+                          clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)",
                         }}
                       />
 
@@ -161,7 +136,7 @@ export default function UrunDetay() {
                           {model.shortDesc}
                         </p>
 
-                        <div className="mt-auto pt-6 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[#8B1A1A] transition-all duration-300 group-hover:gap-3">
+                        <div className="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-extrabold uppercase tracking-[0.12em] text-[#8B1A1A] transition-all duration-300 group-hover:gap-3">
                           Detayı Aç
                           <ArrowRight className="h-4 w-4" />
                         </div>
