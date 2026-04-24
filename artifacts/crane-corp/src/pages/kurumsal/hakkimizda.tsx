@@ -42,7 +42,7 @@ export default function Hakkimizda() {
             viewport={{ once: true }}
             className="rounded-sm overflow-hidden shadow-md"
           >
-            <img src={craneImg as unknown as string} alt="ZOMAK Vinç" className="w-160 h-100 object-contain" />
+            <img src={craneImg as unknown as string} alt="ZOMAK Vinç" className="w-full h-auto object-contain" />
           </motion.div>
         </div>
 
