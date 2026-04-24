@@ -12,7 +12,6 @@ import { Button } from "@/components/ui/button";
 import { useListCategories } from "@workspace/api-client-react";
 import heroImg1 from "@assets/hero_kurtarici_1.png";
 import heroImg2 from "@assets/hero_vinc_2.png";
-import heroImg3 from "@assets/hero_kurtarici_3.jpeg";
 import heroImg4 from "@assets/hero_kurtarici_4.jpeg";
 
 const references = [
@@ -37,14 +36,6 @@ const heroSlides = [
     title: "SAHADA\nYÜKSEK PERFORMANS",
     desc: "Ağır hizmet koşullarına uygun, güvenilir ve dayanıklı ürün gruplarımız ile projelerinize değer katıyoruz.",
     image: heroImg2,
-    cta: "/urunler",
-  },
-  {
-    id: 3,
-    eyebrow: "ÖZEL ÜRETİM",
-    title: "GÜÇ VE\nSTİL BİR ARADA",
-    desc: "Her proje için özel tasarım ve üretim kapasitemiz ile beklentilerinizin ötesinde çözümler sunuyoruz.",
-    image: heroImg3,
     cta: "/urunler",
   },
   {
