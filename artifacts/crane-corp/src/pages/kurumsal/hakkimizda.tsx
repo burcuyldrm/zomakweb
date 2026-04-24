@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import craneImg from "@assets/hakkımızda_1775570946334.png";
+import craneImg from "@assets/hakkımızda.png";
 import { PageHero } from "@/components/layout/page-hero";
 
 const values = [
