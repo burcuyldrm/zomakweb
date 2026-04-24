@@ -217,9 +217,6 @@ export default function Home() {
       <section className="relative z-20 -mt-10 bg-white pb-20 pt-6 md:-mt-14 md:pt-10">
         <div className="container mx-auto px-4 md:px-8">
           <div className="mb-8 text-center">
-            <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#8B1A1A]">
-              Ürün Gruplarımız
-            </div>
             <h2 className="text-3xl font-black text-gray-900 md:text-4xl">
               ÜRÜNLERİMİZ
             </h2>
