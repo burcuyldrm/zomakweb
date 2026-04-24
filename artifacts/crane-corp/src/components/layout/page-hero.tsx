@@ -7,7 +7,7 @@ interface PageHeroProps {
 export function PageHero({ label, title, description }: PageHeroProps) {
   return (
     <div className="relative bg-[#111111] overflow-hidden">
-      <div className="relative container mx-auto px-4 md:px-8 py-15 flex flex-col justify-center">
+      <div className="relative container mx-auto px-4 md:px-8 py-17 flex flex-col justify-center">
         <h1 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
           {title}
         </h1>
