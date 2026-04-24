@@ -75,7 +75,7 @@ export default function Referanslar() {
 
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8">
-          <p className="text-gray-500 text-sm leading-relaxed mb-14 max-w-3xl">
+          <p className="text-gray-500 text-sm leading-relaxed mb-14 whitespace-nowrap">
             Zomak olarak referans müşterilerimizle yalnızca bir ticari ilişki değil, uzun vadeli ve güvene dayalı bir iş ortaklığı kurmaktayız. Teslim ettiğimiz her ekipman, bu ortaklığın somut bir yansımasıdır.
           </p>
 
