@@ -221,8 +221,8 @@ export default function UrunModelDetay() {
 
             {/* PDF görüntüleyici — react-pdf (canvas tabanlı, iframe yok) */}
             {model.pdfUrl && (
-              <div className="mb-6">
-                <div className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] overflow-hidden flex flex-col items-center p-4">
+              <div className="mb-6 flex justify-center">
+                <div className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] overflow-hidden inline-flex flex-col items-center p-4">
                   <Document
                     file={model.pdfUrl}
                     onLoadSuccess={onDocumentLoadSuccess}
@@ -231,7 +231,7 @@ export default function UrunModelDetay() {
                   >
                     <Page
                       pageNumber={pageNumber}
-                      width={Math.min(800, window.innerWidth - 80)}
+                      width={Math.min(480, window.innerWidth - 80)}
                       renderAnnotationLayer={false}
                       renderTextLayer={false}
                       className="shadow-md rounded"
