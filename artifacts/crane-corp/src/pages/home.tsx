@@ -206,7 +206,7 @@ export default function Home() {
               preserveAspectRatio="none"
             >
               <path
-                d="M0,0 C280,140 520,175 720,155 C950,130 1170,55 1440,0 L1440,180 L0,180 Z"
+                d="M0,30 C360,175 1080,175 1440,30 L1440,180 L0,180 Z"
                 fill="white"
               />
             </svg>
