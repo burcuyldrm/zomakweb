@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import logoImg from "@assets/WhatsApp_Image_2026-04-19_at_21.54.01_1777040973552.jpeg";
+import logoImg from "@assets/zomak-logo-nobg.png";
 
 const products = [
   { href: "/urunler/mobil-katlanir-vinc", label: "Mobil Katlanır Vinç" },
@@ -139,10 +139,10 @@ export function Navbar() {
       {/* ── MAIN NAV — fixed 90px height, overflow visible for logo ── */}
       <nav
         className="bg-white border-b-2 border-[#8B1A1A] shadow-sm"
-        style={{ height: "80px" }}
+        style={{ height: "130px" }}
       >
         <div
-          className="h-full px-4 md:px-10 flex items-center justify-between"
+          className="h-full px-4 md:px-15 flex items-center justify-between"
         >
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center" }}>
@@ -150,7 +150,7 @@ export function Navbar() {
               src={logoImg as unknown as string}
               alt="ZOMAK"
               style={{
-                height: "60px",
+                height: "125px",
                 width: "auto",
                 objectFit: "contain",
                 display: "block",

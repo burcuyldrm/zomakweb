@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import logoImg from "@assets/WhatsApp_Image_2026-04-19_at_21.54.01_1777040973552.jpeg";
+import logoImg from "@assets/zomak-logo-nobg.png";
 
 const navItems = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },

@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Lock, Eye, EyeOff } from "lucide-react";
-import logoImg from "@assets/WhatsApp_Image_2026-04-19_at_21.54.01_1777040973552.jpeg";
+import logoImg from "@assets/zomak-logo-nobg.png";
 
 const loginSchema = z.object({
   email: z.string().email("Geçerli bir e-posta adresi giriniz"),
