@@ -46,11 +46,18 @@ export default function Teklif() {
     },
   });
 
-  function onSubmit(_values: QuoteValues) {
-    setTimeout(() => {
+  async function onSubmit(values: QuoteValues) {
+    const res = await fetch("/api/quotes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    });
+    if (res.ok) {
       setSubmitted(true);
       toast({ title: "Talebiniz alındı", description: "Ekibimiz en kısa sürede sizinle iletişime geçecektir." });
-    }, 600);
+    } else {
+      toast({ title: "Hata", description: "Gönderim başarısız. Lütfen tekrar deneyin.", variant: "destructive" });
+    }
   }
 
   return (

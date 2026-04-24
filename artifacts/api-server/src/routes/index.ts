@@ -8,6 +8,7 @@ import contactRouter from "./contact";
 import statsRouter from "./stats";
 import uploadRouter from "./upload";
 import referencesRouter from "./references";
+import quotesRouter from "./quotes";
 
 const router: IRouter = Router();
 
@@ -20,5 +21,6 @@ router.use(mediaRouter);
 router.use(contactRouter);
 router.use(statsRouter);
 router.use(referencesRouter);
+router.use(quotesRouter);
 
 export default router;
