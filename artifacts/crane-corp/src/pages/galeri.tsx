@@ -3,9 +3,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 import craneImg from "@assets/e8d0929a-4828-4358-80ce-dc6d91d4660f_1775312450764.jpeg";
 import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763.jpeg";
+import galeri1 from "@assets/galeri_vinc_1.jpeg";
+import galeri2 from "@assets/galeri_kurtarici_2.jpeg";
+import galeri3 from "@assets/galeri_kurtarici_3.jpeg";
+import galeri4 from "@assets/galeri_kurtarici_4.jpeg";
+import galeri5 from "@assets/galeri_kurtarici_5.jpeg";
+import galeri6 from "@assets/galeri_vinc_6.jpeg";
 import { PageHero } from "@/components/layout/page-hero";
 
 const images = [
+  { src: galeri1, alt: "Mobil Vinç ZV-060" },
+  { src: galeri2, alt: "Kurtarıcı ZK-G300" },
+  { src: galeri3, alt: "Kurtarıcı ZK-G300 — Otobüs Kurtarma" },
+  { src: galeri4, alt: "Kurtarıcı ZK-G300 — TIR Kurtarma" },
+  { src: galeri5, alt: "Kurtarıcı ZK-G300 — Yol Yardım" },
+  { src: galeri6, alt: "Vinç — Kanca Operasyonu" },
   { src: craneImg, alt: "Mobil Katlanır Vinç" },
   { src: truckImg, alt: "Hidrolik Gözlüklü Kurtarıcı — Pekgöz" },
 ];
