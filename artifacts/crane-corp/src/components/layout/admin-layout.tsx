@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import {
   LayoutDashboard, Package, Building2, Image, Star,
-  FileText, Settings, LogOut, Menu, X, Globe, ChevronRight,
+  FileText, Settings, LogOut, Menu, X, Globe, ChevronRight, Layers,
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -10,6 +10,7 @@ import logoImg from "@assets/zomak-logo-nobg.png";
 const navItems = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/urunler", label: "Ürünler", icon: Package },
+  { href: "/admin/categories", label: "Ürün Grupları", icon: Layers },
   { href: "/admin/kurumsal", label: "Kurumsal", icon: Building2 },
   { href: "/admin/galeri", label: "Galeri", icon: Image },
   { href: "/admin/referanslar", label: "Referanslar", icon: Star },

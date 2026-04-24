@@ -18,7 +18,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowLeft, Upload, X, Plus, GripVertical } from "lucide-react";
+import { ArrowLeft, Upload, X, Plus, FileText, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 
 const productSchema = z.object({
@@ -64,8 +64,9 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
   const [teknikSpecs, setTeknikSpecs] = useState<KV[]>([]);
   // Genel Özellikler
   const [genelSpecs, setGenelSpecs] = useState<KV[]>([]);
-  // Diyagram görselleri
+  // Diyagram görselleri (resimler) ve PDF dosyaları
   const [diagrams, setDiagrams] = useState<string[]>([]);
+  const [pdfUrl, setPdfUrl] = useState<string>("");
   const diagramRef = useRef<HTMLInputElement>(null);
 
   const [uploading, setUploading] = useState(false);
@@ -91,6 +92,7 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
       setGallery(product.gallery ?? []);
       setTeknikSpecs((product.specs as KV[]) ?? []);
       setDiagrams(product.usageAreas ?? []);
+      setPdfUrl(product.pdfUrl ?? "");
 
       // Genel özellikler description'dan JSON olarak okunuyor
       try {
@@ -137,9 +139,16 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
     if (!files) return;
     setUploading(true);
     try {
-      const urls = await Promise.all(Array.from(files).map(uploadFile));
-      setDiagrams(prev => [...prev, ...urls]);
-      toast({ title: `${urls.length} diyagram eklendi` });
+      for (const file of Array.from(files)) {
+        const url = await uploadFile(file);
+        if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
+          setPdfUrl(url);
+          toast({ title: "PDF yüklendi", description: file.name });
+        } else {
+          setDiagrams(prev => [...prev, url]);
+          toast({ title: "Diyagram eklendi", description: file.name });
+        }
+      }
     } catch { toast({ title: "Hata", description: "Yükleme başarısız.", variant: "destructive" }); }
     finally { setUploading(false); }
   }
@@ -174,7 +183,7 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
       gallery,
       usageAreas: diagrams,
       optionalEquipment: [],
-      pdfUrl: null,
+      pdfUrl: pdfUrl || null,
     };
 
     if (isEdit) {
@@ -415,23 +424,63 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
           <div className={sectionClass}>
             <h2 className={sectionTitle}>Diyagram / Teknik Çizim</h2>
             <input ref={diagramRef} type="file" accept="image/*,.pdf" multiple className="hidden" onChange={e => handleDiagramUpload(e.target.files)} />
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-3">
-              {diagrams.map((img, i) => (
-                <div key={i} className="relative group aspect-video">
-                  <img src={img} alt="" className="w-full h-full object-contain rounded-sm bg-gray-100 border border-gray-200" />
-                  <button type="button" className="absolute top-1 right-1 w-5 h-5 bg-red-600 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                    onClick={() => setDiagrams(d => d.filter((_, idx) => idx !== i))}>
-                    <X className="w-3 h-3" />
-                  </button>
+
+            {/* PDF Bölümü */}
+            <div className="mb-5">
+              <p className="text-xs font-semibold text-gray-500 mb-2">PDF DOSYASI (TEKNİK KATALOG)</p>
+              {pdfUrl ? (
+                <div className="flex items-center gap-3 p-3 bg-red-50 border border-red-100 rounded-sm">
+                  <div className="w-10 h-10 bg-[#8B1A1A] rounded flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-gray-800 truncate">
+                      {pdfUrl.split("/").pop() || "PDF Dosyası"}
+                    </p>
+                    <p className="text-xs text-gray-400 truncate">{pdfUrl}</p>
+                  </div>
+                  <div className="flex items-center gap-1 flex-shrink-0">
+                    <a href={pdfUrl} target="_blank" rel="noopener noreferrer"
+                      className="p-1.5 text-gray-500 hover:text-[#8B1A1A] transition-colors rounded">
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                    <button type="button" className="p-1.5 text-gray-400 hover:text-red-600 transition-colors rounded"
+                      onClick={() => setPdfUrl("")}>
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
-              ))}
-              <button type="button" className="aspect-video border-2 border-dashed border-gray-200 rounded-sm flex flex-col items-center justify-center hover:border-[#8B1A1A] hover:bg-red-50 transition-all"
-                onClick={() => diagramRef.current?.click()} disabled={uploading}>
-                <Plus className="w-5 h-5 text-gray-300" />
-                <span className="text-[10px] text-gray-400 mt-1">Diyagram Ekle</span>
-              </button>
+              ) : (
+                <button type="button"
+                  className="flex items-center gap-2 px-4 py-2.5 border-2 border-dashed border-gray-200 rounded-sm text-gray-400 hover:border-[#8B1A1A] hover:text-[#8B1A1A] hover:bg-red-50 transition-all text-sm"
+                  onClick={() => diagramRef.current?.click()} disabled={uploading}>
+                  <FileText className="w-4 h-4" />
+                  PDF Yükle
+                </button>
+              )}
             </div>
-            <p className="text-xs text-gray-400">Teknik çizim veya diyagram görsellerini yükleyin</p>
+
+            {/* Görsel Diyagramlar */}
+            <div>
+              <p className="text-xs font-semibold text-gray-500 mb-2">DİYAGRAM GÖRSELLERİ</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-3">
+                {diagrams.map((img, i) => (
+                  <div key={i} className="relative group aspect-video">
+                    <img src={img} alt="" className="w-full h-full object-contain rounded-sm bg-gray-100 border border-gray-200" />
+                    <button type="button" className="absolute top-1 right-1 w-5 h-5 bg-red-600 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                      onClick={() => setDiagrams(d => d.filter((_, idx) => idx !== i))}>
+                      <X className="w-3 h-3" />
+                    </button>
+                  </div>
+                ))}
+                <button type="button" className="aspect-video border-2 border-dashed border-gray-200 rounded-sm flex flex-col items-center justify-center hover:border-[#8B1A1A] hover:bg-red-50 transition-all"
+                  onClick={() => diagramRef.current?.click()} disabled={uploading}>
+                  <Plus className="w-5 h-5 text-gray-300" />
+                  <span className="text-[10px] text-gray-400 mt-1">Görsel Ekle</span>
+                </button>
+              </div>
+            </div>
+            <p className="text-xs text-gray-400">Görsel için PNG/JPG, katalog için PDF yükleyebilirsiniz</p>
           </div>
 
           {/* ── YAYIN AYARLARI ── */}
