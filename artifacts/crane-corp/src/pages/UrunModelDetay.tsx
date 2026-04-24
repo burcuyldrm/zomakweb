@@ -214,78 +214,83 @@ export default function UrunModelDetay() {
           </motion.div>
         </div>
 
-        {/* ── Diyagram bölümü ── */}
-        {(diagrams.length > 0 || model.pdfUrl) && (
+        {/* ── Diyagram + Galeri yan yana ── */}
+        {(diagrams.length > 0 || model.pdfUrl || (model.gallery && model.gallery.length > 0)) && (
           <div className="mt-16 border-t border-gray-100 pt-12">
-            <h2 className="mb-6 text-xl font-black text-gray-900">Teknik Diyagram</h2>
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
 
-            {/* PDF görüntüleyici — react-pdf (canvas tabanlı, iframe yok) */}
-            {model.pdfUrl && (
-              <div className="mb-6 flex justify-center">
-                <div className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] overflow-hidden inline-flex flex-col items-center p-4">
-                  <Document
-                    file={model.pdfUrl}
-                    onLoadSuccess={onDocumentLoadSuccess}
-                    loading={<div className="py-12 text-sm text-gray-400">PDF yükleniyor...</div>}
-                    error={<div className="py-12 text-sm text-red-500">PDF yüklenemedi.</div>}
-                  >
-                    <Page
-                      pageNumber={pageNumber}
-                      width={Math.min(480, window.innerWidth - 80)}
-                      renderAnnotationLayer={false}
-                      renderTextLayer={false}
-                      className="shadow-md rounded"
-                    />
-                  </Document>
+              {/* Sol: Teknik Diyagram */}
+              {(model.pdfUrl || diagrams.length > 0) && (
+                <div>
+                  <h2 className="mb-6 text-xl font-black text-gray-900">Teknik Diyagram</h2>
 
-                  {numPages > 1 && (
-                    <div className="flex items-center gap-4 mt-4">
-                      <button
-                        disabled={pageNumber <= 1}
-                        onClick={() => setPageNumber(p => p - 1)}
-                        className="p-1.5 rounded-full border border-gray-300 bg-white hover:bg-gray-100 disabled:opacity-30 transition"
+                  {model.pdfUrl && (
+                    <div className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] overflow-hidden flex flex-col items-center p-4">
+                      <Document
+                        file={model.pdfUrl}
+                        onLoadSuccess={onDocumentLoadSuccess}
+                        loading={<div className="py-12 text-sm text-gray-400">PDF yükleniyor...</div>}
+                        error={<div className="py-12 text-sm text-red-500">PDF yüklenemedi.</div>}
                       >
-                        <ChevronLeft className="w-4 h-4 text-gray-700" />
-                      </button>
-                      <span className="text-sm text-gray-600 font-medium">
-                        {pageNumber} / {numPages}
-                      </span>
-                      <button
-                        disabled={pageNumber >= numPages}
-                        onClick={() => setPageNumber(p => p + 1)}
-                        className="p-1.5 rounded-full border border-gray-300 bg-white hover:bg-gray-100 disabled:opacity-30 transition"
-                      >
-                        <ChevronRight className="w-4 h-4 text-gray-700" />
-                      </button>
+                        <Page
+                          pageNumber={pageNumber}
+                          width={Math.min(440, window.innerWidth / 2 - 80)}
+                          renderAnnotationLayer={false}
+                          renderTextLayer={false}
+                          className="shadow-md rounded"
+                        />
+                      </Document>
+
+                      {numPages > 1 && (
+                        <div className="flex items-center gap-4 mt-4">
+                          <button
+                            disabled={pageNumber <= 1}
+                            onClick={() => setPageNumber(p => p - 1)}
+                            className="p-1.5 rounded-full border border-gray-300 bg-white hover:bg-gray-100 disabled:opacity-30 transition"
+                          >
+                            <ChevronLeft className="w-4 h-4 text-gray-700" />
+                          </button>
+                          <span className="text-sm text-gray-600 font-medium">
+                            {pageNumber} / {numPages}
+                          </span>
+                          <button
+                            disabled={pageNumber >= numPages}
+                            onClick={() => setPageNumber(p => p + 1)}
+                            className="p-1.5 rounded-full border border-gray-300 bg-white hover:bg-gray-100 disabled:opacity-30 transition"
+                          >
+                            <ChevronRight className="w-4 h-4 text-gray-700" />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {diagrams.length > 0 && (
+                    <div className="mt-4 flex flex-col gap-4">
+                      {diagrams.map((img, i) => (
+                        <div key={i} className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] p-4 flex items-center justify-center">
+                          <img src={img} alt={`Diyagram ${i + 1}`} className="max-h-[340px] w-auto max-w-full object-contain" />
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
-              </div>
-            )}
+              )}
 
-            {/* Görsel diyagramlar */}
-            {diagrams.length > 0 && (
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                {diagrams.map((img, i) => (
-                  <div key={i} className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] p-4 flex items-center justify-center">
-                    <img src={img} alt={`Diyagram ${i + 1}`} className="max-h-[340px] w-auto max-w-full object-contain" />
+              {/* Sağ: Ürün Galerisi */}
+              {model.gallery && model.gallery.length > 0 && (
+                <div>
+                  <h2 className="mb-6 text-xl font-black text-gray-900">Ürün Galerisi</h2>
+                  <div className="grid grid-cols-2 gap-3">
+                    {model.gallery.map((img, i) => (
+                      <div key={i} className="overflow-hidden rounded-[16px] bg-[#f3f3f3] cursor-pointer" onClick={() => setActiveImg(img)}>
+                        <img src={img} alt={`${model.name} - ${i + 1}`} className="h-[150px] w-full object-cover transition-transform duration-300 hover:scale-105" />
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* ── Fotoğraf galerisi ── */}
-        {model.gallery && model.gallery.length > 0 && (
-          <div className="mt-16 border-t border-gray-100 pt-12">
-            <h2 className="mb-6 text-xl font-black text-gray-900">Ürün Galerisi</h2>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-              {model.gallery.map((img, i) => (
-                <div key={i} className="overflow-hidden rounded-[16px] bg-[#f3f3f3] cursor-pointer" onClick={() => setActiveImg(img)}>
-                  <img src={img} alt={`${model.name} - ${i + 1}`} className="h-[160px] w-full object-cover transition-transform duration-300 hover:scale-105" />
                 </div>
-              ))}
+              )}
+
             </div>
           </div>
         )}
