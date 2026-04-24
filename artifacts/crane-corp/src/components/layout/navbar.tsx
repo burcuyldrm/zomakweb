@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import logoImg from "@assets/zomak-logo-nobg.png";
+import logoImg from "@assets/WhatsApp_Image_2026-04-19_at_21.54.01_1777040973552.jpeg";
 
 const products = [
   { href: "/urunler/mobil-katlanir-vinc", label: "Mobil Katlanır Vinç" },
@@ -142,7 +142,7 @@ export function Navbar() {
         style={{ height: "130px" }}
       >
         <div
-          className="h-full px-4 md:px-15 flex items-center justify-between"
+          className="h-full px-4 md:px-20 flex items-center justify-between"
         >
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center" }}>
@@ -150,7 +150,7 @@ export function Navbar() {
               src={logoImg as unknown as string}
               alt="ZOMAK"
               style={{
-                height: "125px",
+                height: "128px",
                 width: "auto",
                 objectFit: "contain",
                 display: "block",
@@ -161,10 +161,7 @@ export function Navbar() {
           {/* Desktop — centered nav links */}
           <div className="hidden md:flex items-center gap-7 text-sm font-bold tracking-wide absolute left-1/2 -translate-x-1/2">
             <Link href="/">
-              <span className={cn(
-                "cursor-pointer transition-colors hover:text-[#8B1A1A]",
-                location === "/" ? "text-[#8B1A1A]" : "text-gray-800",
-              )}>
+              <span className="cursor-pointer transition-colors hover:text-[#8B1A1A] text-[#8B1A1A] text-[15px]">
                 ANA SAYFA
               </span>
             </Link>
@@ -223,7 +220,6 @@ export function Navbar() {
           </div>
         </div>
       </nav>
-
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 flex flex-col shadow-lg">
