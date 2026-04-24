@@ -139,19 +139,18 @@ export function Navbar() {
       {/* ── MAIN NAV — fixed 90px height, overflow visible for logo ── */}
       <nav
         className="bg-white border-b-2 border-[#8B1A1A] shadow-sm"
-        style={{ height: "120px" }}
+        style={{ height: "80px" }}
       >
         <div
           className="h-full px-4 md:px-10 flex items-center justify-between"
-          style={{  }}
         >
-          {/* Logo — 10px eşit boşluk üstte ve altta */}
+          {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center" }}>
             <img
               src={logoImg as unknown as string}
               alt="ZOMAK"
               style={{
-                height: "180px",
+                height: "60px",
                 width: "auto",
                 objectFit: "contain",
                 display: "block",
