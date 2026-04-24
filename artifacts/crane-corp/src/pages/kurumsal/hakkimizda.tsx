@@ -40,9 +40,9 @@ export default function Hakkimizda() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-sm overflow-hidden shadow-md"
+            className="rounded-xl overflow-hidden shadow-md flex items-center justify-center bg-gray-50 h-[380px]"
           >
-            <img src={craneImg as unknown as string} alt="ZOMAK Vinç" className="w-full max-h-[420px] object-contain" />
+            <img src={craneImg as unknown as string} alt="ZOMAK Vinç" className="w-full h-full object-contain p-4" />
           </motion.div>
         </div>
 
