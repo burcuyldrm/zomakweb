@@ -363,10 +363,6 @@ export default function Home() {
       {/* ── CONTACT CTA ──────────────────────────────── */}
       <section className="border-t border-gray-200 bg-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <div className="mb-3 text-xs font-bold tracking-widest text-[#8B1A1A]">
-            PROJENİZİ DEĞERLENDİRELİM
-          </div>
-
           <h2 className="mb-4 text-3xl font-black leading-tight text-gray-900 md:text-4xl">
             Bizimle İletişime Geçin
           </h2>
