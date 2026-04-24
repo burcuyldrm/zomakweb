@@ -155,7 +155,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop — centered nav links */}
-          <div className="hidden md:flex items-center gap-7 text-sm font-bold tracking-wide absolute left-1/2 -translate-x-1/2">
+          <div className="hidden md:flex items-center gap-7 font-bold tracking-wide absolute left-1/2 -translate-x-1/2 text-[15px]">
             <Link href="/">
               <span className="cursor-pointer transition-colors hover:text-[#8B1A1A] text-[#8B1A1A] text-[15px]">
                 ANA SAYFA
