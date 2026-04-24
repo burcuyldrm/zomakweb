@@ -50,10 +50,7 @@ function DropdownMenu({
     >
       <div className="flex items-center gap-0.5">
         <Link href={href}>
-          <span className={cn(
-            "cursor-pointer text-sm font-bold tracking-wide transition-colors hover:text-[#8B1A1A]",
-            isActive ? "text-[#8B1A1A]" : "text-gray-800",
-          )}>
+          <span className="cursor-pointer font-bold tracking-wide transition-colors hover:text-[#8B1A1A] text-gray-800 text-[15px]">
             {label}
           </span>
         </Link>
@@ -68,7 +65,6 @@ function DropdownMenu({
           <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-200", open && "rotate-180")} />
         </button>
       </div>
-
       {open && (
         <div className="absolute top-full left-0 pt-2 min-w-[240px] z-50">
           <div className="bg-white border border-gray-200 shadow-xl py-1 rounded-sm">
