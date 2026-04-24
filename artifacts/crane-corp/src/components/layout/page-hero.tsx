@@ -7,7 +7,7 @@ interface PageHeroProps {
 export function PageHero({ label, title, description }: PageHeroProps) {
   return (
     <div className="relative bg-[#111111] overflow-hidden" style={{ minHeight: "100px" }}>
-      <div className="relative container mx-auto px-4 md:px-8 pt-20 pb-14">
+      <div className="relative container mx-auto px-4 md:px-8 pt-18 pb-12">
         <div className="text-[10px] font-bold text-white/60 tracking-[0.25em] uppercase mb-3">
           {label}
         </div>

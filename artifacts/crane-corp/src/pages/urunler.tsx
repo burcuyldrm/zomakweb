@@ -32,9 +32,10 @@ export default function Urunler() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.06 }}
+                className="h-full"
               >
-                <Link href={`/urunler/${cat.slug}`}>
-                  <article className="group relative min-h-[430px] cursor-pointer overflow-hidden rounded-[28px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+                <Link href={`/urunler/${cat.slug}`} className="h-full flex flex-col">
+                  <article className="group relative flex flex-col flex-1 min-h-[430px] cursor-pointer overflow-hidden rounded-[28px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
                     <div
                       className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
                       style={{
