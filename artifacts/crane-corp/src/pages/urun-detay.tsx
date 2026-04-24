@@ -120,7 +120,7 @@ export default function UrunDetay() {
           </div>
         )}
 
-        <div className="relative z-10 container mx-auto px-4 py-14 md:px-8 md:py-16">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 py-20 md:py-24 flex flex-col justify-center">
           <h1 className="text-4xl font-black text-white md:text-5xl">
             {category.name}
           </h1>
