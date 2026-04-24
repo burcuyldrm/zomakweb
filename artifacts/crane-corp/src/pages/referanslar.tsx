@@ -7,7 +7,7 @@ import logoKahraman from "@assets/image_1777048766865.png";
 import logoBergama from "@assets/image_1777048771889.png";
 import logoMarasal from "@assets/image_1777048777035.png";
 
-const referencesWithLogo = [
+const references = [
   {
     name: "Üçer Vinç",
     sector: "Vinç ve Kaldırma Hizmetleri",
@@ -32,14 +32,36 @@ const referencesWithLogo = [
     desc: "İnşaat ve sanayi projelerinde mobil ekipman tedariki ve teknik destek.",
     logo: logoMarasal,
   },
-];
-
-const referencesNoLogo = [
-  { name: "Kuşadası Vinç", sector: "Liman ve Nakliye" },
-  { name: "Fındık Vinç", sector: "Kaldırma Hizmetleri" },
-  { name: "Sert Oto Kurtarma", sector: "Oto Kurtarma" },
-  { name: "İzoto Yol Yardım", sector: "Yol Yardım Hizmetleri" },
-  { name: "Pekgöz Vinç", sector: "Vinç ve Kaldırma Hizmetleri" },
+  {
+    name: "Kuşadası Vinç",
+    sector: "Liman ve Nakliye",
+    desc: "Liman operasyonları ve deniz kargo kaldırma projelerinde ekipman desteği.",
+    logo: null,
+  },
+  {
+    name: "Fındık Vinç",
+    sector: "Kaldırma Hizmetleri",
+    desc: "Ağır yük taşıma ve kaldırma operasyonlarında güvenilir ekipman çözümleri.",
+    logo: null,
+  },
+  {
+    name: "Sert Oto Kurtarma",
+    sector: "Oto Kurtarma",
+    desc: "Araç kurtarma ve yol yardım operasyonlarına özel kurtarıcı ekipmanları.",
+    logo: null,
+  },
+  {
+    name: "İzoto Yol Yardım",
+    sector: "Yol Yardım Hizmetleri",
+    desc: "Karayolu yol yardım ve araç kurtarma hizmetlerinde uzun vadeli iş birliği.",
+    logo: null,
+  },
+  {
+    name: "Pekgöz Vinç",
+    sector: "Vinç ve Kaldırma Hizmetleri",
+    desc: "Hidrolik kurtarıcı ve mobil vinç ekipmanları tedarikinde güvenilir iş ortağı.",
+    logo: null,
+  },
 ];
 
 export default function Referanslar() {
@@ -57,15 +79,14 @@ export default function Referanslar() {
             Zomak olarak referans müşterilerimizle yalnızca bir ticari ilişki değil, uzun vadeli ve güvene dayalı bir iş ortaklığı kurmaktayız. Teslim ettiğimiz her ekipman, bu ortaklığın somut bir yansımasıdır.
           </p>
 
-          {/* Logolu referanslar */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-            {referencesWithLogo.map((ref, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {references.map((ref, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.08 }}
+                transition={{ duration: 0.45, delay: i * 0.06 }}
                 className="group relative flex flex-col bg-white border border-gray-200 rounded-[20px] overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)] hover:border-[#8B1A1A]/30 transition-all duration-300"
               >
                 <div
@@ -74,11 +95,17 @@ export default function Referanslar() {
                 />
                 <div className="relative z-10 flex flex-col h-full p-6">
                   <div className="flex items-center justify-center h-[100px] mb-4 bg-white rounded-xl border border-gray-100 shadow-sm px-4">
-                    <img
-                      src={ref.logo as unknown as string}
-                      alt={ref.name}
-                      className="max-h-[64px] max-w-full w-auto object-contain"
-                    />
+                    {ref.logo ? (
+                      <img
+                        src={ref.logo as unknown as string}
+                        alt={ref.name}
+                        className="max-h-[64px] max-w-full w-auto object-contain"
+                      />
+                    ) : (
+                      <span className="text-[#8B1A1A] font-black text-4xl">
+                        {ref.name.charAt(0)}
+                      </span>
+                    )}
                   </div>
                   <span className="block h-[4px] w-8 rounded-full bg-[#8B1A1A] mb-3" />
                   <h3 className="text-[18px] font-black text-gray-900 group-hover:text-[#8B1A1A] transition-colors duration-300 mb-1">
@@ -91,32 +118,6 @@ export default function Referanslar() {
                     {ref.desc}
                   </p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Logosuz referanslar */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
-            {referencesNoLogo.map((ref, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="group flex flex-col items-center justify-center text-center border border-gray-200 rounded-2xl p-6 hover:border-[#8B1A1A]/40 hover:bg-[#fdf5f5] hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="w-14 h-14 rounded-full bg-[#8B1A1A]/10 flex items-center justify-center mb-3 group-hover:bg-[#8B1A1A]/20 transition-colors">
-                  <span className="text-[#8B1A1A] font-black text-lg">
-                    {ref.name.charAt(0)}
-                  </span>
-                </div>
-                <h3 className="text-sm font-black text-gray-900 group-hover:text-[#8B1A1A] transition-colors mb-1">
-                  {ref.name}
-                </h3>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                  {ref.sector}
-                </p>
               </motion.div>
             ))}
           </div>
