@@ -302,9 +302,6 @@ export default function Home() {
       <section className="border-b border-gray-200 bg-gray-50 py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="mb-12 text-center">
-            <div className="mb-2 text-xs font-bold tracking-widest text-[#8B1A1A]">
-              GÜVENİ KAZANDIK
-            </div>
             <h2 className="text-3xl font-black text-gray-900">
               Referanslarımız
             </h2>
