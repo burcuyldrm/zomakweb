@@ -13,12 +13,21 @@ import { useListCategories } from "@workspace/api-client-react";
 import heroImg1 from "@assets/hero_kurtarici_1.png";
 import heroImg2 from "@assets/hero_vinc_2.png";
 import heroImg4 from "@assets/hero_kurtarici_4.jpeg";
+import logoUcer from "@assets/image_1777048760463.png";
+import logoKahraman from "@assets/image_1777048766865.png";
+import logoBergama from "@assets/image_1777048771889.png";
+import logoMarasal from "@assets/image_1777048777035.png";
 
-const references = [
-  "Pekgöz Vinç",
-  "Fındık Vinç",
-  "Bergama Vinç",
-  "Kuşadası Vinç",
+const marqueeRefs = [
+  { name: "Üçer Vinç", logo: logoUcer },
+  { name: "Kahraman Karoser", logo: logoKahraman },
+  { name: "Bergama Vinç", logo: logoBergama },
+  { name: "Maraşal Vinç", logo: logoMarasal },
+  { name: "Pekgöz Vinç", logo: null },
+  { name: "Fındık Vinç", logo: null },
+  { name: "Kuşadası Vinç", logo: null },
+  { name: "Sert Oto Kurtarma", logo: null },
+  { name: "İzoto Yol Yardım", logo: null },
 ];
 
 const heroSlides = [
@@ -290,40 +299,65 @@ export default function Home() {
         </div>
       </section>
       {/* ── REFERENCES ───────────────────────────────── */}
-      <section className="border-b border-gray-200 bg-gray-50 py-20">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-black text-gray-900">
-              Referanslarımız
-            </h2>
-          </div>
+      <section className="border-b border-gray-200 bg-gray-50 py-16">
+        <style>{`
+          @keyframes marquee-scroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee-scroll 28s linear infinite;
+          }
+          .marquee-track:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
 
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {references.map((ref, i) => (
-              <motion.div
+        <div className="mb-10 text-center">
+          <h2 className="text-3xl font-black text-gray-900">Referanslarımız</h2>
+          <p className="mt-2 text-sm text-gray-500">Güvenimizi paylaşan iş ortaklarımız</p>
+        </div>
+
+        <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+          <div className="marquee-track">
+            {[...marqueeRefs, ...marqueeRefs].map((ref, i) => (
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07 }}
-                className="flex items-center justify-center rounded-sm border border-gray-200 bg-white p-8 text-center text-sm font-bold text-gray-700 transition-colors duration-300 hover:border-[#8B1A1A] hover:text-[#8B1A1A]"
+                className="mx-3 flex w-52 shrink-0 flex-col items-center justify-center gap-3 rounded-xl border border-gray-200 bg-white px-6 py-5 shadow-sm transition-shadow duration-300 hover:shadow-md"
               >
-                {ref}
-              </motion.div>
+                {ref.logo ? (
+                  <img
+                    src={ref.logo}
+                    alt={ref.name}
+                    className="h-14 w-full object-contain"
+                  />
+                ) : (
+                  <div className="flex h-14 w-full items-center justify-center">
+                    <span className="text-center text-xs font-bold uppercase tracking-wide text-gray-400">
+                      {ref.name}
+                    </span>
+                  </div>
+                )}
+                <span className="text-center text-xs font-semibold text-gray-600">
+                  {ref.name}
+                </span>
+              </div>
             ))}
           </div>
+        </div>
 
-          <div className="mt-6 text-center">
-            <Link href="/referanslar">
-              <Button
-                variant="ghost"
-                className="group text-sm font-bold text-[#8B1A1A] hover:bg-transparent"
-              >
-                Tüm Referanslar
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
-          </div>
+        <div className="mt-8 text-center">
+          <Link href="/referanslar">
+            <Button
+              variant="ghost"
+              className="group text-sm font-bold text-[#8B1A1A] hover:bg-transparent"
+            >
+              Tüm Referanslar
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </section>
       {/* ── CONTACT CTA ──────────────────────────────── */}
