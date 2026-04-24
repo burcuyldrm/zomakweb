@@ -284,7 +284,7 @@ export default function Home() {
       <section className="border-b border-gray-100 bg-white py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-4 inline-block rounded-full border border-[#8B1A1A]/20 bg-[#8B1A1A]/5 px-4 py-1.5 text-xs font-bold tracking-widest text-[#8B1A1A]">
+            <div className="mb-4 inline-block rounded-full border border-[#8B1A1A]/20 bg-[#8B1A1A]/5 px-4 py-1.5 font-bold tracking-widest text-[#8B1A1A] text-[18px]">
               BİZ KİMİZ
             </div>
             <h2 className="mb-6 text-4xl font-black leading-tight text-gray-900 md:text-5xl">
