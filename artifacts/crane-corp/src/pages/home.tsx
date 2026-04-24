@@ -199,18 +199,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 z-10 h-24 md:h-32">
-            <svg
-              viewBox="0 0 1440 180"
-              className="h-full w-full"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0,30 C280,170 520,180 720,165 C950,145 1170,90 1440,20 L1440,180 L0,180 Z"
-                fill="white"
-              />
-            </svg>
-          </div>
+          <div className="absolute bottom-0 left-0 w-full h-[120px] bg-white z-20 [clip-path:polygon(0_45%,100%_15%,100%_100%,0_100%)]" />
         </div>
       </section>
       {/* ── PRODUCT CARDS ─────────────────────────── */}
