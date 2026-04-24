@@ -1,30 +1,36 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Building2 } from "lucide-react";
-import truckImg from "@assets/8c2a8adc-d4f4-4d87-abe2-5b692886a23b_1775312450763.jpeg";
 import { PageHero } from "@/components/layout/page-hero";
+import logoUcer from "@assets/image_1777048760463.png";
+import logoKahraman from "@assets/image_1777048766865.png";
+import logoBergama from "@assets/image_1777048771889.png";
+import logoMarasal from "@assets/image_1777048777035.png";
 
 const references = [
   {
-    name: "Pekgöz Vinç",
+    name: "Üçer Vinç",
     sector: "Vinç ve Kaldırma Hizmetleri",
     desc: "Hidrolik kurtarıcı sistemleri ve mobil vinç ekipmanları tedariki alanında uzun vadeli iş ortaklığı.",
+    logo: logoUcer,
   },
   {
-    name: "Fındık Vinç",
-    sector: "Kaldırma Hizmetleri",
-    desc: "İnşaat ve sanayi projelerinde mobil ekipman tedariki ve teknik destek.",
+    name: "Kahraman Karoser",
+    sector: "Karoser ve Ağır Taşıt",
+    desc: "Ağır hizmet araçları için özel üretim platform ve kurtarıcı ekipmanları tedariki.",
+    logo: logoKahraman,
   },
   {
     name: "Bergama Vinç",
     sector: "Vinç Hizmetleri",
     desc: "Bergama ve çevre bölgelerde proje bazlı kaldırma ve kurtarma çözümleri.",
+    logo: logoBergama,
   },
   {
-    name: "Kuşadası Vinç",
-    sector: "Liman ve Nakliye",
-    desc: "Liman operasyonları ve deniz kargo kaldırma projelerinde ekipman desteği.",
+    name: "Maraşal Vinç",
+    sector: "Kaldırma Hizmetleri",
+    desc: "İnşaat ve sanayi projelerinde mobil ekipman tedariki ve teknik destek.",
+    logo: logoMarasal,
   },
 ];
 
@@ -37,59 +43,57 @@ export default function Referanslar() {
         description="Türkiye'nin önde gelen vinç ve platform operatörleriyle iş ortaklığı kuruyoruz."
       />
 
-      <section className="py-16">
+      <section className="py-20">
         <div className="container mx-auto px-4 md:px-8">
-          <p className="text-gray-500 text-sm leading-relaxed mb-12 max-w-3xl">
+          <p className="text-gray-500 text-sm leading-relaxed mb-14 max-w-3xl">
             Zomak olarak referans müşterilerimizle yalnızca bir ticari ilişki değil, uzun vadeli ve güvene dayalı bir iş ortaklığı kurmaktayız. Teslim ettiğimiz her ekipman, bu ortaklığın somut bir yansımasıdır.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {references.map((ref, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="border border-gray-200 rounded-sm p-8 hover:border-[#8B1A1A] group transition-colors duration-300"
-                data-testid={`ref-card-${i}`}
+                transition={{ duration: 0.45, delay: i * 0.08 }}
+                className="group relative flex flex-col bg-white border border-gray-200 rounded-[20px] overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)] hover:border-[#8B1A1A]/30 transition-all duration-300"
               >
-                <div className="flex items-start justify-between mb-5">
-                  <div className="w-14 h-14 bg-gray-100 group-hover:bg-[#8B1A1A]/10 flex items-center justify-center rounded-sm transition-colors">
-                    <Building2 className="w-7 h-7 text-gray-400 group-hover:text-[#8B1A1A] transition-colors" />
+                <div
+                  className="absolute inset-0 bg-[#f8f8f8] transition-colors duration-300 group-hover:bg-[#fdf5f5]"
+                  style={{ clipPath: "polygon(0 0, 75% 0, 100% 18%, 100% 100%, 0 100%)" }}
+                />
+
+                <div className="relative z-10 flex flex-col h-full p-6">
+                  <div className="flex items-center justify-center h-[100px] mb-6 bg-white rounded-xl border border-gray-100 shadow-sm px-4">
+                    <img
+                      src={ref.logo as unknown as string}
+                      alt={ref.name}
+                      className="max-h-[64px] max-w-full w-auto object-contain"
+                    />
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#8B1A1A] border border-[#8B1A1A]/30 px-3 py-1 rounded-sm">
+
+                  <span className="mt-4 block h-[4px] w-8 rounded-full bg-[#8B1A1A] mb-4" />
+
+                  <h3 className="text-[18px] font-black text-gray-900 group-hover:text-[#8B1A1A] transition-colors duration-300 mb-1">
+                    {ref.name}
+                  </h3>
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#8B1A1A]/70 mb-3">
                     {ref.sector}
-                  </span>
+                  </p>
+                  <p className="text-gray-500 text-sm leading-relaxed mt-auto">
+                    {ref.desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-black uppercase mb-2 text-gray-900 group-hover:text-[#8B1A1A] transition-colors">
-                  {ref.name}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{ref.desc}</p>
               </motion.div>
             ))}
-          </div>
-
-          {/* Pekgöz showcase image */}
-          <div className="mb-14 rounded-sm overflow-hidden shadow-md">
-            <img
-              src={truckImg as unknown as string}
-              alt="Pekgöz Vinç — ZOMAK Ekipmanı"
-              className="w-full h-64 object-cover object-center"
-            />
-            <div className="bg-gray-50 border-x border-b border-gray-200 px-6 py-4 flex items-center justify-between">
-              <div>
-                <div className="text-[10px] font-bold text-[#8B1A1A] tracking-widest mb-0.5">REFERANS PROJESİ</div>
-                <div className="text-sm font-bold text-gray-800">Pekgöz Vinç — Hidrolik Kurtarıcı Teslimi</div>
-              </div>
-            </div>
           </div>
 
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="bg-gray-50 border border-dashed border-gray-300 rounded-sm p-12 text-center"
+            className="bg-gray-50 border border-dashed border-gray-300 rounded-2xl p-12 text-center"
           >
             <div className="text-xs font-bold text-[#8B1A1A] tracking-widest uppercase mb-2">Büyümeye Devam Ediyoruz</div>
             <h3 className="text-2xl font-black uppercase text-gray-900 mb-3">Referans Listemiz Genişliyor</h3>
