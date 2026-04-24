@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useRoute } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, MessageCircle, Phone } from "lucide-react";
+import { ArrowLeft, MessageCircle, Phone, FileText, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -16,6 +16,7 @@ interface ProductModel {
   specs: { key: string; value: string }[];
   description: string;
   usageAreas: string[];
+  pdfUrl: string | null;
   capacity: string;
   status: string;
 }
@@ -201,16 +202,44 @@ export default function UrunModelDetay() {
         </div>
 
         {/* ── Diyagram bölümü ── */}
-        {diagrams.length > 0 && (
+        {(diagrams.length > 0 || model.pdfUrl) && (
           <div className="mt-16 border-t border-gray-100 pt-12">
             <h2 className="mb-6 text-xl font-black text-gray-900">Teknik Diyagram</h2>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              {diagrams.map((img, i) => (
-                <div key={i} className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] p-4 flex items-center justify-center">
-                  <img src={img} alt={`Diyagram ${i + 1}`} className="max-h-[340px] w-auto max-w-full object-contain" />
-                </div>
-              ))}
-            </div>
+
+            {/* PDF indirme kartı */}
+            {model.pdfUrl && (
+              <div className="mb-6">
+                <a
+                  href={model.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className="inline-flex items-center gap-4 rounded-[16px] border border-red-100 bg-red-50 px-6 py-4 hover:bg-red-100 transition-colors group"
+                >
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#8B1A1A]">
+                    <FileText className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-black text-gray-900 group-hover:text-[#8B1A1A] transition-colors">
+                      Teknik Çalışma Diyagramı
+                    </p>
+                    <p className="text-xs text-gray-500 mt-0.5">{model.name} — PDF</p>
+                  </div>
+                  <Download className="ml-4 h-5 w-5 text-[#8B1A1A] opacity-60 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </div>
+            )}
+
+            {/* Görsel diyagramlar */}
+            {diagrams.length > 0 && (
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                {diagrams.map((img, i) => (
+                  <div key={i} className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] p-4 flex items-center justify-center">
+                    <img src={img} alt={`Diyagram ${i + 1}`} className="max-h-[340px] w-auto max-w-full object-contain" />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
