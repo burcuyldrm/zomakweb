@@ -10,6 +10,10 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useListCategories } from "@workspace/api-client-react";
+import heroImg1 from "@assets/50d58c24-2014-4f30-964c-46b163d42691_1777045730587.jpeg";
+import heroImg2 from "@assets/WhatsApp_Image_2026-04-05_at_15.06.43_1777045750774.jpeg";
+import heroImg3 from "@assets/anasayfa_vinc_hero.png";
+import heroImg4 from "@assets/mobil_vinc_hero.jpeg";
 
 const references = [
   "Pekgöz Vinç",
@@ -24,7 +28,7 @@ const heroSlides = [
     eyebrow: "ZOMAK VİNÇ PLATFORM VE MAKİNA SANAYİ",
     title: "ZİRVEYE\nODAKLAN",
     desc: "Mobil vinç, kurtarıcı ve özel hidrolik sistem çözümlerinde güvenilir üretim ve mühendislik desteği sunuyoruz.",
-    image: "/images/products/zv-300-1.jpeg",
+    image: heroImg1,
     cta: "/urunler",
   },
   {
@@ -32,7 +36,23 @@ const heroSlides = [
     eyebrow: "ENDÜSTRİYEL GÜÇ",
     title: "SAHADA\nYÜKSEK PERFORMANS",
     desc: "Ağır hizmet koşullarına uygun, güvenilir ve dayanıklı ürün gruplarımız ile projelerinize değer katıyoruz.",
-    image: "/images/products/zk-g300-1.jpeg",
+    image: heroImg2,
+    cta: "/urunler",
+  },
+  {
+    id: 3,
+    eyebrow: "ÖZEL ÜRETİM",
+    title: "GÜÇ VE\nSTİL BİR ARADA",
+    desc: "Her proje için özel tasarım ve üretim kapasitemiz ile beklentilerinizin ötesinde çözümler sunuyoruz.",
+    image: heroImg3,
+    cta: "/urunler",
+  },
+  {
+    id: 4,
+    eyebrow: "MOBİL VİNÇ",
+    title: "ALANLARDA\nÜSTÜN KALDIRIŞ",
+    desc: "Yüksek kapasiteli mobil vinç sistemlerimiz ile en zorlu kaldırma operasyonlarında yanınızdayız.",
+    image: heroImg4,
     cta: "/urunler",
   },
 ];
