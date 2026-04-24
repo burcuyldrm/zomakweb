@@ -1,9 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Link, useRoute } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, MessageCircle, Phone } from "lucide-react";
+import { ArrowLeft, MessageCircle, Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 interface ProductModel {
   id: number;
@@ -42,6 +47,14 @@ export default function UrunModelDetay() {
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [activeImg, setActiveImg] = useState<string | null>(null);
+
+  const [numPages, setNumPages] = useState<number>(0);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const onDocumentLoadSuccess = useCallback(({ numPages }: { numPages: number }) => {
+    setNumPages(numPages);
+    setPageNumber(1);
+  }, []);
 
   useEffect(() => {
     if (!modelSlug) return;
@@ -206,15 +219,47 @@ export default function UrunModelDetay() {
           <div className="mt-16 border-t border-gray-100 pt-12">
             <h2 className="mb-6 text-xl font-black text-gray-900">Teknik Diyagram</h2>
 
-            {/* Gömülü PDF görüntüleyici */}
+            {/* PDF görüntüleyici — react-pdf (canvas tabanlı, iframe yok) */}
             {model.pdfUrl && (
-              <div className="mb-6 rounded-[20px] overflow-hidden border border-gray-200 shadow-sm bg-[#f3f3f3]">
-                <iframe
-                  src={model.pdfUrl}
-                  title={`${model.name} Teknik Diyagram`}
-                  className="w-full"
-                  style={{ height: "680px", border: "none" }}
-                />
+              <div className="mb-6">
+                <div className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] overflow-hidden flex flex-col items-center p-4">
+                  <Document
+                    file={model.pdfUrl}
+                    onLoadSuccess={onDocumentLoadSuccess}
+                    loading={<div className="py-12 text-sm text-gray-400">PDF yükleniyor...</div>}
+                    error={<div className="py-12 text-sm text-red-500">PDF yüklenemedi.</div>}
+                  >
+                    <Page
+                      pageNumber={pageNumber}
+                      width={Math.min(800, window.innerWidth - 80)}
+                      renderAnnotationLayer={false}
+                      renderTextLayer={false}
+                      className="shadow-md rounded"
+                    />
+                  </Document>
+
+                  {numPages > 1 && (
+                    <div className="flex items-center gap-4 mt-4">
+                      <button
+                        disabled={pageNumber <= 1}
+                        onClick={() => setPageNumber(p => p - 1)}
+                        className="p-1.5 rounded-full border border-gray-300 bg-white hover:bg-gray-100 disabled:opacity-30 transition"
+                      >
+                        <ChevronLeft className="w-4 h-4 text-gray-700" />
+                      </button>
+                      <span className="text-sm text-gray-600 font-medium">
+                        {pageNumber} / {numPages}
+                      </span>
+                      <button
+                        disabled={pageNumber >= numPages}
+                        onClick={() => setPageNumber(p => p + 1)}
+                        className="p-1.5 rounded-full border border-gray-300 bg-white hover:bg-gray-100 disabled:opacity-30 transition"
+                      >
+                        <ChevronRight className="w-4 h-4 text-gray-700" />
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
 
