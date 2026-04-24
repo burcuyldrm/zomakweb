@@ -10,10 +10,10 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useListCategories } from "@workspace/api-client-react";
-import heroImg1 from "@assets/50d58c24-2014-4f30-964c-46b163d42691_1777045730587.jpeg";
-import heroImg2 from "@assets/WhatsApp_Image_2026-04-05_at_15.06.43_1777045750774.jpeg";
-import heroImg3 from "@assets/anasayfa_vinc_hero.png";
-import heroImg4 from "@assets/mobil_vinc_hero.jpeg";
+import heroImg1 from "@assets/hero_kurtarici_1.png";
+import heroImg2 from "@assets/hero_vinc_2.png";
+import heroImg3 from "@assets/hero_kurtarici_3.jpeg";
+import heroImg4 from "@assets/hero_kurtarici_4.jpeg";
 
 const references = [
   "Pekgöz Vinç",
