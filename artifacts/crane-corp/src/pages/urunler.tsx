@@ -3,26 +3,18 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { useListCategories } from "@workspace/api-client-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { PageHero } from "@/components/layout/page-hero";
 
 export default function Urunler() {
   const { data: categories, isLoading } = useListCategories();
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="border-b border-gray-200 bg-gray-50 py-10">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#8B1A1A]">
-            Ürün Portföyü
-          </div>
-          <h1 className="mt-3 text-4xl font-black text-gray-900">
-            Ürünlerimiz
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-500">
-            Kategori bazlı ürün gruplarımızı inceleyin ve ihtiyacınıza uygun
-            modeli seçin.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        label="Ürün Portföyü"
+        title="Ürünlerimiz"
+        description="Kategori bazlı ürün gruplarımızı inceleyin ve ihtiyacınıza uygun modeli seçin."
+      />
 
       <div className="container mx-auto px-4 py-14 md:px-8">
         {isLoading ? (
