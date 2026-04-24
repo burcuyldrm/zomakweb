@@ -261,27 +261,28 @@ export default function Home() {
       </section>
 
       {/* ── INTRO ───────────────────────────────── */}
-      <section className="border-b border-gray-100 bg-white py-14">
-        <div className="container mx-auto px-4 text-justify md:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div>
-              <div className="mb-3 text-xs font-bold tracking-widest text-[#8B1A1A]">
-                BİZ KİMİZ
-              </div>
-              <h2 className="mb-5 text-3xl font-black leading-tight text-gray-900 md:text-4xl">
-                Sektörün Güvenilir Üreticisi
-              </h2>
-              <p className="mb-4 leading-relaxed text-gray-600">
-                Zomak Vinç Platform ve Makina Sanayi, 2024 yılında İzmir'de
-                kurulmuş olup mobil katlanır vinç, hidrolik kurtarıcı ve sepetli
-                platform ekipmanları alanında üretim ve hizmet vermektedir.
-              </p>
-              <p className="leading-relaxed text-gray-600">
-                Mühendislik odaklı yaklaşımımız, kaliteli üretim süreçlerimiz ve
-                müşteri memnuniyetine olan bağlılığımız ile Türkiye'nin önde
-                gelen endüstriyel firmalarına güvenilir çözümler sunmaktayız.
-              </p>
+      <section className="border-b border-gray-100 bg-white py-20">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-4 inline-block rounded-full border border-[#8B1A1A]/20 bg-[#8B1A1A]/5 px-4 py-1.5 text-xs font-bold tracking-widest text-[#8B1A1A]">
+              BİZ KİMİZ
             </div>
+            <h2 className="mb-6 text-4xl font-black leading-tight text-gray-900 md:text-5xl">
+              Sektörün{" "}
+              <span className="text-[#8B1A1A]">Güvenilir</span>{" "}
+              Üreticisi
+            </h2>
+            <div className="mx-auto mb-6 h-1 w-16 bg-[#8B1A1A]" />
+            <p className="mb-4 text-base leading-relaxed text-gray-600">
+              Zomak Vinç Platform ve Makina Sanayi, 2024 yılında İzmir'de
+              kurulmuş olup mobil katlanır vinç, hidrolik kurtarıcı ve sepetli
+              platform ekipmanları alanında üretim ve hizmet vermektedir.
+            </p>
+            <p className="text-base leading-relaxed text-gray-600">
+              Mühendislik odaklı yaklaşımımız, kaliteli üretim süreçlerimiz ve
+              müşteri memnuniyetine olan bağlılığımız ile Türkiye'nin önde
+              gelen endüstriyel firmalarına güvenilir çözümler sunmaktayız.
+            </p>
           </div>
         </div>
       </section>
