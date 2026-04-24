@@ -7,7 +7,7 @@ import logoKahraman from "@assets/image_1777048766865.png";
 import logoBergama from "@assets/image_1777048771889.png";
 import logoMarasal from "@assets/image_1777048777035.png";
 
-const references = [
+const referencesWithLogo = [
   {
     name: "Üçer Vinç",
     sector: "Vinç ve Kaldırma Hizmetleri",
@@ -34,6 +34,14 @@ const references = [
   },
 ];
 
+const referencesNoLogo = [
+  { name: "Kuşadası Vinç", sector: "Liman ve Nakliye" },
+  { name: "Fındık Vinç", sector: "Kaldırma Hizmetleri" },
+  { name: "Sert Oto Kurtarma", sector: "Oto Kurtarma" },
+  { name: "İzoto Yol Yardım", sector: "Yol Yardım Hizmetleri" },
+  { name: "Pekgöz Vinç", sector: "Vinç ve Kaldırma Hizmetleri" },
+];
+
 export default function Referanslar() {
   return (
     <div className="min-h-screen bg-white">
@@ -49,8 +57,9 @@ export default function Referanslar() {
             Zomak olarak referans müşterilerimizle yalnızca bir ticari ilişki değil, uzun vadeli ve güvene dayalı bir iş ortaklığı kurmaktayız. Teslim ettiğimiz her ekipman, bu ortaklığın somut bir yansımasıdır.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {references.map((ref, i) => (
+          {/* Logolu referanslar */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+            {referencesWithLogo.map((ref, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -63,18 +72,15 @@ export default function Referanslar() {
                   className="absolute inset-0 bg-[#f8f8f8] transition-colors duration-300 group-hover:bg-[#fdf5f5]"
                   style={{ clipPath: "polygon(0 0, 75% 0, 100% 18%, 100% 100%, 0 100%)" }}
                 />
-
                 <div className="relative z-10 flex flex-col h-full p-6">
-                  <div className="flex items-center justify-center h-[100px] mb-6 bg-white rounded-xl border border-gray-100 shadow-sm px-4">
+                  <div className="flex items-center justify-center h-[100px] mb-4 bg-white rounded-xl border border-gray-100 shadow-sm px-4">
                     <img
                       src={ref.logo as unknown as string}
                       alt={ref.name}
                       className="max-h-[64px] max-w-full w-auto object-contain"
                     />
                   </div>
-
-                  <span className="mt-4 block h-[4px] w-8 rounded-full bg-[#8B1A1A] mb-4" />
-
+                  <span className="block h-[4px] w-8 rounded-full bg-[#8B1A1A] mb-3" />
                   <h3 className="text-[18px] font-black text-gray-900 group-hover:text-[#8B1A1A] transition-colors duration-300 mb-1">
                     {ref.name}
                   </h3>
@@ -85,6 +91,32 @@ export default function Referanslar() {
                     {ref.desc}
                   </p>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Logosuz referanslar */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
+            {referencesNoLogo.map((ref, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="group flex flex-col items-center justify-center text-center border border-gray-200 rounded-2xl p-6 hover:border-[#8B1A1A]/40 hover:bg-[#fdf5f5] hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-full bg-[#8B1A1A]/10 flex items-center justify-center mb-3 group-hover:bg-[#8B1A1A]/20 transition-colors">
+                  <span className="text-[#8B1A1A] font-black text-lg">
+                    {ref.name.charAt(0)}
+                  </span>
+                </div>
+                <h3 className="text-sm font-black text-gray-900 group-hover:text-[#8B1A1A] transition-colors mb-1">
+                  {ref.name}
+                </h3>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                  {ref.sector}
+                </p>
               </motion.div>
             ))}
           </div>
