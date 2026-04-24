@@ -31,7 +31,7 @@ export default function Galeri() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: i * 0.04 }}
-              className="aspect-square overflow-hidden rounded-sm group cursor-pointer relative bg-gray-100"
+              className="aspect-square overflow-hidden rounded-2xl group cursor-pointer relative bg-gray-100"
               onClick={() => setLightbox(i)}
               data-testid={`gallery-img-${i}`}
             >
