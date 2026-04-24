@@ -98,7 +98,7 @@ export default function Home() {
                 alt={heroSlides[activeSlide].title}
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/20 opacity-[0.4]" />
             </motion.div>
           </AnimatePresence>
 
@@ -213,7 +213,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── PRODUCT CARDS ─────────────────────────── */}
       <section className="relative z-20 -mt-10 bg-white pb-20 pt-6 md:-mt-14 md:pt-10">
         <div className="container mx-auto px-4 md:px-8">
@@ -279,7 +278,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── INTRO ───────────────────────────────── */}
       <section className="border-b border-gray-100 bg-white py-20">
         <div className="container mx-auto px-4 md:px-8">
@@ -306,7 +304,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── REFERENCES ───────────────────────────────── */}
       <section className="border-b border-gray-200 bg-gray-50 py-20">
         <div className="container mx-auto px-4 md:px-8">
@@ -347,7 +344,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── CONTACT CTA ──────────────────────────────── */}
       <section className="border-t border-gray-200 bg-white py-16">
         <div className="container mx-auto px-4 text-center">
