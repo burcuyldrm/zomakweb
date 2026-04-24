@@ -6,7 +6,7 @@ interface PageHeroProps {
 
 export function PageHero({ label, title, description }: PageHeroProps) {
   return (
-    <div className="relative bg-[#8B1A1A] overflow-hidden" style={{ minHeight: "180px" }}>
+    <div className="relative bg-[#8B1A1A] overflow-hidden" style={{ minHeight: "150px" }}>
       {/* Dekoratif arka plan deseni */}
       <div className="absolute inset-0 opacity-10"
         style={{
