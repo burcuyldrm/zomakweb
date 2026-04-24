@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import logoImg from "@assets/ZOMAKLOGO_1775573024840.png";
+import logoImg from "@assets/WhatsApp_Image_2026-04-19_at_21.54.01_1777040973552.jpeg";
 
 const products = [
   { href: "/urunler/mobil-katlanir-vinc", label: "Mobil Katlanır Vinç" },

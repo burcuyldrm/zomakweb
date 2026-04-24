@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Lock, Eye, EyeOff } from "lucide-react";
-import logoImg from "@assets/ZOMAKLOGO_1775573024840.png";
+import logoImg from "@assets/WhatsApp_Image_2026-04-19_at_21.54.01_1777040973552.jpeg";
 
 const loginSchema = z.object({
   email: z.string().email("Geçerli bir e-posta adresi giriniz"),
@@ -49,7 +49,7 @@ export default function AdminLogin() {
           <img
             src={logoImg as unknown as string}
             alt="ZOMAK"
-            className="h-12 w-auto object-contain mx-auto mb-4 brightness-0 invert"
+            className="h-20 w-auto object-contain mx-auto mb-4"
           />
           <p className="text-gray-400 text-sm mt-2 tracking-widest uppercase text-[11px]">
             Yönetim Paneli
