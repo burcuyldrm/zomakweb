@@ -6,7 +6,7 @@ interface PageHeroProps {
 
 export function PageHero({ label, title, description }: PageHeroProps) {
   return (
-    <div className="relative bg-[#8B1A1A] overflow-hidden" style={{ minHeight: "150px" }}>
+    <div className="relative bg-[#111111] overflow-hidden" style={{ minHeight: "100px" }}>
       {/* Dekoratif arka plan deseni */}
       <div className="absolute inset-0 opacity-10"
         style={{
@@ -18,7 +18,7 @@ export function PageHero({ label, title, description }: PageHeroProps) {
       <div className="absolute right-0 top-0 bottom-0 w-1 bg-white/20" />
       <div className="absolute right-1 top-0 bottom-0 w-[3px] bg-white/10" />
 
-      <div className="relative container mx-auto px-4 md:px-8 pt-20 pb-14">
+      <div className="relative container mx-auto px-4 md:px-8 pt-12 pb-8">
         <div className="text-[10px] font-bold text-white/60 tracking-[0.25em] uppercase mb-3">
           {label}
         </div>
