@@ -48,7 +48,7 @@ export default function KalitePolitikamiz() {
             viewport={{ once: true }}
             className="flex items-center justify-center"
           >
-            <img src="/kurumsal/kalite-1.jpg" alt="ZOMAK Üretim" className="w-full h-auto rounded-xl shadow-md" />
+            <img src="/kurumsal/kalite-1.jpg" alt="ZOMAK Üretim" className="w-full max-h-[380px] object-contain rounded-xl shadow-md" />
           </motion.div>
         </div>
 
@@ -60,7 +60,7 @@ export default function KalitePolitikamiz() {
             viewport={{ once: true }}
             className="flex items-center justify-center"
           >
-            <img src="/kurumsal/kalite-2.jpg" alt="ZOMAK Kalite Kontrol" className="w-full h-auto rounded-xl shadow-md" />
+            <img src="/kurumsal/kalite-2.jpg" alt="ZOMAK Kalite Kontrol" className="w-full max-h-[380px] object-contain rounded-xl shadow-md" />
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
