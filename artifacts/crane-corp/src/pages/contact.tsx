@@ -7,7 +7,7 @@ const contactItems = [
   { icon: Phone, label: "Telefon", value: "0541 129 01 02", href: "tel:05411290102" },
   { icon: Mail, label: "E-posta", value: "info@zomak.com.tr", href: "mailto:info@zomak.com.tr" },
   { icon: MapPin, label: "Adres", value: "Atatürk Mahallesi 4. Cadde No:54\nOğlananası-Menderes / İzmir", href: undefined },
-  { icon: Clock, label: "Çalışma Saatleri", value: "Pzt–Cuma: 08:00–18:00\nCumartesi: 09:00–14:00\nPazar: Kapalı", href: undefined },
+  { icon: Clock, label: "Çalışma Saatleri", value: "Pzt–Cmt: 08:00–18:00\nPazar: Kapalı", href: undefined },
 ];
 
 export default function Contact() {
