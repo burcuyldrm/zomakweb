@@ -81,7 +81,6 @@ export default function AdminDashboard() {
           </div>
           <div className="space-y-2">
             {[
-              { label: "Kuruluş Yılı", value: "2024" },
               { label: "Ürün Grubu", value: "5 Kategori" },
               { label: "Aktif Referans", value: "4 Firma" },
               { label: "Hizmet Bölgesi", value: "Türkiye + İhracat" },

@@ -9,7 +9,7 @@ type Tab = typeof tabs[number];
 
 const defaultContent: Record<Tab, Record<string, string>> = {
   "Hakkımızda": {
-    "Şirket Tanıtımı": "Zomak Vinç Platform ve Makina Sanayi, 2024 yılında İzmir'de kurulmuş olup vinç, kurtarıcı ve platform ekipmanları tasarımı ile üretimi konusunda hizmet vermektedir.",
+    "Şirket Tanıtımı": "Zomak Vinç Platform ve Makina Sanayi, İzmir'de kurulmuş olup vinç, kurtarıcı ve platform ekipmanları tasarımı ile üretimi konusunda hizmet vermektedir.",
     "Ek Bilgi": "Teknik bilgi birikimimiz ve deneyimli mühendislik kadromuz ile her ölçekteki projeye uygun ekipman sunabilme kapasitesine sahibiz.",
   },
   "Vizyon & Misyon": {
