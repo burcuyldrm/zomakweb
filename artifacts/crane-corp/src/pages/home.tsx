@@ -51,7 +51,7 @@ const heroSlides = [
     id: 4,
     eyebrow: "MOBİL VİNÇ",
     title: "SINIFININ\nEN BÜYÜĞÜ",
-    desc: "Yüksek kapasiteli mobil vinç sistemlerimiz ile en zorlu kaldırma operasyonlarında yanınızdayız.",
+    desc: "Sınıfının en yüksek metraj ve taşıma kapasitesine sahip ZK Serisi Kurtarıcılarımız ile mühendislik sınırlarını çiziyoruz.",
     image: heroImg4,
     cta: "/urunler",
   },
