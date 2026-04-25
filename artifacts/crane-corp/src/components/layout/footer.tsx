@@ -31,7 +31,6 @@ export function Footer() {
               {[
                 { href: "/kurumsal/hakkimizda", label: "Hakkımızda" },
                 { href: "/kurumsal/kalite-politikamiz", label: "Kalite Politikamız" },
-                { href: "/kurumsal/cevre-politikamiz", label: "Çevre Politikamız" },
                 { href: "/referanslar", label: "Referanslar" },
                 { href: "/galeri", label: "Galeri" },
               ].map(({ href, label }) => (
