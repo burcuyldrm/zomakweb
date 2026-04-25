@@ -243,37 +243,38 @@ export default function UrunDetay() {
                     transition={{ duration: 0.4, delay: i * 0.05 }}
                   >
                     <Link href={`/urunler/${category.slug}/${model.slug}`}>
-                      <article className="group relative min-h-[250px] cursor-pointer overflow-hidden rounded-[26px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
-                        <div
-                          className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
-                          style={{ clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)" }}
-                        />
-                        <div className="relative z-10 flex h-full flex-col px-6 py-6">
-                          {model.coverImage && (
-                            <div className="mb-4 flex h-[120px] items-center justify-center">
-                              <img
-                                src={model.coverImage}
-                                alt={model.name}
-                                className="max-h-[110px] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                              />
+                      <div className="group transition-all duration-300 hover:-translate-y-1.5 hover:[filter:drop-shadow(0_18px_40px_rgba(0,0,0,0.10))]">
+                        <article
+                          className="relative min-h-[250px] cursor-pointer bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
+                          style={{ clipPath: "polygon(0 0, calc(100% - 52px) 0, 100% 52px, 100% 100%, 0 100%)" }}
+                        >
+                          <div className="flex h-full flex-col px-6 py-6">
+                            {model.coverImage && (
+                              <div className="mb-4 flex h-[120px] items-center justify-center overflow-hidden">
+                                <img
+                                  src={model.coverImage}
+                                  alt={model.name}
+                                  className="max-h-[110px] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                                />
+                              </div>
+                            )}
+                            <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-gray-400">
+                              Model
                             </div>
-                          )}
-                          <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-gray-400">
-                            Model
+                            <h3 className="text-3xl font-black text-[#1f1f1f] transition-colors duration-300 group-hover:text-[#8B1A1A]">
+                              {model.name}
+                            </h3>
+                            <div className="mt-3 h-[5px] w-10 rounded-full bg-[#B3201D]" />
+                            <p className="mt-4 text-sm leading-relaxed text-gray-500">
+                              {model.shortDescription}
+                            </p>
+                            <div className="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-extrabold uppercase tracking-[0.12em] text-[#8B1A1A] transition-all duration-300 group-hover:gap-3">
+                              Detayı Aç
+                              <ArrowRight className="h-4 w-4" />
+                            </div>
                           </div>
-                          <h3 className="text-3xl font-black text-[#1f1f1f] transition-colors duration-300 group-hover:text-[#8B1A1A]">
-                            {model.name}
-                          </h3>
-                          <div className="mt-3 h-[5px] w-10 rounded-full bg-[#B3201D]" />
-                          <p className="mt-4 text-sm leading-relaxed text-gray-500">
-                            {model.shortDescription}
-                          </p>
-                          <div className="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-extrabold uppercase tracking-[0.12em] text-[#8B1A1A] transition-all duration-300 group-hover:gap-3">
-                            Detayı Aç
-                            <ArrowRight className="h-4 w-4" />
-                          </div>
-                        </div>
-                      </article>
+                        </article>
+                      </div>
                     </Link>
                   </motion.div>
                 ))}
