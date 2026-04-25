@@ -50,7 +50,7 @@ const heroSlides = [
   {
     id: 4,
     eyebrow: "MOBİL VİNÇ",
-    title: "ALANLARDA\nÜSTÜN KALDIRIŞ",
+    title: "SINIFININ\nEN BÜYÜĞÜ",
     desc: "Yüksek kapasiteli mobil vinç sistemlerimiz ile en zorlu kaldırma operasyonlarında yanınızdayız.",
     image: heroImg4,
     cta: "/urunler",
