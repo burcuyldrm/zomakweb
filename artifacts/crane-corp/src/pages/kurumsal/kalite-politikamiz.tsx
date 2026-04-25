@@ -1,17 +1,16 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/layout/page-hero";
 
 const commitments = [
-  "Uluslararası kalite standartlarına uygun üretim süreçleri",
-  "Sürekli iyileştirme kültürü ve inovasyon odaklı yaklaşım",
-  "Müşteri geri bildirimlerini değerlendirme ve hızlı aksiyon",
-  "Hammadde ve bileşen tedarikinde güvenilir kaynak yönetimi",
-  "Üretim süreçlerinde sistem testleri ve kalite kontrol noktaları",
-  "Teknik ekibin sürekli eğitim ve gelişim programları",
-  "Teslim öncesi kapsamlı ürün denetim protokolleri",
+  { title: "Uluslararası Standartlar", desc: "Üretimin her aşamasında uluslararası kalite normlarına tam uyum." },
+  { title: "Sürekli İyileştirme", desc: "Yenilik odaklı yaklaşım ve süregelen süreç geliştirme kültürü." },
+  { title: "Müşteri Geri Bildirimi", desc: "Geri bildirimleri sistematik olarak değerlendirme ve hızlı aksiyon." },
+  { title: "Güvenilir Tedarik", desc: "Hammadde ve bileşen seçiminde titiz ve güvenilir kaynak yönetimi." },
+  { title: "Sistem Testleri", desc: "Üretim süreçlerinde kapsamlı kalite kontrol ve test noktaları." },
+  { title: "Ekip Gelişimi", desc: "Teknik personelin sürekli eğitim ve mesleki gelişim programları." },
+  { title: "Teslim Öncesi Denetim", desc: "Her ürünün tesliminden önce kapsamlı kalite denetim protokolü." },
 ];
 
 export default function KalitePolitikamiz() {
@@ -25,7 +24,7 @@ export default function KalitePolitikamiz() {
 
       <div className="container mx-auto px-4 md:px-8 py-16">
 
-        {/* Üst bölüm: metin + görsel */}
+        {/* Üst bölüm: metin + görsel 1 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start mb-16">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="prose prose-gray max-w-none">
@@ -52,40 +51,54 @@ export default function KalitePolitikamiz() {
           </motion.div>
         </div>
 
-        {/* İkinci bölüm: görsel + taahhütler */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="rounded-xl overflow-hidden shadow-md h-[380px]"
-          >
-            <img src="/kurumsal/kalite-2.jpg" alt="ZOMAK Kalite Kontrol" className="w-full h-full object-cover" />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl font-black text-gray-900 mb-6">KALİTE TAAHHÜTLERİMİZ</h2>
-            <ul className="space-y-3">
-              {commitments.map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                  <CheckCircle className="w-4 h-4 text-[#8B1A1A] flex-shrink-0 mt-0.5" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+        {/* Taahhüt & Anlayış — Vizyon/Misyon stili */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
+            <h3 className="font-black text-sm tracking-widest text-[#8B1A1A] mb-3">KALİTE TAAHHÜDÜMÜZ</h3>
+            <p className="text-gray-700 leading-relaxed text-sm">
+              Ürettiğimiz her ekipmanın uluslararası kalite normlarına eksiksiz uygun olmasını garanti ediyor; hammaddeden teslimata uzanan sürecin tamamında titiz kalite kontrol protokollerini uyguluyoruz.
+            </p>
+          </div>
+          <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
+            <h3 className="font-black text-sm tracking-widest text-[#8B1A1A] mb-3">KALİTE ANLAYIŞIMIZ</h3>
+            <p className="text-gray-700 leading-relaxed text-sm">
+              Kalite bizim için bir hedef değil, iş yapış biçimimizin ayrılmaz bir parçasıdır. Müşteri geri bildirimlerini sistematik biçimde değerlendiriyor; sürekli iyileştirme kültürünü tüm ekibimizle birlikte yaşatıyoruz.
+            </p>
+          </div>
         </div>
 
-        {/* Kalite ilkesi */}
-        <div className="bg-[#111111] text-white rounded-sm p-8 mb-10">
-          <h2 className="text-lg font-black mb-3">KALİTE İLKEMİZ</h2>
-          <p className="text-gray-300 leading-relaxed text-sm italic">
-            "Ürünlerimizin her birini, kendi ekibimizin de güvenle kullanacağı standartlarda üretiriz. Kalite bir hedef değil; iş yapış biçimimizin ayrılmaz bir parçasıdır."
-          </p>
+        {/* Kalite ilkeleri — Temel Değerler stili */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-black text-gray-900 mb-8">KALİTE İLKELERİMİZ</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {commitments.map((v, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="bg-white border border-gray-200 rounded-sm p-6 hover:border-[#8B1A1A] transition-colors"
+              >
+                <div className="w-6 h-0.5 bg-[#8B1A1A] mb-4" />
+                <h4 className="font-black text-sm text-gray-900 mb-2 uppercase">{v.title}</h4>
+                <p className="text-gray-500 text-xs leading-relaxed">{v.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Kalite ilkesi alıntısı + görsel 2 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-xl overflow-hidden shadow-md mb-12">
+          <div className="bg-[#111111] text-white p-10 flex flex-col justify-center">
+            <h2 className="text-lg font-black mb-4 tracking-wide">KALİTE İLKEMİZ</h2>
+            <p className="text-gray-300 leading-relaxed text-sm italic">
+              "Ürünlerimizin her birini, kendi ekibimizin de güvenle kullanacağı standartlarda üretiriz. Kalite bir hedef değil; iş yapış biçimimizin ayrılmaz bir parçasıdır."
+            </p>
+          </div>
+          <div className="h-[280px] lg:h-auto">
+            <img src="/kurumsal/kalite-2.jpg" alt="ZOMAK Kalite Kontrol" className="w-full h-full object-cover" />
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-3">
