@@ -254,7 +254,11 @@ export default function Home() {
                           <img
                             src={cat.image}
                             alt={cat.name}
-                            className="max-h-[170px] w-auto max-w-full object-contain drop-shadow-[0_12px_16px_rgba(0,0,0,0.14)] transition-transform duration-500 group-hover:scale-[1.04]"
+                            className={`w-auto max-w-full object-contain drop-shadow-[0_12px_16px_rgba(0,0,0,0.14)] transition-transform duration-500 group-hover:scale-[1.04] ${
+                              cat.slug === "mobil-katlanir-vinc" || cat.slug === "kayar-kasa"
+                                ? "max-h-[205px]"
+                                : "max-h-[170px]"
+                            }`}
                           />
                         ) : (
                           <div className="h-[170px] w-full rounded-xl bg-gray-200" />
