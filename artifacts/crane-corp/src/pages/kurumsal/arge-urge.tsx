@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import arge1 from "@assets/arge1_1775570334475.png";
-import arge2 from "@assets/arge2_1775570334476.png";
 import arge3 from "@assets/arge3_1775570334476.png";
 import { PageHero } from "@/components/layout/page-hero";
 
@@ -26,7 +25,6 @@ export default function ArgeUrge() {
         <div className="grid grid-cols-1 gap-6 mb-12">
           {[
             { src: arge1, alt: "ZOMAK AR-GE Teknik Çizim" },
-            { src: arge2, alt: "ZOMAK AR-GE 3D Model" },
             { src: arge3, alt: "ZOMAK AR-GE Simülasyon" },
           ].map((img, i) => (
             <motion.div
