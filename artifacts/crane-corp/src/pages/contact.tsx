@@ -48,7 +48,7 @@ export default function Contact() {
                 </motion.div>
               ))}
 
-              <a href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%27tan%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%20Makine'den%20teklif%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
                 <Button className="w-full bg-green-700 hover:bg-green-600 text-white font-bold rounded-sm border-none uppercase mt-2">
                   <MessageCircle className="mr-2 w-4 h-4" /> WhatsApp ile Yaz
                 </Button>

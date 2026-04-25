@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const WA_MESSAGE = encodeURIComponent(
-  "Merhaba, ZOMAK'tan vinç/platform hizmeti için teklif almak istiyorum."
+  "Merhaba, ZOMAK Makine'den teklif almak istiyorum."
 );
 const WA_URL = `https://wa.me/905411290102?text=${WA_MESSAGE}`;
 

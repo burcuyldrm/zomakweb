@@ -394,7 +394,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%27tan%20vin%C3%A7%2Fplatform%20hizmeti%20i%C3%A7in%20teklif%20almak%20istiyorum."
+              href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%20Makine'den%20teklif%20almak%20istiyorum."
               target="_blank"
               rel="noopener noreferrer"
             >

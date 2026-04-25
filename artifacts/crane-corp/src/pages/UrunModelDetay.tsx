@@ -200,7 +200,7 @@ export default function UrunModelDetay() {
                   Teklif Al
                 </Button>
               </Link>
-              <a href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%27tan%20bu%20model%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/905411290102?text=Merhaba%2C%20ZOMAK%20Makine'den%20teklif%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="h-11 rounded-sm border-gray-300 px-7 font-bold uppercase text-gray-800 hover:bg-gray-50">
                   <MessageCircle className="mr-2 h-4 w-4 text-green-600" /> WhatsApp
                 </Button>
