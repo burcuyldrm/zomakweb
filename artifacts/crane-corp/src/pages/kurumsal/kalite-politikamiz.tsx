@@ -48,7 +48,7 @@ export default function KalitePolitikamiz() {
             viewport={{ once: true }}
             className="rounded-xl overflow-hidden shadow-md h-[380px]"
           >
-            <img src="/kurumsal/kalite-1.png" alt="ZOMAK Üretim" className="w-full h-full object-cover" />
+            <img src="/kurumsal/kalite-1.jpg" alt="ZOMAK Üretim" className="w-full h-full object-cover" />
           </motion.div>
         </div>
 
@@ -60,7 +60,7 @@ export default function KalitePolitikamiz() {
             viewport={{ once: true }}
             className="rounded-xl overflow-hidden shadow-md h-[380px]"
           >
-            <img src="/kurumsal/kalite-2.png" alt="ZOMAK Kalite Kontrol" className="w-full h-full object-cover" />
+            <img src="/kurumsal/kalite-2.jpg" alt="ZOMAK Kalite Kontrol" className="w-full h-full object-cover" />
           </motion.div>
 
           <motion.div
