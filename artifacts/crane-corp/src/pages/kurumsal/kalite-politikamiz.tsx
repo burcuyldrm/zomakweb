@@ -25,8 +25,8 @@ export default function KalitePolitikamiz() {
 
       <div className="container mx-auto px-4 md:px-8 py-16">
 
-        {/* Kalite Felsefemiz: metin sol + görsel 1 sağ */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start mb-16">
+        {/* 1. Kalite Felsefemiz: metin sol + görsel 1 sağ (kırpılmadan) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-16">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="prose prose-gray max-w-none">
               <h2 className="text-2xl font-black text-gray-900 mb-5">KALİTE FELSEFEMİZ</h2>
@@ -46,13 +46,37 @@ export default function KalitePolitikamiz() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-xl overflow-hidden shadow-md h-[380px]"
+            className="flex items-center justify-center"
           >
-            <img src="/kurumsal/kalite-1.jpg" alt="ZOMAK Üretim" className="w-full h-full object-cover" />
+            <img src="/kurumsal/kalite-1.jpg" alt="ZOMAK Üretim" className="w-full h-auto rounded-xl shadow-md" />
           </motion.div>
         </div>
 
-        {/* Taahhüt & Anlayış — Vizyon/Misyon stili */}
+        {/* 2. Görsel 2 sol + Kalite Taahhütlerimiz listesi sağ (kırpılmadan) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center justify-center"
+          >
+            <img src="/kurumsal/kalite-2.jpg" alt="ZOMAK Kalite Kontrol" className="w-full h-auto rounded-xl shadow-md" />
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-2xl font-black text-gray-900 mb-6">KALİTE TAAHHÜTLERİMİZ</h2>
+            <ul className="space-y-3">
+              {commitments.map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+                  <CheckCircle className="w-4 h-4 text-[#8B1A1A] flex-shrink-0 mt-0.5" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* 3. Kalite Taahhüdümüz + Kalite Anlayışımız kutuları */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
             <h3 className="font-black text-sm tracking-widest text-[#8B1A1A] mb-3">KALİTE TAAHHÜDÜMÜZ</h3>
@@ -68,31 +92,7 @@ export default function KalitePolitikamiz() {
           </div>
         </div>
 
-        {/* Kalite İlkeleri: checklist sol + görsel 2 sağ */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-16">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl font-black text-gray-900 mb-6">KALİTE TAAHHÜTLERİMİZ</h2>
-            <ul className="space-y-3">
-              {commitments.map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                  <CheckCircle className="w-4 h-4 text-[#8B1A1A] flex-shrink-0 mt-0.5" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="rounded-xl overflow-hidden shadow-md h-[380px]"
-          >
-            <img src="/kurumsal/kalite-2.jpg" alt="ZOMAK Kalite Kontrol" className="w-full h-full object-cover" />
-          </motion.div>
-        </div>
-
-        {/* Kalite ilkesi alıntısı */}
+        {/* 4. Kalite ilkesi alıntısı */}
         <div className="bg-[#111111] text-white rounded-sm p-8 mb-10">
           <h2 className="text-lg font-black mb-3">KALİTE İLKEMİZ</h2>
           <p className="text-gray-300 leading-relaxed text-sm italic">
