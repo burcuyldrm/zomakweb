@@ -8,8 +8,8 @@ import logoImg from "@assets/WhatsApp_Image_2026-04-19_at_21.54.01_1777040973552
 const products = [
   { href: "/urunler/mobil-katlanir-vinc", label: "Mobil Katlanır Vinç" },
   { href: "/urunler/kurtarici", label: "Kurtarıcı" },
-  { href: "/urunler/ozel-hidrolik-makineler", label: "Özel Hidrolik Makineler" },
   { href: "/urunler/kayar-kasa", label: "Kayar Kasa" },
+  { href: "/urunler/ozel-hidrolik-makineler", label: "Özel Hidrolik Makineler" },
 ];
 
 const kurumsal = [

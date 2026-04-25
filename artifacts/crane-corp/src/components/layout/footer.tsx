@@ -54,10 +54,9 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 { href: "/urunler/mobil-katlanir-vinc", label: "Mobil Katlanır Vinç" },
-                { href: "/urunler/hidrolik-gozluklu-kurtarici", label: "Hidrolik Gözlüklü Kurtarıcı" },
-                { href: "/urunler/hidrolik-kurtarici", label: "Hidrolik Kurtarıcı" },
+                { href: "/urunler/kurtarici", label: "Kurtarıcı" },
+                { href: "/urunler/kayar-kasa", label: "Kayar Kasa" },
                 { href: "/urunler/ozel-hidrolik-makineler", label: "Özel Hidrolik Makineler" },
-                { href: "/urunler/sepetli-platform", label: "Sepetli Platform" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href}>
