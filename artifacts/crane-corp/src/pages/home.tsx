@@ -64,7 +64,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(timer);
   }, []);
