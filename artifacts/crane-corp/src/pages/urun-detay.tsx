@@ -242,6 +242,29 @@ export default function UrunDetay() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.05 }}
                   >
+                    {category.slug === "ozel-hidrolik-makineler" ? (
+                      <article className="group relative min-h-[250px] overflow-hidden rounded-[26px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+                        <div
+                          className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
+                          style={{ clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)" }}
+                        />
+                        <div className="relative z-10 flex h-full flex-col px-6 py-6">
+                          {model.coverImage && (
+                            <div className="mb-5 flex h-[160px] items-center justify-center">
+                              <img
+                                src={model.coverImage}
+                                alt="Özel Hidrolik Makine"
+                                className="max-h-[150px] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                              />
+                            </div>
+                          )}
+                          <div className="mt-1 h-[5px] w-10 rounded-full bg-[#B3201D]" />
+                          <p className="mt-4 text-sm leading-relaxed text-gray-600">
+                            {model.shortDescription}
+                          </p>
+                        </div>
+                      </article>
+                    ) : (
                     <Link href={`/urunler/${category.slug}/${model.slug}`}>
                       <article className="group relative min-h-[250px] cursor-pointer overflow-hidden rounded-[26px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
                         <div
@@ -275,6 +298,7 @@ export default function UrunDetay() {
                         </div>
                       </article>
                     </Link>
+                    )}
                   </motion.div>
                 ))}
               </div>
