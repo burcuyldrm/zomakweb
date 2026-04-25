@@ -43,7 +43,7 @@ const heroSlides = [
     id: 2,
     eyebrow: "ENDÜSTRİYEL GÜÇ",
     title: "SAHADA\nYÜKSEK PERFORMANS",
-    desc: "Ağır hizmet koşullarına uygun, güvenilir ve dayanıklı ürün gruplarımız ile projelerinize değer katıyoruz.",
+    desc: "Ağır hizmet koşullarına uygun, güvenilir ve dayanıklı ZV Serisi Mobil Katlanır Vinçlerimiz ile projelerinize değer katıyoruz.",
     image: heroImg2,
     cta: "/urunler",
   },
