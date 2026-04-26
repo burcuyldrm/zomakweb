@@ -12,7 +12,7 @@ export default function OzelHidrolik() {
         title="ÖZEL HİDROLİK MAKİNELER"
         description="Müşteri ihtiyaçlarına özel, proje bazlı mühendislik çözümleri."
       />
-      <div className="container mx-auto px-4 md:px-8 py-16 max-w-6xl">
+      <div className="container mx-auto px-4 md:px-8 pt-8 pb-16 max-w-6xl">
 
         <Link href="/urunler">
           <Button
