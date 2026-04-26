@@ -56,13 +56,6 @@ export default function OzelHidrolik() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-[#111111] text-white rounded-sm p-8 mb-8">
-              <h2 className="text-lg font-black mb-3">MÜHENDİSLİK GÜVENCESI</h2>
-              <p className="text-gray-300 leading-relaxed text-sm text-justify">
-                Her proje; saha koşulları, operasyonel gereksinimler ve performans beklentileri dikkate alınarak mühendislik bakış açısıyla ele alınır. Tasarım, üretim ve uygulama süreçlerinin tamamı ZOMAK güvencesiyle yürütülür. İhtiyacınızı anlar, tasarlar ve gerçeğe dönüştürür.
-              </p>
-            </div>
-
             <div className="flex flex-wrap gap-3">
               <Link href="/teklif">
                 <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold rounded-sm border-none">
