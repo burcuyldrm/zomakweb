@@ -269,18 +269,20 @@ export default function UrunDetay() {
                     </Link>
                     ) : (
                     <Link href={`/urunler/${category.slug}/${model.slug}`}>
-                      <article className="group relative min-h-[250px] cursor-pointer overflow-hidden rounded-[26px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
-                        <div
-                          className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
-                          style={{ clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)" }}
-                        />
+                      <article
+                        className="group relative min-h-[250px] cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]"
+                        style={{
+                          backgroundColor: '#f3f4f6',
+                          clipPath: 'polygon(26px 0, calc(100% - 80px) 0, 100% 80px, 100% calc(100% - 26px), calc(100% - 26px) 100%, 26px 100%, 0 calc(100% - 26px), 0 26px)',
+                        }}
+                      >
                         <div className="relative z-10 flex h-full flex-col px-6 py-6">
                           {model.coverImage && (
-                            <div className="mb-4 flex h-[120px] items-center justify-center">
+                            <div className="mb-5 flex h-[160px] items-center justify-center overflow-hidden">
                               <img
                                 src={model.coverImage}
                                 alt={model.name}
-                                className="max-h-[110px] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                                className="max-h-[150px] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                               />
                             </div>
                           )}
