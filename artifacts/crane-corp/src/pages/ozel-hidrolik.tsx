@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/layout/page-hero";
 
 export default function OzelHidrolik() {
@@ -59,6 +61,13 @@ export default function OzelHidrolik() {
             <p className="text-gray-600 leading-relaxed text-justify">
               Her proje; saha koşulları, operasyonel gereksinimler ve performans beklentileri dikkate alınarak mühendislik bakış açısıyla ele alınır. Tasarım, üretim ve uygulama süreçlerinin tamamı ZOMAK güvencesiyle yürütülür. İhtiyacınızı anlar, tasarlar ve gerçeğe dönüştürür.
             </p>
+            <div className="mt-8">
+              <Link href="/urunler">
+                <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold rounded-sm border-none">
+                  TÜM ÜRÜNLER
+                </Button>
+              </Link>
+            </div>
           </motion.div>
 
           <motion.div
