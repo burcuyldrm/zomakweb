@@ -298,13 +298,13 @@ export default function UrunModelDetay() {
           {/* Sol: fotoğraf + thumbnail strip */}
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <div className="overflow-hidden rounded-[28px] bg-[#f3f3f3] p-8 shadow-sm">
-              <div className="group relative flex min-h-[380px] items-center justify-center">
+              <div className="group relative flex min-h-[460px] items-center justify-center">
                 {(activeImg || model.coverImage) ? (
                   <>
                     <img
                       src={activeImg || model.coverImage}
                       alt={model.name}
-                      className="max-h-[380px] w-auto max-w-full object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.16)] cursor-zoom-in"
+                      className="max-h-[440px] w-full object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.16)] cursor-zoom-in"
                       onClick={() => { const imgs = [model.coverImage, ...model.gallery].filter(Boolean); const idx = imgs.indexOf(activeImg || model.coverImage); openLightbox(imgs, idx >= 0 ? idx : 0); }}
                     />
                     <button
