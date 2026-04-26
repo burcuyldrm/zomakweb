@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRoute, Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Search } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -35,9 +35,6 @@ export default function UrunDetay() {
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
-  const [search, setSearch] = useState("");
-  const [selectedPrefix, setSelectedPrefix] = useState("tum");
-
   useEffect(() => {
     if (!slug) return;
     setLoading(true);
@@ -57,32 +54,6 @@ export default function UrunDetay() {
       .finally(() => setLoading(false));
   }, [slug]);
 
-  const prefixes = useMemo(
-    () =>
-      Array.from(
-        new Set(
-          models.map((m) => {
-            if (m.name.startsWith("ZV")) return "ZV";
-            if (m.name.startsWith("ZGK")) return "ZGK";
-            if (m.name.startsWith("ZK")) return "ZK";
-            if (m.name.startsWith("ZP")) return "ZP";
-            return "Diğer";
-          }),
-        ),
-      ),
-    [models],
-  );
-
-  const filteredModels = useMemo(() => {
-    return models.filter((m) => {
-      const matchSearch =
-        m.name.toLowerCase().includes(search.toLowerCase()) ||
-        m.shortDescription.toLowerCase().includes(search.toLowerCase());
-      if (!matchSearch) return false;
-      if (selectedPrefix === "tum") return true;
-      return m.name.startsWith(selectedPrefix);
-    });
-  }, [models, search, selectedPrefix]);
 
   if (loading) {
     return (
@@ -143,80 +114,8 @@ export default function UrunDetay() {
           </Button>
         </Link>
 
-        <div className="flex flex-col gap-8 lg:flex-row">
-          <aside className="w-full lg:w-[320px] lg:min-w-[320px]">
-            <div className="rounded-[24px] border border-gray-200 bg-[#f3f3f3] p-6 lg:sticky lg:top-6">
-              <div className="mb-6">
-                <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#8B1A1A]">
-                  Filtreler
-                </div>
-                <h2 className="mt-2 text-2xl font-black text-gray-900">Model Seç</h2>
-              </div>
-
-              <div className="mb-6">
-                <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-gray-500">
-                  Kategori
-                </label>
-                <div className="rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-700">
-                  {category.name}
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-gray-500">
-                  Model Ara
-                </label>
-                <div className="flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-3">
-                  <Search className="h-4 w-4 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Örn. ZV-060"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    className="w-full bg-transparent text-sm text-gray-700 outline-none"
-                  />
-                </div>
-              </div>
-
-              {prefixes.length > 0 && (
-                <div className="mb-2">
-                  <div className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-gray-500">Seri</div>
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => setSelectedPrefix("tum")}
-                      className={`flex w-full items-center justify-between rounded-xl border px-4 py-3 text-sm font-semibold transition ${
-                        selectedPrefix === "tum"
-                          ? "border-[#8B1A1A] bg-[#8B1A1A] text-white"
-                          : "border-gray-300 bg-white text-gray-700 hover:border-[#8B1A1A]"
-                      }`}
-                    >
-                      <span>Tümü</span>
-                      <span>{models.length}</span>
-                    </button>
-                    {prefixes.map((prefix) => {
-                      const count = models.filter((m) => m.name.startsWith(prefix)).length;
-                      return (
-                        <button
-                          key={prefix}
-                          onClick={() => setSelectedPrefix(prefix)}
-                          className={`flex w-full items-center justify-between rounded-xl border px-4 py-3 text-sm font-semibold transition ${
-                            selectedPrefix === prefix
-                              ? "border-[#8B1A1A] bg-[#8B1A1A] text-white"
-                              : "border-gray-300 bg-white text-gray-700 hover:border-[#8B1A1A]"
-                          }`}
-                        >
-                          <span>{prefix}</span>
-                          <span>{count}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-            </div>
-          </aside>
-
-          <section className="min-w-0 flex-1">
+        <div>
+          <section>
             <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div>
                 <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#8B1A1A]">
@@ -228,13 +127,13 @@ export default function UrunDetay() {
               </div>
               <div className="text-sm font-medium text-gray-500">
                 Toplam{" "}
-                <span className="font-bold text-gray-900">{filteredModels.length}</span> model
+                <span className="font-bold text-gray-900">{models.length}</span> model
               </div>
             </div>
 
-            {filteredModels.length > 0 ? (
+            {models.length > 0 ? (
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                {filteredModels.map((model, i) => (
+                {models.map((model, i) => (
                   <motion.div
                     key={model.slug}
                     initial={{ opacity: 0, y: 20 }}
