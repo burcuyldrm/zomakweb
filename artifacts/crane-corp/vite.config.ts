@@ -58,6 +58,9 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
+  optimizeDeps: {
+    exclude: ["@imgly/background-removal", "onnxruntime-web"],
+  },
   server: {
     port,
     host: "0.0.0.0",

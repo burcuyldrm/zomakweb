@@ -2,7 +2,7 @@ import { useParams, useLocation } from "wouter";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import {
   useGetProduct,
   useCreateProduct,
@@ -19,7 +19,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowLeft, Upload, X, Plus, FileText, ExternalLink } from "lucide-react";
+import { ArrowLeft, Upload, X, Plus, FileText, ExternalLink, Wand2, Loader2 } from "lucide-react";
 import { Link } from "wouter";
 
 const productSchema = z.object({
@@ -72,6 +72,8 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
   const diagramRef = useRef<HTMLInputElement>(null);
 
   const [uploading, setUploading] = useState(false);
+  const [removeBg, setRemoveBg] = useState(false);
+  const [removingBg, setRemovingBg] = useState(false);
 
   const form = useForm<ProductFormValues>({
     resolver: zodResolver(productSchema),
@@ -116,16 +118,37 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
     return data.url as string;
   }
 
-  async function handleCoverUpload(file: File) {
+  const handleCoverUpload = useCallback(async (file: File) => {
     setUploading(true);
     try {
-      const url = await uploadFile(file);
+      let fileToUpload: File = file;
+
+      if (removeBg) {
+        setRemovingBg(true);
+        toast({ title: "Arka plan kaldırılıyor...", description: "Bu işlem 10-30 saniye sürebilir." });
+        try {
+          const { removeBackground } = await import("@imgly/background-removal");
+          const blob = await removeBackground(file);
+          const baseName = file.name.replace(/\.[^.]+$/, "");
+          fileToUpload = new File([blob], `${baseName}_nobg.png`, { type: "image/png" });
+          toast({ title: "Arka plan kaldırıldı" });
+        } catch {
+          toast({ title: "Uyarı", description: "Arka plan kaldırılamadı, orijinal görsel yükleniyor.", variant: "destructive" });
+        } finally {
+          setRemovingBg(false);
+        }
+      }
+
+      const url = await uploadFile(fileToUpload);
       form.setValue("coverImage", url);
       setCoverPreview(url);
       toast({ title: "Kapak görseli yüklendi" });
-    } catch { toast({ title: "Hata", description: "Yükleme başarısız.", variant: "destructive" }); }
-    finally { setUploading(false); }
-  }
+    } catch {
+      toast({ title: "Hata", description: "Yükleme başarısız.", variant: "destructive" });
+    } finally {
+      setUploading(false);
+    }
+  }, [removeBg, form]);
 
   async function handleGalleryUpload(files: FileList | null) {
     if (!files) return;
@@ -314,14 +337,36 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
 
           {/* ── KAPAK GÖRSELİ ── */}
           <div className={sectionClass}>
-            <h2 className={sectionTitle}>Kapak Görseli</h2>
+            <div className="flex items-center justify-between mb-5">
+              <h2 className={sectionTitle} style={{ marginBottom: 0 }}>Kapak Görseli</h2>
+              <label className="flex items-center gap-2 cursor-pointer select-none">
+                <Switch
+                  checked={removeBg}
+                  onCheckedChange={setRemoveBg}
+                />
+                <span className="flex items-center gap-1.5 text-xs font-semibold text-gray-600">
+                  <Wand2 className="w-3.5 h-3.5 text-[#8B1A1A]" />
+                  Arka planı kaldır
+                </span>
+              </label>
+            </div>
+            {removeBg && (
+              <div className="mb-4 rounded-sm bg-amber-50 border border-amber-200 px-4 py-2.5 text-xs text-amber-800 font-medium">
+                Aktif: Yüklenen görsel teknik çizim ise arka planı otomatik kaldırılır ve şeffaf PNG olarak kaydedilir.
+              </div>
+            )}
             <input ref={coverRef} type="file" accept="image/*" className="hidden" onChange={e => { const f = e.target.files?.[0]; if (f) handleCoverUpload(f); }} />
             <div className="flex gap-5 items-start">
               <div
-                className="w-36 h-36 border-2 border-dashed border-gray-200 rounded-sm flex items-center justify-center cursor-pointer hover:border-[#8B1A1A] hover:bg-red-50 transition-all flex-shrink-0 overflow-hidden bg-gray-50"
-                onClick={() => coverRef.current?.click()}
+                className="w-36 h-36 border-2 border-dashed border-gray-200 rounded-sm flex items-center justify-center cursor-pointer hover:border-[#8B1A1A] hover:bg-red-50 transition-all flex-shrink-0 overflow-hidden bg-gray-50 bg-[length:16px_16px] bg-[image:linear-gradient(45deg,#e5e5e5_25%,transparent_25%,transparent_75%,#e5e5e5_75%),linear-gradient(45deg,#e5e5e5_25%,transparent_25%,transparent_75%,#e5e5e5_75%)] bg-[position:0_0,8px_8px]"
+                onClick={() => !removingBg && coverRef.current?.click()}
               >
-                {coverPreview ? (
+                {removingBg ? (
+                  <div className="flex flex-col items-center gap-2">
+                    <Loader2 className="w-6 h-6 text-[#8B1A1A] animate-spin" />
+                    <span className="text-[10px] text-gray-500 text-center px-1">Arka plan kaldırılıyor...</span>
+                  </div>
+                ) : coverPreview ? (
                   <img src={coverPreview} alt="" className="w-full h-full object-contain" />
                 ) : (
                   <div className="text-center">
@@ -331,8 +376,8 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
                 )}
               </div>
               <div className="flex-1 space-y-2">
-                <Button type="button" variant="outline" className="rounded-sm border-gray-300 text-gray-700 text-sm" onClick={() => coverRef.current?.click()} disabled={uploading}>
-                  <Upload className="w-4 h-4 mr-2" /> Bilgisayardan Seç
+                <Button type="button" variant="outline" className="rounded-sm border-gray-300 text-gray-700 text-sm" onClick={() => coverRef.current?.click()} disabled={uploading || removingBg}>
+                  {removingBg ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> İşleniyor...</> : <><Upload className="w-4 h-4 mr-2" /> Bilgisayardan Seç</>}
                 </Button>
                 <FormField control={form.control} name="coverImage" render={({ field }) => (
                   <FormItem>

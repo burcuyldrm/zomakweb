@@ -75,6 +75,8 @@
     "zod": "catalog:"
   },
   "dependencies": {
+    "@imgly/background-removal": "^1.7.0",
+    "onnxruntime-web": "^1.24.3",
     "react-pdf": "^10.4.1"
   }
 }
