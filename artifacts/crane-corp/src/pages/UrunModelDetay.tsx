@@ -16,6 +16,7 @@ interface ProductModel {
   slug: string;
   categoryId: number;
   categoryName: string;
+  shortDescription: string;
   coverImage: string;
   gallery: string[];
   specs: { key: string; value: string }[];
@@ -161,7 +162,11 @@ export default function UrunModelDetay() {
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <div className="mb-2 text-[10px] font-bold tracking-widest text-[#8B1A1A]">MODEL DETAYI</div>
             <h1 className="mb-2 text-3xl font-black leading-tight text-gray-900 md:text-4xl">{model.name}</h1>
-            <p className="mb-6 text-base font-semibold text-gray-500">{model.categoryName}</p>
+            <p className="mb-4 text-base font-semibold text-gray-500">{model.categoryName}</p>
+
+            {model.shortDescription && (
+              <p className="mb-6 text-sm leading-relaxed text-gray-600 text-justify">{model.shortDescription}</p>
+            )}
 
             {/* Teknik Özellikler */}
             {model.specs && model.specs.length > 0 && (
