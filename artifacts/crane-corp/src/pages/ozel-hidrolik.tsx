@@ -12,7 +12,6 @@ export default function OzelHidrolik() {
         title="ÖZEL HİDROLİK MAKİNELER"
         description="Müşteri ihtiyaçlarına özel, proje bazlı mühendislik çözümleri."
       />
-
       <div className="container mx-auto px-4 md:px-8 py-16 max-w-6xl">
 
         {/* Bölüm 1 */}
@@ -29,9 +28,9 @@ export default function OzelHidrolik() {
             <h2 className="text-2xl font-black text-gray-900 mb-5">
               STANDART ÖTESI KAPASİTE
             </h2>
-            <p className="text-gray-600 leading-relaxed text-justify">
-              ZOMAK, standart ürünlerinin ötesinde; müşteri ihtiyaçlarına özel, proje bazlı hidrolik makine çözümleri geliştirme kabiliyetine sahiptir.
-            </p>
+            <p className="text-gray-600 leading-relaxed text-justify">ZOMAK, standart ürünlerinin ötesinde; müşteri ihtiyaçlarına özel, proje bazlı hidrolik makine çözümleri geliştirme kabiliyetine sahiptir.
+
+            Her proje; saha koşulları, operasyonel gereksinimler ve performans beklentileri dikkate alınarak mühendislik bakış açısıyla ele alınır. Tasarım, üretim ve uygulama süreçlerinin tamamı ZOMAK güvencesiyle yürütülür. İhtiyacınızı anlar, tasarlar ve gerçeğe dönüştürür.</p>
           </motion.div>
 
           <motion.div
