@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { Link, useRoute } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, MessageCircle, Phone, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, MessageCircle, Phone, ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -49,8 +49,17 @@ export default function UrunModelDetay() {
   const [notFound, setNotFound] = useState(false);
   const [activeImg, setActiveImg] = useState<string | null>(null);
 
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState(1);
+
+  useEffect(() => {
+    if (!lightboxSrc) return;
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") setLightboxSrc(null); };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [lightboxSrc]);
 
   const onDocumentLoadSuccess = useCallback(({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
@@ -101,6 +110,27 @@ export default function UrunModelDetay() {
 
   return (
     <div className="min-h-screen bg-white">
+
+      {/* Lightbox */}
+      {lightboxSrc && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          onClick={() => setLightboxSrc(null)}
+        >
+          <button
+            className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition"
+            onClick={() => setLightboxSrc(null)}
+          >
+            <X className="h-6 w-6" />
+          </button>
+          <img
+            src={lightboxSrc}
+            alt="Büyütülmüş görsel"
+            className="max-h-[90vh] max-w-[92vw] object-contain drop-shadow-2xl rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
       {/* Breadcrumb */}
       <div className="border-b border-gray-200 bg-gray-50 py-3">
         <div className="container mx-auto px-4 md:px-8">
@@ -129,13 +159,22 @@ export default function UrunModelDetay() {
           {/* Sol: fotoğraf + thumbnail strip */}
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <div className="overflow-hidden rounded-[28px] bg-[#f3f3f3] p-8 shadow-sm">
-              <div className="flex min-h-[380px] items-center justify-center">
+              <div className="group relative flex min-h-[380px] items-center justify-center">
                 {(activeImg || model.coverImage) ? (
-                  <img
-                    src={activeImg || model.coverImage}
-                    alt={model.name}
-                    className="max-h-[380px] w-auto max-w-full object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.16)]"
-                  />
+                  <>
+                    <img
+                      src={activeImg || model.coverImage}
+                      alt={model.name}
+                      className="max-h-[380px] w-auto max-w-full object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.16)] cursor-zoom-in"
+                      onClick={() => setLightboxSrc(activeImg || model.coverImage)}
+                    />
+                    <button
+                      className="absolute right-2 top-2 rounded-full bg-white/80 p-1.5 text-gray-600 opacity-0 group-hover:opacity-100 transition shadow"
+                      onClick={() => setLightboxSrc(activeImg || model.coverImage)}
+                    >
+                      <ZoomIn className="h-4 w-4" />
+                    </button>
+                  </>
                 ) : (
                   <div className="flex h-[380px] w-full items-center justify-center rounded-xl bg-gray-200 text-gray-400">Görsel Yok</div>
                 )}
@@ -259,8 +298,15 @@ export default function UrunModelDetay() {
                   {diagrams.length > 0 && (
                     <div className="mt-4 flex flex-col gap-4">
                       {diagrams.map((img, i) => (
-                        <div key={i} className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] p-4 flex items-center justify-center">
+                        <div
+                          key={i}
+                          className="group relative rounded-[20px] border border-gray-200 bg-[#f3f3f3] p-4 flex items-center justify-center cursor-zoom-in"
+                          onClick={() => setLightboxSrc(img)}
+                        >
                           <img src={img} alt={`Diyagram ${i + 1}`} className="max-h-[340px] w-auto max-w-full object-contain" />
+                          <div className="absolute inset-0 rounded-[20px] flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-colors duration-300">
+                            <ZoomIn className="h-7 w-7 text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow" />
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -274,8 +320,15 @@ export default function UrunModelDetay() {
                   <h2 className="mb-6 text-xl font-black text-gray-900">Ürün Galerisi</h2>
                   <div className="grid grid-cols-2 gap-3">
                     {model.gallery.map((img, i) => (
-                      <div key={i} className="overflow-hidden rounded-[16px] bg-[#f3f3f3] cursor-pointer" onClick={() => setActiveImg(img)}>
-                        <img src={img} alt={`${model.name} - ${i + 1}`} className="h-[150px] w-full object-cover transition-transform duration-300 hover:scale-105" />
+                      <div
+                        key={i}
+                        className="group relative overflow-hidden rounded-[16px] bg-[#f3f3f3] cursor-zoom-in"
+                        onClick={() => setLightboxSrc(img)}
+                      >
+                        <img src={img} alt={`${model.name} - ${i + 1}`} className="h-[150px] w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors duration-300">
+                          <ZoomIn className="h-6 w-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow" />
+                        </div>
                       </div>
                     ))}
                   </div>
