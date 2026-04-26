@@ -175,7 +175,7 @@ export default function UrunDetay() {
                         />
                         <div className="relative z-10 flex h-full flex-col px-6 py-6">
                           {model.coverImage && (
-                            <div className="mb-4 flex h-[180px] items-center justify-center">
+                            <div className="mb-4 flex h-[180px] items-center justify-center overflow-hidden rounded-2xl">
                               <img
                                 src={model.coverImage}
                                 alt={model.name}
