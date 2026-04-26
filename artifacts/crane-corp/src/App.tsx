@@ -21,6 +21,7 @@ import Hakkimizda from "@/pages/kurumsal/hakkimizda";
 import KalitePolitikamiz from "@/pages/kurumsal/kalite-politikamiz";
 import CevrePolitikamiz from "@/pages/kurumsal/cevre-politikamiz";
 import ArgeUrge from "@/pages/kurumsal/arge-urge";
+import OzelHidrolik from "@/pages/ozel-hidrolik";
 
 import AdminLogin from "@/pages/admin/login";
 import AdminDashboard from "@/pages/admin/dashboard";
@@ -75,6 +76,9 @@ function Router() {
       </Route>
       <Route path="/urunler/:productSlug/:modelSlug">
         <PublicLayout><UrunModelDetay /></PublicLayout>
+      </Route>
+      <Route path="/urunler/ozel-hidrolik-makineler">
+        <PublicLayout><OzelHidrolik /></PublicLayout>
       </Route>
       <Route path="/urunler/:slug">
         <PublicLayout><UrunDetay /></PublicLayout>
