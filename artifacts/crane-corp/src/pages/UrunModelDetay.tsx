@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { Link, useRoute } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, MessageCircle, Phone, ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
+import { ArrowLeft, MessageCircle, Phone, ChevronLeft, ChevronRight, X, ZoomIn, Maximize2, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -64,6 +64,21 @@ export default function UrunModelDetay() {
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState(1);
 
+  const [pdfLightboxOpen, setPdfLightboxOpen] = useState(false);
+  const [pdfLbNumPages, setPdfLbNumPages] = useState(0);
+  const [pdfLbPage, setPdfLbPage] = useState(1);
+
+  useEffect(() => {
+    if (!pdfLightboxOpen) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setPdfLightboxOpen(false);
+      if (e.key === "ArrowLeft") setPdfLbPage(p => Math.max(1, p - 1));
+      if (e.key === "ArrowRight") setPdfLbPage(p => Math.min(pdfLbNumPages, p + 1));
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [pdfLightboxOpen, pdfLbNumPages]);
+
   useEffect(() => {
     if (!lightboxOpen) return;
     const handler = (e: KeyboardEvent) => {
@@ -124,6 +139,80 @@ export default function UrunModelDetay() {
 
   return (
     <div className="min-h-screen bg-white">
+
+      {/* PDF Lightbox */}
+      {pdfLightboxOpen && model?.pdfUrl && (
+        <div
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black/95 backdrop-blur-sm"
+          onClick={() => setPdfLightboxOpen(false)}
+        >
+          {/* Üst bar */}
+          <div
+            className="w-full flex items-center justify-between px-6 py-3 bg-black/60 border-b border-white/10"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span className="text-white text-sm font-semibold">Teknik Diyagram — {model.name}</span>
+            <div className="flex items-center gap-3">
+              <a
+                href={model.pdfUrl}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs font-bold text-white/70 hover:text-white transition"
+              >
+                <Download className="h-4 w-4" /> İndir
+              </a>
+              <button
+                className="rounded-full bg-white/10 p-2 text-white hover:bg-white/25 transition"
+                onClick={() => setPdfLightboxOpen(false)}
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* PDF içeriği */}
+          <div
+            className="flex-1 overflow-auto w-full flex flex-col items-center py-6 px-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Document
+              file={model.pdfUrl}
+              onLoadSuccess={({ numPages }) => { setPdfLbNumPages(numPages); setPdfLbPage(1); }}
+              loading={<div className="py-16 text-white/50 text-sm">PDF yükleniyor…</div>}
+              error={<div className="py-16 text-red-400 text-sm">PDF yüklenemedi.</div>}
+            >
+              <Page
+                pageNumber={pdfLbPage}
+                width={Math.min(900, window.innerWidth - 80)}
+                renderAnnotationLayer={false}
+                renderTextLayer={false}
+                className="shadow-2xl rounded-lg"
+              />
+            </Document>
+
+            {pdfLbNumPages > 1 && (
+              <div className="flex items-center gap-5 mt-6">
+                <button
+                  disabled={pdfLbPage <= 1}
+                  onClick={() => setPdfLbPage(p => p - 1)}
+                  className="p-2 rounded-full bg-white/10 text-white hover:bg-white/25 disabled:opacity-30 transition"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <span className="text-white text-sm font-medium">{pdfLbPage} / {pdfLbNumPages}</span>
+                <button
+                  disabled={pdfLbPage >= pdfLbNumPages}
+                  onClick={() => setPdfLbPage(p => p + 1)}
+                  className="p-2 rounded-full bg-white/10 text-white hover:bg-white/25 disabled:opacity-30 transition"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Lightbox */}
       {lightboxOpen && (
@@ -306,20 +395,47 @@ export default function UrunModelDetay() {
 
                   {model.pdfUrl && (
                     <div className="rounded-[20px] border border-gray-200 bg-[#f3f3f3] overflow-hidden flex flex-col items-center p-4">
-                      <Document
-                        file={model.pdfUrl}
-                        onLoadSuccess={onDocumentLoadSuccess}
-                        loading={<div className="py-12 text-sm text-gray-400">PDF yükleniyor...</div>}
-                        error={<div className="py-12 text-sm text-red-500">PDF yüklenemedi.</div>}
+                      {/* Üst aksiyon barı */}
+                      <div className="w-full flex items-center justify-between mb-3">
+                        <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">PDF Diyagram</span>
+                        <div className="flex items-center gap-2">
+                          <a
+                            href={model.pdfUrl}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-[#8B1A1A] transition"
+                          >
+                            <Download className="h-3.5 w-3.5" /> İndir
+                          </a>
+                          <button
+                            onClick={() => { setPdfLbPage(pageNumber); setPdfLightboxOpen(true); }}
+                            className="flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-[#8B1A1A] transition"
+                          >
+                            <Maximize2 className="h-3.5 w-3.5" /> Tam Ekran
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className="cursor-zoom-in"
+                        onClick={() => { setPdfLbPage(pageNumber); setPdfLightboxOpen(true); }}
                       >
-                        <Page
-                          pageNumber={pageNumber}
-                          width={Math.min(440, window.innerWidth / 2 - 80)}
-                          renderAnnotationLayer={false}
-                          renderTextLayer={false}
-                          className="shadow-md rounded"
-                        />
-                      </Document>
+                        <Document
+                          file={model.pdfUrl}
+                          onLoadSuccess={onDocumentLoadSuccess}
+                          loading={<div className="py-12 text-sm text-gray-400">PDF yükleniyor...</div>}
+                          error={<div className="py-12 text-sm text-red-500">PDF yüklenemedi.</div>}
+                        >
+                          <Page
+                            pageNumber={pageNumber}
+                            width={Math.min(420, window.innerWidth / 2 - 80)}
+                            renderAnnotationLayer={false}
+                            renderTextLayer={false}
+                            className="shadow-md rounded"
+                          />
+                        </Document>
+                      </div>
 
                       {numPages > 1 && (
                         <div className="flex items-center gap-4 mt-4">
