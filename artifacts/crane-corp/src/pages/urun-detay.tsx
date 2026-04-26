@@ -179,7 +179,7 @@ export default function UrunDetay() {
                               <img
                                 src={model.coverImage}
                                 alt={model.name}
-                                className="max-h-[170px] w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                                className="max-h-[170px] w-full rounded-xl object-contain transition-transform duration-500 group-hover:scale-105"
                               />
                             </div>
                           )}
