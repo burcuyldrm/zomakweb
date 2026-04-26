@@ -22,7 +22,6 @@ export default function KalitePolitikamiz() {
         title="KALİTE POLİTİKAMIZ"
         description="Kalite, ZOMAK'ın üretim felsefesinin temel taşıdır."
       />
-
       <div className="container mx-auto px-4 md:px-8 py-16">
 
         {/* 1. Kalite Felsefemiz: metin sol + görsel 1 sağ (kırpılmadan) */}
@@ -30,7 +29,7 @@ export default function KalitePolitikamiz() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="prose prose-gray max-w-none">
               <h2 className="text-2xl font-black text-gray-900 mb-5">KALİTE FELSEFEMİZ</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-4 text-justify">
                 Zomak Vinç Platform ve Makina Sanayi olarak kalite; üretim sürecinin her aşamasında titizlikle uyguladığımız bir disiplindir. Müşteri memnuniyetini en üst düzeyde tutmak, güvenli ve uzun ömürlü ekipmanlar üretmek ve sektördeki kalite standartlarını karşılamak ya da aşmak temel hedeflerimiz arasındadır.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
