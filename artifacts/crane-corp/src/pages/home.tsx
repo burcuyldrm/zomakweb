@@ -294,7 +294,7 @@ export default function Home() {
               mobil katlanır vinç, hidrolik kurtarıcı ve sepetli
               platform ekipmanları alanında üretim ve hizmet vermektedir.
             </p>
-            <p className="text-base leading-relaxed text-gray-600">
+            <p className="text-base leading-relaxed text-gray-600 text-justify">
               Mühendislik odaklı yaklaşımımız, kaliteli üretim süreçlerimiz ve
               müşteri memnuniyetine olan bağlılığımız ile Türkiye'nin önde
               gelen endüstriyel firmalarına güvenilir çözümler sunmaktayız.
