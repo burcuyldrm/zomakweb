@@ -19,12 +19,12 @@ export default function OzelHidrolik() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8B1A1A] mb-3">
-              PROJE BAZLI ÇÖZÜMLER
-            </div>
             <h2 className="text-2xl font-black text-gray-900 mb-5">
               STANDART ÖTESI KAPASİTE
             </h2>
+            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8B1A1A] mb-3">
+              PROJE BAZLI ÇÖZÜMLER
+            </div>
             <p className="text-gray-600 leading-relaxed text-justify">
               ZOMAK, standart ürünlerinin ötesinde; müşteri ihtiyaçlarına özel, proje bazlı hidrolik makine çözümleri geliştirme kabiliyetine sahiptir.
             </p>
