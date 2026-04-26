@@ -14,6 +14,7 @@ import {
 import { useQueryClient } from "@tanstack/react-query";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -26,6 +27,7 @@ const productSchema = z.object({
   slug: z.string().min(1).regex(/^[a-z0-9-]+$/, "Sadece küçük harf, rakam ve tire"),
   categoryId: z.coerce.number().min(1, "Kategori seçiniz"),
   capacity: z.string().default(""),
+  shortDescription: z.string().default(""),
   coverImage: z.string().default(""),
   status: z.enum(["published", "draft"]),
   featured: z.boolean(),
@@ -73,7 +75,7 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
 
   const form = useForm<ProductFormValues>({
     resolver: zodResolver(productSchema),
-    defaultValues: { name: "", slug: "", categoryId: 0, capacity: "", coverImage: "", status: "published", featured: false, sortOrder: 0 },
+    defaultValues: { name: "", slug: "", categoryId: 0, capacity: "", shortDescription: "", coverImage: "", status: "published", featured: false, sortOrder: 0 },
   });
 
   useEffect(() => {
@@ -83,6 +85,7 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
         slug: product.slug,
         categoryId: product.categoryId,
         capacity: product.capacity,
+        shortDescription: product.shortDescription ?? "",
         coverImage: product.coverImage,
         status: product.status as "published" | "draft",
         featured: product.featured,
@@ -177,7 +180,6 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
   function onSubmit(values: ProductFormValues) {
     const payload = {
       ...values,
-      shortDescription: "",
       description: JSON.stringify(genelSpecs.filter(s => s.key)),
       specs: teknikSpecs.filter(s => s.key),
       gallery,
@@ -287,6 +289,22 @@ export default function ProductForm({ baseRoute = "/admin/urunler" }: ProductFor
                   <FormLabel className={labelClass}>KAPASİTE</FormLabel>
                   <FormControl>
                     <Input className="rounded-sm border-gray-200" placeholder="örn. 30 ton" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} />
+            </div>
+            <div className="mt-5">
+              <FormField control={form.control} name="shortDescription" render={({ field }) => (
+                <FormItem>
+                  <FormLabel className={labelClass}>KISA AÇIKLAMA</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      className="rounded-sm border-gray-200 text-sm resize-none"
+                      placeholder="Ürün hakkında kısa bir açıklama (opsiyonel)"
+                      rows={3}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
