@@ -142,20 +142,6 @@ export default function UrunModelDetay() {
               </div>
             </div>
 
-            {/* Thumbnail strip */}
-            {allImages.length > 1 && (
-              <div className="mt-3 flex gap-2 flex-wrap">
-                {allImages.map((img, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveImg(img)}
-                    className={`w-16 h-16 rounded-xl overflow-hidden border-2 transition-all ${activeImg === img ? "border-[#8B1A1A]" : "border-transparent hover:border-gray-300"}`}
-                  >
-                    <img src={img} alt="" className="w-full h-full object-cover bg-gray-100" />
-                  </button>
-                ))}
-              </div>
-            )}
           </motion.div>
 
           {/* Sağ: başlık + özellik tabloları */}
