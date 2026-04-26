@@ -304,7 +304,7 @@ export default function UrunModelDetay() {
                     <img
                       src={activeImg || model.coverImage}
                       alt={model.name}
-                      className="max-h-[480px] w-full object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.16)] cursor-zoom-in"
+                      className="max-h-[480px] w-full rounded-2xl object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.16)] cursor-zoom-in"
                       onClick={() => { const imgs = [model.coverImage, ...model.gallery].filter(Boolean); const idx = imgs.indexOf(activeImg || model.coverImage); openLightbox(imgs, idx >= 0 ? idx : 0); }}
                     />
                     <button
