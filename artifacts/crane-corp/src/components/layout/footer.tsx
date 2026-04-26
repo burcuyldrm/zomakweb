@@ -75,7 +75,7 @@ export function Footer() {
               <li className="flex gap-3 items-start">
                 <MapPin className="w-4 h-4 text-[#8B1A1A] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm leading-relaxed">
-                  Atatürk Mahallesi 4. Cadde No:54<br />Oğlananası-Menderes / İzmir
+                  Atatürk Mahallesi 4. Cadde No:129<br />Oğlananası-Menderes / İzmir
                 </span>
               </li>
               <li className="flex gap-3 items-center">
