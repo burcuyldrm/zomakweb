@@ -6,7 +6,7 @@ import { PageHero } from "@/components/layout/page-hero";
 const contactItems = [
   { icon: Phone, label: "Telefon", value: "0541 129 01 02", href: "tel:05411290102" },
   { icon: Mail, label: "E-posta", value: "info@zomak.com.tr", href: "mailto:info@zomak.com.tr" },
-  { icon: MapPin, label: "Adres", value: "Atatürk Mahallesi 4. Cadde No:54\nOğlananası-Menderes / İzmir", href: undefined },
+  { icon: MapPin, label: "Adres", value: "Atatürk Mahallesi 4. Cadde No:129\nOğlananası-Menderes / İzmir", href: undefined },
   { icon: Clock, label: "Çalışma Saatleri", value: "Pzt–Cmt: 08:00–18:00\nPazar: Kapalı", href: undefined },
 ];
 
@@ -63,7 +63,7 @@ export default function Contact() {
               className="w-full rounded-sm overflow-hidden border border-gray-200 shadow-sm min-h-[420px]"
             >
               <iframe
-                src="https://www.google.com/maps?q=Atatürk+Mahallesi+4.+Cadde+No:54+Oğlananası+Menderes+İzmir&output=embed"
+                src="https://www.google.com/maps?q=Atatürk+Mahallesi+4.+Cadde+No:129+Oğlananası+Menderes+İzmir&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: "block", minHeight: "420px" }}
