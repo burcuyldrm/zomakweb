@@ -32,7 +32,7 @@ export default function KalitePolitikamiz() {
               <p className="text-gray-600 leading-relaxed mb-4 text-justify">
                 Zomak Vinç Platform ve Makina Sanayi olarak kalite; üretim sürecinin her aşamasında titizlikle uyguladığımız bir disiplindir. Müşteri memnuniyetini en üst düzeyde tutmak, güvenli ve uzun ömürlü ekipmanlar üretmek ve sektördeki kalite standartlarını karşılamak ya da aşmak temel hedeflerimiz arasındadır.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-4 text-justify">
                 Kalite anlayışımız yalnızca nihai ürünle sınırlı değildir. Hammadde temini, tasarım aşaması, üretim süreçleri, kalite kontrol denetimleri ve satış sonrası hizmetlerin tümünü kapsayan bütünleşik bir sistem olarak değerlendirilmektedir.
               </p>
               <p className="text-gray-600 leading-relaxed text-justify">
