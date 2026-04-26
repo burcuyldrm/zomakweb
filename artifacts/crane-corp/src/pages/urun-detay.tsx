@@ -245,14 +245,26 @@ export default function UrunDetay() {
                   >
                     {category.slug === "ozel-hidrolik-makineler" ? (
                     <Link href={`/urunler/${category.slug}/${model.slug}`} className="h-full block">
-                      <article className="group relative h-full cursor-pointer overflow-hidden rounded-[26px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+                      <article
+                        className="group relative min-h-[250px] cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]"
+                        style={{ borderRadius: "26px 0 26px 26px" }}
+                      >
                         <div
-                          className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
-                          style={{ clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)" }}
+                          className="absolute right-0 top-0 z-20"
+                          style={{
+                            width: 0,
+                            height: 0,
+                            borderTop: "28px solid white",
+                            borderLeft: "28px solid transparent",
+                          }}
+                        />
+                        <div
+                          className="absolute inset-0 bg-[#f3f4f6]"
+                          style={{ borderRadius: "26px 0 26px 26px" }}
                         />
                         <div className="relative z-10 flex h-full flex-col px-6 py-6">
                           {model.coverImage && (
-                            <div className="mb-5 flex h-[160px] items-center justify-center">
+                            <div className="mb-5 flex h-[160px] items-center justify-center overflow-hidden">
                               <img
                                 src={model.coverImage}
                                 alt="Özel Hidrolik Makine"
