@@ -35,7 +35,7 @@ export default function KalitePolitikamiz() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 Kalite anlayışımız yalnızca nihai ürünle sınırlı değildir. Hammadde temini, tasarım aşaması, üretim süreçleri, kalite kontrol denetimleri ve satış sonrası hizmetlerin tümünü kapsayan bütünleşik bir sistem olarak değerlendirilmektedir.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-justify">
                 Sürekli iyileştirme ilkesini benimseyerek müşteri geri bildirimlerini ve sektör gelişmelerini yakından takip ediyor; bu doğrultuda ürün ve süreç kalitemizi sürekli olarak geliştiriyoruz.
               </p>
             </div>
