@@ -245,7 +245,7 @@ export default function UrunDetay() {
                   >
                     {category.slug === "ozel-hidrolik-makineler" ? (
                     <Link href={`/urunler/${category.slug}/${model.slug}`} className="h-full block">
-                      <article className="group relative h-full cursor-pointer overflow-hidden rounded-[26px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+                      <article className="group relative h-full cursor-pointer overflow-hidden rounded-[26px] transition-all duration-300 hover:-translate-y-1.5">
                         <div
                           className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
                           style={{ clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)" }}
@@ -269,7 +269,7 @@ export default function UrunDetay() {
                     </Link>
                     ) : (
                     <Link href={`/urunler/${category.slug}/${model.slug}`}>
-                      <article className="group relative min-h-[250px] cursor-pointer overflow-hidden rounded-[26px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+                      <article className="group relative min-h-[250px] cursor-pointer overflow-hidden rounded-[26px] transition-all duration-300 hover:-translate-y-1.5">
                         <div
                           className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
                           style={{ clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)" }}
