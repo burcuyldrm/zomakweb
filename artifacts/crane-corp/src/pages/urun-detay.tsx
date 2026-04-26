@@ -245,10 +245,14 @@ export default function UrunDetay() {
                   >
                     {category.slug === "ozel-hidrolik-makineler" ? (
                     <Link href={`/urunler/${category.slug}/${model.slug}`} className="h-full block">
-                      <article className="group relative min-h-[250px] cursor-pointer overflow-hidden rounded-[26px] bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
-                        <div className="flex h-full flex-col px-6 py-6">
+                      <article className="group relative h-full cursor-pointer overflow-hidden rounded-[26px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+                        <div
+                          className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
+                          style={{ clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)" }}
+                        />
+                        <div className="relative z-10 flex h-full flex-col px-6 py-6">
                           {model.coverImage && (
-                            <div className="mb-5 flex h-[160px] items-center justify-center overflow-hidden rounded-[16px]">
+                            <div className="mb-5 flex h-[160px] items-center justify-center">
                               <img
                                 src={model.coverImage}
                                 alt="Özel Hidrolik Makine"
