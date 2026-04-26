@@ -81,7 +81,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
 
         {/* Bottom */}
         <div className="p-3 border-t border-gray-100 space-y-0.5">
-          <Link href="/" target="_blank">
+          <Link href="/" target="_blank" rel="noopener noreferrer">
             <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-sm text-sm font-semibold text-gray-500 hover:bg-gray-100 hover:text-gray-800 cursor-pointer">
               <Globe className="w-4 h-4" />
               Siteyi Görüntüle
