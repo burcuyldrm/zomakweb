@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 
 export default function OzelHidrolik() {
@@ -12,6 +13,17 @@ export default function OzelHidrolik() {
         description="Müşteri ihtiyaçlarına özel, proje bazlı mühendislik çözümleri."
       />
       <div className="container mx-auto px-4 md:px-8 py-16 max-w-6xl">
+
+        <Link href="/urunler">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="-ml-2 mb-8 rounded-sm text-xs font-bold uppercase text-gray-500 hover:text-[#8B1A1A]"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Tüm Ürünler
+          </Button>
+        </Link>
 
         {/* Bölüm 1 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-16">
@@ -61,13 +73,6 @@ export default function OzelHidrolik() {
             <p className="text-gray-600 leading-relaxed text-justify">
               Her proje; saha koşulları, operasyonel gereksinimler ve performans beklentileri dikkate alınarak mühendislik bakış açısıyla ele alınır. Tasarım, üretim ve uygulama süreçlerinin tamamı ZOMAK güvencesiyle yürütülür. İhtiyacınızı anlar, tasarlar ve gerçeğe dönüştürür.
             </p>
-            <div className="mt-8">
-              <Link href="/urunler">
-                <Button className="bg-[#8B1A1A] hover:bg-[#A52020] text-white font-bold rounded-sm border-none">
-                  TÜM ÜRÜNLER
-                </Button>
-              </Link>
-            </div>
           </motion.div>
 
           <motion.div
