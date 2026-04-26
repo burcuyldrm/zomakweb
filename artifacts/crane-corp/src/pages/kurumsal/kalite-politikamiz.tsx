@@ -82,7 +82,7 @@ export default function KalitePolitikamiz() {
             <p className="text-gray-700 text-sm text-justify">Kaliteyi yalnızca bir sonuç değil, tüm operasyonel süreçlerimizin merkezinde yer alan bir yönetim anlayışı olarak ele alıyoruz. Üretim planlamasından saha uygulamalarına kadar her aşamada süreç kontrolü, izlenebilirlik ve standartlaşmayı esas alarak hatasız ve sürdürülebilir üretim gerçekleştiriyoruz.</p>
           </div>
           <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
-            <h3 className="font-black text-sm tracking-widest text-[#8B1A1A] mb-3">KALİTE ANLAYIŞIMIZ</h3>
+            <h3 className="font-black text-sm tracking-widest text-[#8B1A1A] mb-3">GÜVEN VE PERFORMANS ODAKLI ÜRETİM</h3>
             <p className="text-gray-700 text-sm text-justify">
               Kalite bizim için bir hedef değil, iş yapış biçimimizin ayrılmaz bir parçasıdır. Müşteri geri bildirimlerini sistematik biçimde değerlendiriyor; sürekli iyileştirme kültürünü tüm ekibimizle birlikte yaşatıyoruz.
             </p>
