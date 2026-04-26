@@ -85,7 +85,7 @@ export default function KalitePolitikamiz() {
           </div>
           <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
             <h3 className="font-black text-sm tracking-widest text-[#8B1A1A] mb-3">KALİTE ANLAYIŞIMIZ</h3>
-            <p className="text-gray-700 leading-relaxed text-sm">
+            <p className="text-gray-700 text-sm text-justify">
               Kalite bizim için bir hedef değil, iş yapış biçimimizin ayrılmaz bir parçasıdır. Müşteri geri bildirimlerini sistematik biçimde değerlendiriyor; sürekli iyileştirme kültürünü tüm ekibimizle birlikte yaşatıyoruz.
             </p>
           </div>
