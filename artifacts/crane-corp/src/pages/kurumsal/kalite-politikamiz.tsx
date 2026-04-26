@@ -78,7 +78,7 @@ export default function KalitePolitikamiz() {
         {/* 3. Kalite Taahhüdümüz + Kalite Anlayışımız kutuları */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           <div className="bg-gray-50 border border-gray-200 rounded-sm p-8">
-            <h3 className="font-black text-sm tracking-widest text-[#8B1A1A] mb-3">KALİTE TAAHHÜDÜMÜZ</h3>
+            <h3 className="font-black text-sm tracking-widest text-[#8B1A1A] mb-3">OPERASYONEL KALİTE YAKLAŞIMIMIZ</h3>
             <p className="text-gray-700 text-sm text-justify">
               Ürettiğimiz her ekipmanın uluslararası kalite normlarına eksiksiz uygun olmasını garanti ediyor; hammaddeden teslimata uzanan sürecin tamamında titiz kalite kontrol protokollerini uyguluyoruz.
             </p>
