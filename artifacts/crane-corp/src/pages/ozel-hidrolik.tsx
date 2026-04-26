@@ -39,8 +39,11 @@ export default function OzelHidrolik() {
             <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8B1A1A] mb-3">
               PROJE BAZLI ÇÖZÜMLER
             </div>
-            <p className="text-gray-600 leading-relaxed text-justify">
+            <p className="text-gray-600 leading-relaxed text-justify mb-4">
               ZOMAK, standart ürünlerinin ötesinde; müşteri ihtiyaçlarına özel, proje bazlı hidrolik makine çözümleri geliştirme kabiliyetine sahiptir.
+            </p>
+            <p className="text-gray-600 leading-relaxed text-justify">
+              Her proje; saha koşulları, operasyonel gereksinimler ve performans beklentileri dikkate alınarak mühendislik bakış açısıyla ele alınır. Tasarım, üretim ve uygulama süreçlerinin tamamı ZOMAK güvencesiyle yürütülür. İhtiyacınızı anlar, tasarlar ve gerçeğe dönüştürür.
             </p>
           </motion.div>
 
