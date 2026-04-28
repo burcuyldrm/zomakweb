@@ -114,9 +114,6 @@ export default function Referanslar() {
                   <p className="text-xs font-bold uppercase tracking-widest text-[#8B1A1A]/70 mb-3">
                     {ref.sector}
                   </p>
-                  <p className="text-gray-500 text-sm leading-relaxed mt-auto">
-                    {ref.desc}
-                  </p>
                 </div>
               </motion.div>
             ))}
