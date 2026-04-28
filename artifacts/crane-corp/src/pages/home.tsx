@@ -103,7 +103,7 @@ export default function Home() {
           </AnimatePresence>
 
           <div className="relative z-20 container mx-auto flex h-full items-center px-4 md:px-8">
-            <div className="max-w-2xl -translate-y-12">
+            <div className="max-w-2xl -translate-y-20">
               <motion.div
                 key={`eyebrow-${heroSlides[activeSlide].id}`}
                 initial={{ opacity: 0, y: 18 }}
