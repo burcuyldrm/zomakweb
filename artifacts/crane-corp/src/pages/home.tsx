@@ -49,7 +49,7 @@ const heroSlides = [
   },
   {
     id: 4,
-    eyebrow: "MOBİL VİNÇ",
+    eyebrow: "YÜKSEK KALİTE",
     title: "SINIFININ\nEN BÜYÜĞÜ",
     desc: "Sınıfının en yüksek metraj ve taşıma kapasitesine sahip ZK Serisi Kurtarıcılarımız ile mühendislik sınırlarını çiziyoruz.",
     image: heroImg4,
