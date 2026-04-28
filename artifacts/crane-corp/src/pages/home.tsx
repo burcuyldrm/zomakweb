@@ -289,11 +289,7 @@ export default function Home() {
               Üreticisi
             </h2>
             <div className="mx-auto mb-6 h-1 w-16 bg-[#8B1A1A]" />
-            <p className="mb-4 text-base leading-relaxed text-gray-600 text-justify">
-              Zomak Vinç Platform ve Makina Sanayi, İzmir'de kurulmuş olup
-              mobil katlanır vinç, hidrolik kurtarıcı ve sepetli
-              platform ekipmanları alanında üretim ve hizmet vermektedir.
-            </p>
+            <p className="mb-4 text-base leading-relaxed text-gray-600 text-justify">Zomak Vinç Platform ve Makina Sanayi, İzmir'de kurulmuş olup mobil katlanır vinç, hidrolik kurtarıcı ve kayar kasa ekipmanları alanında üretim ve hizmet vermektedir.</p>
             <p className="text-base leading-relaxed text-gray-600 text-justify">
               Mühendislik odaklı yaklaşımımız, kaliteli üretim süreçlerimiz ve
               müşteri memnuniyetine olan bağlılığımız ile Türkiye'nin önde
