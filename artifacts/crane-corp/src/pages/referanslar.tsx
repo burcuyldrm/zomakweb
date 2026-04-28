@@ -40,7 +40,7 @@ const references = [
   },
   {
     name: "Kuşadası Vinç",
-    sector: "Liman ve Nakliye",
+    sector: "Kaldırma Hizmetleri",
     desc: "Liman operasyonları ve deniz kargo kaldırma projelerinde ekipman desteği.",
     logo: null,
   },
