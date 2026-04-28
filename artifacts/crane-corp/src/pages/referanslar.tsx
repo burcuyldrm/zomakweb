@@ -58,7 +58,7 @@ const references = [
   },
   {
     name: "İzoto Yol Yardım",
-    sector: "Yol Yardım Hizmetleri",
+    sector: "Oto Kurtarma",
     desc: "Karayolu yol yardım ve araç kurtarma hizmetlerinde uzun vadeli iş birliği.",
     logo: null,
   },
