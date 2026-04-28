@@ -17,9 +17,7 @@ export function Footer() {
                 className="h-36 w-auto object-contain"
               />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Zomak Vinç Platform ve Makina Sanayi, Türkiye ve dünya genelinde kaldırma, kurtarıcı ve platform ekipmanları alanında güvenilir çözümler sunar.
-            </p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">Zomak Vinç Platform ve Makina Sanayi, Türkiye ve dünya genelinde kaldırma, kurtarıcı ve gözlük ekipmanları alanında güvenilir çözümler sunar.</p>
           </div>
 
           {/* Kurumsal + Hızlı Bağlantılar */}
