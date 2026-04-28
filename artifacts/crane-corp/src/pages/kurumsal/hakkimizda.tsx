@@ -24,9 +24,7 @@ export default function Hakkimizda() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="prose prose-gray max-w-none">
               <h2 className="text-2xl font-black text-gray-900 mb-5">ŞİRKET KİMLİĞİMİZ</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Zomak Vinç Platform ve Makina Sanayi, İzmir'de kurulmuş olup vinç, kurtarıcı ve platform ekipmanları tasarımı ile üretimi konusunda hizmet vermektedir. Şirketimiz, endüstriyel ihtiyaçlara yönelik güvenilir, dayanıklı ve yüksek performanslı ekipmanlar üretmekte; Türkiye'nin önde gelen iş makineleri ve ağır araç operatörlerine çözüm ortağı olmaktadır.
-              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">Zomak Vinç Platform ve Makina Sanayi, İzmir'de kurulmuş olup vinç, kurtarıcı ve kayar kasa ekipmanları tasarımı ile üretimi konusunda hizmet vermektedir. Şirketimiz, endüstriyel ihtiyaçlara yönelik güvenilir, dayanıklı ve yüksek performanslı ekipmanlar üretmekte; Türkiye'nin önde gelen iş makineleri ve ağır araç operatörlerine çözüm ortağı olmaktadır.</p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Teknik bilgi birikimimiz ve deneyimli mühendislik kadromuz ile her ölçekteki projeye uygun ekipman sunabilme kapasitesine sahibiz. Standart ürün portföyümüzün yanı sıra projeye özel tasarım ve üretim hizmetleri de sunmaktayız.
               </p>
