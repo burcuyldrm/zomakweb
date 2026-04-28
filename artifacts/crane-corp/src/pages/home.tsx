@@ -172,7 +172,7 @@ export default function Home() {
 
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-sm transition hover:bg-black/40"
+            className="absolute left-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-sm transition-all hover:bg-black/40"
             aria-label="Önceki slayt"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -180,7 +180,7 @@ export default function Home() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-sm transition hover:bg-black/40"
+            className="absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-sm transition-all hover:bg-black/40"
             aria-label="Sonraki slayt"
           >
             <ChevronRight className="h-5 w-5" />
@@ -227,7 +227,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 gap-7 md:grid-cols-2 xl:grid-cols-4">
-            {(categories ?? []).map((cat, i) => (
+            {Array.isArray(categories) ? categories.map((cat, i) => (
               <motion.div
                 key={cat.slug}
                 initial={{ opacity: 0, y: 24 }}
@@ -237,7 +237,7 @@ export default function Home() {
                 className="h-full"
               >
                 <Link href={`/urunler/${cat.slug}`} className="block h-full">
-                  <article className="group relative h-full min-h-[430px] cursor-pointer overflow-hidden rounded-[28px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+                  <article className="group relative h-full min-h-[430px] cursor-pointer overflow-hidden rounded-[28px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.12)]">
                     <div
                       className="absolute inset-0 bg-[#f3f3f3] transition-colors duration-300 group-hover:bg-[#ececec]"
                       style={{ clipPath: "polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%)" }}
@@ -275,7 +275,7 @@ export default function Home() {
                   </article>
                 </Link>
               </motion.div>
-            ))}
+            )) : null}
           </div>
         </div>
       </section>
@@ -289,7 +289,7 @@ export default function Home() {
               Üreticisi
             </h2>
             <div className="mx-auto mb-6 h-1 w-16 bg-[#8B1A1A]" />
-            <p className="mb-4 text-base leading-relaxed text-gray-600 text-justify">Zomak Vinç Platform ve Makina Sanayi, İzmir'de kurulmuş olup mobil katlanır vinç, hidrolik kurtarıcı ve kayar kasa ekipmanları alanında üretim ve hizmet vermektedir.</p>
+            <p className="mb-4 text-base leading-relaxed text-gray-600 text-justify">Zomak Vinç Platform ve Makina Sanayi, İzmir'de kurulmuş olup mobil katlanır vinç, hidrolik kurtarıcı ve özel hidrolik sistem ürünlerini tasarlayıp üretmektedir.</p>
             <p className="text-base leading-relaxed text-gray-600 text-justify">
               Mühendislik odaklı yaklaşımımız, kaliteli üretim süreçlerimiz ve
               müşteri memnuniyetine olan bağlılığımız ile Türkiye'nin önde
