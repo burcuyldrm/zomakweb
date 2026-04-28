@@ -140,7 +140,7 @@ export function Navbar() {
           className="h-full px-4 md:px-20 flex items-center justify-between"
         >
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+          <Link href="/" className="flex-shrink-0" style={{ display: "flex", alignItems: "center" }}>
             <img
               src={logoImg as unknown as string}
               alt="ZOMAK"
@@ -154,7 +154,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop — centered nav links */}
-          <div className="hidden md:flex items-center gap-7 font-bold tracking-wide absolute left-1/2 -translate-x-1/2 text-[15px]">
+          <div className="hidden md:flex flex-1 items-center justify-center gap-7 font-bold tracking-wide text-[15px]">
             <Link href="/">
               <span className="cursor-pointer transition-colors hover:text-[#8B1A1A] text-[#8B1A1A] text-[15px]">
                 ANA SAYFA
@@ -193,7 +193,7 @@ export function Navbar() {
           </div>
 
           {/* Right side — CTA + mobile toggle */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+          <div className="flex items-center gap-3 flex-shrink-0 ml-4">
             <div className="hidden md:flex">
               <Link href="/teklif">
                 <Button
