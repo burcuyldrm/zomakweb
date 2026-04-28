@@ -70,7 +70,7 @@ export default function Referanslar() {
       <PageHero
         label="GÜVEN DUYANLAR"
         title="REFERANSLARIMIZ"
-        description="Türkiye'nin önde gelen vinç ve platform operatörleriyle iş ortaklığı kuruyoruz."
+        description="Türkiye'nin önde gelen vinç ve kurtarıcı operatörleriyle iş ortaklığı kuruyoruz."
       />
 
       <section className="py-20">
