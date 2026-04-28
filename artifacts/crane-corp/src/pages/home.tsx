@@ -102,7 +102,7 @@ export default function Home() {
             </motion.div>
           </AnimatePresence>
 
-          <div className="relative z-10 container mx-auto flex h-full items-center px-4 md:px-8">
+          <div className="relative z-20 container mx-auto flex h-full items-center px-4 md:px-8">
             <div className="max-w-2xl">
               <motion.div
                 key={`eyebrow-${heroSlides[activeSlide].id}`}
@@ -199,7 +199,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 z-10 h-32 md:h-44">
+          <div className="absolute bottom-0 left-0 right-0 z-10 h-32 md:h-44 pointer-events-none">
             <svg
               viewBox="0 0 1440 180"
               className="h-full w-full"
