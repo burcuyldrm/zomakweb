@@ -6,3 +6,9 @@ id = "C3tnh5Ft_clFT-fQnisev"
 uri = "file://ZOMAK_SITE_VERILERI.md"
 type = "text"
 title = "ZOMAK Web Sitesi Veri Envanteri"
+
+[[outputs]]
+id = "vENwayeAi1Kria28r7TYi"
+uri = "file://BACKEND_ANALIZ.md"
+type = "text"
+title = "ZOMAK Backend Teknik Analizi"
