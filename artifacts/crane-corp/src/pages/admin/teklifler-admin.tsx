@@ -4,7 +4,7 @@ import { Eye, ChevronDown, X } from "lucide-react";
 const mockQuotes = [
   { id: "TKL-001", name: "Ahmet Yılmaz", firma: "Konak Vinç Ltd.", telefon: "0532 111 22 33", email: "ahmet@konak.com", hizmet: "Mobil Katlanır Vinç", sehir: "İzmir", aciklama: "Şantiye için kısa vadeli kiralama ya da satın alma seçeneklerini değerlendirmek istiyoruz.", status: "yeni", tarih: "2026-04-03" },
   { id: "TKL-002", name: "Mehmet Kaya", firma: "Ege İş Makineleri", telefon: "0541 222 33 44", email: "m.kaya@egeis.com", hizmet: "Hidrolik Kurtarıcı", sehir: "Manisa", aciklama: "TIR ve ağır taşıt kurtarma için araç arıyoruz.", status: "incelendi", tarih: "2026-04-02" },
-  { id: "TKL-003", name: "Fatma Demir", firma: "Güneş Nakliyat", telefon: "0533 444 55 66", email: "f.demir@gunes.com", hizmet: "Sepetli Platform", sehir: "Ankara", aciklama: "Elektrik bakım ekibimiz için sepetli platform ihtiyacımız var.", status: "teklif-verildi", tarih: "2026-04-01" },
+  { id: "TKL-003", name: "Fatma Demir", firma: "Güneş Nakliyat", telefon: "0533 444 55 66", email: "f.demir@gunes.com", hizmet: "Kayar Kasa", sehir: "Ankara", aciklama: "Kayar kasa ihtiyacımız var.", status: "teklif-verildi", tarih: "2026-04-01" },
   { id: "TKL-004", name: "Hasan Çelik", firma: "Birlik İnşaat", telefon: "0545 777 88 99", email: "hcelik@birlik.com", hizmet: "Özel Hidrolik Makine", sehir: "İstanbul", aciklama: "Özel proje için tasarım ve üretim hizmeti almak istiyoruz.", status: "kapandi", tarih: "2026-03-28" },
 ];
 

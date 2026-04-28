@@ -260,7 +260,7 @@
 | Pekgöz Vinç | Vinç & Kaldırma | Hidrolik Kurtarıcı Teslimi | İzmir | 2024 |
 | Fındık Vinç | Vinç & Kaldırma | Mobil Katlanır Vinç Teslimi | İzmir | 2024 |
 | Bergama Vinç | Kurtarıcı Hizmetleri | Hidrolik Gözlüklü Kurtarıcı | Bergama | 2025 |
-| Kuşadası Vinç | Platform & Kaldırma | Sepetli Platform Teslimi | Kuşadası | 2025 |
+| Kuşadası Vinç | Kayar Kasa | Kayar Kasa Teslimi | Kuşadası | 2025 |
 
 ### Referanslar Sayfasındaki Ek Firmalar (statik)
 - Üçer Vinç — logo: `image_1777048760463.png`

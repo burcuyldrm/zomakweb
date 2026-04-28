@@ -11,7 +11,7 @@ const statCards = [
 const recentQuotes = [
   { id: "TKL-001", name: "Ahmet Yılmaz", firma: "Konak Vinç Ltd.", hizmet: "Mobil Katlanır Vinç", sehir: "İzmir", status: "yeni", tarih: "2026-04-03" },
   { id: "TKL-002", name: "Mehmet Kaya", firma: "Ege İş Makineleri", hizmet: "Hidrolik Kurtarıcı", sehir: "Manisa", status: "incelendi", tarih: "2026-04-02" },
-  { id: "TKL-003", name: "Fatma Demir", firma: "Güneş Nakliyat", hizmet: "Sepetli Platform", sehir: "Ankara", status: "teklif-verildi", tarih: "2026-04-01" },
+  { id: "TKL-003", name: "Fatma Demir", firma: "Güneş Nakliyat", hizmet: "Kayar Kasa", sehir: "Ankara", status: "teklif-verildi", tarih: "2026-04-01" },
 ];
 
 const statusBadge = (s: string) => {

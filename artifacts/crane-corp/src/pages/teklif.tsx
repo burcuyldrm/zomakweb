@@ -29,7 +29,7 @@ const hizmetler = [
   "Hidrolik Gözlüklü Kurtarıcı",
   "Hidrolik Kurtarıcı",
   "Özel Hidrolik Makine",
-  "Sepetli Platform",
+  "Kayar Kasa",
   "Diğer / Bilgi Almak İstiyorum",
 ];
 
