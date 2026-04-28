@@ -9,6 +9,12 @@ import logoMarasal from "@assets/image_1777048777035.png";
 
 const references = [
   {
+    name: "Pekgöz Vinç",
+    sector: "Vinç ve Kaldırma Hizmetleri",
+    desc: "Hidrolik kurtarıcı ve mobil vinç ekipmanları tedarikinde güvenilir iş ortağı.",
+    logo: null,
+  },
+  {
     name: "Üçer Vinç",
     sector: "Vinç ve Kaldırma Hizmetleri",
     desc: "Hidrolik kurtarıcı sistemleri ve mobil vinç ekipmanları tedariki alanında uzun vadeli iş ortaklığı.",
@@ -54,12 +60,6 @@ const references = [
     name: "İzoto Yol Yardım",
     sector: "Yol Yardım Hizmetleri",
     desc: "Karayolu yol yardım ve araç kurtarma hizmetlerinde uzun vadeli iş birliği.",
-    logo: null,
-  },
-  {
-    name: "Pekgöz Vinç",
-    sector: "Vinç ve Kaldırma Hizmetleri",
-    desc: "Hidrolik kurtarıcı ve mobil vinç ekipmanları tedarikinde güvenilir iş ortağı.",
     logo: null,
   },
 ];

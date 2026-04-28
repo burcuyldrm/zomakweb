@@ -19,11 +19,11 @@ import logoBergama from "@assets/image_1777048771889.png";
 import logoMarasal from "@assets/image_1777048777035.png";
 
 const marqueeRefs = [
+  { name: "Pekgöz Vinç", logo: null },
   { name: "Üçer Vinç", logo: logoUcer },
   { name: "Kahraman Karoser", logo: logoKahraman },
   { name: "Bergama Vinç", logo: logoBergama },
   { name: "Maraşal Vinç", logo: logoMarasal },
-  { name: "Pekgöz Vinç", logo: null },
   { name: "Fındık Vinç", logo: null },
   { name: "Kuşadası Vinç", logo: null },
   { name: "Sert Oto Kurtarma", logo: null },
