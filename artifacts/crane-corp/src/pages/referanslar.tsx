@@ -10,7 +10,7 @@ import logoMarasal from "@assets/image_1777048777035.png";
 const references = [
   {
     name: "Pekgöz Vinç",
-    sector: "Vinç ve Kaldırma Hizmetleri",
+    sector: "Vinç ve Kurtarıcı Hizmetleri",
     desc: "Hidrolik kurtarıcı ve mobil vinç ekipmanları tedarikinde güvenilir iş ortağı.",
     logo: null,
   },
