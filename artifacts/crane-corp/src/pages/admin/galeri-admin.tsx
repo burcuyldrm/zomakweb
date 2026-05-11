@@ -15,7 +15,7 @@ interface MediaItem {
 }
 
 async function fetchMedia(): Promise<MediaItem[]> {
-  const r = await fetch("/api/media");
+  const r = await fetch("/api/media?type=gallery");
   return r.json();
 }
 
@@ -41,7 +41,7 @@ export default function GaleriAdmin() {
       const r = await fetch("/api/media", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "image", title, url }),
+        body: JSON.stringify({ type: "gallery", title, url }),
       });
       if (!r.ok) throw new Error("Hata");
       return r.json();

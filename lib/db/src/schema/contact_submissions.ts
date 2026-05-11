@@ -11,6 +11,7 @@ export const contactSubmissionsTable = pgTable("contact_submissions", {
   department: text("department"),
   subject: text("subject").notNull(),
   message: text("message").notNull(),
+  status: text("status").notNull().default("yeni"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 

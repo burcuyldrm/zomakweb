@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express, { type Express } from "express";
 import cors from "cors";
 import pinoHttp from "pino-http";
@@ -33,7 +34,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const uploadsDir = path.join(__dirname, "..", "uploads");
+const uploadsDir = path.join(__dirname, "..", "..", "crane-corp", "public", "uploads");
 app.use("/uploads", express.static(uploadsDir));
 
 app.use("/api", router);

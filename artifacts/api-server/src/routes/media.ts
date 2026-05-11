@@ -1,4 +1,7 @@
 import { Router, type IRouter } from "express";
+import multer from "multer";
+import path from "path";
+import fs from "fs";
 import { eq } from "drizzle-orm";
 import { db, mediaTable } from "@workspace/db";
 import {
@@ -9,6 +12,23 @@ import {
 } from "@workspace/api-zod";
 
 const router: IRouter = Router();
+
+// Multer konfigürasyonu: frontend'in public/uploads klasörüne kaydet
+const uploadDir = path.join(process.cwd(), "../../crane-corp/public/uploads");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, uploadDir);
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(null, uniqueSuffix + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage });
 
 router.get("/media", async (req, res): Promise<void> => {
   const params = ListMediaQueryParams.safeParse(req.query);
@@ -46,6 +66,18 @@ router.delete("/media/:id", async (req, res): Promise<void> => {
 
   await db.delete(mediaTable).where(eq(mediaTable.id, params.data.id));
   res.sendStatus(204);
+});
+
+// Upload endpoint: tek dosya yükleme
+router.post("/upload", upload.single("file"), async (req, res): Promise<void> => {
+  if (!req.file) {
+    res.status(400).json({ error: "No file uploaded" });
+    return;
+  }
+
+  // Dosya yolunu döndür
+  const url = `/uploads/${req.file.filename}`;
+  res.json({ url });
 });
 
 export default router;

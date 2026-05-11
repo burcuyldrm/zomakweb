@@ -4,7 +4,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Plus, Pencil, Trash2, X, Check, Upload, Image } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { Plus, Pencil, Trash2, X, Check, Upload, Image, Wand2, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 type EditState = {
@@ -25,6 +26,8 @@ export default function AdminCategories() {
   const [isAdding, setIsAdding] = useState(false);
   const [newCat, setNewCat] = useState({ ...emptyNew });
   const [uploading, setUploading] = useState(false);
+  const [removeBg, setRemoveBg] = useState(false);
+  const [removingBg, setRemovingBg] = useState(false);
   const newImageRef = useRef<HTMLInputElement>(null);
   const editImageRef = useRef<HTMLInputElement>(null);
 
@@ -47,7 +50,7 @@ export default function AdminCategories() {
   async function uploadFile(file: File): Promise<string> {
     const fd = new FormData();
     fd.append("file", file);
-    const res = await fetch("/api/upload", { method: "POST", body: fd });
+    const res = await fetch("/api/upload?rounded=true", { method: "POST", body: fd });
     if (!res.ok) throw new Error("Yükleme başarısız");
     const data = await res.json();
     return data.url as string;
@@ -56,7 +59,25 @@ export default function AdminCategories() {
   async function handleImageUpload(file: File, target: "new" | "edit") {
     setUploading(true);
     try {
-      const url = await uploadFile(file);
+      let fileToUpload = file;
+
+      if (removeBg) {
+        setRemovingBg(true);
+        toast({ title: "Arka plan kaldırılıyor...", description: "Bu işlem 10-30 saniye sürebilir." });
+        try {
+          const { removeBackground } = await import("@imgly/background-removal");
+          const blob = await removeBackground(file);
+          const baseName = file.name.replace(/\.[^.]+$/, "");
+          fileToUpload = new File([blob], `${baseName}_nobg.png`, { type: "image/png" });
+          toast({ title: "Arka plan kaldırıldı" });
+        } catch {
+          toast({ title: "Uyarı", description: "Arka plan kaldırılamadı, orijinal görsel yükleniyor.", variant: "destructive" });
+        } finally {
+          setRemovingBg(false);
+        }
+      }
+
+      const url = await uploadFile(fileToUpload);
       if (target === "new") setNewCat(p => ({ ...p, image: url }));
       else setEditing(p => p ? { ...p, image: url } : p);
       toast({ title: "Görsel yüklendi" });
@@ -64,6 +85,7 @@ export default function AdminCategories() {
       toast({ title: "Hata", description: "Yükleme başarısız.", variant: "destructive" });
     } finally {
       setUploading(false);
+      setRemovingBg(false);
     }
   }
 
@@ -191,9 +213,21 @@ export default function AdminCategories() {
                   </div>
                 )}
                 <div className="flex flex-col gap-1.5">
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <Switch
+                      checked={removeBg}
+                      onCheckedChange={setRemoveBg}
+                      className="scale-75 origin-left"
+                    />
+                    <span className="text-xs text-gray-500 flex items-center gap-1">
+                      {removingBg ? <Loader2 className="w-3 h-3 animate-spin" /> : <Wand2 className="w-3 h-3" />}
+                      Arka planı kaldır
+                    </span>
+                  </div>
                   <Button type="button" variant="outline" size="sm" className="rounded-sm border-gray-300 text-gray-600 h-8 text-xs"
-                    onClick={() => newImageRef.current?.click()} disabled={uploading}>
-                    <Upload className="w-3.5 h-3.5 mr-1.5" /> {uploading ? "Yükleniyor..." : "Görsel Yükle"}
+                    onClick={() => newImageRef.current?.click()} disabled={uploading || removingBg}>
+                    <Upload className="w-3.5 h-3.5 mr-1.5" />
+                    {removingBg ? "Arka plan kaldırılıyor..." : uploading ? "Yükleniyor..." : "Görsel Yükle"}
                   </Button>
                   <Input
                     placeholder="veya görsel yolu girin..."
@@ -257,7 +291,7 @@ export default function AdminCategories() {
                           <Input type="number" className="rounded-sm border-gray-200 text-xs h-8" placeholder="Sıra" value={editing.sortOrder}
                             onChange={e => setEditing(p => p ? { ...p, sortOrder: parseInt(e.target.value) || 0 } : p)} />
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 flex-wrap">
                           <input ref={editImageRef} type="file" accept="image/*" className="hidden"
                             onChange={e => { const f = e.target.files?.[0]; if (f) handleImageUpload(f, "edit"); }} />
                           {editing.image ? (
@@ -267,11 +301,19 @@ export default function AdminCategories() {
                               <Image className="w-4 h-4 text-gray-300" />
                             </div>
                           )}
+                          <div className="flex items-center gap-1.5">
+                            <Switch checked={removeBg} onCheckedChange={setRemoveBg} className="scale-[0.65] origin-left" />
+                            <span className="text-xs text-gray-400 flex items-center gap-0.5">
+                              {removingBg ? <Loader2 className="w-3 h-3 animate-spin" /> : <Wand2 className="w-3 h-3" />}
+                              Arka planı kaldır
+                            </span>
+                          </div>
                           <Button type="button" variant="outline" size="sm" className="rounded-sm border-gray-200 text-gray-500 h-7 text-xs"
-                            onClick={() => editImageRef.current?.click()} disabled={uploading}>
-                            <Upload className="w-3 h-3 mr-1" /> Görsel
+                            onClick={() => editImageRef.current?.click()} disabled={uploading || removingBg}>
+                            <Upload className="w-3 h-3 mr-1" />
+                            {removingBg ? "İşleniyor..." : uploading ? "Yükleniyor..." : "Görsel"}
                           </Button>
-                          <Input className="rounded-sm border-gray-200 text-xs h-7 flex-1" placeholder="Görsel yolu..." value={editing.image}
+                          <Input className="rounded-sm border-gray-200 text-xs h-7 flex-1 min-w-[160px]" placeholder="Görsel yolu..." value={editing.image}
                             onChange={e => setEditing(p => p ? { ...p, image: e.target.value } : p)} />
                         </div>
                       </td>

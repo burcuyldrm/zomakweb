@@ -6,7 +6,7 @@ import fs from "fs";
 import sharp from "sharp";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const uploadsDir = path.join(__dirname, "..", "..", "uploads");
+const uploadsDir = path.join(__dirname, "..", "..", "crane-corp", "public", "uploads");
 
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
@@ -35,34 +35,38 @@ const upload = multer({
 
 const CORNER_RADIUS = 50;
 
-async function roundCornersIfJpeg(file: Express.Multer.File): Promise<string> {
+async function applyRoundedCorners(file: Express.Multer.File): Promise<string> {
   const ext = path.extname(file.filename).toLowerCase();
-  const isJpeg = ext === ".jpg" || ext === ".jpeg";
-
-  if (!isJpeg) {
-    return `/uploads/${file.filename}`;
-  }
-
+  const base = path.basename(file.filename, ext);
+  const outputFilename = `${base}.png`;
   const inputPath = file.path;
-  const pngFilename = path.basename(file.filename, ext) + ".png";
-  const outputPath = path.join(uploadsDir, pngFilename);
+  const outputPath = path.join(uploadsDir, outputFilename);
 
   const image = sharp(inputPath);
   const { width, height } = await image.metadata();
-  const r = CORNER_RADIUS;
 
   const mask = Buffer.from(
-    `<svg><rect x="0" y="0" width="${width}" height="${height}" rx="${r}" ry="${r}"/></svg>`
+    `<svg><rect x="0" y="0" width="${width}" height="${height}" rx="${CORNER_RADIUS}" ry="${CORNER_RADIUS}"/></svg>`
   );
 
+  // Write to a temp file first to avoid read/write conflict on same path (PNG input)
+  const tmpPath = inputPath + ".rnd";
   await image
     .composite([{ input: mask, blend: "dest-in" }])
     .png()
-    .toFile(outputPath);
+    .toFile(tmpPath);
 
-  fs.unlinkSync(inputPath);
+  fs.renameSync(tmpPath, outputPath);
+  if (inputPath !== outputPath) fs.unlinkSync(inputPath);
 
-  return `/uploads/${pngFilename}`;
+  return `/uploads/${outputFilename}`;
+}
+
+async function roundCornersIfJpeg(file: Express.Multer.File): Promise<string> {
+  const ext = path.extname(file.filename).toLowerCase();
+  const isJpeg = ext === ".jpg" || ext === ".jpeg";
+  if (!isJpeg) return `/uploads/${file.filename}`;
+  return applyRoundedCorners(file);
 }
 
 const router: IRouter = Router();
@@ -73,7 +77,10 @@ router.post("/upload", upload.single("file"), async (req, res): Promise<void> =>
     return;
   }
   try {
-    const url = await roundCornersIfJpeg(req.file);
+    const rounded = req.query.rounded === "true";
+    const url = rounded
+      ? await applyRoundedCorners(req.file)
+      : await roundCornersIfJpeg(req.file);
     const filename = path.basename(url);
     res.status(201).json({ url, filename, originalName: req.file.originalname, size: req.file.size });
   } catch (err) {

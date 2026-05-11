@@ -20,7 +20,8 @@ export default function UrunlerAdmin() {
   const { data: categories } = useListCategories();
   const deleteProduct = useDeleteProduct();
 
-  const filtered = (products ?? []).filter((p) =>
+  const productsArray = Array.isArray(products) ? products : [];
+  const filtered = productsArray.filter((p) =>
     p.name.toLowerCase().includes(search.toLowerCase()) ||
     p.categoryName.toLowerCase().includes(search.toLowerCase())
   );

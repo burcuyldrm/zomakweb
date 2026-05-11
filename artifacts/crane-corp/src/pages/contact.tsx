@@ -10,6 +10,11 @@ const contactItems = [
   { icon: Clock, label: "Çalışma Saatleri", value: "Pzt–Cmt: 08:00–18:00\nPazar: Kapalı", href: undefined },
 ];
 
+const LAT = 38.0575;
+const LNG = 27.1692;
+const GMAPS_URL   = `https://www.google.com/maps/search/Atatürk+Mahallesi+4.+Cadde+No:129+Oğlananası+Menderes+İzmir`;
+const GMAPS_EMBED = `https://maps.google.com/maps?q=Atatürk+Mahallesi+4.+Cadde+No:129+Oğlananası+Menderes+İzmir&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+
 export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
@@ -60,17 +65,26 @@ export default function Contact() {
               initial={{ opacity: 0, x: 15 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="w-full rounded-sm overflow-hidden border border-gray-200 shadow-sm min-h-[420px]"
+              className="w-full rounded-sm overflow-hidden border border-gray-200 shadow-sm flex flex-col"
             >
               <iframe
-                src="https://www.google.com/maps?q=Atatürk+Mahallesi+4.+Cadde+No:129+Oğlananası+Menderes+İzmir&output=embed"
+                src={GMAPS_EMBED}
                 width="100%"
-                height="100%"
-                style={{ border: 0, display: "block", minHeight: "420px" }}
+                height="420"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="ZOMAK Konum"
+                title="ZOMAK Makine Konum"
               />
+              <a
+                href={GMAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-center text-xs text-gray-400 hover:text-[#8B1A1A] py-1.5 bg-gray-50 border-t border-gray-200 transition-colors"
+              >
+                Google Maps'te görüntüle →
+              </a>
             </motion.div>
 
           </div>

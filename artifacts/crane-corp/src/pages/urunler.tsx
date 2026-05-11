@@ -25,7 +25,7 @@ export default function Urunler() {
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-7 md:grid-cols-2 xl:grid-cols-4">
-            {(categories ?? []).map((cat, i) => (
+            {(Array.isArray(categories) ? categories : []).map((cat, i) => (
               <motion.div
                 key={cat.slug}
                 initial={{ opacity: 0, y: 24 }}
