@@ -33,6 +33,10 @@ minimumReleaseAgeExclude:
   # this setting guards against does not apply to our own packages.
   - '@replit/*'
   - stripe-replit-sync
+  # Rollup and its platform-specific native binaries must be installable immediately
+  # so Vite production builds work on Vercel (Linux x64) without native binary gaps.
+  - rollup
+  - '@rollup/*'
 
 packages:
   - artifacts/*
@@ -120,4 +124,4 @@ overrides:
   # drizzle-kit uses esbuild internally on an older version that's vulnerable, this overrides it
   "@esbuild-kit/esm-loader": "npm:tsx@^4.21.0"
   esbuild: "0.27.3"
-  rollup: "4.17.2"
+  rollup: "4.44.0"
