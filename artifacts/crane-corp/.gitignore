@@ -1,0 +1,3 @@
+# Un-ignore dist so pre-built files can be committed for Vercel deployment
+!dist
+!dist/**
