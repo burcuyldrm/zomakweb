@@ -57,6 +57,7 @@ export default async ({ mode }) => {
   },
   root: path.resolve(import.meta.dirname),
   build: {
+    modulePreload: false,
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
