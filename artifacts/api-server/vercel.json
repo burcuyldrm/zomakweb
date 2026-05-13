@@ -1,7 +1,5 @@
 {
   "version": 2,
-  "installCommand": "echo 'dist pre-built, skipping install'",
-  "buildCommand": "echo 'dist pre-built, skipping build'",
   "builds": [
     {
       "src": "dist/vercel.mjs",
@@ -11,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/vercel.mjs"
+      "dest": "/dist/vercel.mjs"
     }
   ]
 }
