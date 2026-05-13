@@ -15,8 +15,12 @@ const router: IRouter = Router();
 
 // Multer konfigürasyonu: frontend'in public/uploads klasörüne kaydet
 const uploadDir = path.join(process.cwd(), "../../crane-corp/public/uploads");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
+try {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
+} catch {
+  // read-only filesystem (e.g. Vercel serverless) — uploads disabled
 }
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {

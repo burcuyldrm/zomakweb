@@ -73506,8 +73506,11 @@ import path from "path";
 import fs from "fs";
 var router5 = (0, import_express5.Router)();
 var uploadDir = path.join(process.cwd(), "../../crane-corp/public/uploads");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
+try {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
+} catch {
 }
 var storage = import_multer.default.diskStorage({
   destination: (req, file2, cb) => {
@@ -73704,8 +73707,11 @@ import fs2 from "fs";
 import sharp from "sharp";
 var __dirname2 = path2.dirname(fileURLToPath(import.meta.url));
 var uploadsDir = path2.join(__dirname2, "..", "..", "crane-corp", "public", "uploads");
-if (!fs2.existsSync(uploadsDir)) {
-  fs2.mkdirSync(uploadsDir, { recursive: true });
+try {
+  if (!fs2.existsSync(uploadsDir)) {
+    fs2.mkdirSync(uploadsDir, { recursive: true });
+  }
+} catch {
 }
 var storage2 = import_multer2.default.diskStorage({
   destination: (_req, _file2, cb) => cb(null, uploadsDir),
