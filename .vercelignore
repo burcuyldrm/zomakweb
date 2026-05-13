@@ -1,0 +1,8 @@
+node_modules
+*.zip
+attached_assets
+.claude
+artifacts/crane-corp/node_modules
+artifacts/api-server/node_modules
+artifacts/api-server/uploads
+lib/*/node_modules
