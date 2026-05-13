@@ -16,6 +16,9 @@ import { Button } from "@/components/ui/button";
 import { Lock, Eye, EyeOff } from "lucide-react";
 import logoImg from "@assets/zomak-logo-nobg.png";
 
+const ADMIN_EMAIL = "admin@zomak.com.tr";
+const ADMIN_PASSWORD = "Zomak@2025";
+
 const loginSchema = z.object({
   email: z.string().email("Geçerli bir e-posta adresi giriniz"),
   password: z.string().min(1, "Şifre zorunludur"),
@@ -27,17 +30,24 @@ export default function AdminLogin() {
   const [, setLocation] = useLocation();
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const form = useForm<LoginValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: { email: "", password: "" },
   });
 
-  function onSubmit(_values: LoginValues) {
+  function onSubmit(values: LoginValues) {
     setLoading(true);
+    setError("");
     setTimeout(() => {
+      if (values.email === ADMIN_EMAIL && values.password === ADMIN_PASSWORD) {
+        localStorage.setItem("zomak_admin_auth", "1");
+        setLocation("/admin/urunler");
+      } else {
+        setError("E-posta veya şifre hatalı.");
+      }
       setLoading(false);
-      setLocation("/admin/urunler");
     }, 600);
   }
 
@@ -114,6 +124,9 @@ export default function AdminLogin() {
                   </FormItem>
                 )}
               />
+              {error && (
+                <p className="text-red-400 text-sm text-center">{error}</p>
+              )}
               <Button
                 type="submit"
                 className="w-full h-12 font-bold rounded-sm mt-2 bg-[#8B1A1A] hover:bg-[#A52020] text-white"

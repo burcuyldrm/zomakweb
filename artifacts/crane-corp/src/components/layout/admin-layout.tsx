@@ -3,7 +3,7 @@ import {
   LayoutDashboard, Package, Building2, Image, Star,
   FileText, Settings, LogOut, Menu, X, Globe, ChevronRight, Layers,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import logoImg from "@assets/zomak-logo-nobg.png";
 
@@ -19,8 +19,19 @@ const navItems = [
 ];
 
 export function AdminLayout({ children }: { children: React.ReactNode }) {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("zomak_admin_auth") !== "1") {
+      setLocation("/admin");
+    }
+  }, [setLocation]);
+
+  function handleLogout() {
+    localStorage.removeItem("zomak_admin_auth");
+    setLocation("/admin");
+  }
 
   const isActive = (href: string) =>
     location === href || location.startsWith(href + "/");
@@ -87,12 +98,13 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
               Siteyi Görüntüle
             </div>
           </Link>
-          <Link href="/admin">
-            <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-sm text-sm font-semibold text-gray-500 hover:bg-red-50 hover:text-[#8B1A1A] cursor-pointer">
-              <LogOut className="w-4 h-4" />
-              Çıkış
-            </div>
-          </Link>
+          <div
+            onClick={handleLogout}
+            className="flex items-center gap-2.5 px-3 py-2.5 rounded-sm text-sm font-semibold text-gray-500 hover:bg-red-50 hover:text-[#8B1A1A] cursor-pointer"
+          >
+            <LogOut className="w-4 h-4" />
+            Çıkış
+          </div>
         </div>
       </aside>
 
