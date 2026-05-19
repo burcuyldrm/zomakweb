@@ -3,6 +3,10 @@
   "buildCommand": "echo 'Using pre-built static files'",
   "outputDirectory": "artifacts/crane-corp/dist/public",
   "installCommand": "echo 'Skipping install'",
+  "redirects": [
+    { "source": "/en", "destination": "/", "permanent": false },
+    { "source": "/en/(.*)", "destination": "/$1", "permanent": false }
+  ],
   "rewrites": [
     {
       "source": "/api/:path*",
